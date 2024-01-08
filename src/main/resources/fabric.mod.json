@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "tead",
+	"version": "${version}",
+	"name": "tead",
+	"description": "This mod adds lead, double axes, a shotgun, some new potions effects and many other misc things.",
+	"authors": [
+		"Python-Bear"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/tead/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.pythonbear.tead.Tead"
+		],
+		"client": [
+			"net.pythonbear.tead.TeadClient"
+		],
+		"fabric-datagen": [
+			"net.pythonbear.tead.TeadDataGenerator"
+		]
+	},
+	"mixins": [
+		"tead.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.3",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
