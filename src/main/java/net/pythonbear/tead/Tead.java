@@ -2,6 +2,7 @@ package net.pythonbear.tead;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.pythonbear.tead.item.TeadItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +12,7 @@ public class Tead implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		TeadItems.registerModItems();
 
 		LOGGER.info("Hello Fabric world!");
 	}
