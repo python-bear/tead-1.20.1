@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "tead:ruby"
+    }
+  },
+  "result": {
+    "item": "tead:block_of_ruby",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tead:block/block_of_ruby"
+  },
+  "render_type": "solid"
+}

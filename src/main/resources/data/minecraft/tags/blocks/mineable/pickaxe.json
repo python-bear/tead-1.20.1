@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tead:lead_ore",
+    "tead:block_of_ruby",
+    "tead:block_of_lead",
+    "tead:ruby_ore",
+    "tead:deepslate_ruby_ore"
+  ]
+}

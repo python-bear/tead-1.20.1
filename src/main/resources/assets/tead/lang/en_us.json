@@ -1,4 +1,12 @@
 {
+  "itemgroup.tead": "Tead",
+
   "item.tead.ruby": "Ruby",
-  "item.tead.galena": "Galena"
+  "item.tead.galena": "Galena",
+
+  "block.tead.block_of_ruby": "Block Of Ruby",
+  "block.tead.block_of_lead": "Block Of Lead",
+  "block.tead.lead_ore": "Galena Ore",
+  "block.tead.ruby_ore": "Ruby Ore",
+  "block.tead.deepslate_ruby_ore": "Deepslate Ruby Ore"
 }
