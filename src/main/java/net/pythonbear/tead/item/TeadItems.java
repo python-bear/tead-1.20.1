@@ -12,9 +12,11 @@ import net.pythonbear.tead.Tead;
 
 public class TeadItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
+    public static final Item GALENA = registerItem("galena", new Item(new FabricItemSettings()));
 
     private static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
+        entries.add(GALENA);
     }
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Tead.MOD_ID, name), item);
