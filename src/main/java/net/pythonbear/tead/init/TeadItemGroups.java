@@ -17,6 +17,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.GALENA);
 
+                        entries.add(TeadItems.LEAD_APPLE);
+
                         entries.add(TeadItems.LIGHTNING_STAFF);
 
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);
