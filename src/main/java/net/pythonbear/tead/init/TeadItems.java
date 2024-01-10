@@ -13,6 +13,7 @@ import net.pythonbear.tead.item.TeadFoodComponents;
 public class TeadItems {
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item GALENA = registerItem("galena", new Item(new FabricItemSettings()));
+    public static final Item LEAD_INGOT = registerItem("lead_ingot", new Item(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
             new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
@@ -21,6 +22,7 @@ public class TeadItems {
     static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);
         entries.add(GALENA);
+        entries.add(LEAD_INGOT);
         entries.add(LIGHTNING_STAFF);
         entries.add(LEAD_APPLE);
     }

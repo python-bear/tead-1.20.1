@@ -3,10 +3,12 @@
 
   "item.tead.ruby": "Ruby",
   "item.tead.galena": "Galena",
+  "item.tead.lead_ingot": "Lead Ingot",
 
   "item.tead.lead_apple": "Lead Apple",
 
   "item.tead.lightning_staff": "Lightning Staff",
+  "item.tead.lightning_staff.tooltip": "Harness the storm's power",
 
   "block.tead.block_of_ruby": "Block Of Ruby",
   "block.tead.block_of_lead": "Block Of Lead",

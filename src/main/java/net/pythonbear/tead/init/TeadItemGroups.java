@@ -16,6 +16,7 @@ public class TeadItemGroups {
                     .icon(() -> new ItemStack(TeadItems.RUBY)).entries((displayContext, entries) -> {
                         entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.GALENA);
+                        entries.add(TeadItems.LEAD_INGOT);
 
                         entries.add(TeadItems.LEAD_APPLE);
 

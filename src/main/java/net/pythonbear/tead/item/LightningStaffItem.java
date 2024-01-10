@@ -1,5 +1,6 @@
 package net.pythonbear.tead.item;
 
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -9,12 +10,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class LightningStaffItem extends Item {
     public LightningStaffItem(Settings settings) {
@@ -70,5 +76,11 @@ public class LightningStaffItem extends Item {
         }
 
         return TypedActionResult.pass(user.getStackInHand(hand));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.tead.lightning_staff.tooltip").formatted(Formatting.DARK_GREEN));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }
