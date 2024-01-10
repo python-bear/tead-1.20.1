@@ -1,21 +1,26 @@
-// 1.20.1	2024-01-10T11:57:34.9617653	tead/Model Definitions
+// 1.20.1	2024-01-10T13:12:41.8891584	tead/Model Definitions
+3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 3d6bd9a1f99e419833534738de86fa168de97ee5 assets\tead\blockstates\lead_ore.json
-ca9188f1c0f71c958de6583c89c9b43756eb34cb assets\tead\models\block\lead_ore.json
-4168f0d71aab47178e392503253b19a099f31d5e assets\tead\models\block\block_of_ruby.json
 eb86524146484e6d38e09c81e317f0965baf9668 assets\tead\models\item\galena.json
 20390bf97fe8a8eec9e5bc73517c0814ae9ec19d assets\tead\models\item\lead_ore.json
 eb49985fc4f43bcf3a7da9019ffbfeab87f09313 assets\tead\blockstates\deepslate_ruby_ore.json
+8d34fa0117bb310038523ca419c5f602da8f44ee assets\tead\models\item\lead_sword.json
+420c84e582e5d912d53b5af0f2f6e7cc73a50d69 assets\tead\models\block\block_of_lead.json
+bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
+b8132a13a12a521b324a5c1d41464bb2f9e49cdb assets\tead\models\item\lead_axe.json
+08e79e81197b9ac109235f3293b6ef93b93480fa assets\tead\blockstates\block_of_lead.json
+df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
+ae1143863dfa3f3d4551e111f441ef9e78771e62 assets\tead\models\item\lightning_staff.json
+b3bb92399218af3786abef2ab4a1949bf4bb6035 assets\tead\models\item\deepslate_ruby_ore.json
+2438589f7e728bc693d67bad14ba9b0e05a6bb86 assets\tead\models\item\lead_apple.json
+ca9188f1c0f71c958de6583c89c9b43756eb34cb assets\tead\models\block\lead_ore.json
+4168f0d71aab47178e392503253b19a099f31d5e assets\tead\models\block\block_of_ruby.json
+201ce0517311f3ee7560c184dd0ab88cb191bcd5 assets\tead\models\item\lead_shovel.json
 93b71f521ce88a230103e62ae82affa6fc5739d3 assets\tead\models\item\block_of_lead.json
 09eeae367b2f99efe6a6cbe439a6ad51f3fcf24a assets\tead\models\item\ruby_ore.json
-420c84e582e5d912d53b5af0f2f6e7cc73a50d69 assets\tead\models\block\block_of_lead.json
 6453d3a0c146a8ec7b10f71db2e311501089d765 assets\tead\blockstates\block_of_ruby.json
 544fae509e1529ac672239b179e59a2c8b6be593 assets\tead\models\block\ruby_ore.json
 4a1e752268ed6cded1236c6ac276a4f32a848881 assets\tead\models\item\lead_ingot.json
 c2d71ad3e8671e427f1ab3f322c295c3483f0333 assets\tead\models\item\ruby.json
-bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
-08e79e81197b9ac109235f3293b6ef93b93480fa assets\tead\blockstates\block_of_lead.json
-df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
-d12c59d2e4210d7c4dd2ab08b9f5f496d5bda798 assets\tead\models\item\lightning_staff.json
-b3bb92399218af3786abef2ab4a1949bf4bb6035 assets\tead\models\item\deepslate_ruby_ore.json
-2438589f7e728bc693d67bad14ba9b0e05a6bb86 assets\tead\models\item\lead_apple.json
+90cdc35037b0300591264ec3b333141b37655333 assets\tead\models\item\lead_hoe.json
 0e600f052a4ab797636f5b94c12bab31e494ebe3 assets\tead\models\block\deepslate_ruby_ore.json

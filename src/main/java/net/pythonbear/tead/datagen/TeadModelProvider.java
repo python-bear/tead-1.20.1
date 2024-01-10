@@ -28,6 +28,12 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_APPLE, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.GENERATED);
+
+        itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.LEAD_AXE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.LEAD_HOE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.LEAD_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.LEAD_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.LEAD_SWORD, Models.HANDHELD);
     }
 }

@@ -7,6 +7,12 @@
 
   "item.tead.lead_apple": "Lead Apple",
 
+  "item.tead.lead_axe": "Lead Axe",
+  "item.tead.lead_pickaxe": "Lead Pickaxe",
+  "item.tead.lead_hoe": "Lead Hoe",
+  "item.tead.lead_shovel": "Lead Shovel",
+  "item.tead.lead_sword": "Lead Sword",
+
   "item.tead.lightning_staff": "Lightning Staff",
   "item.tead.lightning_staff.tooltip": "Harness the storm's power",
 

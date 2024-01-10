@@ -2,7 +2,7 @@ package net.pythonbear.tead.init;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -18,6 +18,16 @@ public class TeadItems {
             new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.LEAD_APPLE)));
+    public static final Item LEAD_AXE = registerItem("lead_axe",
+            new AxeItem(TeadToolMaterial.LEAD, 5.0f, -3.2f,  new FabricItemSettings()));
+    public static final Item LEAD_PICKAXE = registerItem("lead_pickaxe",
+            new PickaxeItem(TeadToolMaterial.LEAD, 1, -2.9f,  new FabricItemSettings()));
+    public static final Item LEAD_SWORD = registerItem("lead_sword",
+            new SwordItem(TeadToolMaterial.LEAD, 3, -2.5f,  new FabricItemSettings()));
+    public static final Item LEAD_SHOVEL = registerItem("lead_shovel",
+            new ShovelItem(TeadToolMaterial.LEAD, 1.5f, -3.0f,  new FabricItemSettings()));
+    public static final Item LEAD_HOE = registerItem("lead_hoe",
+            new HoeItem(TeadToolMaterial.LEAD, -2, -1.0f,  new FabricItemSettings()));
 
     static void addItemsToIngredientItemGroup(FabricItemGroupEntries entries) {
         entries.add(RUBY);

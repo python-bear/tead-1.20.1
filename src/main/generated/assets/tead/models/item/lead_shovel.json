@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "tead:item/lightning_staff"
+    "layer0": "tead:item/lead_shovel"
   }
 }
