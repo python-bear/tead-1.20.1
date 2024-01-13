@@ -36,6 +36,20 @@ public class TeadItems {
             new ShovelItem(TeadToolMaterial.LEAD, 1.5f, -3.0f,  new FabricItemSettings()));
     public static final Item LEAD_HOE = registerItem("lead_hoe",
             new HoeItem(TeadToolMaterial.LEAD, -2, -1.0f,  new FabricItemSettings()));
+    public static final Item WOOD_DOUBLE_AXE = registerItem("wood_double_axe",
+            new AxeItem(ToolMaterials.WOOD, 6.2f, -3.4f,  new FabricItemSettings()));
+    public static final Item STONE_DOUBLE_AXE = registerItem("stone_double_axe",
+            new AxeItem(ToolMaterials.STONE, 7.2f, -3.4f,  new FabricItemSettings()));
+    public static final Item GOLD_DOUBLE_AXE = registerItem("gold_double_axe",
+            new AxeItem(ToolMaterials.GOLD, 6.5f, -3.2f,  new FabricItemSettings()));
+    public static final Item LEAD_DOUBLE_AXE = registerItem("lead_double_axe",
+            new AxeItem(TeadToolMaterial.LEAD, 6.0f, -3.4f,  new FabricItemSettings()));
+    public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
+            new AxeItem(ToolMaterials.IRON, 6.5f, -3.3f,  new FabricItemSettings()));
+    public static final Item DIAMOND_DOUBLE_AXE = registerItem("diamond_double_axe",
+            new AxeItem(ToolMaterials.DIAMOND, 5.7f, -3.2f,  new FabricItemSettings()));
+    public static final Item NETHERITE_DOUBLE_AXE = registerItem("netherite_double_axe",
+            new AxeItem(ToolMaterials.NETHERITE, 6.0f, -3.2f,  new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));

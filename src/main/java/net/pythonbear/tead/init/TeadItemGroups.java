@@ -35,6 +35,13 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_PICKAXE);
                         entries.add(TeadItems.LEAD_SHOVEL);
                         entries.add(TeadItems.LEAD_SWORD);
+                        entries.add(TeadItems.LEAD_DOUBLE_AXE);
+                        entries.add(TeadItems.WOOD_DOUBLE_AXE);
+                        entries.add(TeadItems.STONE_DOUBLE_AXE);
+                        entries.add(TeadItems.GOLD_DOUBLE_AXE);
+                        entries.add(TeadItems.IRON_DOUBLE_AXE);
+                        entries.add(TeadItems.DIAMOND_DOUBLE_AXE);
+                        entries.add(TeadItems.NETHERITE_DOUBLE_AXE);
 
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);

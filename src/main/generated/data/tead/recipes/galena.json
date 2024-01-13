@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tead:block_of_galena"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tead:galena"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:lead_ingot"
+    },
+    "$": {
+      "item": "minecraft:redstone"
+    },
+    "%": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "pattern": [
+    " $ ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "count": 3,
+    "item": "tead:lead_bullet"
+  },
+  "show_notification": true
+}

@@ -6,8 +6,10 @@ import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.tag.ItemTags;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 
@@ -177,6 +179,80 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
                 .criterion(hasItem(Items.LEAD), conditionsFromItem(Items.LEAD))
                 .criterion(hasItem(Items.TRIPWIRE_HOOK), conditionsFromItem(Items.TRIPWIRE_HOOK))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', TeadItems.LEAD_INGOT)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.WOOD_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', ItemTags.PLANKS)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.ACACIA_PLANKS), conditionsFromItem(Items.ACACIA_PLANKS))
+                .criterion(hasItem(Items.BAMBOO_PLANKS), conditionsFromItem(Items.BAMBOO_PLANKS))
+                .criterion(hasItem(Items.BIRCH_PLANKS), conditionsFromItem(Items.BIRCH_PLANKS))
+                .criterion(hasItem(Items.CHERRY_PLANKS), conditionsFromItem(Items.CHERRY_PLANKS))
+                .criterion(hasItem(Items.CRIMSON_PLANKS), conditionsFromItem(Items.CRIMSON_PLANKS))
+                .criterion(hasItem(Items.JUNGLE_PLANKS), conditionsFromItem(Items.JUNGLE_PLANKS))
+                .criterion(hasItem(Items.DARK_OAK_PLANKS), conditionsFromItem(Items.DARK_OAK_PLANKS))
+                .criterion(hasItem(Items.MANGROVE_PLANKS), conditionsFromItem(Items.MANGROVE_PLANKS))
+                .criterion(hasItem(Items.OAK_PLANKS), conditionsFromItem(Items.OAK_PLANKS))
+                .criterion(hasItem(Items.SPRUCE_PLANKS), conditionsFromItem(Items.SPRUCE_PLANKS))
+                .criterion(hasItem(Items.WARPED_PLANKS), conditionsFromItem(Items.WARPED_PLANKS))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STONE_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', ItemTags.STONE_TOOL_MATERIALS)
+                .criterion(hasItem(Items.COBBLED_DEEPSLATE), conditionsFromItem(Items.COBBLED_DEEPSLATE))
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .criterion(hasItem(Items.BLACKSTONE), conditionsFromItem(Items.BLACKSTONE))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', Items.GOLD_INGOT)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.IRON_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', Items.IRON_INGOT)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.DIAMOND_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', Items.DIAMOND)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.NETHERITE_DOUBLE_AXE, 1)
+                .pattern("#%#")
+                .pattern("#%#")
+                .pattern(" % ")
+                .input('%', Items.STICK)
+                .input('#', Items.NETHERITE_INGOT)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
                 .offerTo(exporter);
     }
 }

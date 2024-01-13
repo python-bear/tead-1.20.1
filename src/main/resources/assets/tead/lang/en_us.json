@@ -19,6 +19,13 @@
   "item.tead.lead_hoe": "Lead Hoe",
   "item.tead.lead_shovel": "Lead Shovel",
   "item.tead.lead_sword": "Lead Sword",
+  "item.tead.lead_double_axe": "Lead Doubleaxe",
+  "item.tead.wood_double_axe": "Wood Doubleaxe",
+  "item.tead.stone_double_axe": "Stone Doubleaxe",
+  "item.tead.gold_double_axe": "Gold Doubleaxe",
+  "item.tead.iron_double_axe": "Iron Doubleaxe",
+  "item.tead.diamond_double_axe": "Diamond Doubleaxe",
+  "item.tead.netherite_double_axe": "Netherite Doubleaxe",
 
   "item.tead.music_disc_battle_hymn": "Battle Music Disc",
   "item.tead.music_disc_battle_hymn.desc": "ManO'War - Battle Hymn",
