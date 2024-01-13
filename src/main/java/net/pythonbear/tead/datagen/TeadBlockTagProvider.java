@@ -21,6 +21,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(TeadBlocks.BLOCK_OF_LEAD)
+                .add(TeadBlocks.BLOCK_OF_GALENA)
                 .add(TeadBlocks.RUBY_ORE)
                 .add(TeadBlocks.DEEPSLATE_RUBY_ORE)
                 .add(TeadBlocks.LEAD_ORE)
@@ -37,6 +38,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.BLOCK_OF_RUBY);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(TeadBlocks.LEAD_ORE);
+                .add(TeadBlocks.LEAD_ORE)
+                .add(TeadBlocks.BLOCK_OF_GALENA);
     }
 }

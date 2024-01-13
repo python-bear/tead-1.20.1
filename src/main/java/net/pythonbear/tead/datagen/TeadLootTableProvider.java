@@ -26,6 +26,7 @@ public class TeadLootTableProvider extends FabricBlockLootTableProvider {
         // Blocks that droop themselves
         addDrop(TeadBlocks.BLOCK_OF_LEAD);
         addDrop(TeadBlocks.BLOCK_OF_RUBY);
+        addDrop(TeadBlocks.BLOCK_OF_GALENA);
 
         // Ores that drop more than one resource
         addDrop(TeadBlocks.LEAD_ORE, copperLikeOreDrops(TeadBlocks.LEAD_ORE, TeadItems.GALENA, 1f, 3f));

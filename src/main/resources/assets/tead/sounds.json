@@ -1,0 +1,146 @@
+{
+  "battle_hymn": {
+    "subtitle": "sounds.tead.battle_hymn",
+    "sounds": [
+      {
+        "name": "tead:battle_hymn",
+        "stream": true
+      }
+    ]
+  },
+  "day_one": {
+    "subtitle": "sounds.tead.day_one",
+    "sounds": [
+      {
+        "name": "tead:day_one",
+        "stream": true
+      }
+    ]
+  },
+  "hail_and_kill": {
+    "subtitle": "sounds.tead.hail_and_kill",
+    "sounds": [
+      {
+        "name": "tead:hail_and_kill",
+        "stream": true
+      }
+    ]
+  },
+  "homeland": {
+    "subtitle": "sounds.tead.homeland",
+    "sounds": [
+      {
+        "name": "tead:homeland",
+        "stream": true
+      }
+    ]
+  },
+  "lord_give_me_a_sign": {
+    "subtitle": "sounds.tead.lord_give_me_a_sign",
+    "sounds": [
+      {
+        "name": "tead:lord_give_me_a_sign",
+        "stream": true
+      }
+    ]
+  },
+  "lose_yourself": {
+    "subtitle": "sounds.tead.lose_yourself",
+    "sounds": [
+      {
+        "name": "tead:lose_yourself",
+        "stream": true
+      }
+    ]
+  },
+  "mutiny": {
+    "subtitle": "sounds.tead.mutiny",
+    "sounds": [
+      {
+        "name": "tead:mutiny",
+        "stream": true
+      }
+    ]
+  },
+  "never_gonna_give_you_up": {
+    "subtitle": "sounds.tead.never_gonna_give_you_up",
+    "sounds": [
+      {
+        "name": "tead:never_gonna_give_you_up",
+        "stream": true
+      }
+    ]
+  },
+  "never_gonna_stop": {
+    "subtitle": "sounds.tead.never_gonna_stop",
+    "sounds": [
+      {
+        "name": "tead:never_gonna_stop",
+        "stream": true
+      }
+    ]
+  },
+  "swords_in_the_wind": {
+    "subtitle": "sounds.tead.swords_in_the_wind",
+    "sounds": [
+      {
+        "name": "tead:swords_in_the_wind",
+        "stream": true
+      }
+    ]
+  },
+  "the_godfather": {
+    "subtitle": "sounds.tead.the_godfather",
+    "sounds": [
+      {
+        "name": "tead:the_godfather",
+        "stream": true
+      }
+    ]
+  },
+  "the_heart_asks_pleasure_first": {
+    "subtitle": "sounds.tead.the_heart_asks_pleasure_first",
+    "sounds": [
+      {
+        "name": "tead:the_heart_asks_pleasure_first",
+        "stream": true
+      }
+    ]
+  },
+  "the_phantom_of_the_opera": {
+    "subtitle": "sounds.tead.the_phantom_of_the_opera",
+    "sounds": [
+      {
+        "name": "tead:the_phantom_of_the_opera",
+        "stream": true
+      }
+    ]
+  },
+  "till_i_collapse": {
+    "subtitle": "sounds.tead.till_i_collapse",
+    "sounds": [
+      {
+        "name": "tead:till_i_collapse",
+        "stream": true
+      }
+    ]
+  },
+  "time": {
+    "subtitle": "sounds.tead.time",
+    "sounds": [
+      {
+        "name": "tead:time",
+        "stream": true
+      }
+    ]
+  },
+  "untouchable": {
+    "subtitle": "sounds.tead.untouchable",
+    "sounds": [
+      {
+        "name": "tead:untouchable",
+        "stream": true
+      }
+    ]
+  }
+}

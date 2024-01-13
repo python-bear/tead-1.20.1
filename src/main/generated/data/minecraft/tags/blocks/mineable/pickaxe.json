@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "tead:block_of_lead",
+    "tead:block_of_galena",
     "tead:ruby_ore",
     "tead:deepslate_ruby_ore",
     "tead:lead_ore",

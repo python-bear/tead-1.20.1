@@ -15,8 +15,16 @@ public class TeadItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.tead"))
                     .icon(() -> new ItemStack(TeadItems.RUBY)).entries((displayContext, entries) -> {
                         entries.add(TeadItems.RUBY);
+                        entries.add(TeadItems.OBSIDIAN_SHARD);
                         entries.add(TeadItems.GALENA);
                         entries.add(TeadItems.LEAD_INGOT);
+                        entries.add(TeadItems.LEAD_NUGGET);
+                        entries.add(TeadItems.LEAD_BULLET);
+                        entries.add(TeadItems.AMETHYST_ARROW);
+                        entries.add(TeadItems.EXPLOSIVE_ARROW);
+                        entries.add(TeadItems.LIGHTNING_ARROW);
+                        entries.add(TeadItems.OBSIDIAN_ARROW);
+                        entries.add(TeadItems.RUBY_ARROW);
 
                         entries.add(TeadItems.LEAD_APPLE);
 
@@ -28,7 +36,25 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_SHOVEL);
                         entries.add(TeadItems.LEAD_SWORD);
 
+                        entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
+                        entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
+                        entries.add(TeadItems.MUSIC_DISC_HAIL_AND_KILL);
+                        entries.add(TeadItems.MUSIC_DISC_HOMELAND);
+                        entries.add(TeadItems.MUSIC_DISC_LORD_GIVE_ME_A_SIGN);
+                        entries.add(TeadItems.MUSIC_DISC_LOSE_YOURSELF);
+                        entries.add(TeadItems.MUSIC_DISC_MUTINY);
+                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_GIVE_YOU_UP);
+                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_STOP);
+                        entries.add(TeadItems.MUSIC_DISC_SWORDS_IN_THE_WIND);
+                        entries.add(TeadItems.MUSIC_DISC_THE_GODFATHER);
+                        entries.add(TeadItems.MUSIC_DISC_THE_HEART_ASKS_PLEASURE_FIRST);
+                        entries.add(TeadItems.MUSIC_DISC_THE_PHANTOM_OF_THE_OPERA);
+                        entries.add(TeadItems.MUSIC_DISC_TILL_I_COLLAPSE);
+                        entries.add(TeadItems.MUSIC_DISC_TIME);
+                        entries.add(TeadItems.MUSIC_DISC_UNTOUCHABLE);
+
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);
+                        entries.add(TeadBlocks.BLOCK_OF_GALENA);
                         entries.add(TeadBlocks.BLOCK_OF_LEAD);
                         entries.add(TeadBlocks.LEAD_ORE);
                         entries.add(TeadBlocks.RUBY_ORE);

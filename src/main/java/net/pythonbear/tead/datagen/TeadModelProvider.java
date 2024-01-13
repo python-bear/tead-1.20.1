@@ -18,6 +18,7 @@ public class TeadModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BLOCK_OF_LEAD);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BLOCK_OF_RUBY);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BLOCK_OF_GALENA);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DEEPSLATE_RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RUBY_ORE);
     }
@@ -25,7 +26,15 @@ public class TeadModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(TeadItems.RUBY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.OBSIDIAN_SHARD, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.LEAD_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.LEAD_BULLET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.EXPLOSIVE_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.LIGHTNING_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.OBSIDIAN_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.RUBY_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.AMETHYST_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_APPLE, Models.GENERATED);
 
@@ -35,5 +44,22 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.LEAD_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SWORD, Models.HANDHELD);
+
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_HAIL_AND_KILL, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_HOMELAND, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_LORD_GIVE_ME_A_SIGN, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_LOSE_YOURSELF, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_MUTINY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_NEVER_GONNA_GIVE_YOU_UP, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_NEVER_GONNA_STOP, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_SWORDS_IN_THE_WIND, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_THE_GODFATHER, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_THE_HEART_ASKS_PLEASURE_FIRST, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_THE_PHANTOM_OF_THE_OPERA, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_TILL_I_COLLAPSE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_TIME, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUSIC_DISC_UNTOUCHABLE, Models.GENERATED);
     }
 }

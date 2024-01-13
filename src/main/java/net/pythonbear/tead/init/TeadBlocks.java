@@ -23,6 +23,8 @@ public class TeadBlocks {
     public static final Block BLOCK_OF_LEAD = registerBlock("block_of_lead",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.STONE_GRAY)
                     .sounds(BlockSoundGroup.CHAIN)));
+    public static final Block BLOCK_OF_GALENA = registerBlock("block_of_galena",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK).mapColor(MapColor.IRON_GRAY)));
     public static final Block LEAD_ORE = registerBlock("lead_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.IRON_ORE), UniformIntProvider.create(0, 1)));
     public static final Block RUBY_ORE = registerBlock("ruby_ore",
