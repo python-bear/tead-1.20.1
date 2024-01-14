@@ -42,6 +42,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_DOUBLE_AXE);
                         entries.add(TeadItems.DIAMOND_DOUBLE_AXE);
                         entries.add(TeadItems.NETHERITE_DOUBLE_AXE);
+                        entries.add(TeadItems.OBSIDIAN_SWORD);
 
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
