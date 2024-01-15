@@ -2,9 +2,11 @@ package net.pythonbear.tead;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.pythonbear.tead.init.TeadItemGroups;
-import net.pythonbear.tead.init.TeadItems;
-import net.pythonbear.tead.init.TeadBlocks;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.pythonbear.tead.init.*;
+import net.pythonbear.tead.item.sickle.PlayerBlockBreakHandler;
+import net.pythonbear.tead.item.sickle.UseBlockHandler;
 import net.pythonbear.tead.sound.TeadSounds;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +17,8 @@ public class Tead implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		UseBlockCallback.EVENT.register(UseBlockHandler::handle);
+		PlayerBlockBreakEvents.AFTER.register(PlayerBlockBreakHandler::handle);
 		TeadSounds.registerSounds();
 		TeadItemGroups.registerItemGroups();
 		TeadItems.registerItems();

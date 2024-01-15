@@ -5,6 +5,8 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.init.TeadTags;
+import net.pythonbear.tead.item.SickleItem;
 
 import java.util.concurrent.CompletableFuture;
 
