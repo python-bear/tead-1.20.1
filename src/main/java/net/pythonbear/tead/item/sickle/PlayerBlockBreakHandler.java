@@ -2,6 +2,7 @@ package net.pythonbear.tead.item.sickle;
 
 import java.util.NoSuchElementException;
 
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.pythonbear.tead.Tead;
 
@@ -36,9 +37,10 @@ public final class PlayerBlockBreakHandler {
     public static void handle(World world, PlayerEntity player, BlockPos pos, BlockState state,
                               BlockEntity blockEntity) {
         try {
+            Tead.LOGGER.info("activte item: " + player.getStackInHand(Hand.MAIN_HAND).getItem());
             if (!world.isClient() && SickleHarvesting.isCrop(state.getBlock()) && SickleHarvesting.isMature(state)
                     && world.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) &&
-                    player.getActiveItem().getItem() instanceof SickleItem) {
+                    player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof SickleItem) {
                 Random random = world.getRandom();
                 int experienceAmount = random.nextInt(2);
 

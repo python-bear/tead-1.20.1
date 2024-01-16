@@ -30,6 +30,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_BULLET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.EXPLOSIVE_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LIGHTNING_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_ARROW, Models.GENERATED);
@@ -65,6 +66,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.IRON_DAGGER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.DIAMOND_DAGGER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.NETHERITE_DAGGER, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.CORAL_DAGGER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WOOD_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STONE_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.GOLD_DOUBLE_AXE, Models.HANDHELD);
@@ -73,6 +75,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.DIAMOND_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.NETHERITE_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);

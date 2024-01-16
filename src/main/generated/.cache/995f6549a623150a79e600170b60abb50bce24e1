@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-15T19:43:21.2636806	tead/Model Definitions
+// 1.20.1	2024-01-16T16:08:29.0410144	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 4a09838cdbde9a35e1f5d2e30980d9d1a564e384 assets\tead\models\item\music_disc_the_godfather.json
 3d6bd9a1f99e419833534738de86fa168de97ee5 assets\tead\blockstates\lead_ore.json
@@ -6,6 +6,7 @@
 5a88038e5789097a2c94b5102f5f5e9602f04727 assets\tead\models\item\music_disc_the_heart_asks_pleasure_first.json
 fdca29cd9a20215ecc7e9dea4d52e8a24a5e7815 assets\tead\models\item\diamond_hammer.json
 5fa90f05c05e1f58b31183242ada137ce7b52638 assets\tead\models\item\netherite_sickle.json
+e6b75360bc63c60fb27a492a4c2dd5ccc0d9baff assets\tead\models\item\handle.json
 8d34fa0117bb310038523ca419c5f602da8f44ee assets\tead\models\item\lead_sword.json
 0497fbabc32e26af727b3851be7b0df55aeb96d0 assets\tead\models\block\block_of_galena.json
 2b141914c3ee658cd7bcef04fb417c1459e74421 assets\tead\models\item\music_disc_battle_hymn.json
@@ -25,11 +26,13 @@ cef38c64291ada5b94ba6dd7cd583249e788c5fa assets\tead\models\item\music_disc_day_
 5cf79a4d7db68f81527ac9c6c5d5f1bd04d10b11 assets\tead\models\item\block_of_galena.json
 163301f3c1e49e208a04c49179c90026eccd9c81 assets\tead\models\item\gold_dagger.json
 9417b99deff88b0601435145329b8c5043729967 assets\tead\models\item\music_disc_time.json
+8cf803b41cad9575b6b55cfabac7cd7d966ea2f1 assets\tead\models\item\battle_staff.json
 93b71f521ce88a230103e62ae82affa6fc5739d3 assets\tead\models\item\block_of_lead.json
 09eeae367b2f99efe6a6cbe439a6ad51f3fcf24a assets\tead\models\item\ruby_ore.json
 e5358dae89b37d866548c07f0b5c5c04fb20f9bb assets\tead\models\item\music_disc_till_i_collapse.json
-aa44f1ba4d425749aac3557292af06c234194d29 assets\tead\models\item\stone_hammer.json
+d58de787c0edfae8cca0c67177ed119a0a3f947a assets\tead\models\item\coral_dagger.json
 94a7424ff6851b891a675567df420703053b0293 assets\tead\blockstates\block_of_galena.json
+aa44f1ba4d425749aac3557292af06c234194d29 assets\tead\models\item\stone_hammer.json
 c9ff6359827e857ffd84d6c27c50b100a151bd04 assets\tead\models\item\iron_hammer.json
 c2d71ad3e8671e427f1ab3f322c295c3483f0333 assets\tead\models\item\ruby.json
 03ca446df60ebb3f4bb1bebbba46fddabeba82a6 assets\tead\models\item\wood_dagger.json
@@ -51,8 +54,8 @@ bfd764f8a8f171ed0389997876eb4c3670be79bb assets\tead\models\item\wood_hammer.jso
 420c84e582e5d912d53b5af0f2f6e7cc73a50d69 assets\tead\models\block\block_of_lead.json
 f155df962301009763ac23287f069bdd5dfb12fb assets\tead\models\item\gold_hammer.json
 9dc10d73e3a4733f0dc7d2787f542f95f7d8d8e2 assets\tead\models\item\lead_sickle.json
-70e0c359fb85682759bee590633c4ec3ed3b2346 assets\tead\models\item\netherite_dagger.json
 b991d80e1011954db64fae86b98e62ba196e77cb assets\tead\models\item\music_disc_hail_and_kill.json
+70e0c359fb85682759bee590633c4ec3ed3b2346 assets\tead\models\item\netherite_dagger.json
 bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
 08e79e81197b9ac109235f3293b6ef93b93480fa assets\tead\blockstates\block_of_lead.json
 8aaece55f1f36720d63fa1d1630c4e61b621515d assets\tead\models\item\ruby_arrow.json
@@ -65,9 +68,9 @@ b3bb92399218af3786abef2ab4a1949bf4bb6035 assets\tead\models\item\deepslate_ruby_
 ca9188f1c0f71c958de6583c89c9b43756eb34cb assets\tead\models\block\lead_ore.json
 201ce0517311f3ee7560c184dd0ab88cb191bcd5 assets\tead\models\item\lead_shovel.json
 459a580bbd499d3b5902d7e364ed026936c09573 assets\tead\models\item\obsidian_sword.json
+711af3d75e9e730ebe696618113a317e4bc03e50 assets\tead\models\item\music_disc_untouchable.json
 d7fab5f73051013295cac5988a4ada0617510068 assets\tead\models\item\diamond_double_axe.json
 3375e1f35ed2545d4a557071f4951744dcec804a assets\tead\models\item\music_disc_homeland.json
-711af3d75e9e730ebe696618113a317e4bc03e50 assets\tead\models\item\music_disc_untouchable.json
 8addebd45c102c93e65b29a58f315449942e2108 assets\tead\models\item\iron_dagger.json
 300a00ca6e8caa530e84249c2693aa78fff23a20 assets\tead\models\item\lightning_arrow.json
 4dcc1cbb7f31ccb84135919988d246859164939f assets\tead\models\item\music_disc_mutiny.json

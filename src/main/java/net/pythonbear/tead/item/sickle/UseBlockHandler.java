@@ -26,8 +26,6 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.SickleItem;
-import net.pythonbear.tead.item.sickle.SickleHarvestEvents;
-import net.pythonbear.tead.item.sickle.SickleHarvesting;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -38,7 +36,6 @@ public final class UseBlockHandler {
      * Handles the event {@link UseBlockCallback}.
      * Will cancel further event processing only if the {@link PlayerEntity player}
      * is not in spectator mode,
-     * is not crouching,
      * is holding the correct item (depends on {@link ModConfig#getRequireHoe() requireHoe})
      * and the interaction involves a fully grown {@link #isCrop crop}.
      *
@@ -49,14 +46,16 @@ public final class UseBlockHandler {
      * @return - {@link ActionResult} result of the action.
      */
     public static ActionResult handle(PlayerEntity player, World world, Hand hand, BlockHitResult result) {
+        Tead.LOGGER.info("handling UseBlockHandler");
         ActionResult actionResult = ActionResult.PASS;
 
         assert player != null;
         if (!player.isSpectator()) {
             BlockPos blockPos = result.getBlockPos();
             BlockState blockState = world.getBlockState(blockPos);
-
-            if (hand == Hand.MAIN_HAND && canHarvest(world, blockState, blockPos, player, hand, true)) {
+            Tead.LOGGER.info("activte item 2: " + player.getStackInHand(Hand.MAIN_HAND).getItem());
+            if (hand == Hand.MAIN_HAND && canHarvest(world, blockState, blockPos, player, hand, true) &&
+                    player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof SickleItem) {
                 try {
                     IntProperty cropAge = SickleHarvesting.getAge(blockState);
                     if (SickleHarvesting.isMature(blockState, cropAge)) {
@@ -65,14 +64,12 @@ public final class UseBlockHandler {
                             harvest((ServerWorld) world, cropAge, blockState, blockPos, result.getSide(), result,
                                     (ServerPlayerEntity) player, hand);
 
-                            if (player.getStackInHand(hand).getItem() instanceof SickleItem) {
-                                BlockState state = world.getBlockState(blockPos);
-                                if (canHarvest(world, state, blockPos, player, hand, false)) {
-                                    IntProperty age = SickleHarvesting.getAge(state);
-                                    if (SickleHarvesting.isMature(state, age)) {
-                                        harvest((ServerWorld) world, age, state, result.getBlockPos(), result.getSide(),
-                                                null, (ServerPlayerEntity) player, hand);
-                                    }
+                            BlockState state = world.getBlockState(blockPos);
+                            if (canHarvest(world, state, blockPos, player, hand, false)) {
+                                IntProperty age = SickleHarvesting.getAge(state);
+                                if (SickleHarvesting.isMature(state, age)) {
+                                    harvest((ServerWorld) world, age, state, result.getBlockPos(), result.getSide(),
+                                            null, (ServerPlayerEntity) player, hand);
                                 }
                             }
                         }

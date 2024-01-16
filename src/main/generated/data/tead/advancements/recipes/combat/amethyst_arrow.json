@@ -25,18 +25,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stick"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "tead:amethyst_arrow"
@@ -47,7 +35,6 @@
   "requirements": [
     [
       "has_feather",
-      "has_stick",
       "has_amethyst_shard",
       "has_the_recipe"
     ]

@@ -29,6 +29,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_APPLE);
 
                         entries.add(TeadItems.LIGHTNING_STAFF);
+                        entries.add(TeadItems.BATTLE_STAFF);
+
+                        entries.add(TeadItems.HANDLE);
 
                         entries.add(TeadItems.LEAD_AXE);
                         entries.add(TeadItems.LEAD_HOE);
@@ -44,6 +47,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_HAMMER);
                         entries.add(TeadItems.WOOD_DAGGER);
                         entries.add(TeadItems.STONE_DAGGER);
+                        entries.add(TeadItems.CORAL_DAGGER);
                         entries.add(TeadItems.GOLD_DAGGER);
                         entries.add(TeadItems.LEAD_DAGGER);
                         entries.add(TeadItems.IRON_DAGGER);

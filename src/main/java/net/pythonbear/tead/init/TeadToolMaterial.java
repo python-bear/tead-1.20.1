@@ -10,6 +10,8 @@ import java.util.function.Supplier;
 public enum TeadToolMaterial implements ToolMaterial {
     LEAD(MiningLevels.STONE, 200, 5.5f, 2.0f, 19,
             () -> Ingredient.ofItems(TeadItems.LEAD_INGOT)),
+    CORAL(MiningLevels.STONE, 235, 6.5f, 2.0f, 13,
+            () -> Ingredient.ofItems(Items.BRAIN_CORAL)),
     OBSIDIAN(MiningLevels.NETHERITE, 2031, 13.0f, 4.0f, 3,
             () -> Ingredient.ofItems(Items.OBSIDIAN));
 

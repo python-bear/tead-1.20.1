@@ -13,18 +13,6 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stick"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "tead:iron_sickle"
@@ -34,7 +22,6 @@
   },
   "requirements": [
     [
-      "has_stick",
       "has_iron_ingot",
       "has_the_recipe"
     ]

@@ -2,7 +2,6 @@ package net.pythonbear.tead.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import net.minecraft.block.AirBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
@@ -15,9 +14,10 @@ import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
+import net.pythonbear.tead.init.CustomAttacking;
 
 public class BladedWeaponItem extends ToolItem implements Vanishable {
     private final float attackDamage;
@@ -31,9 +31,9 @@ public class BladedWeaponItem extends ToolItem implements Vanishable {
         this.attackDamage = attackDamage + toolMaterial.getAttackDamage();
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
-                "Weapon modifier", (double)this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
+                "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
-                "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
+                "Weapon modifier", attackSpeed, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -81,29 +81,27 @@ public class BladedWeaponItem extends ToolItem implements Vanishable {
         return super.getAttributeModifiers(slot);
     }
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        Item mainHandItem = user.getStackInHand(Hand.MAIN_HAND).getItem();
-
-        if (hand == Hand.OFF_HAND && ((mainHandItem instanceof BladedWeaponItem && ((BladedWeaponItem)
-                mainHandItem).dualWielded)) || mainHandItem == null) {
-            if (!world.isClient()) {
-                return TypedActionResult.success(user.getStackInHand(hand));
-            }
-            return TypedActionResult.success(user.getStackInHand(hand));
-        }
-        return TypedActionResult.pass(user.getStackInHand(hand));
-    }
-    @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         Item mainHandItem = user.getStackInHand(Hand.MAIN_HAND).getItem();
 
-        if (hand == Hand.OFF_HAND && ((mainHandItem instanceof BladedWeaponItem && ((BladedWeaponItem)
-                mainHandItem).dualWielded)) || mainHandItem == null) {
+        if (hand == Hand.OFF_HAND && stack.getItem() instanceof BladedWeaponItem && ((BladedWeaponItem)
+                stack.getItem()).dualWielded && ((mainHandItem instanceof BladedWeaponItem && ((BladedWeaponItem)
+                mainHandItem).dualWielded)) || user.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
             if (!user.getWorld().isClient()) {
-                user.attack(entity);
+                if (user.getItemCooldownManager().isCoolingDown(this)) {
+                    return ActionResult.FAIL;
+                } else {
+                    user.getStackInHand(Hand.OFF_HAND).damage(1, user,
+                            playerEntity -> playerEntity.sendToolBreakStatus(Hand.OFF_HAND));
+                    user.getItemCooldownManager().set(this, 20);
+                    CustomAttacking.attack(user, entity, Hand.OFF_HAND,
+                            ((BladedWeaponItem) stack.getItem()).getAttackDamage());
+                    return ActionResult.SUCCESS;
+                }
             }
-            return ActionResult.SUCCESS;
+            return ActionResult.PASS;
+        } else {
+            return ActionResult.PASS;
         }
-        return ActionResult.PASS;
     }
 }
