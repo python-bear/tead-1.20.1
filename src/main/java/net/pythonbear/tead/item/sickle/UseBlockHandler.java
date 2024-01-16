@@ -46,14 +46,12 @@ public final class UseBlockHandler {
      * @return - {@link ActionResult} result of the action.
      */
     public static ActionResult handle(PlayerEntity player, World world, Hand hand, BlockHitResult result) {
-        Tead.LOGGER.info("handling UseBlockHandler");
         ActionResult actionResult = ActionResult.PASS;
 
         assert player != null;
         if (!player.isSpectator()) {
             BlockPos blockPos = result.getBlockPos();
             BlockState blockState = world.getBlockState(blockPos);
-            Tead.LOGGER.info("activte item 2: " + player.getStackInHand(Hand.MAIN_HAND).getItem());
             if (hand == Hand.MAIN_HAND && canHarvest(world, blockState, blockPos, player, hand, true) &&
                     player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof SickleItem) {
                 try {

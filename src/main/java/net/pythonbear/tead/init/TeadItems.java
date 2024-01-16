@@ -97,7 +97,7 @@ public class TeadItems {
     public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
             new AxeItem(TeadToolMaterial.OBSIDIAN, 4.0f, -2.5f,  new FabricItemSettings()));
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
-            new SwordItem(ToolMaterials.WOOD, 4, -1.9f,  new FabricItemSettings()));
+            new StaffItem(ToolMaterials.WOOD, 4, -1.9f,  new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));

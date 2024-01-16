@@ -37,7 +37,6 @@ public final class PlayerBlockBreakHandler {
     public static void handle(World world, PlayerEntity player, BlockPos pos, BlockState state,
                               BlockEntity blockEntity) {
         try {
-            Tead.LOGGER.info("activte item: " + player.getStackInHand(Hand.MAIN_HAND).getItem());
             if (!world.isClient() && SickleHarvesting.isCrop(state.getBlock()) && SickleHarvesting.isMature(state)
                     && world.getGameRules().getBoolean(GameRules.DO_TILE_DROPS) &&
                     player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof SickleItem) {
