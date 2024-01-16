@@ -3,22 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "tag": "minecraft:planks"
-    },
-    "$": {
-      "item": "tead:handle"
+      "item": "minecraft:stick"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    "#%#",
-    "#%#",
-    " $ "
+    "  #",
+    " % ",
+    "#  "
   ],
   "result": {
-    "item": "tead:wood_double_axe"
+    "item": "tead:battle_staff"
   },
   "show_notification": true
 }

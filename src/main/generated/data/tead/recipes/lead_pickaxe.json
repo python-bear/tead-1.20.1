@@ -5,13 +5,16 @@
     "#": {
       "item": "tead:lead_ingot"
     },
+    "$": {
+      "item": "tead:handle"
+    },
     "%": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
     "###",
-    " % ",
+    " $ ",
     " % "
   ],
   "result": {

@@ -6,7 +6,7 @@
       "tag": "minecraft:stone_tool_materials"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [

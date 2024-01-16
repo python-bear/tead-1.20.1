@@ -5,20 +5,17 @@
     "#": {
       "tag": "minecraft:planks"
     },
-    "$": {
-      "item": "tead:handle"
-    },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    "#%#",
-    "#%#",
-    " $ "
+    " ##",
+    " ##",
+    "%  "
   ],
   "result": {
-    "item": "tead:wood_double_axe"
+    "item": "tead:wood_hammer"
   },
   "show_notification": true
 }

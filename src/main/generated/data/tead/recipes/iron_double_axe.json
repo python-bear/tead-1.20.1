@@ -5,6 +5,9 @@
     "#": {
       "item": "minecraft:iron_ingot"
     },
+    "$": {
+      "item": "tead:handle"
+    },
     "%": {
       "item": "minecraft:stick"
     }
@@ -12,7 +15,7 @@
   "pattern": [
     "#%#",
     "#%#",
-    " % "
+    " $ "
   ],
   "result": {
     "item": "tead:iron_double_axe"

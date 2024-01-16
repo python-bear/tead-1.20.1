@@ -6,13 +6,13 @@
       "item": "minecraft:diamond"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    " # ",
-    "  #",
-    "%# "
+    " ##",
+    " ##",
+    "%  "
   ],
   "result": {
     "item": "tead:diamond_hammer"

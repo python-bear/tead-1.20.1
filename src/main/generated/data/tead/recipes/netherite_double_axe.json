@@ -5,6 +5,9 @@
     "#": {
       "item": "minecraft:netherite_ingot"
     },
+    "$": {
+      "item": "tead:handle"
+    },
     "%": {
       "item": "minecraft:stick"
     }
@@ -12,7 +15,7 @@
   "pattern": [
     "#%#",
     "#%#",
-    " % "
+    " $ "
   ],
   "result": {
     "item": "tead:netherite_double_axe"

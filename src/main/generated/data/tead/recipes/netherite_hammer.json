@@ -6,13 +6,13 @@
       "item": "minecraft:netherite_ingot"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    " # ",
-    "  #",
-    "%# "
+    " ##",
+    " ##",
+    "%  "
   ],
   "result": {
     "item": "tead:netherite_hammer"
