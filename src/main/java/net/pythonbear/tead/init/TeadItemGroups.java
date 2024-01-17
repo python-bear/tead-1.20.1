@@ -67,9 +67,14 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.LEAD_SICKLE);
                         entries.add(TeadItems.IRON_SICKLE);
-                        entries.add(TeadItems.IRON_CLAYMORE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.NETHERITE_SICKLE);
+                        entries.add(TeadItems.GOLD_CLAYMORE);
+                        entries.add(TeadItems.LEAD_CLAYMORE);
+                        entries.add(TeadItems.IRON_CLAYMORE);
+                        entries.add(TeadItems.DIAMOND_CLAYMORE);
+                        entries.add(TeadItems.NETHERITE_CLAYMORE);
+                        entries.add(TeadItems.OBSIDIAN_CLAYMORE);
                         entries.add(TeadItems.OBSIDIAN_SWORD);
 
                         entries.add(TeadItems.SWIFTNESS_BOOTS);

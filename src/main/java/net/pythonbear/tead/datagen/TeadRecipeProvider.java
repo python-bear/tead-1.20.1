@@ -21,6 +21,10 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
             TeadBlocks.RUBY_ORE,
             TeadBlocks.DEEPSLATE_RUBY_ORE
     );
+    private static final List<ItemConvertible> LEAD_SMELTABLES = List.of(
+            TeadBlocks.LEAD_ORE,
+            TeadItems.GALENA
+    );
 
     public TeadRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -32,6 +36,10 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 "ruby");
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 150,
                 "ruby");
+        offerSmelting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 2, 150,
+                "lead");
+        offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 2, 80,
+                "lead");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC,
                 TeadBlocks.BLOCK_OF_RUBY);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA,
@@ -189,6 +197,37 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.HANDLE)
                 .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_HAMMER, 1)
+                .pattern(" ##")
+                .pattern(" ##")
+                .pattern("% ")
+                .input('#', TeadItems.LEAD_INGOT)
+                .input('%', TeadItems.HANDLE)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_SICKLE, 1)
+                .pattern(" # ")
+                .pattern("  #")
+                .pattern("%#")
+                .input('#', TeadItems.LEAD_INGOT)
+                .input('%', TeadItems.HANDLE)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_CLAYMORE, 1)
+                .pattern("  #")
+                .pattern("## ")
+                .pattern("%#")
+                .input('#', TeadItems.LEAD_INGOT)
+                .input('%', TeadItems.HANDLE)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_DAGGER, 1)
+                .pattern(" # ")
+                .pattern("% ")
+                .input('#', TeadItems.LEAD_INGOT)
+                .input('%', Items.STICK)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.WOOD_DOUBLE_AXE, 1)
                 .pattern("#%#")
                 .pattern("#%#")
@@ -326,6 +365,14 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.GOLD_INGOT)
                 .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CLAYMORE, 1)
+                .pattern("  #")
+                .pattern("## ")
+                .pattern("%# ")
+                .input('%', TeadItems.HANDLE)
+                .input('#', Items.GOLD_INGOT)
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_DAGGER, 1)
                 .pattern(" #")
                 .pattern("% ")
@@ -398,6 +445,14 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.DIAMOND)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.DIAMOND_CLAYMORE, 1)
+                .pattern("  #")
+                .pattern("## ")
+                .pattern("%# ")
+                .input('%', TeadItems.HANDLE)
+                .input('#', Items.DIAMOND)
+                .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.DIAMOND_DAGGER, 1)
                 .pattern(" #")
                 .pattern("% ")
@@ -405,42 +460,30 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.DIAMOND)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.NETHERITE_DOUBLE_AXE, 1)
-                .pattern("#%#")
-                .pattern("#%#")
-                .pattern(" $ ")
-                .input('%', Items.STICK)
-                .input('#', Items.NETHERITE_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.NETHERITE_HAMMER, 1)
-                .pattern(" ##")
-                .pattern(" ##")
-                .pattern("%  ")
-                .input('%', TeadItems.HANDLE)
-                .input('#', Items.NETHERITE_INGOT)
-                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.NETHERITE_SICKLE, 1)
-                .pattern(" # ")
-                .pattern("  #")
-                .pattern("%# ")
-                .input('%', TeadItems.HANDLE)
-                .input('#', Items.NETHERITE_INGOT)
-                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.NETHERITE_DAGGER, 1)
-                .pattern(" #")
-                .pattern("% ")
-                .input('%', Items.STICK)
-                .input('#', Items.NETHERITE_INGOT)
-                .criterion(hasItem(Items.NETHERITE_INGOT), conditionsFromItem(Items.NETHERITE_INGOT))
-                .offerTo(exporter);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_DOUBLE_AXE, RecipeCategory.COMBAT,
+                TeadItems.NETHERITE_DOUBLE_AXE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HAMMER, RecipeCategory.COMBAT,
+                TeadItems.NETHERITE_HAMMER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_SICKLE, RecipeCategory.COMBAT,
+                TeadItems.NETHERITE_SICKLE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_CLAYMORE, RecipeCategory.COMBAT,
+                TeadItems.NETHERITE_CLAYMORE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_DAGGER, RecipeCategory.COMBAT,
+                TeadItems.NETHERITE_DAGGER);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.OBSIDIAN_SWORD, 1)
-                .pattern("  #")
-                .pattern("$# ")
-                .pattern("%$ ")
+                .pattern(" # ")
+                .pattern("$#$")
+                .pattern(" % ")
+                .input('%', TeadItems.HANDLE)
+                .input('#', Items.OBSIDIAN)
+                .input('$', TeadItems.OBSIDIAN_SHARD)
+                .criterion(hasItem(Items.OBSIDIAN), conditionsFromItem(Items.OBSIDIAN))
+                .criterion(hasItem(TeadItems.OBSIDIAN_SHARD), conditionsFromItem(TeadItems.OBSIDIAN_SHARD))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.OBSIDIAN_CLAYMORE, 1)
+                .pattern(" $#")
+                .pattern("##$")
+                .pattern("%# ")
                 .input('%', TeadItems.HANDLE)
                 .input('#', Items.OBSIDIAN)
                 .input('$', TeadItems.OBSIDIAN_SHARD)
