@@ -3,18 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:netherite_ingot"
+      "item": "tead:lead_ingot"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    " #",
-    "% "
+    "  #",
+    "## ",
+    "%# "
   ],
   "result": {
-    "item": "tead:netherite_dagger"
+    "item": "tead:lead_claymore"
   },
   "show_notification": true
 }

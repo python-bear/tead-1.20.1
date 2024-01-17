@@ -23,6 +23,7 @@ public class Tead implements ModInitializer {
 		TeadItemGroups.registerItemGroups();
 		TeadItems.registerItems();
 		TeadBlocks.registerBlocks();
+		TeadLootTableModifiers.modifyLootTables();
 
 		LOGGER.info("Hello Fabric world!");
 	}

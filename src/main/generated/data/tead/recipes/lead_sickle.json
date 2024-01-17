@@ -3,10 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:obsidian"
-    },
-    "$": {
-      "item": "tead:obsidian_shard"
+      "item": "tead:lead_ingot"
     },
     "%": {
       "item": "tead:handle"
@@ -14,11 +11,11 @@
   },
   "pattern": [
     " # ",
-    "$#$",
-    " % "
+    "  #",
+    "%# "
   ],
   "result": {
-    "item": "tead:obsidian_sword"
+    "item": "tead:lead_sickle"
   },
   "show_notification": true
 }

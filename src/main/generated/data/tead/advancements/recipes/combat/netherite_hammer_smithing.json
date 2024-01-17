@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tead:netherite_sickle"
+        "recipe": "minecraft:netherite_hammer_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tead:netherite_sickle"
+      "minecraft:netherite_hammer_smithing"
     ]
   },
   "sends_telemetry_event": false

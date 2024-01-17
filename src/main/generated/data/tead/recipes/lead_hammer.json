@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:netherite_ingot"
+      "item": "tead:lead_ingot"
     },
     "%": {
       "item": "tead:handle"
@@ -15,7 +15,7 @@
     "%  "
   ],
   "result": {
-    "item": "tead:netherite_hammer"
+    "item": "tead:lead_hammer"
   },
   "show_notification": true
 }

@@ -58,7 +58,6 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.GOLD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.IRON_SICKLE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.IRON_CLAYMORE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.DIAMOND_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.NETHERITE_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WOOD_DAGGER, Models.HANDHELD);

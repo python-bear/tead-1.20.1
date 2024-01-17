@@ -7,12 +7,15 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadArmorMaterials;
 
 public class SwiftnessArmorItem extends ArmorItem {
     public SwiftnessArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
+        settings.rarity(Rarity.RARE);
     }
 
     @Override
@@ -42,14 +45,23 @@ public class SwiftnessArmorItem extends ArmorItem {
     }
 
     private boolean hasCorrectArmorOn(PlayerEntity player) {
-        for (ItemStack armorStack : player.getInventory().armor) {
-            if (!(armorStack.getItem() instanceof ArmorItem)) {
-                return false;
-            }
+        Tead.LOGGER.info("checking has right armor");
+        ItemStack bootsStack = player.getInventory().getArmorStack(0);
+
+        if (!(bootsStack.getItem() instanceof ArmorItem)) {
+            Tead.LOGGER.info("Boots slot is not an armor item, it was: " + bootsStack.getItem());
+            return false;
         }
 
-        ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(0).getItem());
+        ArmorItem boots = (ArmorItem) bootsStack.getItem();
 
-        return boots.getMaterial() == TeadArmorMaterials.SWIFTNESS;
+        if (boots.getMaterial() == TeadArmorMaterials.SWIFTNESS) {
+            Tead.LOGGER.info("Armor material: " + boots.getMaterial());
+            return true;
+        } else {
+            Tead.LOGGER.info("Boots material does not match expected material");
+            return false;
+        }
     }
+
 }

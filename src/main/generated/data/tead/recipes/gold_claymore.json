@@ -3,19 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:netherite_ingot"
+      "item": "minecraft:gold_ingot"
     },
     "%": {
       "item": "tead:handle"
     }
   },
   "pattern": [
-    " # ",
     "  #",
+    "## ",
     "%# "
   ],
   "result": {
-    "item": "tead:netherite_sickle"
+    "item": "tead:gold_claymore"
   },
   "show_notification": true
 }

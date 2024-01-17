@@ -29,6 +29,7 @@
   "item.tead.lead_hammer": "Lead Great Hammer",
   "item.tead.lead_sickle": "Lead Sickle",
   "item.tead.lead_dagger": "Lead Dagger",
+  "item.tead.lead_claymore": "Lead Claymore",
   "item.tead.wood_double_axe": "Wood Doubleaxe",
   "item.tead.wood_hammer": "Mallet",
   "item.tead.wood_sickle": "Wood Sickle",
@@ -41,6 +42,7 @@
   "item.tead.gold_hammer": "Gold Great Hammer",
   "item.tead.gold_sickle": "Gold Sickle",
   "item.tead.gold_dagger": "Gold Dagger",
+  "item.tead.gold_claymore": "Gold Claymore",
   "item.tead.coral_dagger": "Coral Dagger",
   "item.tead.iron_double_axe": "Iron Doubleaxe",
   "item.tead.iron_hammer": "Iron Great Hammer",
@@ -51,10 +53,12 @@
   "item.tead.diamond_hammer": "Diamond Great Hammer",
   "item.tead.diamond_sickle": "Diamond Sickle",
   "item.tead.diamond_dagger": "Diamond Dagger",
+  "item.tead.diamond_claymore": "Diamond Claymore",
   "item.tead.netherite_double_axe": "Netherite Doubleaxe",
   "item.tead.netherite_hammer": "Netherite Great Hammer",
   "item.tead.netherite_sickle": "Netherite Sickle",
   "item.tead.netherite_dagger": "Netherite Dagger",
+  "item.tead.netherite_claymore": "Netherite Claymore",
 
   "item.tead.swiftness_boots": "Boots Of Swiftness",
 

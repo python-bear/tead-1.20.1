@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 80,
+  "experience": 2.0,
+  "group": "lead",
+  "ingredient": {
+    "item": "tead:galena"
+  },
+  "result": "tead:lead_ingot"
+}

@@ -3,22 +3,22 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:netherite_ingot"
+      "item": "minecraft:obsidian"
     },
     "$": {
-      "item": "tead:handle"
+      "item": "tead:obsidian_shard"
     },
     "%": {
-      "item": "minecraft:stick"
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    "#%#",
-    "#%#",
-    " $ "
+    " $#",
+    "##$",
+    "%# "
   ],
   "result": {
-    "item": "tead:netherite_double_axe"
+    "item": "tead:obsidian_claymore"
   },
   "show_notification": true
 }
