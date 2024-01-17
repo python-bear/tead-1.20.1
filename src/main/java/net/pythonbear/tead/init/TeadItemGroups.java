@@ -72,6 +72,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_SICKLE);
                         entries.add(TeadItems.OBSIDIAN_SWORD);
 
+                        entries.add(TeadItems.SWIFTNESS_BOOTS);
+
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
                         entries.add(TeadItems.MUSIC_DISC_HAIL_AND_KILL);

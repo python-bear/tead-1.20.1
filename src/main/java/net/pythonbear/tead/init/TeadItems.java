@@ -27,15 +27,15 @@ public class TeadItems {
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.LEAD_APPLE)));
     public static final Item LEAD_AXE = registerItem("lead_axe",
-            new AxeItem(TeadToolMaterial.LEAD, 5.0f, -3.2f,  new FabricItemSettings()));
+            new AxeItem(TeadToolMaterials.LEAD, 5.0f, -3.2f,  new FabricItemSettings()));
     public static final Item LEAD_PICKAXE = registerItem("lead_pickaxe",
-            new PickaxeItem(TeadToolMaterial.LEAD, 1, -2.9f,  new FabricItemSettings()));
+            new PickaxeItem(TeadToolMaterials.LEAD, 1, -2.9f,  new FabricItemSettings()));
     public static final Item LEAD_SWORD = registerItem("lead_sword",
-            new SwordItem(TeadToolMaterial.LEAD, 3, -2.5f,  new FabricItemSettings()));
+            new SwordItem(TeadToolMaterials.LEAD, 3, -2.5f,  new FabricItemSettings()));
     public static final Item LEAD_SHOVEL = registerItem("lead_shovel",
-            new ShovelItem(TeadToolMaterial.LEAD, 1.5f, -3.0f,  new FabricItemSettings()));
+            new ShovelItem(TeadToolMaterials.LEAD, 1.5f, -3.0f,  new FabricItemSettings()));
     public static final Item LEAD_HOE = registerItem("lead_hoe",
-            new HoeItem(TeadToolMaterial.LEAD, -2, -1.0f,  new FabricItemSettings()));
+            new HoeItem(TeadToolMaterials.LEAD, -2, -1.0f,  new FabricItemSettings()));
     public static final Item WOOD_DOUBLE_AXE = registerItem("wood_double_axe",
             new AxeItem(ToolMaterials.WOOD, 6.2f, -3.4f,  new FabricItemSettings()));
     public static final Item WOOD_HAMMER = registerItem("wood_hammer",
@@ -61,13 +61,13 @@ public class TeadItems {
     public static final Item GOLD_SICKLE = registerItem("gold_sickle",
             new SickleItem(ToolMaterials.GOLD, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item LEAD_DOUBLE_AXE = registerItem("lead_double_axe",
-            new AxeItem(TeadToolMaterial.LEAD, 6.0f, -3.4f,  new FabricItemSettings()));
+            new AxeItem(TeadToolMaterials.LEAD, 6.0f, -3.4f,  new FabricItemSettings()));
     public static final Item LEAD_HAMMER = registerItem("lead_hammer",
-            new HammerItem(TeadToolMaterial.LEAD, 1, -3.2f,  new FabricItemSettings()));
+            new HammerItem(TeadToolMaterials.LEAD, 1, -3.2f,  new FabricItemSettings()));
     public static final Item LEAD_DAGGER = registerItem("lead_dagger",
-            new DaggerItem(TeadToolMaterial.LEAD, 1.5f, -1f,  new FabricItemSettings()));
+            new DaggerItem(TeadToolMaterials.LEAD, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item LEAD_SICKLE = registerItem("lead_sickle",
-            new SickleItem(TeadToolMaterial.LEAD, 1.5f, -1f,  new FabricItemSettings()));
+            new SickleItem(TeadToolMaterials.LEAD, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
             new AxeItem(ToolMaterials.IRON, 6.5f, -3.3f,  new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
@@ -95,18 +95,20 @@ public class TeadItems {
     public static final Item NETHERITE_SICKLE = registerItem("netherite_sickle",
             new SickleItem(ToolMaterials.DIAMOND, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item CORAL_DAGGER = registerItem("coral_dagger",
-            new DaggerItem(TeadToolMaterial.CORAL, 1.5f, -1f,  new FabricItemSettings()));
+            new DaggerItem(TeadToolMaterials.CORAL, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
-            new SwordItem(TeadToolMaterial.OBSIDIAN, 4, -2.5f,  new FabricItemSettings()));
+            new SwordItem(TeadToolMaterials.OBSIDIAN, 4, -2.5f,  new FabricItemSettings()));
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
             new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
                     new FabricItemSettings()));
     public static final Item BONE_CLUB = registerItem("bone_club",
-            new StaffItem(TeadToolMaterial.BONE, 3.8f, -2.4f, 1.3f,
+            new StaffItem(TeadToolMaterials.BONE, 3.8f, -2.4f, 1.3f,
                     0.5f, new FabricItemSettings()));
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
             new StaffItem(ToolMaterials.WOOD, 4, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
+    public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
+            new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));

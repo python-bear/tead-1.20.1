@@ -5,8 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.pythonbear.tead.init.TeadItems;
-import net.pythonbear.tead.init.TeadTags;
-import net.pythonbear.tead.item.SickleItem;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -17,6 +15,9 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(TeadItems.SWIFTNESS_BOOTS);
+
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(TeadItems.MUSIC_DISC_BATTLE_HYMN)
                 .add(TeadItems.MUSIC_DISC_DAY_ONE)

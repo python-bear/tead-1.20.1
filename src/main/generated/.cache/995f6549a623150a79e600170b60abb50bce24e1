@@ -1,6 +1,8 @@
-// 1.20.1	2024-01-16T21:47:32.878026	tead/Model Definitions
+// 1.20.1	2024-01-17T14:34:09.035339	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 4a09838cdbde9a35e1f5d2e30980d9d1a564e384 assets\tead\models\item\music_disc_the_godfather.json
+de20efce848166eb44fbf551717ebede3ef75f87 assets\tead\models\item\swiftness_boots.json
+c07d883f508802257129084ec181e665ba1409eb assets\tead\models\item\swiftness_boots_diamond_trim.json
 3d6bd9a1f99e419833534738de86fa168de97ee5 assets\tead\blockstates\lead_ore.json
 59778708cf1c904e31a2561eefc738ce950291d7 assets\tead\models\item\obsidian_arrow.json
 ab8345fd9d44207c32ecbfd5251b2691c9d7b08f assets\tead\models\item\quarterstaff.json
@@ -19,30 +21,37 @@ e6b75360bc63c60fb27a492a4c2dd5ccc0d9baff assets\tead\models\item\handle.json
 b98f89a814ca703f1874819f50641d78bd8bf2f2 assets\tead\models\item\stone_dagger.json
 b8132a13a12a521b324a5c1d41464bb2f9e49cdb assets\tead\models\item\lead_axe.json
 eba6ba78305eb26c436463ac762c774c811f40bd assets\tead\models\item\wood_double_axe.json
+0ac9c8ccd72809c71183df74c3b2757761fa038f assets\tead\models\item\swiftness_boots_quartz_trim.json
 023fd1fc9729b4697f6ec1988904649ce6b9c78f assets\tead\models\item\music_disc_never_gonna_stop.json
 3f0ab1dd63db152d5d7e9b82e29e0a2c50a2edf7 assets\tead\models\item\music_disc_lord_give_me_a_sign.json
 c3ef326b7d9260590d6e02da37312c9e06021c23 assets\tead\models\item\netherite_hammer.json
+b652b55e8fe7737c61e067d4abc72535cd40b821 assets\tead\models\item\swiftness_boots_copper_trim.json
 cef38c64291ada5b94ba6dd7cd583249e788c5fa assets\tead\models\item\music_disc_day_one.json
 4168f0d71aab47178e392503253b19a099f31d5e assets\tead\models\block\block_of_ruby.json
-5cf79a4d7db68f81527ac9c6c5d5f1bd04d10b11 assets\tead\models\item\block_of_galena.json
 163301f3c1e49e208a04c49179c90026eccd9c81 assets\tead\models\item\gold_dagger.json
+5cf79a4d7db68f81527ac9c6c5d5f1bd04d10b11 assets\tead\models\item\block_of_galena.json
 9417b99deff88b0601435145329b8c5043729967 assets\tead\models\item\music_disc_time.json
 8cf803b41cad9575b6b55cfabac7cd7d966ea2f1 assets\tead\models\item\battle_staff.json
+8ee90c2cd0dba81736ca3ce6239d52e3b21678b9 assets\tead\models\item\swiftness_boots_lapis_trim.json
 93b71f521ce88a230103e62ae82affa6fc5739d3 assets\tead\models\item\block_of_lead.json
 09eeae367b2f99efe6a6cbe439a6ad51f3fcf24a assets\tead\models\item\ruby_ore.json
 e5358dae89b37d866548c07f0b5c5c04fb20f9bb assets\tead\models\item\music_disc_till_i_collapse.json
 d58de787c0edfae8cca0c67177ed119a0a3f947a assets\tead\models\item\coral_dagger.json
 94a7424ff6851b891a675567df420703053b0293 assets\tead\blockstates\block_of_galena.json
 aa44f1ba4d425749aac3557292af06c234194d29 assets\tead\models\item\stone_hammer.json
+4b031bdfc3e31c7e80ccd7a28507bc013045b408 assets\tead\models\item\swiftness_boots_redstone_trim.json
+1a92257d41242a0f2eb68a1fdac02de2772b176f assets\tead\models\item\swiftness_boots_iron_trim.json
 c9ff6359827e857ffd84d6c27c50b100a151bd04 assets\tead\models\item\iron_hammer.json
 c2d71ad3e8671e427f1ab3f322c295c3483f0333 assets\tead\models\item\ruby.json
 03ca446df60ebb3f4bb1bebbba46fddabeba82a6 assets\tead\models\item\wood_dagger.json
 90cdc35037b0300591264ec3b333141b37655333 assets\tead\models\item\lead_hoe.json
+7eabed1c2f21dcdbb7df8164c42c3bcb8ddbc833 assets\tead\models\item\swiftness_boots_amethyst_trim.json
 67d4273a6cc89155cb8a032f8a04f01f4d17a5df assets\tead\models\item\iron_double_axe.json
 dc7d1212dba46024bd52bae64df6b6d8dbf66362 assets\tead\models\item\music_disc_never_gonna_give_you_up.json
+9fe5b647de0bde7a64f5ce9756d6077e14e6ac5b assets\tead\models\item\swiftness_boots_netherite_trim.json
 8764750eb6ab777c7e3406a590888f948a34ee5e assets\tead\models\item\music_disc_lose_yourself.json
-9e2655ceb3a3ade3cc6258127ddcee7f174922da assets\tead\models\item\stone_double_axe.json
 5876491947e777a7a2beb6cea05ef1a68b71e4bd assets\tead\models\item\gold_double_axe.json
+9e2655ceb3a3ade3cc6258127ddcee7f174922da assets\tead\models\item\stone_double_axe.json
 9d6da072ad941f9214e4d95d86bd33e0a8a63546 assets\tead\models\item\iron_sickle.json
 0e600f052a4ab797636f5b94c12bab31e494ebe3 assets\tead\models\block\deepslate_ruby_ore.json
 8a8d42d67370e40e5613d765277d1ff12f35ad11 assets\tead\models\item\stone_sickle.json
@@ -56,6 +65,7 @@ bfd764f8a8f171ed0389997876eb4c3670be79bb assets\tead\models\item\wood_hammer.jso
 f155df962301009763ac23287f069bdd5dfb12fb assets\tead\models\item\gold_hammer.json
 9dc10d73e3a4733f0dc7d2787f542f95f7d8d8e2 assets\tead\models\item\lead_sickle.json
 7c17799ffc6d03240305b62aa37a5a8d5a73e91d assets\tead\models\item\iron_claymore.json
+03390ef15f0141b0d9e939fb884af26e5d6abb8e assets\tead\models\item\swiftness_boots_gold_trim.json
 b991d80e1011954db64fae86b98e62ba196e77cb assets\tead\models\item\music_disc_hail_and_kill.json
 70e0c359fb85682759bee590633c4ec3ed3b2346 assets\tead\models\item\netherite_dagger.json
 bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
@@ -66,6 +76,7 @@ df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
 fe15241b2c7b13d68e442b560275219f9ab0267d assets\tead\models\item\netherite_double_axe.json
 ae1143863dfa3f3d4551e111f441ef9e78771e62 assets\tead\models\item\lightning_staff.json
 b3bb92399218af3786abef2ab4a1949bf4bb6035 assets\tead\models\item\deepslate_ruby_ore.json
+9f70e8969029c61e7ab094ea97a361b91c9f5c43 assets\tead\models\item\swiftness_boots_emerald_trim.json
 2438589f7e728bc693d67bad14ba9b0e05a6bb86 assets\tead\models\item\lead_apple.json
 088f9130b090f76dee2311b5bb1fb0cc719c5531 assets\tead\models\item\lead_dagger.json
 ca9188f1c0f71c958de6583c89c9b43756eb34cb assets\tead\models\block\lead_ore.json

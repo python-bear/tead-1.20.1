@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.ArmorItem;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 
@@ -79,6 +80,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
+
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.SWIFTNESS_BOOTS));
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);

@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 
 import java.util.function.Supplier;
 
-public enum TeadToolMaterial implements ToolMaterial {
+public enum TeadToolMaterials implements ToolMaterial {
     LEAD(MiningLevels.STONE, 200, 5.5f, 2.0f, 19,
             () -> Ingredient.ofItems(TeadItems.LEAD_INGOT)),
     COPPER(MiningLevels.IRON, 235, 5.9f, 2.0f, 16,
@@ -26,8 +26,8 @@ public enum TeadToolMaterial implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    TeadToolMaterial(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability,
-                     Supplier<Ingredient> repairIngredient) {
+    TeadToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability,
+                      Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;

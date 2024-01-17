@@ -17,14 +17,14 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadToolMaterial;
+import net.pythonbear.tead.init.TeadToolMaterials;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class LightningStaffItem extends StaffItem {
     public LightningStaffItem(Settings settings) {
-        super(TeadToolMaterial.COPPER, 2.2f, -2f, 0.5f, 0.4f,
+        super(TeadToolMaterials.COPPER, 2.2f, -2f, 0.5f, 0.4f,
                 settings);
     }
 
