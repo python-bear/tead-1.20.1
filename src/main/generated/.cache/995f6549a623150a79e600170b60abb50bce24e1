@@ -1,8 +1,9 @@
-// 1.20.1	2024-01-16T16:43:54.5138285	tead/Model Definitions
+// 1.20.1	2024-01-16T21:47:32.878026	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 4a09838cdbde9a35e1f5d2e30980d9d1a564e384 assets\tead\models\item\music_disc_the_godfather.json
 3d6bd9a1f99e419833534738de86fa168de97ee5 assets\tead\blockstates\lead_ore.json
 59778708cf1c904e31a2561eefc738ce950291d7 assets\tead\models\item\obsidian_arrow.json
+ab8345fd9d44207c32ecbfd5251b2691c9d7b08f assets\tead\models\item\quarterstaff.json
 5a88038e5789097a2c94b5102f5f5e9602f04727 assets\tead\models\item\music_disc_the_heart_asks_pleasure_first.json
 fdca29cd9a20215ecc7e9dea4d52e8a24a5e7815 assets\tead\models\item\diamond_hammer.json
 5fa90f05c05e1f58b31183242ada137ce7b52638 assets\tead\models\item\netherite_sickle.json
@@ -40,8 +41,8 @@ c2d71ad3e8671e427f1ab3f322c295c3483f0333 assets\tead\models\item\ruby.json
 67d4273a6cc89155cb8a032f8a04f01f4d17a5df assets\tead\models\item\iron_double_axe.json
 dc7d1212dba46024bd52bae64df6b6d8dbf66362 assets\tead\models\item\music_disc_never_gonna_give_you_up.json
 8764750eb6ab777c7e3406a590888f948a34ee5e assets\tead\models\item\music_disc_lose_yourself.json
-5876491947e777a7a2beb6cea05ef1a68b71e4bd assets\tead\models\item\gold_double_axe.json
 9e2655ceb3a3ade3cc6258127ddcee7f174922da assets\tead\models\item\stone_double_axe.json
+5876491947e777a7a2beb6cea05ef1a68b71e4bd assets\tead\models\item\gold_double_axe.json
 9d6da072ad941f9214e4d95d86bd33e0a8a63546 assets\tead\models\item\iron_sickle.json
 0e600f052a4ab797636f5b94c12bab31e494ebe3 assets\tead\models\block\deepslate_ruby_ore.json
 8a8d42d67370e40e5613d765277d1ff12f35ad11 assets\tead\models\item\stone_sickle.json
@@ -54,9 +55,11 @@ bfd764f8a8f171ed0389997876eb4c3670be79bb assets\tead\models\item\wood_hammer.jso
 420c84e582e5d912d53b5af0f2f6e7cc73a50d69 assets\tead\models\block\block_of_lead.json
 f155df962301009763ac23287f069bdd5dfb12fb assets\tead\models\item\gold_hammer.json
 9dc10d73e3a4733f0dc7d2787f542f95f7d8d8e2 assets\tead\models\item\lead_sickle.json
-70e0c359fb85682759bee590633c4ec3ed3b2346 assets\tead\models\item\netherite_dagger.json
+7c17799ffc6d03240305b62aa37a5a8d5a73e91d assets\tead\models\item\iron_claymore.json
 b991d80e1011954db64fae86b98e62ba196e77cb assets\tead\models\item\music_disc_hail_and_kill.json
+70e0c359fb85682759bee590633c4ec3ed3b2346 assets\tead\models\item\netherite_dagger.json
 bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
+dee6172d50cae310da2d48d6af0b1a87fab39dac assets\tead\models\item\bone_club.json
 08e79e81197b9ac109235f3293b6ef93b93480fa assets\tead\blockstates\block_of_lead.json
 8aaece55f1f36720d63fa1d1630c4e61b621515d assets\tead\models\item\ruby_arrow.json
 df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json

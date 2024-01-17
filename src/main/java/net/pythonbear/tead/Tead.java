@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
-import net.pythonbear.tead.enchantment.TeadEnchantments;
 import net.pythonbear.tead.init.*;
 import net.pythonbear.tead.item.sickle.PlayerBlockBreakHandler;
 import net.pythonbear.tead.item.sickle.UseBlockHandler;

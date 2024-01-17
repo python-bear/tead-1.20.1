@@ -29,7 +29,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_APPLE);
 
                         entries.add(TeadItems.LIGHTNING_STAFF);
+                        entries.add(TeadItems.QUARTERSTAFF);
                         entries.add(TeadItems.BATTLE_STAFF);
+                        entries.add(TeadItems.BONE_CLUB);
 
                         entries.add(TeadItems.HANDLE);
 
@@ -65,6 +67,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.LEAD_SICKLE);
                         entries.add(TeadItems.IRON_SICKLE);
+                        entries.add(TeadItems.IRON_CLAYMORE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.NETHERITE_SICKLE);
                         entries.add(TeadItems.OBSIDIAN_SWORD);

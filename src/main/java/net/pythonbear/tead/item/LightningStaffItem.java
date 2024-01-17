@@ -6,7 +6,6 @@ import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -18,13 +17,15 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import net.pythonbear.tead.init.TeadToolMaterial;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LightningStaffItem extends Item {
+public class LightningStaffItem extends StaffItem {
     public LightningStaffItem(Settings settings) {
-        super(settings);
+        super(TeadToolMaterial.COPPER, 2.2f, -2f, 0.5f, 0.4f,
+                settings);
     }
 
     @Override

@@ -18,6 +18,8 @@
 
   "item.tead.obsidian_sword": "Obsidian Sword",
   "item.tead.battle_staff": "Battle Staff",
+  "item.tead.quarterstaff": "Quarterstaff",
+  "item.tead.bone_club": "Bone Club",
   "item.tead.lead_axe": "Lead Axe",
   "item.tead.lead_pickaxe": "Lead Pickaxe",
   "item.tead.lead_hoe": "Lead Hoe",
@@ -44,6 +46,7 @@
   "item.tead.iron_hammer": "Iron Great Hammer",
   "item.tead.iron_sickle": "Iron Sickle",
   "item.tead.iron_dagger": "Iron Dagger",
+  "item.tead.iron_claymore": "Iron Claymore",
   "item.tead.diamond_double_axe": "Diamond Doubleaxe",
   "item.tead.diamond_hammer": "Diamond Great Hammer",
   "item.tead.diamond_sickle": "Diamond Sickle",
@@ -111,7 +114,5 @@
   "sounds.tead.the_phantom_of_the_opera": "The Phantom Of The Opera - Andrew Lloyd Weber",
   "sounds.tead.till_i_collapse": "Till I Collapse - Eminem",
   "sounds.tead.time": "Time - Hans Zimmer",
-  "sounds.tead.untouchable": "Untouchable - DMX",
-
-  "enchantment.tead.staffing": "Staffing"
+  "sounds.tead.untouchable": "Untouchable - DMX"
 }

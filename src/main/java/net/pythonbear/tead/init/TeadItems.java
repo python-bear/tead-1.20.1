@@ -76,6 +76,8 @@ public class TeadItems {
             new DaggerItem(ToolMaterials.IRON, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item IRON_SICKLE = registerItem("iron_sickle",
             new SickleItem(ToolMaterials.IRON, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item IRON_CLAYMORE = registerItem("iron_claymore",
+            new ClaymoreItem(ToolMaterials.IRON, 3, -2.4f,  new FabricItemSettings()));
     public static final Item DIAMOND_DOUBLE_AXE = registerItem("diamond_double_axe",
             new AxeItem(ToolMaterials.DIAMOND, 5.7f, -3.2f,  new FabricItemSettings()));
     public static final Item DIAMOND_HAMMER = registerItem("diamond_hammer",
@@ -95,9 +97,16 @@ public class TeadItems {
     public static final Item CORAL_DAGGER = registerItem("coral_dagger",
             new DaggerItem(TeadToolMaterial.CORAL, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
-            new AxeItem(TeadToolMaterial.OBSIDIAN, 4.0f, -2.5f,  new FabricItemSettings()));
+            new SwordItem(TeadToolMaterial.OBSIDIAN, 4, -2.5f,  new FabricItemSettings()));
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
-            new StaffItem(ToolMaterials.WOOD, 4, -1.9f,  new FabricItemSettings()));
+            new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
+                    new FabricItemSettings()));
+    public static final Item BONE_CLUB = registerItem("bone_club",
+            new StaffItem(TeadToolMaterial.BONE, 3.8f, -2.4f, 1.3f,
+                    0.5f, new FabricItemSettings()));
+    public static final Item QUARTERSTAFF = registerItem("quarterstaff",
+            new StaffItem(ToolMaterials.WOOD, 4, -1.9f, 0.7f, 0.7f,
+                    new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));

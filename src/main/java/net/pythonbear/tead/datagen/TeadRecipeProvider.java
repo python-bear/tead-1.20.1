@@ -358,6 +358,14 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.IRON_CLAYMORE, 1)
+                .pattern("  #")
+                .pattern("## ")
+                .pattern("%# ")
+                .input('%', TeadItems.HANDLE)
+                .input('#', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.IRON_DAGGER, 1)
                 .pattern(" #")
                 .pattern("% ")
@@ -445,8 +453,23 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("#  ")
                 .input('%', TeadItems.HANDLE)
                 .input('#', Items.STICK)
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(TeadItems.HANDLE), conditionsFromItem(TeadItems.HANDLE))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.QUARTERSTAFF, 1)
+                .pattern("  #")
+                .pattern(" # ")
+                .pattern("#  ")
+                .input('#', Items.STICK)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BONE_CLUB, 1)
+                .pattern("  %")
+                .pattern(" % ")
+                .pattern("#  ")
+                .input('#', Items.STICK)
+                .input('%', Items.BONE_BLOCK)
+                .criterion(hasItem(Items.BONE), conditionsFromItem(Items.BONE))
+                .criterion(hasItem(Items.BONE_BLOCK), conditionsFromItem(Items.BONE_BLOCK))
                 .offerTo(exporter);
     }
 }

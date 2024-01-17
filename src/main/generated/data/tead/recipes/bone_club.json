@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "minecraft:bone_block"
+    }
+  },
+  "pattern": [
+    "  %",
+    " % ",
+    "#  "
+  ],
+  "result": {
+    "item": "tead:bone_club"
+  },
+  "show_notification": true
+}

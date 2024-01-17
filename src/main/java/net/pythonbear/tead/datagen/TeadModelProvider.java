@@ -57,6 +57,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.GOLD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.IRON_SICKLE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.IRON_CLAYMORE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.DIAMOND_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.NETHERITE_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WOOD_DAGGER, Models.HANDHELD);
@@ -76,6 +77,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.NETHERITE_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SWORD, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);
