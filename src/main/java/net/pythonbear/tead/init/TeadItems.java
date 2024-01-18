@@ -117,6 +117,8 @@ public class TeadItems {
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
             new StaffItem(ToolMaterials.WOOD, 4, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
+    public static final Item BONE_BOW = registerItem("bone_bow",
+            new BoneBowItem(new FabricItemSettings().maxDamage(415)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",

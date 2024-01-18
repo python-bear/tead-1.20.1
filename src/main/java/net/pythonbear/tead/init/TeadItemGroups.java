@@ -33,6 +33,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.BATTLE_STAFF);
                         entries.add(TeadItems.BONE_CLUB);
 
+                        entries.add(TeadItems.BONE_BOW);
+
                         entries.add(TeadItems.HANDLE);
 
                         entries.add(TeadItems.LEAD_AXE);

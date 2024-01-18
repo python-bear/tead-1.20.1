@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:bone"
+    },
+    "%": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " #%",
+    "# %",
+    " #%"
+  ],
+  "result": {
+    "item": "tead:bone_bow"
+  },
+  "show_notification": true
+}

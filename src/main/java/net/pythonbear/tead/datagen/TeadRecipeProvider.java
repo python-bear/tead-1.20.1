@@ -514,5 +514,14 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BONE), conditionsFromItem(Items.BONE))
                 .criterion(hasItem(Items.BONE_BLOCK), conditionsFromItem(Items.BONE_BLOCK))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BONE_BOW, 1)
+                .pattern(" #%")
+                .pattern("# %")
+                .pattern(" #%")
+                .input('#', Items.BONE)
+                .input('%', Items.STRING)
+                .criterion(hasItem(Items.BONE), conditionsFromItem(Items.BONE))
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .offerTo(exporter);
     }
 }
