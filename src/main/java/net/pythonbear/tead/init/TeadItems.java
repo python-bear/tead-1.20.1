@@ -119,10 +119,12 @@ public class TeadItems {
                     new FabricItemSettings()));
     public static final Item BONE_BOW = registerItem("bone_bow",
             new BoneBowItem(new FabricItemSettings().maxDamage(415)));
+    public static final Item WIND_BOW = registerItem("wind_bow",
+            new WindBowItem(new FabricItemSettings().maxDamage(432)));
     public static final Item SHORT_BOW = registerItem("short_bow",
-            new ShortBowItem(new FabricItemSettings().maxDamage(415)));
+            new ShortBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item LONG_BOW = registerItem("long_bow",
-            new LongBowItem(new FabricItemSettings().maxDamage(415)));
+            new LongBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",

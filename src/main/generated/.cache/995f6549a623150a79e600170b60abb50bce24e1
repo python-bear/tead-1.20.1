@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-18T17:29:54.5220273	tead/Model Definitions
+// 1.20.1	2024-01-18T21:30:52.2731199	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 de20efce848166eb44fbf551717ebede3ef75f87 assets\tead\models\item\swiftness_boots.json
 c07d883f508802257129084ec181e665ba1409eb assets\tead\models\item\swiftness_boots_diamond_trim.json
@@ -61,8 +61,8 @@ b98f89a814ca703f1874819f50641d78bd8bf2f2 assets\tead\models\item\stone_dagger.js
 023fd1fc9729b4697f6ec1988904649ce6b9c78f assets\tead\models\item\music_disc_never_gonna_stop.json
 3f0ab1dd63db152d5d7e9b82e29e0a2c50a2edf7 assets\tead\models\item\music_disc_lord_give_me_a_sign.json
 cef38c64291ada5b94ba6dd7cd583249e788c5fa assets\tead\models\item\music_disc_day_one.json
-b652b55e8fe7737c61e067d4abc72535cd40b821 assets\tead\models\item\swiftness_boots_copper_trim.json
 4168f0d71aab47178e392503253b19a099f31d5e assets\tead\models\block\block_of_ruby.json
+b652b55e8fe7737c61e067d4abc72535cd40b821 assets\tead\models\item\swiftness_boots_copper_trim.json
 5cf79a4d7db68f81527ac9c6c5d5f1bd04d10b11 assets\tead\models\item\block_of_galena.json
 9417b99deff88b0601435145329b8c5043729967 assets\tead\models\item\music_disc_time.json
 8ee90c2cd0dba81736ca3ce6239d52e3b21678b9 assets\tead\models\item\swiftness_boots_lapis_trim.json
@@ -87,8 +87,8 @@ f155df962301009763ac23287f069bdd5dfb12fb assets\tead\models\item\gold_hammer.jso
 03390ef15f0141b0d9e939fb884af26e5d6abb8e assets\tead\models\item\swiftness_boots_gold_trim.json
 bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
 08e79e81197b9ac109235f3293b6ef93b93480fa assets\tead\blockstates\block_of_lead.json
-df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
 8aaece55f1f36720d63fa1d1630c4e61b621515d assets\tead\models\item\ruby_arrow.json
+df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
 ae1143863dfa3f3d4551e111f441ef9e78771e62 assets\tead\models\item\lightning_staff.json
 9f70e8969029c61e7ab094ea97a361b91c9f5c43 assets\tead\models\item\swiftness_boots_emerald_trim.json
 088f9130b090f76dee2311b5bb1fb0cc719c5531 assets\tead\models\item\lead_dagger.json

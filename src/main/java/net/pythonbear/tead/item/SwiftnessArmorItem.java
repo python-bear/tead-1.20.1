@@ -30,9 +30,9 @@ public class SwiftnessArmorItem extends ArmorItem {
 
     private void evaluateArmorEffects(PlayerEntity player) {
         if (hasCorrectArmorOn(player)) {
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 60,
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 100,
                     1, false, false, true));
-            player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 60,
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 100,
                     1, false, false, true));
         }
     }

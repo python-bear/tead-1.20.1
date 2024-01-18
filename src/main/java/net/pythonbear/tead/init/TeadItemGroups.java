@@ -34,6 +34,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.BONE_CLUB);
 
                         entries.add(TeadItems.BONE_BOW);
+                        entries.add(TeadItems.WIND_BOW);
                         entries.add(TeadItems.SHORT_BOW);
                         entries.add(TeadItems.LONG_BOW);
 
