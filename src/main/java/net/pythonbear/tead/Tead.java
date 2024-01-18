@@ -8,6 +8,7 @@ import net.pythonbear.tead.init.*;
 import net.pythonbear.tead.item.sickle.PlayerBlockBreakHandler;
 import net.pythonbear.tead.item.sickle.UseBlockHandler;
 import net.pythonbear.tead.sound.TeadSounds;
+import net.pythonbear.tead.world.gen.TeadWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,12 +20,15 @@ public class Tead implements ModInitializer {
 	public void onInitialize() {
 		UseBlockCallback.EVENT.register(UseBlockHandler::handle);
 		PlayerBlockBreakEvents.AFTER.register(PlayerBlockBreakHandler::handle);
+
 		TeadSounds.registerSounds();
 		TeadItemGroups.registerItemGroups();
 		TeadItems.registerItems();
 		TeadBlocks.registerBlocks();
 		TeadLootTableModifiers.modifyLootTables();
 
-		LOGGER.info("Hello Fabric world!");
+		TeadWorldGeneration.generateTeadWorldGen();
+
+		LOGGER.info("Hello Fabric world! - " + MOD_ID + " fully initialized");
 	}
 }
