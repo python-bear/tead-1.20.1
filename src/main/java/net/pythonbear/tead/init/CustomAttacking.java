@@ -1,6 +1,8 @@
 package net.pythonbear.tead.init;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityGroup;
 import net.minecraft.entity.LivingEntity;
@@ -10,8 +12,11 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.network.packet.s2c.play.EntityVelocityUpdateS2CPacket;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
@@ -19,15 +24,14 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.pythonbear.tead.Tead;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 
 public class CustomAttacking {
     public static void attack(PlayerEntity user, Entity target, Hand hand, Float attackDamage) {
-        Tead.LOGGER.info("hand: " + hand);
-        Tead.LOGGER.info("hand stack: " + user.getStackInHand(hand));
-        Tead.LOGGER.info("damage source: " + user.getDamageSources().playerAttack(user));
         if (!target.isAttackable()) {
             return;
         }
@@ -43,10 +47,18 @@ public class CustomAttacking {
         user.resetLastAttackedTicks();
         if ((f *= 0.2f + h * h * 0.8f) > 0.0f || g > 0.0f) {
             ItemStack itemStack;
+            Optional<Map<Enchantment, Integer>> optionalEnchantments =
+                    Optional.ofNullable(EnchantmentHelper.get(user.getStackInHand(hand)));
+            Map<Enchantment, Integer> itemStackEnchantments = optionalEnchantments.orElse(Collections.emptyMap());
             boolean bl = h > 0.9f;
             boolean bl2 = false;
             int i = 0;
-            i += EnchantmentHelper.getKnockback(user);
+
+            Optional<Integer> knockbackEnchantment =
+                    Optional.ofNullable(itemStackEnchantments.get(Enchantments.KNOCKBACK));
+            i += knockbackEnchantment.orElse(0);
+
+
             if (user.isSprinting() && bl) {
                 user.getWorld().playSound(null, user.getX(), user.getY(), user.getZ(),
                         SoundEvents.ENTITY_PLAYER_ATTACK_KNOCKBACK, user.getSoundCategory(), 1.0f, 1.0f);
@@ -69,7 +81,9 @@ public class CustomAttacking {
             }
             float j = 0.0f;
             boolean bl5 = false;
-            int k = EnchantmentHelper.getFireAspect(user);
+            Optional<Integer> fireAspectEnchantment = Optional.ofNullable(itemStackEnchantments.get(Enchantments.FIRE_ASPECT));
+            int k = fireAspectEnchantment.orElse(0);
+
             if (target instanceof LivingEntity) {
                 j = ((LivingEntity)target).getHealth();
                 if (k > 0 && !target.isOnFire()) {
@@ -94,7 +108,9 @@ public class CustomAttacking {
                     user.setSprinting(false);
                 }
                 if (bl42) {
-                    float l = 1.0f + EnchantmentHelper.getSweepingMultiplier(user) * f;
+                    Optional<Integer> sweepingEdgeEnchantment =
+                            Optional.ofNullable(itemStackEnchantments.get(Enchantments.SWEEPING));
+                    float l = 1.0f + sweepingEdgeEnchantment.orElse(0) * f;
                     List<LivingEntity> list = user.getWorld().getNonSpectatingEntities(LivingEntity.class,
                             target.getBoundingBox().expand(1.0, 0.25, 1.0));
                     for (LivingEntity livingEntity : list) {
@@ -134,9 +150,9 @@ public class CustomAttacking {
                 }
                 user.onAttacking(target);
                 if (target instanceof LivingEntity) {
-                    EnchantmentHelper.onUserDamaged((LivingEntity)target, user);
+                    onUserDamaged((LivingEntity)target, user);
                 }
-                EnchantmentHelper.onTargetDamaged(user, target);
+                onTargetDamaged(user, target);
                 ItemStack itemStack2 = user.getStackInHand(hand);
                 Entity entity = target;
                 if (target instanceof EnderDragonPart) {
@@ -171,4 +187,44 @@ public class CustomAttacking {
             }
         }
     }
+
+    @FunctionalInterface
+    private interface Consumer {
+        void accept(Enchantment var1, int var2);
+    }
+
+    private static void forEachEnchantment(Consumer consumer, Iterable<ItemStack> itemStacks) {
+        for (ItemStack stack : itemStacks) {
+            if (stack.isEmpty()) {
+                continue;
+            }
+            NbtList nbtList = stack.getEnchantments();
+            for (int i = 0; i < nbtList.size(); ++i) {
+                NbtCompound nbtCompound = nbtList.getCompound(i);
+                Registries.ENCHANTMENT.getOrEmpty(EnchantmentHelper.getIdFromNbt(nbtCompound)).ifPresent(enchantment ->
+                        consumer.accept((Enchantment)enchantment, EnchantmentHelper.getLevelFromNbt(nbtCompound)));
+            }
+        }
+    }
+
+    private static void onUserDamaged(LivingEntity user, Entity attacker) {
+        Consumer consumer = (enchantment, level) -> enchantment.onUserDamaged(user, attacker, level);
+        if (user != null) {
+            forEachEnchantment(consumer, user.getItemsEquipped());
+        }
+        if (attacker instanceof PlayerEntity) {
+            forEachEnchantment(consumer, Collections.singletonList(((PlayerEntity) attacker).getMainHandStack()));
+        }
+    }
+
+    private static void onTargetDamaged(LivingEntity user, Entity target) {
+        Consumer consumer = (enchantment, level) -> enchantment.onTargetDamaged(user, target, level);
+        if (user != null) {
+            forEachEnchantment(consumer, user.getItemsEquipped());
+        }
+        if (user instanceof PlayerEntity) {
+            forEachEnchantment(consumer, Collections.singletonList(((PlayerEntity) user).getMainHandStack()));
+        }
+    }
+
 }

@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Vanishable;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LightningStaffItem extends StaffItem {
+public class LightningStaffItem extends StaffItem implements Vanishable {
     public LightningStaffItem(Settings settings) {
         super(TeadToolMaterials.COPPER, 2.2f, -2f, 0.5f, 0.4f,
                 settings);

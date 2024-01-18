@@ -1,0 +1,6 @@
+{
+    "parent": "tead:item/short_bow",
+    "textures": {
+        "layer0": "tead:item/short_bow_pulling_2"
+    }
+}

@@ -11,9 +11,10 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.item.Vanishable;
 import net.minecraft.world.World;
 
-public class StaffItem extends SwordItem {
+public class StaffItem extends SwordItem implements Vanishable {
     private final float knockbackStrength;
     private final float knockbackRadius;
     private final float attackDamage;

@@ -1,0 +1,6 @@
+{
+    "parent": "tead:item/long_bow",
+    "textures": {
+        "layer0": "tead:item/long_bow_pulling_2"
+    }
+}

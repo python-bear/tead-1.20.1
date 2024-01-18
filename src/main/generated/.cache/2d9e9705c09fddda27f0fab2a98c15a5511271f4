@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-18T12:04:15.3784098	tead/Recipes
+// 1.20.1	2024-01-18T17:29:54.5189991	tead/Recipes
 279d8f659b3b2c6539574ffdb534341d337ff749 data\tead\recipes\netherite_dagger_smithing.json
 471a08310bd0f16ad56585d15803336e11cd8dd6 data\tead\advancements\recipes\tools\wood_sickle.json
 410de2b77025aba48844f2d86d3a6107967933fb data\tead\recipes\gold_sickle.json
@@ -52,6 +52,7 @@ cc2c22ec64af15893d349a6e676451b0dd699e9d data\tead\recipes\obsidian_arrow.json
 2b8ce35f19173ca858b82c3fe688653ae41e94c9 data\tead\recipes\netherite_claymore_smithing.json
 eef3fb6d85b494529dcea8f8b7d10fe8afb3ef55 data\tead\advancements\recipes\misc\saddle.json
 8858a0ba6cd770f0b7ed4a90c8a09ee55416d86e data\tead\advancements\recipes\food\lead_apple.json
+0f36ed6f068671b8a03b8d7059b878d7f835916c data\tead\recipes\short_bow.json
 a065091038c41a12250677875f9d7a606c3d7046 data\tead\advancements\recipes\misc\lead_ingot_from_smelting_galena.json
 7ba40fdb9b45227bcda636a3f333d64e325f24f3 data\tead\advancements\recipes\tools\iron_dagger.json
 be58017bff06cc01b49e9b8e0912cfdbf5f68101 data\tead\advancements\recipes\misc\block_of_galena.json
@@ -62,12 +63,14 @@ a6652dc1435cca834591b17b1578e8077f92cd44 data\tead\recipes\stone_dagger.json
 7cbbf9a8359ebe59cc64e129de66f9f5afeca766 data\tead\advancements\recipes\combat\amethyst_arrow.json
 d11813077f6bdfbf065e4d7d171c53e166e44a6d data\tead\recipes\netherite_double_axe_smithing.json
 95332216b9342ab50388ef7f65e1d617a75ae254 data\tead\recipes\lead_hammer.json
+7720dafa1935d6a3c4343b565e1128c847bb0b75 data\tead\recipes\long_bow.json
 453ca508a651e2af4792948d12c8af6ddbb599c6 data\tead\recipes\ruby_from_smelting_deepslate_ruby_ore.json
+a51cc2df0b9d97998cb736818eebf72ed8511a9d data\tead\advancements\recipes\tools\short_bow.json
 01469f3d67824e559055633a6983afbee655f3ac data\tead\advancements\recipes\building_blocks\obsidian_shard.json
 1b066bed40364ba04de5697d7ab5a59403ee30bd data\tead\advancements\recipes\tools\lead_claymore.json
 265c737ededa8796f18f024be9e91a10a0f47bde data\tead\recipes\bone_bow.json
-8d9c52876f759cceadcf2b84c9c0327b4270a2bb data\tead\advancements\recipes\combat\lightning_arrow.json
 4388931c00af447c7b20bc13855720141f2b96f8 data\tead\recipes\lead_pickaxe.json
+8d9c52876f759cceadcf2b84c9c0327b4270a2bb data\tead\advancements\recipes\combat\lightning_arrow.json
 772e114df5d9b75f84d52c0a53ab334eff27a641 data\tead\advancements\recipes\combat\ruby_arrow.json
 5d3533481af4953fe5006bbb6879ed9bca36339f data\tead\recipes\obsidian.json
 2e57d8a40163b74592b4dc8795d0d3c1edf37415 data\tead\advancements\recipes\tools\gold_dagger.json
@@ -76,6 +79,7 @@ e1046232699dad66039c6b238978c6917fe91f87 data\tead\advancements\recipes\tools\go
 b897670391f286d22832d471489a44223465368f data\tead\recipes\handle.json
 625b2a86067f8750c2dfca8b1054017a8b4f38f5 data\tead\advancements\recipes\tools\diamond_hammer.json
 d476142f1f60408529a5330af28379f0b2761fac data\tead\recipes\diamond_dagger.json
+365d8c5c631c4e9c48c11b7134273d608500d977 data\tead\advancements\recipes\tools\long_bow.json
 5ce55bf80a2829c2eb9655ad7d4425f8f4eb836c data\tead\advancements\recipes\misc\ruby_from_blasting_deepslate_ruby_ore.json
 f88a9cf43694cc5cbdcee0a57d67fe64052aa4d7 data\tead\recipes\galena.json
 c0bde0debf5d05594f8cd6bba60a19abd3bf1e22 data\tead\advancements\recipes\tools\iron_hammer.json
@@ -130,8 +134,8 @@ abbbc8c0b0450247db9b13fd269b97f7f3fdd366 data\tead\advancements\recipes\tools\le
 d2519129dc37a892cb16e2b00b579d795a427913 data\tead\advancements\recipes\tools\wood_dagger.json
 80cefc4fa2f4be55afd87b53cf9c0bc8206acb00 data\tead\recipes\lightning_staff.json
 cee7a5a2c53001d8a7b293042fb3bff43b7a2145 data\tead\advancements\recipes\tools\lead_pickaxe.json
-e22a2ea07bc013777ac8f9946a2b86876e7b4e53 data\tead\advancements\recipes\combat\explosive_arrow.json
 76d967f30b22c714b4f5248e8e5f5fab630166a6 data\tead\recipes\ruby.json
+e22a2ea07bc013777ac8f9946a2b86876e7b4e53 data\tead\advancements\recipes\combat\explosive_arrow.json
 f8d6126022d7551e62b8cf3d755e9a69dbe98628 data\tead\recipes\diamond_claymore.json
 3b931942a2b48ffba5ea5f5148b05bcfe9cff3dd data\tead\recipes\netherite_sickle_smithing.json
 aaddaa96f1469919c17096640a17a2a506838f53 data\tead\advancements\recipes\misc\lead_ingot_from_smelting_lead_ore.json

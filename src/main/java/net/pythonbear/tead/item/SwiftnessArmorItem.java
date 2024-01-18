@@ -9,7 +9,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadArmorMaterials;
 
 public class SwiftnessArmorItem extends ArmorItem {
@@ -45,21 +44,17 @@ public class SwiftnessArmorItem extends ArmorItem {
     }
 
     private boolean hasCorrectArmorOn(PlayerEntity player) {
-        Tead.LOGGER.info("checking has right armor");
         ItemStack bootsStack = player.getInventory().getArmorStack(0);
 
         if (!(bootsStack.getItem() instanceof ArmorItem)) {
-            Tead.LOGGER.info("Boots slot is not an armor item, it was: " + bootsStack.getItem());
             return false;
         }
 
         ArmorItem boots = (ArmorItem) bootsStack.getItem();
 
         if (boots.getMaterial() == TeadArmorMaterials.SWIFTNESS) {
-            Tead.LOGGER.info("Armor material: " + boots.getMaterial());
             return true;
         } else {
-            Tead.LOGGER.info("Boots material does not match expected material");
             return false;
         }
     }

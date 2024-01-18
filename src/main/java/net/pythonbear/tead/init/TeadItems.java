@@ -37,7 +37,7 @@ public class TeadItems {
     public static final Item LEAD_HOE = registerItem("lead_hoe",
             new HoeItem(TeadToolMaterials.LEAD, -2, -1.0f,  new FabricItemSettings()));
     public static final Item WOOD_DOUBLE_AXE = registerItem("wood_double_axe",
-            new AxeItem(ToolMaterials.WOOD, 6.2f, -3.4f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.WOOD, 6.2f, -3.5f,  new FabricItemSettings()));
     public static final Item WOOD_HAMMER = registerItem("wood_hammer",
             new HammerItem(ToolMaterials.WOOD, 1, -2.7f,  new FabricItemSettings()));
     public static final Item WOOD_DAGGER = registerItem("wood_dagger",
@@ -45,7 +45,7 @@ public class TeadItems {
     public static final Item WOOD_SICKLE = registerItem("wood_sickle",
             new SickleItem(ToolMaterials.WOOD, 1.5f, -2.4f,  new FabricItemSettings()));
     public static final Item STONE_DOUBLE_AXE = registerItem("stone_double_axe",
-            new AxeItem(ToolMaterials.STONE, 7.2f, -3.4f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.STONE, 7.2f, -3.5f,  new FabricItemSettings()));
     public static final Item STONE_HAMMER = registerItem("stone_hammer",
             new HammerItem(ToolMaterials.STONE, 2, -3.1f,  new FabricItemSettings()));
     public static final Item STONE_DAGGER = registerItem("stone_dagger",
@@ -53,7 +53,7 @@ public class TeadItems {
     public static final Item STONE_SICKLE = registerItem("stone_sickle",
             new SickleItem(ToolMaterials.STONE, 0.5f, -1f,  new FabricItemSettings()));
     public static final Item GOLD_DOUBLE_AXE = registerItem("gold_double_axe",
-            new AxeItem(ToolMaterials.GOLD, 6.5f, -3.2f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.GOLD, 6.5f, -3.3f,  new FabricItemSettings()));
     public static final Item GOLD_HAMMER = registerItem("gold_hammer",
             new HammerItem(ToolMaterials.GOLD, 2, -3.1f,  new FabricItemSettings()));
     public static final Item GOLD_DAGGER = registerItem("gold_dagger",
@@ -63,7 +63,7 @@ public class TeadItems {
     public static final Item GOLD_CLAYMORE = registerItem("gold_claymore",
             new ClaymoreItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item LEAD_DOUBLE_AXE = registerItem("lead_double_axe",
-            new AxeItem(TeadToolMaterials.LEAD, 6.0f, -3.4f,  new FabricItemSettings()));
+            new AxeItem(TeadToolMaterials.LEAD, 6.0f, -3.5f,  new FabricItemSettings()));
     public static final Item LEAD_HAMMER = registerItem("lead_hammer",
             new HammerItem(TeadToolMaterials.LEAD, 1, -3.2f,  new FabricItemSettings()));
     public static final Item LEAD_DAGGER = registerItem("lead_dagger",
@@ -73,7 +73,7 @@ public class TeadItems {
     public static final Item LEAD_CLAYMORE = registerItem("lead_claymore",
             new ClaymoreItem(TeadToolMaterials.LEAD, 3, -2.5f,  new FabricItemSettings()));
     public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
-            new AxeItem(ToolMaterials.IRON, 6.5f, -3.3f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.IRON, 6.5f, -3.4f,  new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
             new HammerItem(ToolMaterials.IRON, 2, -3.1f,  new FabricItemSettings()));
     public static final Item IRON_DAGGER = registerItem("iron_dagger",
@@ -83,7 +83,7 @@ public class TeadItems {
     public static final Item IRON_CLAYMORE = registerItem("iron_claymore",
             new ClaymoreItem(ToolMaterials.IRON, 3, -2.4f,  new FabricItemSettings()));
     public static final Item DIAMOND_DOUBLE_AXE = registerItem("diamond_double_axe",
-            new AxeItem(ToolMaterials.DIAMOND, 5.7f, -3.2f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.DIAMOND, 5.7f, -3.3f,  new FabricItemSettings()));
     public static final Item DIAMOND_HAMMER = registerItem("diamond_hammer",
             new HammerItem(ToolMaterials.DIAMOND, 2, -3.1f,  new FabricItemSettings()));
     public static final Item DIAMOND_DAGGER = registerItem("diamond_dagger",
@@ -93,7 +93,7 @@ public class TeadItems {
     public static final Item DIAMOND_CLAYMORE = registerItem("diamond_claymore",
             new ClaymoreItem(ToolMaterials.DIAMOND, 3, -2.4f,  new FabricItemSettings()));
     public static final Item NETHERITE_DOUBLE_AXE = registerItem("netherite_double_axe",
-            new AxeItem(ToolMaterials.NETHERITE, 4, -3.2f,  new FabricItemSettings()));
+            new AxeItem(ToolMaterials.NETHERITE, 5, -3.3f,  new FabricItemSettings()));
     public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
             new HammerItem(ToolMaterials.DIAMOND, 2, -3.1f,  new FabricItemSettings()));
     public static final Item NETHERITE_DAGGER = registerItem("netherite_dagger",
@@ -101,7 +101,7 @@ public class TeadItems {
     public static final Item NETHERITE_SICKLE = registerItem("netherite_sickle",
             new SickleItem(ToolMaterials.DIAMOND, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item NETHERITE_CLAYMORE = registerItem("netherite_claymore",
-            new ClaymoreItem(ToolMaterials.NETHERITE, 3, -2.4f,  new FabricItemSettings()));
+            new ClaymoreItem(ToolMaterials.NETHERITE, 4, -2.4f,  new FabricItemSettings()));
     public static final Item CORAL_DAGGER = registerItem("coral_dagger",
             new DaggerItem(TeadToolMaterials.CORAL, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
@@ -119,6 +119,10 @@ public class TeadItems {
                     new FabricItemSettings()));
     public static final Item BONE_BOW = registerItem("bone_bow",
             new BoneBowItem(new FabricItemSettings().maxDamage(415)));
+    public static final Item SHORT_BOW = registerItem("short_bow",
+            new ShortBowItem(new FabricItemSettings().maxDamage(415)));
+    public static final Item LONG_BOW = registerItem("long_bow",
+            new LongBowItem(new FabricItemSettings().maxDamage(415)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
