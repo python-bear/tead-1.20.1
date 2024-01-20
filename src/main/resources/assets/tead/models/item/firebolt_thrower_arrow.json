@@ -1,0 +1,6 @@
+{
+    "parent": "tead:item/firebolt_thrower",
+    "textures": {
+        "layer0": "tead:item/firebolt_thrower_arrow"
+    }
+}

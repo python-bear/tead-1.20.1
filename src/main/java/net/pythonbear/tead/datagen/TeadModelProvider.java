@@ -26,6 +26,7 @@ public class TeadModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+        itemModelGenerator.register(TeadItems.FABRIC, Models.GENERATED);
         itemModelGenerator.register(TeadItems.RUBY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SHARD, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);

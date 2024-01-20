@@ -20,6 +20,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_INGOT);
                         entries.add(TeadItems.LEAD_NUGGET);
                         entries.add(TeadItems.LEAD_BULLET);
+                        entries.add(TeadItems.FABRIC);
+
                         entries.add(TeadItems.AMETHYST_ARROW);
                         entries.add(TeadItems.TNT_ARROW);
                         entries.add(TeadItems.BORING_ARROW);
@@ -40,6 +42,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.WIND_BOW);
                         entries.add(TeadItems.SHORT_BOW);
                         entries.add(TeadItems.LONG_BOW);
+
+                        entries.add(TeadItems.FIREBOLT_THROWER);
 
                         entries.add(TeadItems.HANDLE);
 

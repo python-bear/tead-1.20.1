@@ -10,10 +10,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.ArrowItem;
-import net.minecraft.item.CrossbowItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
@@ -38,10 +35,25 @@ public class FireboltThrower extends CrossbowItem {
     private boolean charged = false;
     private boolean loaded = false;
     private static final String CHARGED_PROJECTILES_KEY = "ChargedProjectiles";
+    private static final String CHARGED_KEY = "Charged";
     public static final Predicate<ItemStack> BOW_PROJECTILES = stack -> stack.isIn(ItemTags.ARROWS);
 
     public FireboltThrower(Settings settings) {
         super(settings);
+    }
+
+    public static boolean isCharged(ItemStack stack) {
+        NbtCompound nbtCompound = stack.getNbt();
+        return nbtCompound != null && nbtCompound.getBoolean(CHARGED_KEY);
+    }
+
+    public static boolean hasProjectile(ItemStack crossbow, Item projectile) {
+        return getProjectiles(crossbow).stream().anyMatch(s -> s.isOf(projectile));
+    }
+
+    public static int getPullTime(ItemStack stack) {
+        int i = EnchantmentHelper.getLevel(Enchantments.QUICK_CHARGE, stack);
+        return i == 0 ? 25 : 25 - 5 * i;
     }
 
     private static List<ItemStack> getProjectiles(ItemStack crossbow) {
@@ -78,7 +90,7 @@ public class FireboltThrower extends CrossbowItem {
     }
 
     private static float getSpeed(ItemStack stack) {
-        if (CrossbowItem.hasProjectile(stack, Items.FIREWORK_ROCKET)) {
+        if (hasProjectile(stack, Items.FIREWORK_ROCKET)) {
             return 1.6f;
         }
         return 3.15f;
@@ -156,7 +168,7 @@ public class FireboltThrower extends CrossbowItem {
         if (i > 0) {
             persistentProjectileEntity.setPierceLevel((byte)i);
         }
-        persistentProjectileEntity.setOnFire(true);
+        persistentProjectileEntity.setOnFireFor(360);
         return persistentProjectileEntity;
     }
 

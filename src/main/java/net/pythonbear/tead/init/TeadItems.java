@@ -11,6 +11,7 @@ import net.pythonbear.tead.item.arrow.*;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
+    public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard", new Item(new FabricItemSettings()));
@@ -124,7 +125,7 @@ public class TeadItems {
     public static final Item LONG_BOW = registerItem("long_bow",
             new LongBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item FIREBOLT_THROWER = registerItem("firebolt_thrower",
-            new FireboltThrower(new FabricItemSettings().maxDamage(384)));
+            new FireboltThrower(new FabricItemSettings().maxDamage(427)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",

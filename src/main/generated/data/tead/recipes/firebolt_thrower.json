@@ -3,22 +3,25 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "tead:tnt_arrow"
+      "item": "minecraft:crossbow"
     },
     "$": {
-      "item": "minecraft:iron_pickaxe"
+      "item": "minecraft:flint_and_steel"
     },
     "%": {
-      "item": "minecraft:tnt"
+      "item": "minecraft:string"
+    },
+    "&": {
+      "item": "minecraft:red_dye"
     }
   },
   "pattern": [
-    "%%$",
+    "&$&",
     "%#%",
     "%%%"
   ],
   "result": {
-    "item": "tead:boring_arrow"
+    "item": "tead:firebolt_thrower"
   },
   "show_notification": true
 }
