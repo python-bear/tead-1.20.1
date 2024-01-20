@@ -10,6 +10,8 @@ import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.util.Identifier;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 
@@ -65,7 +67,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.AMETHYST_ARROW, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.AMETHYST_ARROW, 4)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -74,8 +76,18 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.AMETHYST_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.EXPLOSIVE_ARROW, 1)
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "amethyst_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.AMETHYST_ARROW, 4)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.AMETHYST_SHARD)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "amethyst_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.TNT_ARROW, 4)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -84,8 +96,36 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.TNT)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.LIGHTNING_ARROW, 1)
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "tnt_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.TNT_ARROW, 4)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.TNT)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "tnt_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.BORING_ARROW, 1)
+                .pattern("%%$")
+                .pattern("%#%")
+                .pattern("%%%")
+                .input('%', Items.TNT)
+                .input('#', TeadItems.TNT_ARROW)
+                .input('$', Items.IRON_PICKAXE)
+                .criterion(hasItem(TeadItems.TNT_ARROW), conditionsFromItem(TeadItems.TNT_ARROW))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "boring_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.BORING_ARROW, 1)
+                .pattern("%$%")
+                .pattern("%#%")
+                .pattern("%%%")
+                .input('%', Items.TNT)
+                .input('#', TeadItems.TNT_ARROW)
+                .input('$', Items.IRON_PICKAXE)
+                .criterion(hasItem(TeadItems.TNT_ARROW), conditionsFromItem(TeadItems.TNT_ARROW))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "boring_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.COPPER_ARROW, 2)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -94,8 +134,36 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.LIGHTNING_ROD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.LIGHTNING_ROD), conditionsFromItem(Items.LIGHTNING_ROD))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.OBSIDIAN_ARROW, 1)
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "cooper_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.COPPER_ARROW, 2)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.LIGHTNING_ROD)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(Items.LIGHTNING_ROD), conditionsFromItem(Items.LIGHTNING_ROD))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "cooper_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.ENDER_PEARL_ARROW, 1)
+                .pattern("  $")
+                .pattern(" # ")
+                .pattern("%  ")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.ENDER_PEARL)
+                .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "ender_pearl_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.ENDER_PEARL_ARROW, 1)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.ENDER_PEARL)
+                .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "ender_pearl_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.OBSIDIAN_ARROW, 4)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -103,10 +171,19 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.STICK)
                 .input('$', TeadItems.OBSIDIAN_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(TeadItems.OBSIDIAN_SHARD), conditionsFromItem(TeadItems.OBSIDIAN_SHARD))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.RUBY_ARROW, 1)
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "obsidian_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.OBSIDIAN_ARROW, 4)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', TeadItems.OBSIDIAN_SHARD)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(TeadItems.OBSIDIAN_SHARD), conditionsFromItem(TeadItems.OBSIDIAN_SHARD))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "obsidian_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.RUBY_ARROW, 4)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -115,7 +192,27 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.RUBY)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(TeadItems.RUBY), conditionsFromItem(TeadItems.RUBY))
-                .offerTo(exporter);
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "ruby_arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.RUBY_ARROW, 4)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', TeadItems.RUBY)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(TeadItems.RUBY), conditionsFromItem(TeadItems.RUBY))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "ruby_arrow_2"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.ARROW, 4)
+                .pattern("  $")
+                .pattern(" # ")
+                .pattern("%  ")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.FLINT)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LIGHTNING_STAFF, 1)
                 .pattern("  %")
                 .pattern(" # ")

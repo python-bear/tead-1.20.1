@@ -8,11 +8,14 @@
   "item.tead.lead_ingot": "Lead Ingot",
   "item.tead.lead_nugget": "Lead Nugget",
   "item.tead.lead_bullet": "Lead Bullet",
+
   "item.tead.amethyst_arrow": "Amethyst Arrow",
-  "item.tead.explosive_arrow": "Explosive Arrow",
-  "item.tead.lightning_arrow": "Lightning Arrow",
+  "item.tead.tnt_arrow": "Explosive Arrow",
+  "item.tead.copper_arrow": "Lightning Arrow",
   "item.tead.obsidian_arrow": "Obsidian Arrow",
+  "item.tead.boring_arrow": "Boring Arrow",
   "item.tead.ruby_arrow": "Ruby Arrow",
+  "item.tead.ender_pearl_arrow": "Ender Arrow",
 
   "item.tead.lead_apple": "Lead Apple",
 
@@ -62,6 +65,7 @@
   "item.tead.obsidian_claymore": "Obsidian Claymore",
 
   "item.tead.bone_bow": "Bone Bow",
+  "item.tead.trick_bow": "Trick Bow",
   "item.tead.wind_bow": "Wind Bow",
   "item.tead.short_bow": "Shortbow",
   "item.tead.long_bow": "Longbow",

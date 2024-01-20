@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tead:boring_arrow_1"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tnt_arrow": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:tnt_arrow"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tnt_arrow",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tead:boring_arrow_1"
+    ]
+  },
+  "sends_telemetry_event": false
+}

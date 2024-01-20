@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 public class TeadModelPredicateProvider {
     public static void registerTeadModels() {
         registerBow(TeadItems.BONE_BOW);
+        registerBow(TeadItems.TRICK_BOW);
         registerBow(TeadItems.WIND_BOW);
         registerBow(TeadItems.SHORT_BOW);
         registerBow(TeadItems.LONG_BOW);

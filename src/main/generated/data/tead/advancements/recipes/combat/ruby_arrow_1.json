@@ -13,24 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_obsidian_shard": {
+    "has_ruby": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tead:obsidian_shard"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_stick": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:stick"
+              "tead:ruby"
             ]
           }
         ]
@@ -39,7 +27,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tead:obsidian_arrow"
+        "recipe": "tead:ruby_arrow_1"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -47,14 +35,13 @@
   "requirements": [
     [
       "has_feather",
-      "has_stick",
-      "has_obsidian_shard",
+      "has_ruby",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tead:obsidian_arrow"
+      "tead:ruby_arrow_1"
     ]
   },
   "sends_telemetry_event": false

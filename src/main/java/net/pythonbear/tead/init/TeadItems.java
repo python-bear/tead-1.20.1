@@ -7,6 +7,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.*;
+import net.pythonbear.tead.item.arrow.*;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
@@ -17,11 +18,6 @@ public class TeadItems {
     public static final Item LEAD_INGOT = registerItem("lead_ingot", new Item(new FabricItemSettings()));
     public static final Item LEAD_NUGGET = registerItem("lead_nugget", new Item(new FabricItemSettings()));
     public static final Item LEAD_BULLET = registerItem("lead_bullet", new Item(new FabricItemSettings()));
-    public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow", new Item(new FabricItemSettings()));
-    public static final Item EXPLOSIVE_ARROW = registerItem("explosive_arrow", new Item(new FabricItemSettings()));
-    public static final Item LIGHTNING_ARROW = registerItem("lightning_arrow", new Item(new FabricItemSettings()));
-    public static final Item OBSIDIAN_ARROW = registerItem("obsidian_arrow", new Item(new FabricItemSettings()));
-    public static final Item RUBY_ARROW = registerItem("ruby_arrow", new Item(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
             new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
@@ -121,12 +117,30 @@ public class TeadItems {
             new BoneBowItem(new FabricItemSettings().maxDamage(415)));
     public static final Item WIND_BOW = registerItem("wind_bow",
             new WindBowItem(new FabricItemSettings().maxDamage(432)));
+    public static final Item TRICK_BOW = registerItem("trick_bow",
+            new TrickBowItem(new FabricItemSettings().maxDamage(432)));
     public static final Item SHORT_BOW = registerItem("short_bow",
             new ShortBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item LONG_BOW = registerItem("long_bow",
             new LongBowItem(new FabricItemSettings().maxDamage(384)));
+    public static final Item FIREBOLT_THROWER = registerItem("firebolt_thrower",
+            new FireboltThrower(new FabricItemSettings().maxDamage(384)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
+            new AmethystArrowItem(new FabricItemSettings()));
+    public static final Item COPPER_ARROW = registerItem("copper_arrow",
+            new CopperArrowItem(new FabricItemSettings()));
+    public static final Item ENDER_PEARL_ARROW = registerItem("ender_pearl_arrow",
+            new EnderPearlArrowItem(new FabricItemSettings()));
+    public static final Item OBSIDIAN_ARROW = registerItem("obsidian_arrow",
+            new ObsidianArrowItem(new FabricItemSettings()));
+    public static final Item RUBY_ARROW = registerItem("ruby_arrow",
+            new RubyArrowItem(new FabricItemSettings()));
+    public static final Item TNT_ARROW = registerItem("tnt_arrow",
+            new TntArrowItem(new FabricItemSettings()));
+    public static final Item BORING_ARROW = registerItem("boring_arrow",
+            new BoringArrowItem(new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));

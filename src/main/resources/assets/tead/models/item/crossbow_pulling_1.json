@@ -1,0 +1,6 @@
+{
+    "parent": "item/firebolt_thrower",
+    "textures": {
+        "layer0": "item/firebolt_thrower_pulling_1"
+    }
+}

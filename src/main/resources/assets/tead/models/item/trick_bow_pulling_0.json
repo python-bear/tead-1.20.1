@@ -1,0 +1,6 @@
+{
+    "parent": "tead:item/trick_bow",
+    "textures": {
+        "layer0": "tead:item/trick_bow_pulling_0"
+    }
+}

@@ -6,19 +6,20 @@
       "item": "minecraft:stick"
     },
     "$": {
-      "item": "tead:ruby"
+      "item": "tead:obsidian_shard"
     },
     "%": {
       "item": "minecraft:feather"
     }
   },
   "pattern": [
-    "  $",
-    " # ",
-    "%  "
+    "$",
+    "#",
+    "%"
   ],
   "result": {
-    "item": "tead:ruby_arrow"
+    "count": 4,
+    "item": "tead:obsidian_arrow"
   },
   "show_notification": true
 }

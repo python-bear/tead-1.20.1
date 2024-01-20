@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:tnt_arrow"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    },
+    "%": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "pattern": [
+    "%%$",
+    "%#%",
+    "%%%"
+  ],
+  "result": {
+    "item": "tead:boring_arrow"
+  },
+  "show_notification": true
+}

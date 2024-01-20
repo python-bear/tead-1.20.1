@@ -1,24 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_feather": {
+    "has_ender_pearl": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:feather"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_lightning_rod": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:lightning_rod"
+              "minecraft:ender_pearl"
             ]
           }
         ]
@@ -27,21 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tead:lightning_arrow"
+        "recipe": "tead:ender_pearl_arrow_2"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_feather",
-      "has_lightning_rod",
+      "has_ender_pearl",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "tead:lightning_arrow"
+      "tead:ender_pearl_arrow_2"
     ]
   },
   "sends_telemetry_event": false
