@@ -12,6 +12,7 @@ import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
     public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
+    public static final Item JERKY = registerItem("jerky", new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard", new Item(new FabricItemSettings()));

@@ -30,6 +30,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.OBSIDIAN_ARROW);
                         entries.add(TeadItems.RUBY_ARROW);
 
+                        entries.add(TeadItems.JERKY);
                         entries.add(TeadItems.LEAD_APPLE);
 
                         entries.add(TeadItems.LIGHTNING_STAFF);
