@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_nether_sprouts": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:nether_sprouts"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tead:fabric_9"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_twisting_vines": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:twisting_vines"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_nether_sprouts",
+      "has_twisting_vines",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tead:fabric_9"
+    ]
+  },
+  "sends_telemetry_event": false
+}

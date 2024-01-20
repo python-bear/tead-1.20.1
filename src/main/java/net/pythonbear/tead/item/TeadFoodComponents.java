@@ -10,4 +10,7 @@ public class TeadFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 800, 3), 1)
             .statusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 800, 2), 1)
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 679, 1), 1).build();
+
+    public static final FoodComponent JERKY = new FoodComponent.Builder().alwaysEdible().hunger(4)
+            .saturationModifier(7).build();
 }
