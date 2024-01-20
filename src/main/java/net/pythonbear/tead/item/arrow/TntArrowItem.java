@@ -5,7 +5,6 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.CustomizedArrowEntity;
 
 public class TntArrowItem extends ArrowItem {

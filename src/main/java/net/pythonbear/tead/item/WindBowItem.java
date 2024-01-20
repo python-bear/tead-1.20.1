@@ -55,9 +55,7 @@ public class WindBowItem extends BowItem implements Vanishable {
         if (!world.isClient) {
             int k;
             int j;
-//            ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() :
-//                    Items.ARROW);
-//            PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+
             PersistentProjectileEntity persistentProjectileEntity = createWindArrow(world, itemStack, playerEntity);
             persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
                     0.0f, f * 3.0f, 0.9f);

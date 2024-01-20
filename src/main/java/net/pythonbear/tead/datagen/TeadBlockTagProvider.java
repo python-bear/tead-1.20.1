@@ -8,7 +8,6 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadTags;
 

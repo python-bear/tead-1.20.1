@@ -36,7 +36,6 @@ public class WindArrowEntity extends ArrowEntity {
         if (this.startingXPos != null && this.startingZPos != null) {
             double xDelta = this.startingXPos - target.getX();
             double zDelta = this.startingZPos - target.getZ();
-            double meanDelta = (xDelta + zDelta) / 2;
 
             double pullStrength = 0.5;
             double pullX = pullStrength * xDelta;

@@ -1,7 +1,6 @@
 package net.pythonbear.tead.init;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;

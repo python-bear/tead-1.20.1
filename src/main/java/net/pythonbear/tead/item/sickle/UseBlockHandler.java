@@ -232,17 +232,15 @@ public final class UseBlockHandler {
     /**
      * Checks whether the given block is something that might be considered a tall crop, but should actually be treated as a normal crop.
      * <p>
-     * Currently the only known crop with this behavior is Farmer's Delight tomatoes.
+     * Currently, the only known crop with this behavior is Farmer's Delight tomatoes.
      *
      * @param block
      * @return whether to treat a tall crop as a normal crop.
      */
     private static boolean isTallButSeparate(Block block) {
         Optional<RegistryKey<Block>> key = Registries.BLOCK.getKey(block);
-        if (key.isPresent()) {
-            return key.get().getValue().toString().equals("farmersdelight:tomatoes");
-        }
-        return false;
+        return key.map(blockRegistryKey -> blockRegistryKey.getValue().toString().equals("farmersdelight:tomatoes"))
+                .orElse(false);
     }
     /**
      * Expand a {@link BlockBox} horizontally.

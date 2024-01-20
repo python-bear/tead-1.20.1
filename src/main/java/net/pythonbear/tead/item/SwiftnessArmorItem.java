@@ -52,11 +52,7 @@ public class SwiftnessArmorItem extends ArmorItem {
 
         ArmorItem boots = (ArmorItem) bootsStack.getItem();
 
-        if (boots.getMaterial() == TeadArmorMaterials.SWIFTNESS) {
-            return true;
-        } else {
-            return false;
-        }
+        return boots.getMaterial() == TeadArmorMaterials.SWIFTNESS;
     }
 
 }

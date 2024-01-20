@@ -139,11 +139,11 @@ public class FireboltThrower extends CrossbowItem {
             }
         }
         if (shooter instanceof CrossbowUser) {
-            CrossbowUser crossbowUser = (CrossbowUser)((Object)shooter);
+            CrossbowUser crossbowUser = (CrossbowUser)(shooter);
             crossbowUser.shoot(crossbowUser.getTarget(), crossbow, projectileEntity, simulated);
         } else {
             Vec3d vec3d = shooter.getOppositeRotationVector(1.0f);
-            Quaternionf quaternionf = new Quaternionf().setAngleAxis((double)(simulated * ((float)Math.PI / 180)),
+            Quaternionf quaternionf = new Quaternionf().setAngleAxis((simulated * ((float)Math.PI / 180)),
                     vec3d.x, vec3d.y, vec3d.z);
             Vec3d vec3d2 = shooter.getRotationVec(1.0f);
             Vector3f vector3f = vec3d2.toVector3f().rotate(quaternionf);

@@ -202,7 +202,7 @@ public class CustomAttacking {
             for (int i = 0; i < nbtList.size(); ++i) {
                 NbtCompound nbtCompound = nbtList.getCompound(i);
                 Registries.ENCHANTMENT.getOrEmpty(EnchantmentHelper.getIdFromNbt(nbtCompound)).ifPresent(enchantment ->
-                        consumer.accept((Enchantment)enchantment, EnchantmentHelper.getLevelFromNbt(nbtCompound)));
+                        consumer.accept(enchantment, EnchantmentHelper.getLevelFromNbt(nbtCompound)));
             }
         }
     }
@@ -223,7 +223,7 @@ public class CustomAttacking {
             forEachEnchantment(consumer, user.getItemsEquipped());
         }
         if (user instanceof PlayerEntity) {
-            forEachEnchantment(consumer, Collections.singletonList(((PlayerEntity) user).getMainHandStack()));
+            forEachEnchantment(consumer, Collections.singletonList((user).getMainHandStack()));
         }
     }
 

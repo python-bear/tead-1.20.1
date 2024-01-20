@@ -15,7 +15,6 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.WindArrowEntity;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.item.arrow.*;
@@ -114,7 +113,6 @@ public class TrickBowItem extends BowItem implements Vanishable {
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
             }
 
-//            PersistentProjectileEntity persistentProjectileEntity = createWindArrow(world, itemStack, playerEntity);
             persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
                     0.0f, f * 2.8f, 1.1f);
             if (f == 1.0f) {
