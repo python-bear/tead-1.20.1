@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tead:block_of_ruby"
+    "tead:block_of_ruby",
+    "tead:gold_chain"
   ]
 }

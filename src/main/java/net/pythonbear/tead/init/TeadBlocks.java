@@ -2,10 +2,7 @@ package net.pythonbear.tead.init;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.block.MapColor;
+import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -33,6 +30,10 @@ public class TeadBlocks {
     public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE),
                     UniformIntProvider.create(4, 8)));
+    public static final Block GOLD_CHAIN = registerBlock("gold_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.GOLD)
+                    .strength(4.0f, 5.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Tead.MOD_ID, name), block);

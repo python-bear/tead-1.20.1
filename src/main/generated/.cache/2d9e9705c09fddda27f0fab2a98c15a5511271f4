@@ -1,9 +1,9 @@
-// 1.20.1	2024-01-20T15:40:11.6458638	tead/Recipes
+// 1.20.1	2024-01-20T21:52:53.9905346	tead/Recipes
 6f18d2136e9b4c5871b93ee83bf36e8091f05638 data\tead\advancements\recipes\combat\fabric_4.json
 9ca942f591b1c39328dd7b377fb2623bbd80eef6 data\tead\advancements\recipes\combat\jerky_12.json
 410de2b77025aba48844f2d86d3a6107967933fb data\tead\recipes\gold_sickle.json
-6b95b66602bb097782130c81fee7a64aa12af619 data\tead\recipes\boring_arrow_1.json
 b50abe20904ea20e19526a5be79c47fb9945b846 data\tead\recipes\fabric_4.json
+6b95b66602bb097782130c81fee7a64aa12af619 data\tead\recipes\boring_arrow_1.json
 2a69fe4d3177b43aaefb2c24b03b07f5ceaee69e data\tead\advancements\recipes\tools\lead_shovel.json
 a0e9263bd711ba5157fb150d93d2aba57beba633 data\tead\recipes\amethyst_arrow_1.json
 6e4a96ac6f1875ca5ae1c6f813a41fce84f19e41 data\tead\advancements\recipes\tools\bone_club.json
@@ -50,6 +50,7 @@ fd1c648e05db2b61f09a52ff2865ff4b913c9a52 data\tead\advancements\recipes\combat\j
 4f9104aa424992039d3aa3fe599902c3a68000d7 data\tead\recipes\firebolt_thrower.json
 7ba40fdb9b45227bcda636a3f333d64e325f24f3 data\tead\advancements\recipes\tools\iron_dagger.json
 be58017bff06cc01b49e9b8e0912cfdbf5f68101 data\tead\advancements\recipes\misc\block_of_galena.json
+d03babd085bf57aa2c01cd033e28c3001c30b3a1 data\tead\advancements\recipes\tools\grenade_0.json
 7a7341b07756414011f456e447ea25b17deb5275 data\tead\advancements\recipes\misc\lead_ingot_from_blasting_lead_ore.json
 8e92b3fb04c5ef42503e05020a3506e64063300f data\tead\recipes\iron_claymore.json
 ebab0202b297e164c5b0e1d4ee2a79d4909f0b85 data\tead\recipes\tnt_arrow_1.json
@@ -73,6 +74,7 @@ d476142f1f60408529a5330af28379f0b2761fac data\tead\recipes\diamond_dagger.json
 b404ab23cdf36c0d9c6bb515e1975eefa94dea6c data\tead\recipes\book.json
 330b447e2948ea48e958046fc890d55745c56279 data\tead\recipes\bone_club.json
 9ca11f92ee25a9211bbe01caa29738add110c9d0 data\tead\advancements\recipes\combat\jerky_7.json
+b509b554dd176a10514ed2799572b1b0e5082cf5 data\tead\recipes\grenade_1.json
 ce07964245a60a50d76bd819cb068e0118a9c0b0 data\tead\recipes\jerky_0.json
 5c6b0150e9f7d713279fc8e23465440bbf5650c9 data\tead\advancements\recipes\tools\stone_hammer.json
 d3f23b29a76c2df00a092e10d1498ed16981c0ef data\tead\recipes\lead_sword.json
@@ -128,6 +130,7 @@ f37fb0a9c6219e9b17a79fcf25392201a86c1490 data\tead\recipes\wood_double_axe.json
 aa69c9fa6455d48f67b18f79c9ad488035eebe6b data\tead\advancements\recipes\combat\fabric_3.json
 df549fad10ff42d6d354e5cf187d2f68f0fb9bf5 data\tead\recipes\ruby_arrow_2.json
 63277e8e847824da6680ec3226103edbe7126256 data\tead\advancements\recipes\combat\jerky_11.json
+e67c4ab3e1ac409411fda0f2ec896ae53c1e5ae8 data\tead\advancements\recipes\tools\grenade_1.json
 53e4329fece153fe936f10087288c7bb3b5e46c1 data\tead\advancements\recipes\misc\ruby_from_smelting_deepslate_ruby_ore.json
 071ac3c2590254779a4ba3aa928c910b9e78f5b8 data\tead\advancements\recipes\combat\jerky_2.json
 f5abc37b8d65a5aa4e6c6d443bcbfd0beee0250b data\tead\recipes\fabric_5.json
@@ -157,6 +160,7 @@ e80f40d4dc5f38bd7523340098ffb1c0b8add1b5 data\tead\recipes\fabric_9.json
 6dcc54838d1955b6974d3a46d820004a183f1a09 data\tead\recipes\fabric_3.json
 265c737ededa8796f18f024be9e91a10a0f47bde data\tead\recipes\bone_bow.json
 4388931c00af447c7b20bc13855720141f2b96f8 data\tead\recipes\lead_pickaxe.json
+8950bc28fa606d51b2ffbed9d1551719522e1f34 data\tead\recipes\grenade_0.json
 f69b0205c45f0d17b3ca9db3fbeaba3ed15d315c data\tead\recipes\jerky_4.json
 5d3533481af4953fe5006bbb6879ed9bca36339f data\tead\recipes\obsidian.json
 2e57d8a40163b74592b4dc8795d0d3c1edf37415 data\tead\advancements\recipes\tools\gold_dagger.json

@@ -44,6 +44,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_APPLE, Models.GENERATED);
 
+        itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
+
         itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_HOE, Models.HANDHELD);

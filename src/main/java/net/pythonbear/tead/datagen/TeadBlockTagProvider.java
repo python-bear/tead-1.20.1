@@ -28,7 +28,9 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.RUBY_ORE)
                 .add(TeadBlocks.DEEPSLATE_RUBY_ORE)
                 .add(TeadBlocks.LEAD_ORE)
-                .add(TeadBlocks.BLOCK_OF_RUBY);
+                .add(TeadBlocks.BLOCK_OF_RUBY)
+
+                .add(TeadBlocks.GOLD_CHAIN);
 
         getOrCreateTagBuilder(TeadTags.Blocks.REFINED_BUILDING_BLOCKS)
                 .add(Blocks.STONECUTTER)
@@ -249,7 +251,8 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.DEEPSLATE_RUBY_ORE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(TeadBlocks.BLOCK_OF_RUBY);
+                .add(TeadBlocks.BLOCK_OF_RUBY)
+                .add(TeadBlocks.GOLD_CHAIN);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(TeadBlocks.LEAD_ORE)

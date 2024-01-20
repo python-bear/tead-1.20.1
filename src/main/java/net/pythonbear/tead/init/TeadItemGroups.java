@@ -33,6 +33,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.JERKY);
                         entries.add(TeadItems.LEAD_APPLE);
 
+                        entries.add(TeadItems.GRENADE);
+
                         entries.add(TeadItems.LIGHTNING_STAFF);
                         entries.add(TeadItems.QUARTERSTAFF);
                         entries.add(TeadItems.BATTLE_STAFF);
@@ -115,6 +117,8 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.LEAD_ORE);
                         entries.add(TeadBlocks.RUBY_ORE);
                         entries.add(TeadBlocks.DEEPSLATE_RUBY_ORE);
+
+                        entries.add(TeadBlocks.GOLD_CHAIN);
                     }).build());
     public static void registerItemGroups() {
         Tead.LOGGER.info("Registering mod items for " + Tead.MOD_ID);

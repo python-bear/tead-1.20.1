@@ -8,6 +8,7 @@
   "item.tead.lead_ingot": "Lead Ingot",
   "item.tead.lead_nugget": "Lead Nugget",
   "item.tead.lead_bullet": "Lead Bullet",
+  "item.tead.gold_chain": "Gold Chain",
 
   "item.tead.amethyst_arrow": "Amethyst Arrow",
   "item.tead.tnt_arrow": "Explosive Arrow",
@@ -18,6 +19,8 @@
   "item.tead.ender_pearl_arrow": "Ender Arrow",
 
   "item.tead.lead_apple": "Lead Apple",
+
+  "item.tead.grenade": "Grenade",
 
   "item.tead.obsidian_sword": "Obsidian Sword",
   "item.tead.battle_staff": "Battle Staff",
@@ -116,6 +119,7 @@
   "block.tead.lead_ore": "Galena Ore",
   "block.tead.ruby_ore": "Ruby Ore",
   "block.tead.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.tead.gold_chain": "Gold Chain",
 
   "sounds.tead.battle_hymn": "Battle Hymn - ManO'War",
   "sounds.tead.day_one": "Day One - Hans Zimmer",
