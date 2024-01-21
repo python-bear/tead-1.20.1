@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "minecraft:block/oak_planks",
+    "east": "tead:block/old_bookshelf",
+    "north": "tead:block/old_bookshelf",
+    "particle": "tead:block/old_bookshelf",
+    "south": "tead:block/old_bookshelf",
+    "up": "minecraft:block/oak_planks",
+    "west": "tead:block/old_bookshelf"
+  }
+}

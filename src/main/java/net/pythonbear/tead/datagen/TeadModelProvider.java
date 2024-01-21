@@ -2,10 +2,10 @@ package net.pythonbear.tead.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Models;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Identifier;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 
@@ -22,6 +22,128 @@ public class TeadModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BLOCK_OF_GALENA);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DEEPSLATE_RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RUBY_ORE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DRY_DIRT);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DARK_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DARK_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DIRTY_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DIRTY_STONE_PLAQUE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.STONE_PLAQUE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.SLUDGE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.SANDY_COBBLESTONE);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.VERY_SANDY_COBBLESTONE);
+
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.SPARSE_GRASS, TeadBlocks.DRY_DIRT,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/sparse_grass_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/dry_dirt"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.VERY_SPARSE_GRASS, TeadBlocks.DRY_DIRT,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/very_sparse_grass_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/dry_dirt"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.DRY_GRASS, TeadBlocks.DRY_DIRT,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/dry_grass_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/dry_grass_side"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/dry_grass_side"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/dry_grass_side"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/dry_grass_side"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/dry_grass_side"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.BROWN_DRY_GRASS, TeadBlocks.DRY_DIRT,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/brown_dry_grass_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/dry_dirt"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/brown_dry_grass_side"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/brown_dry_grass_side"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/brown_dry_grass_side"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/brown_dry_grass_side"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/brown_dry_grass_side"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.SICK_PUMPKIN, TeadBlocks.SICK_PUMPKIN,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/sick_pumpkin_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/sick_pumpkin_top"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/sick_pumpkin_side"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/sick_pumpkin_side"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/sick_pumpkin_side"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/sick_pumpkin_side"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/sick_pumpkin_side"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.EMPTY_BOOKSHELF, Blocks.OAK_PLANKS,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("block/oak_planks"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("block/oak_planks"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/empty_bookshelf"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/empty_bookshelf"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/empty_bookshelf"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/empty_bookshelf"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/empty_bookshelf"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.OLD_BOOKSHELF, Blocks.OAK_PLANKS,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("block/oak_planks"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("block/oak_planks"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/old_bookshelf"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/old_bookshelf"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/old_bookshelf"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/old_bookshelf"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/old_bookshelf"));
+
+                    return textureMap;
+                });
+        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.CLAYISH_MUD, TeadBlocks.CLAYISH_MUD,
+                (block, block2) -> {
+                    TextureMap textureMap = new TextureMap();
+
+                    textureMap.put(TextureKey.UP, new Identifier("tead:block/clayish_mud_top"));
+                    textureMap.put(TextureKey.DOWN, new Identifier("tead:block/clayish_mud_top"));
+                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/clayish_mud_side"));
+                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/clayish_mud_side"));
+                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/clayish_mud_side"));
+                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/clayish_mud_side"));
+                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/clayish_mud_side"));
+
+                    return textureMap;
+                });
     }
 
     @Override
@@ -43,6 +165,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.ENDER_PEARL_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_APPLE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.MUDDY_CLAY_BALL, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.DARK_BRICK, Models.GENERATED);
 
         itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
 
@@ -64,6 +188,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.GOLD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.IRON_SICKLE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.IRON_TEMPEST_KNIFE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.DIAMOND_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.NETHERITE_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WOOD_DAGGER, Models.HANDHELD);

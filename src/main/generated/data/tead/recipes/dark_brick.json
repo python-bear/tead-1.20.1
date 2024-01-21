@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tead:dark_bricks"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "tead:dark_brick"
+  }
+}

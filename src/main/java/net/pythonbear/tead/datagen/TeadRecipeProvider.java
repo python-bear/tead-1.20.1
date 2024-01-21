@@ -27,6 +27,10 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
             TeadBlocks.LEAD_ORE,
             TeadItems.GALENA
     );
+    private static final List<ItemConvertible> DARK_BRICK_SMELTABLES = List.of(
+            TeadBlocks.CLAYISH_MUD,
+            TeadItems.MUDDY_CLAY_BALL
+    );
 
     public TeadRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -42,6 +46,10 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 "lead");
         offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 2, 80,
                 "lead");
+        offerSmelting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
+                150, "dark_brick");
+        offerBlasting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
+                80,  "dark_brick");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC,
                 TeadBlocks.BLOCK_OF_RUBY);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA,
@@ -907,6 +915,32 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                 .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_BOOTS, 1)
+                .pattern("# #")
+                .pattern("# #")
+                .input('#',TeadBlocks.GOLD_CHAIN)
+                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_HELMET, 1)
+                .pattern("###")
+                .pattern("# #")
+                .input('#', TeadBlocks.GOLD_CHAIN)
+                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_LEGGINGS, 1)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', TeadBlocks.GOLD_CHAIN)
+                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_CHESTPLATE, 1)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .input('#', TeadBlocks.GOLD_CHAIN)
+                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.CHAINMAIL_BOOTS, 1)
                 .pattern("# #")
                 .pattern("# #")
@@ -932,6 +966,16 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .input('#', Items.CHAIN)
                 .criterion(hasItem(Items.CHAIN), conditionsFromItem(Items.CHAIN))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DARK_BRICKS, 1)
+                .pattern("##")
+                .pattern("##")
+                .input('#', TeadItems.DARK_BRICK)
+                .criterion(hasItem(TeadItems.DARK_BRICK), conditionsFromItem(TeadItems.DARK_BRICK))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, TeadItems.DARK_BRICK, 4)
+                .input(TeadBlocks.DARK_BRICKS)
+                .criterion(hasItem(TeadBlocks.DARK_BRICKS), conditionsFromItem(TeadBlocks.DARK_BRICKS))
                 .offerTo(exporter);
     }
 }

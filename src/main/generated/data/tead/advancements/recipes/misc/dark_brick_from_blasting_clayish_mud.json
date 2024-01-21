@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clayish_mud": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:clayish_mud"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:dark_brick_from_blasting_clayish_mud"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_clayish_mud",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:dark_brick_from_blasting_clayish_mud"
+    ]
+  },
+  "sends_telemetry_event": false
+}

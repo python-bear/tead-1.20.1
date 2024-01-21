@@ -7,6 +7,13 @@
     "tead:deepslate_ruby_ore",
     "tead:lead_ore",
     "tead:block_of_ruby",
+    "tead:dark_bricks",
+    "tead:dark_cobblestone",
+    "tead:dirty_cobblestone",
+    "tead:dirty_stone_plaque",
+    "tead:stone_plaque",
+    "tead:sandy_cobblestone",
+    "tead:very_sandy_cobblestone",
     "tead:gold_chain"
   ]
 }

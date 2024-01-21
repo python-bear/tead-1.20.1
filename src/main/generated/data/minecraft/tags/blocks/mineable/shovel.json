@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "tead:clayish_mud",
+    "tead:sludge",
+    "tead:sparse_grass",
+    "tead:dry_grass",
+    "tead:brown_dry_grass",
+    "tead:very_sparse_grass",
+    "tead:dry_dirt"
+  ]
+}

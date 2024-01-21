@@ -1,7 +1,9 @@
-// 1.20.1	2024-01-21T12:04:02.5787046	tead/Tags for minecraft:block
+// 1.20.1	2024-01-21T15:51:06.0958562	tead/Tags for minecraft:block
 a7bed1c69a0776fb68eb189877fde38060a9bac4 data\minecraft\tags\blocks\needs_diamond_tool.json
-903568367f886d194f47d51f4a2ea86349f03135 data\minecraft\tags\blocks\mineable\pickaxe.json
+a29a401919d5905bd706e6010cbf590fd32c34e7 data\minecraft\tags\blocks\mineable\pickaxe.json
+06a698369cbe90b291874c870defaeadb1cfd018 data\minecraft\tags\blocks\mineable\shovel.json
 da02140abf3f60817141bdba207062e68c8f63ef data\minecraft\tags\blocks\needs_stone_tool.json
+4402bd1b02cef6085b60ea6200b6250fa7dca5ba data\minecraft\tags\blocks\mineable\axe.json
 75e44d91d29541430306f8668a7ef7d07c95a203 data\tead\tags\blocks\refined_building_blocks.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
 09425a87bd0bbfc9cf872ff514cef10ae39f5d36 data\minecraft\tags\blocks\needs_iron_tool.json

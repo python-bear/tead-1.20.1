@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:gold_chain"
+    }
+  },
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "tead:gold_chainmail_chestplate"
+  },
+  "show_notification": true
+}

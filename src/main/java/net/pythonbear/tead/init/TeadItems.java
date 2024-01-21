@@ -12,6 +12,9 @@ import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
     public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
+    public static final Item MUDDY_CLAY_BALL = registerItem("muddy_clay_ball",
+            new Item(new FabricItemSettings()));
+    public static final Item DARK_BRICK = registerItem("dark_brick", new Item(new FabricItemSettings()));
     public static final Item JERKY = registerItem("jerky", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.JERKY)));
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
@@ -80,6 +83,9 @@ public class TeadItems {
             new DaggerItem(ToolMaterials.IRON, 1.5f, -1f,  new FabricItemSettings()));
     public static final Item IRON_SICKLE = registerItem("iron_sickle",
             new SickleItem(ToolMaterials.IRON, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item IRON_TEMPEST_KNIFE = registerItem("iron_tempest_knife",
+            new BladedWeaponItem(ToolMaterials.IRON, 2.7f, -1.6f,  new FabricItemSettings(),
+                    false));
     public static final Item IRON_CLAYMORE = registerItem("iron_claymore",
             new ClaymoreItem(ToolMaterials.IRON, 3, -2.4f,  new FabricItemSettings()));
     public static final Item DIAMOND_DOUBLE_AXE = registerItem("diamond_double_axe",

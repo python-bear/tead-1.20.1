@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.0,
+  "group": "dark_brick",
+  "ingredient": {
+    "item": "tead:muddy_clay_ball"
+  },
+  "result": "tead:dark_brick"
+}

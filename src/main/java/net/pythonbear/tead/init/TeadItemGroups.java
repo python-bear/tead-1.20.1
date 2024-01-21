@@ -21,6 +21,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_NUGGET);
                         entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
+                        entries.add(TeadItems.MUDDY_CLAY_BALL);
+                        entries.add(TeadItems.DARK_BRICK);
 
                         entries.add(TeadItems.AMETHYST_ARROW);
                         entries.add(TeadItems.TNT_ARROW);
@@ -82,6 +84,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.LEAD_SICKLE);
                         entries.add(TeadItems.IRON_SICKLE);
+                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.NETHERITE_SICKLE);
                         entries.add(TeadItems.GOLD_CLAYMORE);
@@ -115,14 +118,33 @@ public class TeadItemGroups {
                         entries.add(TeadItems.MUSIC_DISC_TIME);
                         entries.add(TeadItems.MUSIC_DISC_UNTOUCHABLE);
 
+                        entries.add(TeadBlocks.GOLD_CHAIN);
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);
                         entries.add(TeadBlocks.BLOCK_OF_GALENA);
                         entries.add(TeadBlocks.BLOCK_OF_LEAD);
+
                         entries.add(TeadBlocks.LEAD_ORE);
                         entries.add(TeadBlocks.RUBY_ORE);
                         entries.add(TeadBlocks.DEEPSLATE_RUBY_ORE);
 
-                        entries.add(TeadBlocks.GOLD_CHAIN);
+                        entries.add(TeadBlocks.SICK_PUMPKIN);
+
+                        entries.add(TeadBlocks.CLAYISH_MUD);
+                        entries.add(TeadBlocks.SLUDGE);
+                        entries.add(TeadBlocks.DRY_DIRT);
+                        entries.add(TeadBlocks.VERY_SPARSE_GRASS);
+                        entries.add(TeadBlocks.SPARSE_GRASS);
+                        entries.add(TeadBlocks.DRY_GRASS);
+                        entries.add(TeadBlocks.BROWN_DRY_GRASS);
+                        entries.add(TeadBlocks.DARK_BRICKS);
+                        entries.add(TeadBlocks.DARK_COBBLESTONE);
+                        entries.add(TeadBlocks.DIRTY_COBBLESTONE);
+                        entries.add(TeadBlocks.DIRTY_STONE_PLAQUE);
+                        entries.add(TeadBlocks.SANDY_COBBLESTONE);
+                        entries.add(TeadBlocks.VERY_SANDY_COBBLESTONE);
+                        entries.add(TeadBlocks.STONE_PLAQUE);
+                        entries.add(TeadBlocks.EMPTY_BOOKSHELF);
+                        entries.add(TeadBlocks.OLD_BOOKSHELF);
                     }).build());
     public static void registerItemGroups() {
         Tead.LOGGER.info("Registering mod items for " + Tead.MOD_ID);

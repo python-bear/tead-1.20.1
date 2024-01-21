@@ -28,8 +28,29 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.DEEPSLATE_RUBY_ORE)
                 .add(TeadBlocks.LEAD_ORE)
                 .add(TeadBlocks.BLOCK_OF_RUBY)
+                .add(TeadBlocks.DARK_BRICKS)
+                .add(TeadBlocks.DARK_COBBLESTONE)
+                .add(TeadBlocks.DIRTY_COBBLESTONE)
+                .add(TeadBlocks.DIRTY_STONE_PLAQUE)
+                .add(TeadBlocks.STONE_PLAQUE)
+                .add(TeadBlocks.SANDY_COBBLESTONE)
+                .add(TeadBlocks.VERY_SANDY_COBBLESTONE)
 
                 .add(TeadBlocks.GOLD_CHAIN);
+
+        getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
+                .add(TeadBlocks.CLAYISH_MUD)
+                .add(TeadBlocks.SLUDGE)
+                .add(TeadBlocks.SPARSE_GRASS)
+                .add(TeadBlocks.DRY_GRASS)
+                .add(TeadBlocks.BROWN_DRY_GRASS)
+                .add(TeadBlocks.VERY_SPARSE_GRASS)
+                .add(TeadBlocks.DRY_DIRT);
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(TeadBlocks.EMPTY_BOOKSHELF)
+                .add(TeadBlocks.OLD_BOOKSHELF)
+                .add(TeadBlocks.SICK_PUMPKIN);
 
         getOrCreateTagBuilder(TeadTags.Blocks.REFINED_BUILDING_BLOCKS)
                 .add(Blocks.STONECUTTER)

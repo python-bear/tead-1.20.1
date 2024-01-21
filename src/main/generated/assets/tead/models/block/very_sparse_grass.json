@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "tead:block/dry_dirt",
+    "east": "tead:block/dry_dirt",
+    "north": "tead:block/dry_dirt",
+    "particle": "tead:block/dry_dirt",
+    "south": "tead:block/dry_dirt",
+    "up": "tead:block/very_sparse_grass_top",
+    "west": "tead:block/dry_dirt"
+  }
+}

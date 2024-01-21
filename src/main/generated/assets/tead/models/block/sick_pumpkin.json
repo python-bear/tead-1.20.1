@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "tead:block/sick_pumpkin_top",
+    "east": "tead:block/sick_pumpkin_side",
+    "north": "tead:block/sick_pumpkin_side",
+    "particle": "tead:block/sick_pumpkin_side",
+    "south": "tead:block/sick_pumpkin_side",
+    "up": "tead:block/sick_pumpkin_top",
+    "west": "tead:block/sick_pumpkin_side"
+  }
+}
