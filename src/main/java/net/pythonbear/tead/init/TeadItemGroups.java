@@ -93,6 +93,10 @@ public class TeadItemGroups {
                         entries.add(TeadItems.OBSIDIAN_SWORD);
 
                         entries.add(TeadItems.SWIFTNESS_BOOTS);
+                        entries.add(TeadItems.GOLD_CHAINMAIL_HELMET);
+                        entries.add(TeadItems.GOLD_CHAINMAIL_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_CHAINMAIL_LEGGINGS);
+                        entries.add(TeadItems.GOLD_CHAINMAIL_BOOTS);
 
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);

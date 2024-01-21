@@ -11,9 +11,12 @@ import net.pythonbear.tead.Tead;
 import java.util.function.Supplier;
 
 public enum TeadArmorMaterials implements ArmorMaterial {
-    SWIFTNESS("swiftness", 10, new int[] {1, 3, 2, 1}, 4,
+    SWIFTNESS("swiftness", 10, new int[] {1, 2, 3, 1}, 4,
             SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0,
-            () -> Ingredient.ofItems(Items.LEATHER));
+            () -> Ingredient.ofItems(Items.LEATHER)),
+    GOLD_CHAIN("gold_chain", 7, new int[] {1, 2, 4, 1}, 25,
+    SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
+            () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN));
 
     private final String name;
     private final int durabilityMultiplier;

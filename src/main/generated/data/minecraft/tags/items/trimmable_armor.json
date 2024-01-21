@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "tead:swiftness_boots"
+    "tead:swiftness_boots",
+    "tead:gold_chainmail_helmet",
+    "tead:gold_chainmail_chestplate",
+    "tead:gold_chainmail_leggings",
+    "tead:gold_chainmail_boots"
   ]
 }

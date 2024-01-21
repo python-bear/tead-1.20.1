@@ -131,6 +131,14 @@ public class TeadItems {
             new FireboltThrower(new FabricItemSettings().maxDamage(427)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_HELMET = registerItem("gold_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_CHESTPLATE = registerItem("gold_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_LEGGINGS = registerItem("gold_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",
