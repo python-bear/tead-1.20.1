@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_clay": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:clay"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mud": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:mud"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "tead:clayish_mud"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mud",
+      "has_clay",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "tead:clayish_mud"
+    ]
+  },
+  "sends_telemetry_event": false
+}

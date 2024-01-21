@@ -53,6 +53,21 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.SICK_PUMPKIN);
 
         getOrCreateTagBuilder(TeadTags.Blocks.REFINED_BUILDING_BLOCKS)
+                .add(TeadBlocks.BLOCK_OF_LEAD)
+                .add(TeadBlocks.BLOCK_OF_GALENA)
+                .add(TeadBlocks.RUBY_ORE)
+                .add(TeadBlocks.DEEPSLATE_RUBY_ORE)
+                .add(TeadBlocks.LEAD_ORE)
+                .add(TeadBlocks.BLOCK_OF_RUBY)
+                .add(TeadBlocks.DARK_BRICKS)
+                .add(TeadBlocks.DARK_COBBLESTONE)
+                .add(TeadBlocks.DIRTY_COBBLESTONE)
+                .add(TeadBlocks.DIRTY_STONE_PLAQUE)
+                .add(TeadBlocks.STONE_PLAQUE)
+                .add(TeadBlocks.SANDY_COBBLESTONE)
+                .add(TeadBlocks.VERY_SANDY_COBBLESTONE)
+                .add(TeadBlocks.GOLD_CHAIN)
+
                 .add(Blocks.STONECUTTER)
                 .add(Blocks.ANVIL)
                 .add(Blocks.CHIPPED_ANVIL)

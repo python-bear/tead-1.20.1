@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "tead:dry_dirt"
+    },
+    {
+      "item": "minecraft:grass_block"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "tead:dry_grass"
+  }
+}

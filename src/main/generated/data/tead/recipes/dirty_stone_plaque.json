@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:dirt"
+    },
+    {
+      "item": "tead:stone_plaque"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "tead:dirty_stone_plaque"
+  }
+}

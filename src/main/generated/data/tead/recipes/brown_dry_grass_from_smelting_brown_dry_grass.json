@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 80,
+  "experience": 3.0,
+  "group": "brown_dry_grass",
+  "ingredient": {
+    "item": "tead:brown_dry_grass"
+  },
+  "result": "tead:brown_dry_grass"
+}

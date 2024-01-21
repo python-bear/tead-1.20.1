@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-21T15:51:06.1088586	tead/Model Definitions
+// 1.20.1	2024-01-21T16:56:02.9130288	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 9ce48b5cf00c0c19f7b7ba625ecde5fd23af242d assets\tead\models\item\grenade.json
 c07d883f508802257129084ec181e665ba1409eb assets\tead\models\item\swiftness_boots_diamond_trim.json
@@ -79,8 +79,8 @@ ecdd557bc0ccc7dc478dd2173765795da6f7c96a assets\tead\models\block\stone_plaque.j
 ae1143863dfa3f3d4551e111f441ef9e78771e62 assets\tead\models\item\lightning_staff.json
 427bad25a1497f253508ac5ac632c62e59999c43 assets\tead\blockstates\dark_bricks.json
 797c0b273cf3916b97039181236f803e5199068e assets\tead\models\item\gold_chainmail_boots_diamond_trim.json
-6e1ac50db036ac42fbb253c24798761b8d7dc2b8 assets\tead\models\block\clayish_mud.json
 2c030bacece812b4260571323b5e1df35e87a449 assets\tead\models\item\gold_chainmail_leggings_amethyst_trim.json
+6e1ac50db036ac42fbb253c24798761b8d7dc2b8 assets\tead\models\block\clayish_mud.json
 48594953b737e00bf3c8955dc7f874fbaa8aae70 assets\tead\models\item\empty_bookshelf.json
 eebf345df98430619a31e9d1452911d46f6f9f26 assets\tead\models\item\clayish_mud.json
 fa1052412e527ea141720decf167ebb8d27eebfe assets\tead\models\item\sick_pumpkin.json
@@ -183,14 +183,14 @@ ce2e4ab5c4e3ba3b3bccc4dad4b5940f6762fb6c assets\tead\blockstates\stone_plaque.js
 26f7f818ca07ea76a1454eecc396e2ff172d6d79 assets\tead\models\item\gold_chainmail_helmet_iron_trim.json
 3abe5caabd5e5d2d162f861a4a94a534967ebf61 assets\tead\blockstates\brown_dry_grass.json
 3e066de5e072d0e1003d970207eeaff976730ac9 assets\tead\models\item\jerky.json
-022ced3c3a9be8a2248f0365c4d73a8ab9ae5db2 assets\tead\models\item\gold_chainmail_leggings_lapis_trim.json
 1cd4832177f13cc0d4cd3658c8d2abbad3c6114e assets\tead\blockstates\sludge.json
+022ced3c3a9be8a2248f0365c4d73a8ab9ae5db2 assets\tead\models\item\gold_chainmail_leggings_lapis_trim.json
 5d0b3539bee94ee24839ac3d680d7940c74d0b84 assets\tead\models\block\sparse_grass.json
 bb7326361d25aeac967bbc5574ed6cd5e5dee3f4 assets\tead\models\item\block_of_ruby.json
 df38f90b1ba47d7804910c317fd9497c82c7f125 assets\tead\blockstates\ruby_ore.json
 46bb9e099a6e39be261e6cc213aebfd8567595ae assets\tead\models\item\gold_chainmail_boots_redstone_trim.json
-9f70e8969029c61e7ab094ea97a361b91c9f5c43 assets\tead\models\item\swiftness_boots_emerald_trim.json
 d57cb769fd7869ef8d17827782ab72814b77096f assets\tead\blockstates\sandy_cobblestone.json
+9f70e8969029c61e7ab094ea97a361b91c9f5c43 assets\tead\models\item\swiftness_boots_emerald_trim.json
 8d460e8791cdf6330a59365886efa6c0316f34a7 assets\tead\models\item\sandy_cobblestone.json
 088f9130b090f76dee2311b5bb1fb0cc719c5531 assets\tead\models\item\lead_dagger.json
 ca9188f1c0f71c958de6583c89c9b43756eb34cb assets\tead\models\block\lead_ore.json

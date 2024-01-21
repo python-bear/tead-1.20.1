@@ -8,6 +8,7 @@ import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.StonecuttingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
@@ -31,6 +32,9 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
             TeadBlocks.CLAYISH_MUD,
             TeadItems.MUDDY_CLAY_BALL
     );
+    private static final List<ItemConvertible> BROWN_DRY_GRASS_SMELTABLES = List.of(
+            TeadBlocks.BROWN_DRY_GRASS
+    );
 
     public TeadRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -50,6 +54,8 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 150, "dark_brick");
         offerBlasting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
                 80,  "dark_brick");
+        offerSmelting(exporter, BROWN_DRY_GRASS_SMELTABLES, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.BROWN_DRY_GRASS,
+                3, 80, "brown_dry_grass");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC,
                 TeadBlocks.BLOCK_OF_RUBY);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA,
@@ -976,6 +982,122 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, TeadItems.DARK_BRICK, 4)
                 .input(TeadBlocks.DARK_BRICKS)
                 .criterion(hasItem(TeadBlocks.DARK_BRICKS), conditionsFromItem(TeadBlocks.DARK_BRICKS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.CLAYISH_MUD, 2)
+                .input(Blocks.MUD)
+                .input(Blocks.CLAY)
+                .criterion(hasItem(Blocks.MUD), conditionsFromItem(Blocks.MUD))
+                .criterion(hasItem(Blocks.CLAY), conditionsFromItem(Blocks.CLAY))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadItems.MUDDY_CLAY_BALL, 4)
+                .input(Blocks.MUD)
+                .input(Items.CLAY_BALL)
+                .input(Items.CLAY_BALL)
+                .input(Items.CLAY_BALL)
+                .input(Items.CLAY_BALL)
+                .criterion(hasItem(Blocks.MUD), conditionsFromItem(Blocks.MUD))
+                .criterion(hasItem(Items.CLAY_BALL), conditionsFromItem(Items.CLAY_BALL))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.EMPTY_BOOKSHELF, 1)
+                .pattern("###")
+                .pattern("%%%")
+                .pattern("###")
+                .input('#', ItemTags.PLANKS)
+                .input('%', ItemTags.WOODEN_SLABS)
+                .criterion(hasItem(Items.ACACIA_SLAB), conditionsFromItem(Items.ACACIA_SLAB))
+                .criterion(hasItem(Items.BAMBOO_SLAB), conditionsFromItem(Items.BAMBOO_SLAB))
+                .criterion(hasItem(Items.BIRCH_SLAB), conditionsFromItem(Items.BIRCH_SLAB))
+                .criterion(hasItem(Items.CHERRY_SLAB), conditionsFromItem(Items.CHERRY_SLAB))
+                .criterion(hasItem(Items.CRIMSON_SLAB), conditionsFromItem(Items.CRIMSON_SLAB))
+                .criterion(hasItem(Items.JUNGLE_SLAB), conditionsFromItem(Items.JUNGLE_SLAB))
+                .criterion(hasItem(Items.DARK_OAK_SLAB), conditionsFromItem(Items.DARK_OAK_SLAB))
+                .criterion(hasItem(Items.MANGROVE_SLAB), conditionsFromItem(Items.MANGROVE_SLAB))
+                .criterion(hasItem(Items.OAK_SLAB), conditionsFromItem(Items.OAK_SLAB))
+                .criterion(hasItem(Items.SPRUCE_SLAB), conditionsFromItem(Items.SPRUCE_SLAB))
+                .criterion(hasItem(Items.WARPED_SLAB), conditionsFromItem(Items.WARPED_SLAB))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.OLD_BOOKSHELF, 1)
+                .pattern("###")
+                .pattern("%$%")
+                .pattern("###")
+                .input('#', ItemTags.PLANKS)
+                .input('%', Items.BOOK)
+                .input('$', Items.COBWEB)
+                .criterion(hasItem(Items.BOOK), conditionsFromItem(Items.BOOK))
+                .criterion(hasItem(Items.COBWEB), conditionsFromItem(Items.COBWEB))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.SLUDGE, 2)
+                .input(Blocks.MUD)
+                .input(Blocks.COBBLESTONE)
+                .criterion(hasItem(Blocks.MUD), conditionsFromItem(Blocks.MUD))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.STONE_PLAQUE, 3)
+                .pattern(" # ")
+                .pattern("#%#")
+                .pattern(" # ")
+                .input('#', Items.STONE_BRICK_SLAB)
+                .input('%', Items.CHISELED_STONE_BRICKS)
+                .criterion(hasItem(Items.STONE_BRICK_SLAB), conditionsFromItem(Items.STONE_BRICK_SLAB))
+                .criterion(hasItem(Items.CHISELED_STONE_BRICKS), conditionsFromItem(Items.CHISELED_STONE_BRICKS))
+                .offerTo(exporter);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.STONE_PLAQUE,
+                Blocks.CHISELED_STONE_BRICKS);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DIRTY_STONE_PLAQUE, 2)
+                .input(Blocks.DIRT)
+                .input(TeadBlocks.STONE_PLAQUE)
+                .criterion(hasItem(TeadBlocks.STONE_PLAQUE), conditionsFromItem(TeadBlocks.STONE_PLAQUE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DIRTY_COBBLESTONE, 2)
+                .input(Blocks.DIRT)
+                .input(Blocks.COBBLESTONE)
+                .criterion(hasItem(Blocks.COBBLESTONE), conditionsFromItem(Blocks.COBBLESTONE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.SANDY_COBBLESTONE, 2)
+                .input(Blocks.SAND)
+                .input(Blocks.COBBLESTONE)
+                .criterion(hasItem(Blocks.COBBLESTONE), conditionsFromItem(Blocks.COBBLESTONE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.VERY_SANDY_COBBLESTONE, 2)
+                .input(Blocks.SAND)
+                .input(Blocks.SAND)
+                .input(Blocks.COBBLESTONE)
+                .criterion(hasItem(Blocks.COBBLESTONE), conditionsFromItem(Blocks.COBBLESTONE))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DARK_COBBLESTONE, 1)
+                .pattern(" # ")
+                .pattern("#%#")
+                .pattern(" # ")
+                .input('#', Items.BLACK_DYE)
+                .input('%', Items.COBBLESTONE)
+                .criterion(hasItem(Items.BLACK_DYE), conditionsFromItem(Items.BLACK_DYE))
+                .criterion(hasItem(Items.COBBLESTONE), conditionsFromItem(Items.COBBLESTONE))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DRY_DIRT, 2)
+                .input(Blocks.SAND)
+                .input(Blocks.DIRT)
+                .criterion(hasItem(Blocks.SAND), conditionsFromItem(Blocks.SAND))
+                .criterion(hasItem(Blocks.DIRT), conditionsFromItem(Blocks.DIRT))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.SPARSE_GRASS, 2)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(Items.GRASS)
+                .criterion(hasItem(TeadBlocks.DRY_DIRT), conditionsFromItem(TeadBlocks.DRY_DIRT))
+                .criterion(hasItem(Items.GRASS), conditionsFromItem(Items.GRASS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.VERY_SPARSE_GRASS, 3)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(Items.GRASS)
+                .criterion(hasItem(TeadBlocks.DRY_DIRT), conditionsFromItem(TeadBlocks.DRY_DIRT))
+                .criterion(hasItem(Items.GRASS), conditionsFromItem(Items.GRASS))
+                .offerTo(exporter);
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DRY_GRASS, 2)
+                .input(TeadBlocks.DRY_DIRT)
+                .input(Blocks.GRASS_BLOCK)
+                .criterion(hasItem(TeadBlocks.DRY_DIRT), conditionsFromItem(TeadBlocks.DRY_DIRT))
+                .criterion(hasItem(Blocks.GRASS_BLOCK), conditionsFromItem(Blocks.GRASS_BLOCK))
                 .offerTo(exporter);
     }
 }
