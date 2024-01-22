@@ -11,6 +11,7 @@ import net.pythonbear.tead.sound.TeadSounds;
 import net.pythonbear.tead.world.gen.TeadWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import software.bernie.geckolib.GeckoLib;
 
 public class Tead implements ModInitializer {
 	public static final String MOD_ID = "tead";
@@ -18,6 +19,8 @@ public class Tead implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		GeckoLib.initialize();
+
 		UseBlockCallback.EVENT.register(UseBlockHandler::handle);
 		PlayerBlockBreakEvents.AFTER.register(PlayerBlockBreakHandler::handle);
 

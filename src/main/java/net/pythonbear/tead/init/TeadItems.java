@@ -145,6 +145,16 @@ public class TeadItems {
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item IRON_STALWART_HELMET = registerItem("iron_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.IRON_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item DIAMOND_STALWART_HELMET = registerItem("diamond_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.DIAMOND_STALWART, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item NETHERITE_STALWART_HELMET = registerItem("netherite_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.NETHERITE_STALWART, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",

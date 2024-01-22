@@ -216,12 +216,15 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
-
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.SWIFTNESS_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_LEGGINGS));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_BOOTS));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_STALWART_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_STALWART_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_STALWART_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_STALWART_HELMET));
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);

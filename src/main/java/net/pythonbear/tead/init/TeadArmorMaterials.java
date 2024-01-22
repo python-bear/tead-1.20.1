@@ -2,6 +2,7 @@ package net.pythonbear.tead.init;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.ArmorMaterials;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
@@ -14,6 +15,30 @@ public enum TeadArmorMaterials implements ArmorMaterial {
     SWIFTNESS("swiftness", 10, new int[] {1, 2, 3, 1}, 4,
             SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0,
             () -> Ingredient.ofItems(Items.LEATHER)),
+    GOLD_STALWART("gold_stalwart", 7, new int[] {1, 3, 5, 2}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0, 0,
+            () -> Ingredient.ofItems(Items.GOLD_INGOT)),
+    IRON_STALWART("iron_stalwart", 15, new int[] {2, 5, 6, 2}, 9,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0,
+            () -> Ingredient.ofItems(Items.IRON_INGOT)),
+    DIAMOND_STALWART("diamond_stalwart", 33, new int[] {3, 6, 8, 3}, 10,
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2, 0,
+            () -> Ingredient.ofItems(Items.DIAMOND)),
+    NETHERITE_STALWART("netherite_stalwart", 37, new int[] {3, 6, 8, 3}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3, 0.1f,
+            () -> Ingredient.ofItems(Items.NETHERITE_INGOT)),
+    GOLD_ROYAL("gold_royal", 7, new int[] {1, 3, 5, 2}, 25,
+            SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0, 0,
+            () -> Ingredient.ofItems(Items.GOLD_INGOT)),
+    IRON_ROYAL("iron_royal", 15, new int[] {2, 5, 6, 2}, 9,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0, 0,
+            () -> Ingredient.ofItems(Items.IRON_INGOT)),
+    DIAMOND_ROYAL("diamond_royal", 33, new int[] {3, 6, 8, 3}, 10,
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2, 0,
+            () -> Ingredient.ofItems(Items.DIAMOND)),
+    NETHERITE_ROYAL("netherite_royal", 37, new int[] {3, 6, 8, 3}, 15,
+            SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3, 0.1f,
+            () -> Ingredient.ofItems(Items.NETHERITE_INGOT)),
     GOLD_CHAIN("gold_chain", 7, new int[] {1, 2, 4, 1}, 25,
     SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
             () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN));

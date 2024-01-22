@@ -100,6 +100,10 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_CHAINMAIL_CHESTPLATE);
                         entries.add(TeadItems.GOLD_CHAINMAIL_LEGGINGS);
                         entries.add(TeadItems.GOLD_CHAINMAIL_BOOTS);
+                        entries.add(TeadItems.GOLD_STALWART_HELMET);
+                        entries.add(TeadItems.IRON_STALWART_HELMET);
+                        entries.add(TeadItems.DIAMOND_STALWART_HELMET);
+                        entries.add(TeadItems.NETHERITE_STALWART_HELMET);
 
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
