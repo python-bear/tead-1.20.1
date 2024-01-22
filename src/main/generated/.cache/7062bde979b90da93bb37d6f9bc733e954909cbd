@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-22T11:52:58.9936902	tead/Block Loot Tables
+// 1.20.1	2024-01-22T17:57:45.1602387	tead/Block Loot Tables
 58a52e751a1a99f81be70af5c1035edcfa01bd89 data\tead\loot_tables\blocks\clayish_mud.json
 921ac0bd13ba01497f064a862b7d0d7e921dd6ad data\tead\loot_tables\blocks\sick_pumpkin.json
 af455ebaddb213c26102a3ddb413b5865ab94560 data\tead\loot_tables\blocks\ruby_ore.json
@@ -10,8 +10,8 @@ a554d110681080ba8938e6070e2f79b67f144db8 data\tead\loot_tables\blocks\sandy_cobb
 1d6382ff683993db839e2b230bc268542efb115c data\tead\loot_tables\blocks\block_of_ruby.json
 3e1a08bda0fb83234114f78658a50d0e9a8edd9a data\tead\loot_tables\blocks\brown_dry_grass.json
 4d29ce526cb5fc23958ace9f6ba0f9eb7150b717 data\tead\loot_tables\blocks\sparse_grass.json
-aa4459890e8211d32c443514972b07c7ad02708e data\tead\loot_tables\blocks\dirty_stone_plaque.json
 15b069c8bcca778679e2f999985565e5eb24c8a6 data\tead\loot_tables\blocks\block_of_galena.json
+aa4459890e8211d32c443514972b07c7ad02708e data\tead\loot_tables\blocks\dirty_stone_plaque.json
 579db7732e8913f3b95d54fe74ae29e2eb3f630d data\tead\loot_tables\blocks\sludge.json
 b7bdf6c99e5ba47adfe7a6c8e2437f007303879a data\tead\loot_tables\blocks\very_sparse_grass.json
 cfa3cc8c0d19d2a51aa9946c206f55b437d8bfe6 data\tead\loot_tables\blocks\dark_bricks.json

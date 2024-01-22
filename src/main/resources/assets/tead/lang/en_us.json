@@ -2,6 +2,8 @@
   "itemgroup.tead": "Tead",
 
   "item.tead.ruby": "Ruby",
+  "item.tead.fabric": "Fabric",
+  "item.tead.jerky": "Jerky",
   "item.tead.obsidian_shard": "Obsidian Shard",
   "item.tead.galena": "Galena",
   "item.tead.handle": "Handle",
@@ -55,6 +57,7 @@
   "item.tead.iron_double_axe": "Iron Doubleaxe",
   "item.tead.iron_hammer": "Iron Great Hammer",
   "item.tead.iron_sickle": "Iron Sickle",
+  "item.tead.iron_tempest_knife": "Iron Tempest Knife",
   "item.tead.iron_dagger": "Iron Dagger",
   "item.tead.iron_claymore": "Iron Claymore",
   "item.tead.diamond_double_axe": "Diamond Doubleaxe",
@@ -90,6 +93,10 @@
   "item.tead.iron_stalwart_helmet": "Iron Great Helm",
   "item.tead.diamond_stalwart_helmet": "Diamond Great Helm",
   "item.tead.netherite_stalwart_helmet": "Netherite Great Helm",
+  "item.tead.gold_highland_helmet": "Gold Highland Helm",
+  "item.tead.iron_highland_helmet": "Iron Highland Helm",
+  "item.tead.diamond_highland_helmet": "Diamond Highland Helm",
+  "item.tead.netherite_highland_helmet": "Netherite Highland Helm",
 
   "item.tead.music_disc_battle_hymn": "Battle Music Disc",
   "item.tead.music_disc_battle_hymn.desc": "ManO'War - Battle Hymn",

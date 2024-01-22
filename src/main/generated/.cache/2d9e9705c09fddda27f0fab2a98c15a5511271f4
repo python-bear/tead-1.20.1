@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-22T11:52:58.9816868	tead/Recipes
+// 1.20.1	2024-01-22T17:57:45.1462373	tead/Recipes
 6f18d2136e9b4c5871b93ee83bf36e8091f05638 data\tead\advancements\recipes\combat\fabric_4.json
 9ca942f591b1c39328dd7b377fb2623bbd80eef6 data\tead\advancements\recipes\combat\jerky_12.json
 410de2b77025aba48844f2d86d3a6107967933fb data\tead\recipes\gold_sickle.json
@@ -26,8 +26,8 @@ c4acf801b13f7987a244db615a6e43eb01a9a6ce data\tead\recipes\jerky_12.json
 09f4a2d5f3f3acb1bbd3bd3b27fcc5e30736552f data\tead\recipes\wood_sickle.json
 b897670391f286d22832d471489a44223465368f data\tead\recipes\handle_1.json
 1c096ba71e826c5146551793ef771ee86a57f5c2 data\tead\advancements\recipes\combat\fabric_6.json
-2b305998d4be196b07074cecb672aee59770d599 data\tead\advancements\recipes\building_blocks\ruby.json
 dc234b3411b6cf30c381684aa65400cdeebf6772 data\tead\recipes\lead_ingot_from_blasting_galena.json
+2b305998d4be196b07074cecb672aee59770d599 data\tead\advancements\recipes\building_blocks\ruby.json
 bf21e5848e1b5976a765b5ad357e84553556b312 data\tead\recipes\lead_double_axe.json
 b1b487d7e85f1a98d3e62b5a26bffcaa712164eb data\tead\recipes\lead_hoe.json
 ac6885529b6489a404e6a5655c3dee8084b394e5 data\tead\recipes\dirty_cobblestone.json
@@ -270,8 +270,8 @@ ddd74ce8a565f85b0e571b3f39a5fb90c73d5dfb data\tead\advancements\recipes\tools\di
 eccbbeaedc52640a72c6ea2cfca36f8e477f1c00 data\tead\recipes\stone_plaque_from_chiseled_stone_bricks_stonecutting.json
 0da6385eeb6056ae6507a6ecb220c6ed77df93b7 data\tead\advancements\recipes\combat\obsidian_arrow_2.json
 abbbc8c0b0450247db9b13fd269b97f7f3fdd366 data\tead\advancements\recipes\tools\lead_sickle.json
-e3d0c2cb20d36e32ff5ef86fd2c9bdde3f6e13b1 data\tead\recipes\gold_chainmail_leggings.json
 e50c9423261060094e4e0abb8d0eb2b3ef87550d data\tead\advancements\recipes\tools\gold_chainmail_helmet.json
+e3d0c2cb20d36e32ff5ef86fd2c9bdde3f6e13b1 data\tead\recipes\gold_chainmail_leggings.json
 342a9c824ef6ab524176582602d2bc901d95bc44 data\tead\advancements\recipes\combat\jerky_3.json
 52bb3e10d062e4cadd696bf9bdf3e0bd7350cb59 data\tead\advancements\recipes\tools\iron_sickle.json
 c61eb38a447b0eee67158017d28bdd77d208866d data\tead\recipes\boring_arrow_2.json

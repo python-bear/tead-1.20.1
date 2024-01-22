@@ -24,7 +24,11 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.GOLD_STALWART_HELMET)
                 .add(TeadItems.IRON_STALWART_HELMET)
                 .add(TeadItems.DIAMOND_STALWART_HELMET)
-                .add(TeadItems.NETHERITE_STALWART_HELMET);
+                .add(TeadItems.NETHERITE_STALWART_HELMET)
+                .add(TeadItems.GOLD_HIGHLAND_HELMET)
+                .add(TeadItems.IRON_HIGHLAND_HELMET)
+                .add(TeadItems.DIAMOND_HIGHLAND_HELMET)
+                .add(TeadItems.NETHERITE_HIGHLAND_HELMET);
 
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(TeadItems.MUSIC_DISC_BATTLE_HYMN)
