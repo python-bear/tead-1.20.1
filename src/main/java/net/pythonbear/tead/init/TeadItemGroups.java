@@ -104,6 +104,10 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_STALWART_HELMET);
                         entries.add(TeadItems.DIAMOND_STALWART_HELMET);
                         entries.add(TeadItems.NETHERITE_STALWART_HELMET);
+                        entries.add(TeadItems.GOLD_ROYAL_HELMET);
+                        entries.add(TeadItems.IRON_ROYAL_HELMET);
+                        entries.add(TeadItems.DIAMOND_ROYAL_HELMET);
+                        entries.add(TeadItems.NETHERITE_ROYAL_HELMET);
 
                         entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
                         entries.add(TeadItems.MUSIC_DISC_DAY_ONE);

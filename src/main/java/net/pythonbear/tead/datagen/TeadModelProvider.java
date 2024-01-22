@@ -225,6 +225,10 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_STALWART_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_STALWART_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_STALWART_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_ROYAL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_ROYAL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_ROYAL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_ROYAL_HELMET));
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);

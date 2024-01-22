@@ -155,6 +155,16 @@ public class TeadItems {
     public static final Item NETHERITE_STALWART_HELMET = registerItem("netherite_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.NETHERITE_STALWART, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
+    public static final Item GOLD_ROYAL_HELMET = registerItem("gold_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.GOLD_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item IRON_ROYAL_HELMET = registerItem("iron_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.IRON_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item DIAMOND_ROYAL_HELMET = registerItem("diamond_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.DIAMOND_ROYAL, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item NETHERITE_ROYAL_HELMET = registerItem("netherite_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.NETHERITE_ROYAL, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",
