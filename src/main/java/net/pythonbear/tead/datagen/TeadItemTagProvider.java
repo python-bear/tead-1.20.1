@@ -16,14 +16,12 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(TeadItems.SWIFTNESS_BOOTS)
                 .add(TeadItems.GOLD_CHAINMAIL_HELMET)
                 .add(TeadItems.GOLD_CHAINMAIL_CHESTPLATE)
                 .add(TeadItems.GOLD_CHAINMAIL_LEGGINGS)
                 .add(TeadItems.GOLD_CHAINMAIL_BOOTS)
                 .add(TeadItems.ROBE_HELMET)
                 .add(TeadItems.ROBE_CHESTPLATE)
-                .add(TeadItems.ROBE_LEGGINGS)
                 .add(TeadItems.ROBE_BOOTS)
                 .add(TeadItems.GOLD_STALWART_HELMET)
                 .add(TeadItems.IRON_STALWART_HELMET)
@@ -32,7 +30,19 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.GOLD_HIGHLAND_HELMET)
                 .add(TeadItems.IRON_HIGHLAND_HELMET)
                 .add(TeadItems.DIAMOND_HIGHLAND_HELMET)
-                .add(TeadItems.NETHERITE_HIGHLAND_HELMET);
+                .add(TeadItems.NETHERITE_HIGHLAND_HELMET)
+                .add(TeadItems.GOLD_PLATE_HELMET)
+                .add(TeadItems.GOLD_PLATE_CHESTPLATE)
+                .add(TeadItems.GOLD_PLATE_BOOTS)
+                .add(TeadItems.IRON_PLATE_HELMET)
+                .add(TeadItems.IRON_PLATE_CHESTPLATE)
+                .add(TeadItems.IRON_PLATE_BOOTS)
+                .add(TeadItems.DIAMOND_PLATE_HELMET)
+                .add(TeadItems.DIAMOND_PLATE_CHESTPLATE)
+                .add(TeadItems.DIAMOND_PLATE_BOOTS)
+                .add(TeadItems.NETHERITE_PLATE_HELMET)
+                .add(TeadItems.NETHERITE_PLATE_CHESTPLATE)
+                .add(TeadItems.NETHERITE_PLATE_BOOTS);
 
         getOrCreateTagBuilder(ItemTags.MUSIC_DISCS)
                 .add(TeadItems.MUSIC_DISC_BATTLE_HYMN)

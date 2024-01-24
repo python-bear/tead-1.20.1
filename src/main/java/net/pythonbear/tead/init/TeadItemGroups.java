@@ -102,7 +102,6 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_CHAINMAIL_BOOTS);
                         entries.add(TeadItems.ROBE_HELMET);
                         entries.add(TeadItems.ROBE_CHESTPLATE);
-                        entries.add(TeadItems.ROBE_LEGGINGS);
                         entries.add(TeadItems.ROBE_BOOTS);
 //                        entries.add(TeadItems.GOLD_STALWART_HELMET);
 //                        entries.add(TeadItems.IRON_STALWART_HELMET);

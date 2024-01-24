@@ -17,6 +17,18 @@
     "tead:gold_highland_helmet",
     "tead:iron_highland_helmet",
     "tead:diamond_highland_helmet",
-    "tead:netherite_highland_helmet"
+    "tead:netherite_highland_helmet",
+    "tead:gold_plate_helmet",
+    "tead:gold_plate_chestplate",
+    "tead:gold_plate_boots",
+    "tead:iron_plate_helmet",
+    "tead:iron_plate_chestplate",
+    "tead:iron_plate_boots",
+    "tead:diamond_plate_helmet",
+    "tead:diamond_plate_chestplate",
+    "tead:diamond_plate_boots",
+    "tead:netherite_plate_helmet",
+    "tead:netherite_plate_chestplate",
+    "tead:netherite_plate_boots"
   ]
 }

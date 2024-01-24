@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-24T12:29:08.0359528	tead/Model Definitions
+// 1.20.1	2024-01-24T14:54:29.7156201	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 9ce48b5cf00c0c19f7b7ba625ecde5fd23af242d assets\tead\models\item\grenade.json
 88d7d9edfbc905db45cc776a0773f5f1477b721c assets\tead\models\item\netherite_royal_helmet_amethyst_trim.json
@@ -103,8 +103,8 @@ be035de9630702f153bdcf601d2039fafe73fc3b assets\tead\models\item\iron_highland_h
 0ea895a2b60efdc3f637d2a48827f1a8570e669d assets\tead\models\item\netherite_stalwart_helmet_emerald_trim.json
 c9ff6359827e857ffd84d6c27c50b100a151bd04 assets\tead\models\item\iron_hammer.json
 226f322700c6135aa7707a58d6ed9fe466856776 assets\tead\models\item\diamond_claymore.json
-9373d298c88ff119726ab07d420d5426d1498e8e assets\tead\models\item\gold_stalwart_helmet_emerald_trim.json
 dc7d1212dba46024bd52bae64df6b6d8dbf66362 assets\tead\models\item\music_disc_never_gonna_give_you_up.json
+9373d298c88ff119726ab07d420d5426d1498e8e assets\tead\models\item\gold_stalwart_helmet_emerald_trim.json
 2095734bd8b65fb10692ad73a4250addc3ef53d4 assets\tead\models\item\brown_dry_grass.json
 5c75865d827ff0ebbb6888598927270461a5388c assets\tead\models\block\sick_pumpkin.json
 5876491947e777a7a2beb6cea05ef1a68b71e4bd assets\tead\models\item\gold_double_axe.json
@@ -137,8 +137,8 @@ eee67c3432ab3afd96be5ca838c27e4e32df4590 assets\tead\models\item\diamond_highlan
 60f8930d2fff357a95243d5b6b118e868cac407c assets\tead\models\item\netherite_stalwart_helmet_lapis_trim.json
 332dcb67c9d2cc3a8844c0c08ef2d550308c35ba assets\tead\models\item\iron_highland_helmet.json
 eebf345df98430619a31e9d1452911d46f6f9f26 assets\tead\models\item\clayish_mud.json
-c947a6443d8797c8542a40e19f4f24072ea03161 assets\tead\models\item\netherite_highland_helmet_iron_trim.json
 459a580bbd499d3b5902d7e364ed026936c09573 assets\tead\models\item\obsidian_sword.json
+c947a6443d8797c8542a40e19f4f24072ea03161 assets\tead\models\item\netherite_highland_helmet_iron_trim.json
 fa1052412e527ea141720decf167ebb8d27eebfe assets\tead\models\item\sick_pumpkin.json
 04239af6dca29764685fd6a5a0f90e839a4bc6f4 assets\tead\blockstates\very_sparse_grass.json
 1859a8d74e98dfa7c4172e30dfa59cc86c73309c assets\tead\models\item\stone_plaque.json

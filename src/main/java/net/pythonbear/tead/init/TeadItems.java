@@ -149,8 +149,6 @@ public class TeadItems {
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item ROBE_CHESTPLATE = registerItem("robe_chestplate",
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item ROBE_LEGGINGS = registerItem("robe_leggings",
-            new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item ROBE_BOOTS = registerItem("robe_boots",
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",

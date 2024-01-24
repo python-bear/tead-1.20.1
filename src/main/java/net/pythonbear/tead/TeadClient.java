@@ -23,7 +23,6 @@ public class TeadClient implements ClientModInitializer {
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,
-                TeadItems.ROBE_LEGGINGS,
                 TeadItems.ROBE_HELMET,
                 TeadItems.ROBE_CHESTPLATE,
                 TeadItems.GOLD_PLATE_HELMET,
