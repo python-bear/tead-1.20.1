@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.DyeableArmorItem;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
@@ -233,6 +234,18 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_ROYAL_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_ROYAL_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_ROYAL_HELMET));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_PLATE_HELMET));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_PLATE_CHESTPLATE));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_PLATE_BOOTS));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_PLATE_HELMET));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_PLATE_CHESTPLATE));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.IRON_PLATE_BOOTS));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_PLATE_HELMET));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_PLATE_CHESTPLATE));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_PLATE_BOOTS));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_PLATE_HELMET));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_PLATE_CHESTPLATE));
+//        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.NETHERITE_PLATE_BOOTS));
 
         itemModelGenerator.register(TeadItems.MUSIC_DISC_BATTLE_HYMN, Models.GENERATED);
         itemModelGenerator.register(TeadItems.MUSIC_DISC_DAY_ONE, Models.GENERATED);

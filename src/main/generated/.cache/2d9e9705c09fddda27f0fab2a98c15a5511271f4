@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-22T17:57:45.1462373	tead/Recipes
+// 1.20.1	2024-01-24T12:29:08.0289504	tead/Recipes
 6f18d2136e9b4c5871b93ee83bf36e8091f05638 data\tead\advancements\recipes\combat\fabric_4.json
 9ca942f591b1c39328dd7b377fb2623bbd80eef6 data\tead\advancements\recipes\combat\jerky_12.json
 410de2b77025aba48844f2d86d3a6107967933fb data\tead\recipes\gold_sickle.json
@@ -231,8 +231,8 @@ d6a08dc6019485fbb39c858c88e4d24c70309216 data\tead\advancements\recipes\tools\ba
 729025d3a563d06b5d565e0a566ddab52c5acc3a data\tead\advancements\recipes\tools\lightning_staff.json
 1cfffb13b3c433e41129fa173209decbaa55ebdd data\tead\advancements\recipes\combat\netherite_double_axe_smithing.json
 207b39cb580314f9373b98843f5744b9eaabbd8b data\tead\advancements\recipes\building_blocks\stone_plaque.json
-10dd03f2ba7d25c26b2d38e2e58c4b38858093d5 data\tead\recipes\stone_plaque.json
 802e265bfad1f0c2df9206eed6e6402deeb8a15b data\tead\recipes\dirty_stone_plaque.json
+10dd03f2ba7d25c26b2d38e2e58c4b38858093d5 data\tead\recipes\stone_plaque.json
 1129c2af1ca845d4037efa2b1851e2c37cb35651 data\tead\advancements\recipes\tools\lead_double_axe.json
 0a9f332dab6ddc1f3778ff9ce9a0d2b4933dce42 data\tead\advancements\recipes\combat\fabric_9.json
 72ed1d3e0fbea3e1ae0b9e5bfa11ab9467118fb0 data\tead\advancements\recipes\combat\jerky_8.json

@@ -145,6 +145,14 @@ public class TeadItems {
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item ROBE_HELMET = registerItem("robe_helmet",
+            new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item ROBE_CHESTPLATE = registerItem("robe_chestplate",
+            new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item ROBE_LEGGINGS = registerItem("robe_leggings",
+            new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item ROBE_BOOTS = registerItem("robe_boots",
+            new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item IRON_STALWART_HELMET = registerItem("iron_stalwart_helmet",
@@ -175,6 +183,32 @@ public class TeadItems {
     public static final Item NETHERITE_ROYAL_HELMET = registerItem("netherite_royal_helmet",
             new RoyalArmorItem(TeadArmorMaterials.NETHERITE_ROYAL, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
+    public static final Item GOLD_PLATE_HELMET = registerItem("gold_plate_helmet",
+            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_PLATE_CHESTPLATE = registerItem("gold_plate_chestplate",
+            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GOLD_PLATE_BOOTS = registerItem("gold_plate_boots",
+            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item IRON_PLATE_HELMET = registerItem("iron_plate_helmet",
+            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item IRON_PLATE_CHESTPLATE = registerItem("iron_plate_chestplate",
+            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item IRON_PLATE_BOOTS = registerItem("iron_plate_boots",
+            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item DIAMOND_PLATE_HELMET = registerItem("diamond_plate_helmet",
+            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item DIAMOND_PLATE_CHESTPLATE = registerItem("diamond_plate_chestplate",
+            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item DIAMOND_PLATE_BOOTS = registerItem("diamond_plate_boots",
+            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item NETHERITE_PLATE_HELMET = registerItem("netherite_plate_helmet",
+            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item NETHERITE_PLATE_CHESTPLATE = registerItem("netherite_plate_chestplate",
+            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item NETHERITE_PLATE_BOOTS = registerItem("netherite_plate_boots",
+            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",
