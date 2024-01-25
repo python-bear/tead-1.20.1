@@ -1,6 +1,5 @@
 package net.pythonbear.tead.item;
 
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.DyeableArmorItem;
 import net.minecraft.item.DyeableItem;
