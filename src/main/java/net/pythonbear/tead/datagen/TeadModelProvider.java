@@ -169,6 +169,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.DARK_BRICK, Models.GENERATED);
 
         itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SHURIKEN, Models.GENERATED);
 
         itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_AXE, Models.HANDHELD);
@@ -177,7 +178,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.LEAD_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SWORD, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WOOD_HAMMER, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.STONE_HAMMER, Models.HANDHELD);
+//        itemModelGenerator.register(TeadItems.STONE_HAMMER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.GOLD_HAMMER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_HAMMER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.IRON_HAMMER, Models.HANDHELD);

@@ -36,6 +36,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_APPLE);
 
                         entries.add(TeadItems.GRENADE);
+                        entries.add(TeadItems.SHURIKEN);
 
                         entries.add(TeadItems.LIGHTNING_STAFF);
                         entries.add(TeadItems.QUARTERSTAFF);

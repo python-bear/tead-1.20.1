@@ -1,4 +1,4 @@
-package net.pythonbear.tead.entity.custom;
+package net.pythonbear.tead.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -8,40 +8,37 @@ import net.minecraft.item.Item;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.TeadEntities;
 import net.pythonbear.tead.init.TeadItems;
 
-public class GrenadeProjectileEntity extends ThrownItemEntity {
-    public GrenadeProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
+public class ShurikenProjectileEntity extends ThrownItemEntity {
+    public ShurikenProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public GrenadeProjectileEntity(LivingEntity livingEntity, World world) {
-        super(TeadEntities.GRENADE_PROJECTILE, livingEntity, world);
+    public ShurikenProjectileEntity(LivingEntity livingEntity, World world) {
+        super(TeadEntities.SHURIKEN_PROJECTILE, livingEntity, world);
     }
 
     @Override
     protected Item getDefaultItem() {
-        return TeadItems.GRENADE;
+        return TeadItems.SHURIKEN;
     }
 
     @Override
     public Packet<ClientPlayPacketListener> createSpawnPacket() {
         return new EntitySpawnS2CPacket(this);
     }
-
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         if (!this.getWorld().isClient()) {
-            this.getWorld().sendEntityStatus(this, (byte)3);
-            TntEntity tnt = new TntEntity(EntityType.TNT, this.getWorld());
-            tnt.setPosition(this.getPos());
-            tnt.setFuse(1);
-            this.getWorld().spawnEntity(tnt);
-            this.discard();
+            if (this.getWorld().getBlockState(blockHitResult.getBlockPos()).isTransparent(this.getWorld(),
+                    blockHitResult.getBlockPos())) {
+                this.discard();
+            }
         }
         super.onBlockHit(blockHitResult);
     }
@@ -49,11 +46,7 @@ public class GrenadeProjectileEntity extends ThrownItemEntity {
     @Override
     protected void onEntityHit(EntityHitResult entityHitResult) {
         if (!this.getWorld().isClient()) {
-            this.getWorld().sendEntityStatus(this, (byte)3);
-            TntEntity tnt = new TntEntity(EntityType.TNT, this.getWorld());
-            tnt.setPosition(this.getPos());
-            tnt.setFuse(1);
-            this.getWorld().spawnEntity(tnt);
+            entityHitResult.getEntity().damage(this.getDamageSources().thrown(this, this.getOwner()), 4);
             this.discard();
         }
         super.onEntityHit(entityHitResult);

@@ -20,6 +20,7 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, FlyingItemEntityRenderer::new);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,

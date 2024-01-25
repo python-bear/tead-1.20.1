@@ -65,7 +65,7 @@ public class LongBowItem extends BowItem implements Vanishable {
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(Items.ARROW);
         }
-        if ((double)(f = LongBowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
+        if ((double)(f = LongBowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
             return;
         }
         boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);

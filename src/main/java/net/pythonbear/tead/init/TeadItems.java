@@ -25,6 +25,7 @@ public class TeadItems {
     public static final Item LEAD_NUGGET = registerItem("lead_nugget", new Item(new FabricItemSettings()));
     public static final Item LEAD_BULLET = registerItem("lead_bullet", new Item(new FabricItemSettings()));
     public static final Item GRENADE = registerItem("grenade", new GrenadeItem(new FabricItemSettings()));
+    public static final Item SHURIKEN = registerItem("shuriken", new ShurikenItem(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
             new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
