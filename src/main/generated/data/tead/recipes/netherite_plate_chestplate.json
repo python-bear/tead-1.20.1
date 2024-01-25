@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_chestplate"
+    },
+    "$": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "$$$",
+    "%#%",
+    "$ $"
+  ],
+  "result": {
+    "item": "tead:netherite_plate_chestplate"
+  },
+  "show_notification": true
+}

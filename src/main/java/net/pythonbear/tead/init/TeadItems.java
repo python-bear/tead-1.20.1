@@ -153,32 +153,44 @@ public class TeadItems {
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_STALWART_CHESTPLATE = registerItem("gold_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item IRON_STALWART_HELMET = registerItem("iron_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.IRON_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item IRON_STALWART_CHESTPLATE = registerItem("iron_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.IRON_STALWART, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item DIAMOND_STALWART_HELMET = registerItem("diamond_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.DIAMOND_STALWART, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item DIAMOND_STALWART_CHESTPLATE = registerItem("diamond_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.DIAMOND_STALWART, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item NETHERITE_STALWART_HELMET = registerItem("netherite_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.NETHERITE_STALWART, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
+    public static final Item NETHERITE_STALWART_CHESTPLATE = registerItem("netherite_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.NETHERITE_STALWART, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item GOLD_HIGHLAND_HELMET = registerItem("gold_highland_helmet",
-            new HighlandArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item GOLD_HIGHLAND_CHESTPLATE = registerItem("gold_highland_chestplate",
             new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item IRON_HIGHLAND_HELMET = registerItem("iron_highland_helmet",
-            new HighlandArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new HighlandDyableArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item IRON_HIGHLAND_CHESTPLATE = registerItem("iron_highland_chestplate",
             new HighlandDyableArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item DIAMOND_HIGHLAND_HELMET = registerItem("diamond_highland_helmet",
-            new HighlandArmorItem(TeadArmorMaterials.DIAMOND_HIGHLAND, ArmorItem.Type.HELMET,
+            new HighlandDyableArmorItem(TeadArmorMaterials.DIAMOND_HIGHLAND, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
     public static final Item DIAMOND_HIGHLAND_CHESTPLATE = registerItem("diamond_highland_chestplate",
             new HighlandDyableArmorItem(TeadArmorMaterials.DIAMOND_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item NETHERITE_HIGHLAND_HELMET = registerItem("netherite_highland_helmet",
-            new HighlandArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.HELMET,
+            new HighlandDyableArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
     public static final Item NETHERITE_HIGHLAND_CHESTPLATE = registerItem("netherite_highland_chestplate",
             new HighlandDyableArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.CHESTPLATE,

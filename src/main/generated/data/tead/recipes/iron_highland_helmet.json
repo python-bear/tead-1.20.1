@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "$": {
+      "item": "minecraft:iron_helmet"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "#$#",
+    " % "
+  ],
+  "result": {
+    "item": "tead:iron_highland_helmet"
+  },
+  "show_notification": true
+}

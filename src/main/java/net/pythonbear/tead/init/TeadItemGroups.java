@@ -104,6 +104,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ROBE_CHESTPLATE);
                         entries.add(TeadItems.ROBE_BOOTS);
                         entries.add(TeadItems.GOLD_STALWART_HELMET);
+                        entries.add(TeadItems.GOLD_STALWART_CHESTPLATE);
                         entries.add(TeadItems.GOLD_HIGHLAND_HELMET);
                         entries.add(TeadItems.GOLD_HIGHLAND_CHESTPLATE);
                         entries.add(TeadItems.GOLD_ROYAL_HELMET);
@@ -111,6 +112,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_PLATE_CHESTPLATE);
                         entries.add(TeadItems.GOLD_PLATE_BOOTS);
                         entries.add(TeadItems.IRON_STALWART_HELMET);
+                        entries.add(TeadItems.IRON_STALWART_CHESTPLATE);
                         entries.add(TeadItems.IRON_HIGHLAND_HELMET);
                         entries.add(TeadItems.IRON_HIGHLAND_CHESTPLATE);
                         entries.add(TeadItems.IRON_ROYAL_HELMET);
@@ -118,6 +120,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_PLATE_CHESTPLATE);
                         entries.add(TeadItems.IRON_PLATE_BOOTS);
                         entries.add(TeadItems.DIAMOND_STALWART_HELMET);
+                        entries.add(TeadItems.DIAMOND_STALWART_CHESTPLATE);
                         entries.add(TeadItems.DIAMOND_HIGHLAND_HELMET);
                         entries.add(TeadItems.DIAMOND_HIGHLAND_CHESTPLATE);
                         entries.add(TeadItems.DIAMOND_ROYAL_HELMET);
@@ -125,6 +128,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.DIAMOND_PLATE_CHESTPLATE);
                         entries.add(TeadItems.DIAMOND_PLATE_BOOTS);
                         entries.add(TeadItems.NETHERITE_STALWART_HELMET);
+                        entries.add(TeadItems.NETHERITE_STALWART_CHESTPLATE);
                         entries.add(TeadItems.NETHERITE_HIGHLAND_HELMET);
                         entries.add(TeadItems.NETHERITE_HIGHLAND_CHESTPLATE);
                         entries.add(TeadItems.NETHERITE_ROYAL_HELMET);

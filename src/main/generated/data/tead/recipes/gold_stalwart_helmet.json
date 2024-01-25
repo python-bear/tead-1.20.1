@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "%": {
+      "item": "minecraft:golden_helmet"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "tead:gold_stalwart_helmet"
+  },
+  "show_notification": true
+}

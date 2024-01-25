@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "%": {
+      "item": "minecraft:diamond_helmet"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "tead:diamond_stalwart_helmet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "$$$",
+    "$#$",
+    "%$%"
+  ],
+  "result": {
+    "item": "tead:iron_stalwart_chestplate"
+  },
+  "show_notification": true
+}

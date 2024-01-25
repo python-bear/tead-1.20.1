@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "$": {
+      "item": "minecraft:diamond_helmet"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "#$#",
+    " % "
+  ],
+  "result": {
+    "item": "tead:diamond_highland_helmet"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "%": {
+      "item": "minecraft:netherite_helmet"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "tead:netherite_stalwart_helmet"
+  },
+  "show_notification": true
+}
