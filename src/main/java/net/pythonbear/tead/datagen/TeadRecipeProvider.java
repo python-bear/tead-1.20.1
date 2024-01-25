@@ -64,16 +64,18 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.LEAD_NUGGET, RecipeCategory.MISC,
                 TeadItems.LEAD_INGOT);
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.HANDLE)
-                        .input(Items.STICK)
-                        .input(Items.LEATHER)
-                        .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                        .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                        .offerTo(exporter, new Identifier(Tead.MOD_ID, "handle_1"));
+                .input(Items.STICK)
+                .input(Items.LEATHER)
+                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .group("handle")
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "handle_1"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.HANDLE)
                 .input(Items.STICK)
                 .input(TeadItems.FABRIC)
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
+                .group("handle")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "handle_2"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.BAMBOO)
@@ -83,17 +85,20 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(ItemTags.FLOWERS)
                 .input(ItemTags.FLOWERS)
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_1"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHITE_WOOL)
                 .input(Items.WHITE_WOOL)
                 .criterion(hasItem(Items.WHITE_WOOL), conditionsFromItem(Items.WHITE_WOOL))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_2"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHITE_WOOL)
                 .input(Items.BROWN_WOOL)
                 .criterion(hasItem(Items.WHITE_WOOL), conditionsFromItem(Items.WHITE_WOOL))
                 .criterion(hasItem(Items.BROWN_WOOL), conditionsFromItem(Items.BROWN_WOOL))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_3"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHITE_WOOL)
@@ -103,6 +108,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.STRING)
                 .criterion(hasItem(Items.WHITE_WOOL), conditionsFromItem(Items.WHITE_WOOL))
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_4"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.BROWN_WOOL)
@@ -112,6 +118,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.STRING)
                 .criterion(hasItem(Items.BROWN_WOOL), conditionsFromItem(Items.BROWN_WOOL))
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_5"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.HANGING_ROOTS)
@@ -121,6 +128,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.HANGING_ROOTS)
                 .input(Items.HANGING_ROOTS)
                 .criterion(hasItem(Items.HANGING_ROOTS), conditionsFromItem(Items.HANGING_ROOTS))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_6"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHEAT)
@@ -130,6 +138,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.BAMBOO)
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO))
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_7"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHEAT)
@@ -140,6 +149,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.STRING)
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .criterion(hasItem(Items.WHEAT), conditionsFromItem(Items.WHEAT))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_8"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.TWISTING_VINES)
@@ -150,6 +160,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.NETHER_SPROUTS)
                 .criterion(hasItem(Items.NETHER_SPROUTS), conditionsFromItem(Items.NETHER_SPROUTS))
                 .criterion(hasItem(Items.TWISTING_VINES), conditionsFromItem(Items.TWISTING_VINES))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_9"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.CRIMSON_FUNGUS)
@@ -159,6 +170,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Items.STRING)
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .criterion(hasItem(Items.CRIMSON_FUNGUS), conditionsFromItem(Items.CRIMSON_FUNGUS))
+                .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_0"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(ItemTags.FISHES)
@@ -169,6 +181,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COD), conditionsFromItem(Items.COD))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_0"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.ROTTEN_FLESH)
@@ -177,6 +190,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_1"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.BEEF)
@@ -185,6 +199,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BEEF), conditionsFromItem(Items.BEEF))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_2"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.PORKCHOP)
@@ -193,6 +208,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.PORKCHOP), conditionsFromItem(Items.PORKCHOP))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_3"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 2)
                 .input(Items.CHICKEN)
@@ -201,6 +217,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.CHICKEN), conditionsFromItem(Items.CHICKEN))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_4"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.RABBIT)
@@ -209,6 +226,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.RABBIT), conditionsFromItem(Items.RABBIT))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_5"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.MUTTON)
@@ -217,6 +235,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.MUTTON), conditionsFromItem(Items.MUTTON))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.COCOA_BEANS), conditionsFromItem(Items.COCOA_BEANS))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_6"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.ROTTEN_FLESH)
@@ -225,6 +244,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.ROTTEN_FLESH), conditionsFromItem(Items.ROTTEN_FLESH))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_7"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(ItemTags.FISHES)
@@ -235,6 +255,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COD), conditionsFromItem(Items.COD))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_8"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.PORKCHOP)
@@ -243,6 +264,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.PORKCHOP), conditionsFromItem(Items.PORKCHOP))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_9"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.BEEF)
@@ -251,6 +273,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BEEF), conditionsFromItem(Items.BEEF))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_10"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 2)
                 .input(Items.CHICKEN)
@@ -259,6 +282,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.CHICKEN), conditionsFromItem(Items.CHICKEN))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_11"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.RABBIT)
@@ -267,6 +291,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.RABBIT), conditionsFromItem(Items.RABBIT))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_12"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.JERKY, 3)
                 .input(Items.MUTTON)
@@ -275,6 +300,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.MUTTON), conditionsFromItem(Items.MUTTON))
                 .criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
                 .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .group("jerky")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "jerky_13"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.BOOK)
                 .input(Items.PAPER)
@@ -304,6 +330,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.AMETHYST_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+                .group("amethyst_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "amethyst_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.AMETHYST_ARROW, 4)
                 .pattern("$")
@@ -314,6 +341,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.AMETHYST_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.AMETHYST_SHARD), conditionsFromItem(Items.AMETHYST_SHARD))
+                .group("amethyst_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "amethyst_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.TNT_ARROW, 4)
                 .pattern("  $")
@@ -324,6 +352,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.TNT)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .group("tnt_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "tnt_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.TNT_ARROW, 4)
                 .pattern("$")
@@ -334,6 +363,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.TNT)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.TNT), conditionsFromItem(Items.TNT))
+                .group("tnt_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "tnt_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.BORING_ARROW, 1)
                 .pattern("%%$")
@@ -343,6 +373,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', TeadItems.TNT_ARROW)
                 .input('$', Items.IRON_PICKAXE)
                 .criterion(hasItem(TeadItems.TNT_ARROW), conditionsFromItem(TeadItems.TNT_ARROW))
+                .group("boring_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "boring_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.BORING_ARROW, 1)
                 .pattern("%$%")
@@ -352,6 +383,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', TeadItems.TNT_ARROW)
                 .input('$', Items.IRON_PICKAXE)
                 .criterion(hasItem(TeadItems.TNT_ARROW), conditionsFromItem(TeadItems.TNT_ARROW))
+                .group("boring_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "boring_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.COPPER_ARROW, 2)
                 .pattern("  $")
@@ -362,6 +394,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.LIGHTNING_ROD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.LIGHTNING_ROD), conditionsFromItem(Items.LIGHTNING_ROD))
+                .group("copper_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "cooper_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.COPPER_ARROW, 2)
                 .pattern("$")
@@ -372,6 +405,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.LIGHTNING_ROD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.LIGHTNING_ROD), conditionsFromItem(Items.LIGHTNING_ROD))
+                .group("copper_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "cooper_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.ENDER_PEARL_ARROW, 1)
                 .pattern("  $")
@@ -381,6 +415,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.STICK)
                 .input('$', Items.ENDER_PEARL)
                 .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .group("ender_pearl_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "ender_pearl_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.ENDER_PEARL_ARROW, 1)
                 .pattern("$")
@@ -390,6 +425,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.STICK)
                 .input('$', Items.ENDER_PEARL)
                 .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .group("ender_pearl_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "ender_pearl_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.OBSIDIAN_ARROW, 4)
                 .pattern("  $")
@@ -400,6 +436,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.OBSIDIAN_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(TeadItems.OBSIDIAN_SHARD), conditionsFromItem(TeadItems.OBSIDIAN_SHARD))
+                .group("obsidian_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "obsidian_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.OBSIDIAN_ARROW, 4)
                 .pattern("$")
@@ -410,6 +447,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.OBSIDIAN_SHARD)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(TeadItems.OBSIDIAN_SHARD), conditionsFromItem(TeadItems.OBSIDIAN_SHARD))
+                .group("obsidian_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "obsidian_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.RUBY_ARROW, 4)
                 .pattern("  $")
@@ -420,6 +458,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.RUBY)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(TeadItems.RUBY), conditionsFromItem(TeadItems.RUBY))
+                .group("ruby_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "ruby_arrow_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.RUBY_ARROW, 4)
                 .pattern("$")
@@ -430,6 +469,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', TeadItems.RUBY)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(TeadItems.RUBY), conditionsFromItem(TeadItems.RUBY))
+                .group("ruby_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "ruby_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.ARROW, 4)
                 .pattern("  $")
@@ -440,6 +480,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('$', Items.FLINT)
                 .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
                 .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .group("arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LIGHTNING_STAFF, 1)
                 .pattern("  %")
@@ -897,21 +938,8 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .group("grenade")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "grenade_0"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
-                .pattern(" # ")
-                .pattern("# #")
-                .pattern(" # ")
-                .input('#', Items.IRON_INGOT)
-                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_0"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
-                .pattern(" # ")
-                .pattern("# #")
-                .pattern(" # ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GRENADE, 1)
                 .pattern("$& ")
                 .pattern("#%#")
@@ -924,7 +952,24 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.REDSTONE), conditionsFromItem(Items.REDSTONE))
                 .criterion(hasItem(Items.GLASS_BOTTLE), conditionsFromItem(Items.GLASS_BOTTLE))
                 .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .group("grenade")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "grenade_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern(" # ")
+                .input('#', Items.IRON_INGOT)
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .group("shuriken")
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_0"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
+                .pattern(" # ")
+                .pattern("# #")
+                .pattern(" # ")
+                .input('#', TeadItems.LEAD_INGOT)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .group("shuriken")
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_1"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.GOLD_CHAIN, 1)
                 .pattern("%")
                 .pattern("#")
