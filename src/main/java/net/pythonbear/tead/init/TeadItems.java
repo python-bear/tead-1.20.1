@@ -163,13 +163,25 @@ public class TeadItems {
                     new FabricItemSettings()));
     public static final Item GOLD_HIGHLAND_HELMET = registerItem("gold_highland_helmet",
             new HighlandArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_HIGHLAND_CHESTPLATE = registerItem("gold_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item IRON_HIGHLAND_HELMET = registerItem("iron_highland_helmet",
             new HighlandArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item IRON_HIGHLAND_CHESTPLATE = registerItem("iron_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item DIAMOND_HIGHLAND_HELMET = registerItem("diamond_highland_helmet",
             new HighlandArmorItem(TeadArmorMaterials.DIAMOND_HIGHLAND, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
+    public static final Item DIAMOND_HIGHLAND_CHESTPLATE = registerItem("diamond_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.DIAMOND_HIGHLAND, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
     public static final Item NETHERITE_HIGHLAND_HELMET = registerItem("netherite_highland_helmet",
             new HighlandArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item NETHERITE_HIGHLAND_CHESTPLATE = registerItem("netherite_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item GOLD_ROYAL_HELMET = registerItem("gold_royal_helmet",
             new RoyalArmorItem(TeadArmorMaterials.GOLD_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
