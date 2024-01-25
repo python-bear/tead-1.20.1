@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "$": {
+      "item": "tead:handle"
+    },
+    "X": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "XX",
+    "X$",
+    " #"
+  ],
+  "result": {
+    "item": "minecraft:diamond_axe"
+  },
+  "show_notification": true
+}

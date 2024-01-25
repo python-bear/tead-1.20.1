@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-25T17:36:11.9815405	tead/Model Definitions
+// 1.20.1	2024-01-25T19:01:59.8855179	tead/Model Definitions
 3c50dd955f99ca46d6a9f6a101ea3c1bd92a7c2b assets\tead\models\item\lead_pickaxe.json
 9ce48b5cf00c0c19f7b7ba625ecde5fd23af242d assets\tead\models\item\grenade.json
 88d7d9edfbc905db45cc776a0773f5f1477b721c assets\tead\models\item\netherite_royal_helmet_amethyst_trim.json
@@ -103,9 +103,9 @@ abaa14c11ef102de667e10f7562830fb5e61fe3b assets\tead\models\item\gold_royal_helm
 d9012edb32d53a41e513867a89fb06864f5c0137 assets\tead\models\item\iron_royal_helmet_amethyst_trim.json
 69f4d306c797c5bb38d9b0641157101afe30b54a assets\tead\models\item\diamond_highland_helmet_quartz_trim.json
 4168f0d71aab47178e392503253b19a099f31d5e assets\tead\models\block\block_of_ruby.json
+cef38c64291ada5b94ba6dd7cd583249e788c5fa assets\tead\models\item\music_disc_day_one.json
 b652b55e8fe7737c61e067d4abc72535cd40b821 assets\tead\models\item\swiftness_boots_copper_trim.json
 9180e1a07898031322bc350c9dd4602cc261b9e8 assets\tead\models\block\dark_cobblestone.json
-cef38c64291ada5b94ba6dd7cd583249e788c5fa assets\tead\models\item\music_disc_day_one.json
 668790842952bd2cb0e4e4c4b8fa84409ee27ee3 assets\tead\models\item\iron_stalwart_chestplate_iron_trim.json
 be035de9630702f153bdcf601d2039fafe73fc3b assets\tead\models\item\iron_highland_helmet_gold_trim.json
 09fe4c7ada1549b19d709d6c6a0859f301374cd5 assets\tead\models\item\gold_chainmail_boots_netherite_trim.json
@@ -243,8 +243,8 @@ dee6172d50cae310da2d48d6af0b1a87fab39dac assets\tead\models\item\bone_club.json
 af79230eeb485cb8db06556102b0e925c928b32e assets\tead\models\item\netherite_highland_helmet_quartz_trim.json
 fe15241b2c7b13d68e442b560275219f9ab0267d assets\tead\models\item\netherite_double_axe.json
 b3bb92399218af3786abef2ab4a1949bf4bb6035 assets\tead\models\item\deepslate_ruby_ore.json
-b75bd8269cdae26c81d64b03b8e77e45f6bed5a4 assets\tead\models\item\gold_stalwart_chestplate_diamond_trim.json
 2438589f7e728bc693d67bad14ba9b0e05a6bb86 assets\tead\models\item\lead_apple.json
+b75bd8269cdae26c81d64b03b8e77e45f6bed5a4 assets\tead\models\item\gold_stalwart_chestplate_diamond_trim.json
 f6867a83c299a4eab7ae2f27432df6655be519e1 assets\tead\models\item\gold_chainmail_helmet_gold_trim.json
 77fd385ea7aad073266820449e694db6e1993430 assets\tead\models\item\old_bookshelf.json
 68a3a7888dfdb3b2bb050725a8ba61bfe3c24b32 assets\tead\models\item\netherite_stalwart_helmet_amethyst_trim.json
@@ -331,8 +331,8 @@ e2c07333f978935dda670919f51afc1ab0566c7f assets\tead\models\item\diamond_royal_h
 3b9cec2dd155bd39acd4236e9abf348814795a29 assets\tead\models\item\gold_highland_helmet_gold_trim.json
 94be0d0439105f698cd9c0674a7ba82844e61649 assets\tead\models\item\dark_cobblestone.json
 d59472b4099c798fb614b349a87804ed62d7c659 assets\tead\models\item\gold_chainmail_helmet_netherite_trim.json
-20390bf97fe8a8eec9e5bc73517c0814ae9ec19d assets\tead\models\item\lead_ore.json
 02d21d7298dc98a66b4592ffd41a9a0eaed558b7 assets\tead\models\item\iron_stalwart_helmet_quartz_trim.json
+20390bf97fe8a8eec9e5bc73517c0814ae9ec19d assets\tead\models\item\lead_ore.json
 2c98800f3fa466378aa7582ec93d0c16de69f02a assets\tead\blockstates\sick_pumpkin.json
 efedb419dd1a5e67d4e87d6b2d2c20e2638f2836 assets\tead\models\item\gold_chainmail_boots.json
 778d9f0a3001155971af52c3693e8522f821af7a assets\tead\models\item\gold_chainmail_leggings_gold_trim.json
