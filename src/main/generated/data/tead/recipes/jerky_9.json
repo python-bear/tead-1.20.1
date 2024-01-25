@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "equipment",
+  "group": "jerky",
   "ingredients": [
     {
       "item": "minecraft:porkchop"

@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "equipment",
+  "group": "handle",
   "ingredients": [
     {
       "item": "minecraft:stick"

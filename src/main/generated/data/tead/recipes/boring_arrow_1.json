@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
+  "group": "boring_arrow",
   "key": {
     "#": {
       "item": "tead:tnt_arrow"

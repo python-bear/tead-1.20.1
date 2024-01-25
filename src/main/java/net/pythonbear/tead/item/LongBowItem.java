@@ -12,19 +12,23 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 
 public class LongBowItem extends BowItem implements Vanishable {
-    public static final int TICKS_PER_SECOND = 10;
+    public static final int TICKS_PER_SECOND = 1;
     public static final int RANGE = 30;
     public LongBowItem(Settings settings) {
         super(settings);
     }
 
     public static float getPullProgress(int useTicks) {
-        float f = (float)useTicks / 10.0f;
-        if ((f = (f * f + f * 2.0f) / 3.0f) > 1.0f) {
-            f = 1.0f;
+        float f = (float)useTicks / TICKS_PER_SECOND;
+        f = (f * f + f * 2.0F) / 700;
+        Tead.LOGGER.info("progress1: " + f);
+        if (f > 1.0F) {
+            f = 1.0F;
         }
+        Tead.LOGGER.info("progress2: " + f);
         return f;
     }
 
@@ -48,6 +52,11 @@ public class LongBowItem extends BowItem implements Vanishable {
     }
 
     @Override
+    public int getMaxUseTime(ItemStack stack) {
+        return 72000;
+    }
+
+    @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
         int i;
@@ -65,7 +74,7 @@ public class LongBowItem extends BowItem implements Vanishable {
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(Items.ARROW);
         }
-        if ((double)(f = LongBowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
+        if ((double)(f = LongBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
             return;
         }
         boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);
@@ -77,7 +86,7 @@ public class LongBowItem extends BowItem implements Vanishable {
             PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack,
                     playerEntity);
             persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
-                    0.0f, f * 4.5f, 0.8f);
+                    0.0f, f * 4.2f, 0.9f);
             if (f == 1.0f) {
                 persistentProjectileEntity.setCritical(true);
             }
