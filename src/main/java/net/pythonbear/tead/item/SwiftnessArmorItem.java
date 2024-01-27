@@ -13,7 +13,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.Rarity;
 import net.minecraft.world.World;
 import net.pythonbear.tead.init.TeadArmorMaterials;
-import net.pythonbear.tead.item.client.SwiftnessArmorRenderer;
+import net.pythonbear.tead.rendering.SwiftnessArmorRenderer;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.client.RenderProvider;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;

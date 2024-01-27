@@ -954,7 +954,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
                 .group("grenade")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "grenade_1"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 6)
                 .pattern(" # ")
                 .pattern("# #")
                 .pattern(" # ")
@@ -962,7 +962,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .group("shuriken")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_0"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 3)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 6)
                 .pattern(" # ")
                 .pattern("# #")
                 .pattern(" # ")

@@ -11,6 +11,8 @@ import net.pythonbear.tead.entity.TeadEntities;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.init.TeadModelPredicateProvider;
+import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
+import net.pythonbear.tead.rendering.ShotgunProjectileRenderer;
 
 public class TeadClient implements ClientModInitializer {
     @Override
@@ -20,7 +22,8 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
-        EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
+        EntityRendererRegistry.register(TeadEntities.SHOTGUN_PROJECTILE, ShotgunProjectileRenderer::new);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,

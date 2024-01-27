@@ -10,6 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.pythonbear.tead.entity.ShurikenProjectileEntity;
+import net.pythonbear.tead.entity.TeadEntities;
 
 
 public class ShurikenItem extends Item {
@@ -20,14 +21,14 @@ public class ShurikenItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
-        user.getItemCooldownManager().set(this, 10);
+        user.getItemCooldownManager().set(this, 8);
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_TRIDENT_THROW,
                 SoundCategory.NEUTRAL, 0.4f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
         if (!world.isClient) {
-            ShurikenProjectileEntity grenadeEntity = new ShurikenProjectileEntity(user, world);
-            grenadeEntity.setItem(itemStack);
-            grenadeEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 0.1f);
-            world.spawnEntity(grenadeEntity);
+            ShurikenProjectileEntity shurikenEntity = new ShurikenProjectileEntity(TeadEntities.SHURIKEN_PROJECTILE,
+                    user, world);
+            shurikenEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 0.1f);
+            world.spawnEntity(shurikenEntity);
         }
         user.incrementStat(Stats.USED.getOrCreateStat(this));
         if (!user.getAbilities().creativeMode) {

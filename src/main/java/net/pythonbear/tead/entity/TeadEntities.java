@@ -17,5 +17,9 @@ public class TeadEntities {
     public static final EntityType<ShurikenProjectileEntity> SHURIKEN_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "shuriken_projectile"),
             FabricEntityTypeBuilder.<ShurikenProjectileEntity>create(SpawnGroup.MISC, ShurikenProjectileEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.3f, 0.3f)).build());
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+    public static final EntityType<ShotgunProjectileEntity> SHOTGUN_PROJECTILE = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "shotgun_projectile"),
+            FabricEntityTypeBuilder.<ShotgunProjectileEntity>create(SpawnGroup.MISC, ShotgunProjectileEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.1f, 0.1f)).build());
 }

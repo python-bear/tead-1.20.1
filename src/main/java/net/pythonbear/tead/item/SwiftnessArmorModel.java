@@ -1,4 +1,4 @@
-package net.pythonbear.tead.item.client;
+package net.pythonbear.tead.item;
 
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;

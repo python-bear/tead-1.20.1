@@ -124,6 +124,9 @@ public class TeadItems {
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
             new StaffItem(ToolMaterials.WOOD, 4, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
+
+    public static final Item SHOTGUN = registerItem("shotgun",
+            new ShotgunItem(new FabricItemSettings().maxDamage(325)));
     public static final Item BONE_BOW = registerItem("bone_bow",
             new BoneBowItem(new FabricItemSettings().maxDamage(415)));
     public static final Item WIND_BOW = registerItem("wind_bow",
