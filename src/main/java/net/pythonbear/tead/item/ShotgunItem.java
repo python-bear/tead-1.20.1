@@ -6,9 +6,13 @@ import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.ShotgunProjectileEntity;
 import net.pythonbear.tead.entity.TeadEntities;
+import net.pythonbear.tead.init.TeadItems;
 
 public class ShotgunItem extends BowItem {
 
@@ -16,44 +20,52 @@ public class ShotgunItem extends BowItem {
         super(settings);
     }
 
+
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack itemStack = user.getStackInHand(Hand.OFF_HAND);
+        boolean bl = itemStack.getItem() == TeadItems.LEAD_BULLET;
+        if (!user.getAbilities().creativeMode && !bl) {
+            return TypedActionResult.fail(user.getStackInHand(Hand.MAIN_HAND));
+        } else {
+            user.setCurrentHand(Hand.MAIN_HAND);
+            return TypedActionResult.consume(user.getStackInHand(Hand.MAIN_HAND));
+        }
+    }
+
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (user instanceof PlayerEntity player) {
-            int useDuration = this.getMaxUseTime(stack) - remainingUseTicks;
-
-            if (useDuration >= 10) {
-                shootShotgun(world, player, stack);
+        if (!world.isClient) {
+            ((PlayerEntity)user).getItemCooldownManager().set(this, 45);
+            if (user instanceof PlayerEntity player && (user.getOffHandStack().getItem() == TeadItems.LEAD_BULLET ||
+                    ((PlayerEntity) user).isCreative())) {
+                shootShotgun(world, (PlayerEntity) user, stack);
+            } else {
+                world.playSound(user.getX(), user.getY(), user.getZ(), SoundEvents.BLOCK_CHAIN_PLACE,
+                        SoundCategory.PLAYERS, 1, 1, true);
             }
         }
     }
 
     private void shootShotgun(World world, PlayerEntity player, ItemStack stack) {
-        if (!world.isClient) {
-            for (int i = 0; i < 5; i++) {
-                ShotgunProjectileEntity projectile = createSpreadProjectile(world, player, stack, i);
-                world.spawnEntity(projectile);
-            }
+        for (int i = 0; i < 5; i++) {
+            createSpreadProjectile(world, player, stack, i);
+        }
 
-            world.playSound(null, player.getX(), player.getY(), player.getZ(),
-                    SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        world.playSound(null, player.getX(), player.getY(), player.getZ(),
+                SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.PLAYERS, 1.0F, 1.0F);
 
-            if (!player.isCreative()) {
-                player.getInventory().removeOne(stack);
-            }
+        if (!player.isCreative()) {
+            player.getOffHandStack().decrement(1);
         }
     }
 
-    private ShotgunProjectileEntity createSpreadProjectile(World world, PlayerEntity player, ItemStack stack, int index) {
-        ShotgunProjectileEntity projectile = new ShotgunProjectileEntity(TeadEntities.SHOTGUN_PROJECTILE, world);
+    private void createSpreadProjectile(World world, PlayerEntity player, ItemStack stack, int index) {
+        ShotgunProjectileEntity projectile = new ShotgunProjectileEntity(TeadEntities.SHOTGUN_PROJECTILE, world,
+                player);
 
-        // Adjust the spread angle based on the index (spread pattern)
-        float spreadAngle = 10.0F; // Adjust the base spread angle as needed
-        float randomOffset = (world.random.nextFloat() - 0.5F) * 2.0F * 5.0F; // Random offset within -5 to 5 degrees
-
-        float angleOffset = index * spreadAngle + randomOffset;
-
-        projectile.setVelocity(player, player.getPitch() + angleOffset, player.getYaw(), 0.0F, 3.0F,
-                3.0F);
-        return projectile;
+        projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 3.0F,
+                5.0F);
+        world.spawnEntity(projectile);
     }
 }

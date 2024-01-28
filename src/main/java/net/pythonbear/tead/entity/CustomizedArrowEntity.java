@@ -51,8 +51,6 @@ public class CustomizedArrowEntity extends ArrowEntity {
         this.dataTracker.startTracking(COLOR, -1);
 
         Item item = stack.getItem();
-        Tead.LOGGER.info("initializing from stack: " + item);
-        Tead.LOGGER.info("is tnt arrow: " + (item instanceof TntArrowItem));
         if (item instanceof AmethystArrowItem) {
             this.customization = "amethyst";
         } else if (item instanceof CopperArrowItem) {
@@ -128,7 +126,6 @@ public class CustomizedArrowEntity extends ArrowEntity {
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
-        Tead.LOGGER.info("hit a block! and this.customization = " + this.customization);
         World world = this.getWorld();
         switch (this.customization) {
             case "copper":

@@ -19,6 +19,7 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.network.packet.s2c.play.GameStateChangeS2CPacket;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -48,6 +49,10 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
         if (owner instanceof PlayerEntity) {
             this.pickupType = PersistentProjectileEntity.PickupPermission.ALLOWED;
         }
+    }
+
+    protected SoundEvent getHitSound() {
+        return SoundEvents.ITEM_TRIDENT_HIT;
     }
 
     @Override

@@ -1438,5 +1438,18 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
                 .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHOTGUN, 1)
+                .pattern("  #")
+                .pattern("&#^")
+                .pattern("%$ ")
+                .input('#', Items.IRON_INGOT)
+                .input('&', Items.GOLD_INGOT)
+                .input('^', Items.GUNPOWDER)
+                .input('$', TeadItems.HANDLE)
+                .input('%', ItemTags.PLANKS)
+                .criterion(hasItem(Items.GUNPOWDER), conditionsFromItem(Items.GUNPOWDER))
+                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .offerTo(exporter);
     }
 }

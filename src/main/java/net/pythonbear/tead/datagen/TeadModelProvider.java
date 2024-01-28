@@ -154,6 +154,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_BULLET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SHOTGUN_PROJECTILE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);
@@ -217,6 +218,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.SHOTGUN, Models.HANDHELD);
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.SWIFTNESS_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_HELMET));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.GOLD_CHAINMAIL_CHESTPLATE));
