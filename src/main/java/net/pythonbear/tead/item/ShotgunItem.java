@@ -36,7 +36,7 @@ public class ShotgunItem extends BowItem {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (!world.isClient) {
-            ((PlayerEntity)user).getItemCooldownManager().set(this, 45);
+            ((PlayerEntity)user).getItemCooldownManager().set(this, 33);
             if (user instanceof PlayerEntity player && (user.getOffHandStack().getItem() == TeadItems.LEAD_BULLET ||
                     ((PlayerEntity) user).isCreative())) {
                 shootShotgun(world, (PlayerEntity) user, stack);
@@ -48,7 +48,7 @@ public class ShotgunItem extends BowItem {
     }
 
     private void shootShotgun(World world, PlayerEntity player, ItemStack stack) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 7; i++) {
             createSpreadProjectile(world, player, stack, i);
         }
 
@@ -65,7 +65,7 @@ public class ShotgunItem extends BowItem {
                 player);
 
         projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 3.0F,
-                5.0F);
+                8.0F);
         world.spawnEntity(projectile);
     }
 }

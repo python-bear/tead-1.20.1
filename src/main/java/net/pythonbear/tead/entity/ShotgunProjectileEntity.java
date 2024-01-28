@@ -35,7 +35,7 @@ public class ShotgunProjectileEntity extends PersistentProjectileEntity implemen
     @Nullable
     private Entity owner;
     private final SoundEvent sound = this.getHitSound();
-    private final double damage = 1;
+    private final double damage = 1.5;
     @Nullable
     private IntOpenHashSet piercedEntities;
     @Nullable
