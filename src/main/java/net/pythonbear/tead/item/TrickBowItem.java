@@ -15,7 +15,6 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.WindArrowEntity;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.item.arrow.*;
 
@@ -59,12 +58,10 @@ public class TrickBowItem extends BowItem implements Vanishable {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
-        int i;
         float f;
-        if (!(user instanceof PlayerEntity)) {
+        if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        PlayerEntity playerEntity = (PlayerEntity)user;
         boolean bl = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY,
                 stack) > 0;
         ItemStack itemStack = getProjectileType(stack, (PlayerEntity) user);
@@ -74,7 +71,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(Items.ARROW);
         }
-        if ((double)(f = TrickBowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
+        if ((double)(f = TrickBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
             return;
         }
         boolean bl3 = bl2 = bl && BOW_PROJECTILES.test(itemStack);
@@ -83,7 +80,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
             int j;
 
             Item item = itemStack.getItem();
-            PersistentProjectileEntity persistentProjectileEntity = null;
+            PersistentProjectileEntity persistentProjectileEntity;
             if (item instanceof ArrowItem) {
                 ArrowItem arrowItem = (ArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
@@ -146,13 +143,6 @@ public class TrickBowItem extends BowItem implements Vanishable {
         }
         playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         user.removeStatusEffect(StatusEffects.SLOWNESS);
-    }
-
-    private PersistentProjectileEntity createWindArrow(World world, ItemStack stack, LivingEntity shooter) {
-        WindArrowEntity arrowEntity = new WindArrowEntity(world, shooter, shooter.getX(), shooter.getY(),
-                shooter.getZ());
-        arrowEntity.initFromStack(stack);
-        return arrowEntity;
     }
 
     @Override

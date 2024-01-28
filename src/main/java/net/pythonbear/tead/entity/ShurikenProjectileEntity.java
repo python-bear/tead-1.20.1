@@ -2,7 +2,6 @@ package net.pythonbear.tead.entity;
 
 import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -94,7 +93,7 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
         }
 
         if (this.isCritical()) {
-            long l = (long)this.random.nextInt(i / 2 + 2);
+            long l = this.random.nextInt(i / 2 + 2);
             i = (int)Math.min(l + (long)i, 2147483647L);
         }
 
@@ -141,7 +140,7 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
                 }
 
                 this.onHit(livingEntity);
-                if (entity2 != null && livingEntity != entity2 && livingEntity instanceof PlayerEntity && entity2
+                if (livingEntity != entity2 && livingEntity instanceof PlayerEntity && entity2
                         instanceof ServerPlayerEntity && !this.isSilent()) {
                     ((ServerPlayerEntity)entity2)
                             .networkHandler

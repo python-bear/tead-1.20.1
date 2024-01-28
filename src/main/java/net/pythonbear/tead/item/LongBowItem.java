@@ -48,7 +48,7 @@ public class LongBowItem extends BowItem implements Vanishable {
 
     @Override
     public int getRange() {
-        return 30;
+        return RANGE;
     }
 
     @Override
@@ -59,12 +59,10 @@ public class LongBowItem extends BowItem implements Vanishable {
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
-        int i;
         float f;
-        if (!(user instanceof PlayerEntity)) {
+        if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        PlayerEntity playerEntity = (PlayerEntity)user;
         boolean bl = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY,
                 stack) > 0;
         ItemStack itemStack = playerEntity.getProjectileType(stack);

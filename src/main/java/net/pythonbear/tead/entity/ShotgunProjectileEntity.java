@@ -22,7 +22,6 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadItems;
 import org.jetbrains.annotations.Nullable;
 
@@ -115,7 +114,7 @@ public class ShotgunProjectileEntity extends PersistentProjectileEntity implemen
         }
 
         if (this.isCritical()) {
-            long l = (long)this.random.nextInt(i / 2 + 2);
+            long l = this.random.nextInt(i / 2 + 2);
             i = (int)Math.min(l + (long)i, 2147483647L);
         }
 
@@ -162,7 +161,7 @@ public class ShotgunProjectileEntity extends PersistentProjectileEntity implemen
                 }
 
                 this.onHit(livingEntity);
-                if (entity2 != null && livingEntity != entity2 && livingEntity instanceof PlayerEntity && entity2
+                if (livingEntity != entity2 && livingEntity instanceof PlayerEntity && entity2
                         instanceof ServerPlayerEntity && !this.isSilent()) {
                     ((ServerPlayerEntity)entity2)
                             .networkHandler

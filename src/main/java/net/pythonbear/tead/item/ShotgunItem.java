@@ -9,7 +9,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.ShotgunProjectileEntity;
 import net.pythonbear.tead.entity.TeadEntities;
 import net.pythonbear.tead.init.TeadItems;
@@ -37,9 +36,9 @@ public class ShotgunItem extends BowItem {
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         if (!world.isClient) {
             ((PlayerEntity)user).getItemCooldownManager().set(this, 33);
-            if (user instanceof PlayerEntity player && (user.getOffHandStack().getItem() == TeadItems.LEAD_BULLET ||
+            if (user instanceof PlayerEntity && (user.getOffHandStack().getItem() == TeadItems.LEAD_BULLET ||
                     ((PlayerEntity) user).isCreative())) {
-                shootShotgun(world, (PlayerEntity) user, stack);
+                shootShotgun(world, (PlayerEntity) user);
             } else {
                 world.playSound(user.getX(), user.getY(), user.getZ(), SoundEvents.BLOCK_CHAIN_PLACE,
                         SoundCategory.PLAYERS, 1, 1, true);
@@ -47,9 +46,9 @@ public class ShotgunItem extends BowItem {
         }
     }
 
-    private void shootShotgun(World world, PlayerEntity player, ItemStack stack) {
+    private void shootShotgun(World world, PlayerEntity player) {
         for (int i = 0; i < 7; i++) {
-            createSpreadProjectile(world, player, stack, i);
+            createSpreadProjectile(world, player);
         }
 
         world.playSound(null, player.getX(), player.getY(), player.getZ(),
@@ -60,7 +59,7 @@ public class ShotgunItem extends BowItem {
         }
     }
 
-    private void createSpreadProjectile(World world, PlayerEntity player, ItemStack stack, int index) {
+    private void createSpreadProjectile(World world, PlayerEntity player) {
         ShotgunProjectileEntity projectile = new ShotgunProjectileEntity(TeadEntities.SHOTGUN_PROJECTILE, world,
                 player);
 

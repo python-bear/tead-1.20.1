@@ -14,7 +14,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.arrow.*;
 
 import java.util.Set;
@@ -78,9 +77,7 @@ public class CustomizedArrowEntity extends ArrowEntity {
         switch (this.customization) {
             case "amethyst":
                 for (ItemStack armor : target.getArmorItems()) {
-                    armor.damage(5, target, (damagedArmor) -> {
-                        target.animateDamage(target.getYaw());
-                    });
+                    armor.damage(5, target, (damagedArmor) -> target.animateDamage(target.getYaw()));
                 }
                 break;
             case "copper":
@@ -98,9 +95,7 @@ public class CustomizedArrowEntity extends ArrowEntity {
                 break;
             case "ruby":
                 for (ItemStack armor : target.getArmorItems()) {
-                    armor.damage(5, target, (damagedArmor) -> {
-                        target.animateDamage(target.getYaw());
-                    });
+                    armor.damage(5, target, (damagedArmor) -> target.animateDamage(target.getYaw()));
                 }
                 target.damage(this.getDamageSources().arrow(this, this), 4);
                 target.disablesShield();

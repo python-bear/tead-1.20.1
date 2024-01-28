@@ -19,7 +19,7 @@ public class ShortBowItem extends BowItem implements Vanishable {
     }
 
     public static float getPullProgress(int useTicks) {
-        float f = (float)useTicks / 30.0f;
+        float f = (float)useTicks / TICKS_PER_SECOND;
         if ((f = (f * f + f * 2.0f) / 3.0f) > 1.0f) {
             f = 1.0f;
         }
@@ -28,18 +28,16 @@ public class ShortBowItem extends BowItem implements Vanishable {
 
     @Override
     public int getRange() {
-        return 10;
+        return RANGE;
     }
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
-        int i;
         float f;
-        if (!(user instanceof PlayerEntity)) {
+        if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        PlayerEntity playerEntity = (PlayerEntity)user;
         boolean bl = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY,
                 stack) > 0;
         ItemStack itemStack = playerEntity.getProjectileType(stack);
@@ -49,7 +47,7 @@ public class ShortBowItem extends BowItem implements Vanishable {
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(Items.ARROW);
         }
-        if ((double)(f = ShortBowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
+        if ((double)(f = ShortBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
             return;
         }
         boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);

@@ -3,16 +3,13 @@ package net.pythonbear.tead.rendering;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.*;
-import net.minecraft.client.render.entity.model.GhastEntityModel;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.RotationAxis;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.ShotgunProjectileEntity;
-import net.pythonbear.tead.entity.ShurikenProjectileEntity;
 import net.pythonbear.tead.init.TeadItems;
 
 public class ShotgunProjectileRenderer extends ProjectileEntityRenderer<ShotgunProjectileEntity> {
