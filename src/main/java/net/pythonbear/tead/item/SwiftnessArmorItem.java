@@ -62,11 +62,9 @@ public class SwiftnessArmorItem extends ArmorItem implements GeoItem {
     private boolean hasCorrectArmorOn(PlayerEntity player) {
         ItemStack bootsStack = player.getInventory().getArmorStack(0);
 
-        if (!(bootsStack.getItem() instanceof ArmorItem)) {
+        if (!(bootsStack.getItem() instanceof ArmorItem boots)) {
             return false;
         }
-
-        ArmorItem boots = (ArmorItem) bootsStack.getItem();
 
         return boots.getMaterial() == TeadArmorMaterials.SWIFTNESS;
     }

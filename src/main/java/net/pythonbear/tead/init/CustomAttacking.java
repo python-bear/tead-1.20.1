@@ -46,7 +46,6 @@ public class CustomAttacking {
         g *= h;
         user.resetLastAttackedTicks();
         if ((f *= 0.2f + h * h * 0.8f) > 0.0f || g > 0.0f) {
-            ItemStack itemStack;
             Optional<Map<Enchantment, Integer>> optionalEnchantments =
                     Optional.ofNullable(EnchantmentHelper.get(user.getStackInHand(hand)));
             Map<Enchantment, Integer> itemStackEnchantments = optionalEnchantments.orElse(Collections.emptyMap());
@@ -68,7 +67,7 @@ public class CustomAttacking {
             boolean bl3 = bl && user.fallDistance > 0.0f && !user.isOnGround() && !user.isClimbing() &&
                     !user.isTouchingWater() && !user.hasStatusEffect(StatusEffects.BLINDNESS) && !user.hasVehicle() &&
                     target instanceof LivingEntity;
-            boolean bl4 = bl3 = bl3 && !user.isSprinting();
+            bl3 = bl3 && !user.isSprinting();
             if (bl3) {
                 f *= 1.5f;
             }
@@ -76,7 +75,7 @@ public class CustomAttacking {
             boolean bl42 = false;
             double d = user.horizontalSpeed - user.prevHorizontalSpeed;
             if (bl && !bl3 && !bl2 && user.isOnGround() && d < (double)user.getMovementSpeed() &&
-                    (itemStack = user.getStackInHand(hand)).getItem() instanceof SwordItem) {
+                    user.getStackInHand(hand).getItem() instanceof SwordItem) {
                 bl42 = true;
             }
             float j = 0.0f;

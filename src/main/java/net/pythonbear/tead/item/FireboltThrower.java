@@ -14,7 +14,6 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -29,14 +28,12 @@ import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Predicate;
 
 public class FireboltThrower extends CrossbowItem {
     private boolean charged = false;
     private boolean loaded = false;
     private static final String CHARGED_PROJECTILES_KEY = "ChargedProjectiles";
     private static final String CHARGED_KEY = "Charged";
-    public static final Predicate<ItemStack> BOW_PROJECTILES = stack -> stack.isIn(ItemTags.ARROWS);
 
     public FireboltThrower(Settings settings) {
         super(settings);
@@ -106,9 +103,8 @@ public class FireboltThrower extends CrossbowItem {
         List<ItemStack> list = FireboltThrower.getProjectiles(stack);
         float[] fs = FireboltThrower.getSoundPitches(entity.getRandom());
         for (int i = 0; i < list.size(); ++i) {
-            boolean bl;
             ItemStack itemStack = list.get(i);
-            boolean bl2 = bl = entity instanceof PlayerEntity && ((PlayerEntity)entity).getAbilities().creativeMode;
+            boolean bl = entity instanceof PlayerEntity && ((PlayerEntity)entity).getAbilities().creativeMode;
             if (itemStack.isEmpty()) continue;
             if (i == 0) {
                 FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], bl, speed, divergence,
@@ -178,8 +174,7 @@ public class FireboltThrower extends CrossbowItem {
     }
 
     private static void postShoot(World world, LivingEntity entity, ItemStack stack) {
-        if (entity instanceof ServerPlayerEntity) {
-            ServerPlayerEntity serverPlayerEntity = (ServerPlayerEntity)entity;
+        if (entity instanceof ServerPlayerEntity serverPlayerEntity) {
             if (!world.isClient) {
                 Criteria.SHOT_CROSSBOW.trigger(serverPlayerEntity, stack);
             }

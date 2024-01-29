@@ -37,13 +37,10 @@ public class WindBowItem extends BowItem implements Vanishable {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        boolean bl2;
-        int i;
         float f;
-        if (!(user instanceof PlayerEntity)) {
+        if (!(user instanceof PlayerEntity playerEntity)) {
             return;
         }
-        PlayerEntity playerEntity = (PlayerEntity)user;
         boolean bl = playerEntity.getAbilities().creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY,
                 stack) > 0;
         ItemStack itemStack = playerEntity.getProjectileType(stack);
@@ -53,10 +50,10 @@ public class WindBowItem extends BowItem implements Vanishable {
         if (itemStack.isEmpty()) {
             itemStack = new ItemStack(Items.ARROW);
         }
-        if ((double)(f = BowItem.getPullProgress(i = this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
+        if ((double)(f = BowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
             return;
         }
-        boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);
+        boolean bl2 = bl && itemStack.isOf(Items.ARROW);
         if (!world.isClient) {
             int k;
             int j;

@@ -81,7 +81,7 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
             }
 
             if (this.piercingKilledEntities == null) {
-                this.piercingKilledEntities = Lists.<Entity>newArrayListWithCapacity(5);
+                this.piercingKilledEntities = Lists.newArrayListWithCapacity(5);
             }
 
             if (this.piercedEntities.size() >= this.getPierceLevel() + 1) {

@@ -2,7 +2,6 @@ package net.pythonbear.tead.mixin;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.mob.DrownedEntity;
-import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;

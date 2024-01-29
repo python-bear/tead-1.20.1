@@ -12,7 +12,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 
 public class LongBowItem extends BowItem implements Vanishable {
     public static final int TICKS_PER_SECOND = 1;
@@ -24,11 +23,9 @@ public class LongBowItem extends BowItem implements Vanishable {
     public static float getPullProgress(int useTicks) {
         float f = (float)useTicks / TICKS_PER_SECOND;
         f = (f * f + f * 2.0F) / 700;
-        Tead.LOGGER.info("progress1: " + f);
         if (f > 1.0F) {
             f = 1.0F;
         }
-        Tead.LOGGER.info("progress2: " + f);
         return f;
     }
 
@@ -52,11 +49,6 @@ public class LongBowItem extends BowItem implements Vanishable {
     }
 
     @Override
-    public int getMaxUseTime(ItemStack stack) {
-        return 72000;
-    }
-
-    @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
         return ingredient == Items.STICK.getDefaultStack() || ingredient == Items.STRING.getDefaultStack() ||
                 super.canRepair(stack, ingredient);
@@ -64,7 +56,6 @@ public class LongBowItem extends BowItem implements Vanishable {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        boolean bl2;
         float f;
         if (!(user instanceof PlayerEntity playerEntity)) {
             return;
@@ -81,7 +72,7 @@ public class LongBowItem extends BowItem implements Vanishable {
         if ((double)(f = LongBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 1) {
             return;
         }
-        boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);
+        boolean bl2 = bl && itemStack.isOf(Items.ARROW);
         if (!world.isClient) {
             int k;
             int j;

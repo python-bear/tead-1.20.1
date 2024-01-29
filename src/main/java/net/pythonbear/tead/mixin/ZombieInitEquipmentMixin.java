@@ -5,7 +5,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.LocalDifficulty;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -14,7 +13,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 
 @Mixin(ZombieEntity.class)
 public class ZombieInitEquipmentMixin {

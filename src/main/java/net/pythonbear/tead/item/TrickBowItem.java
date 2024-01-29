@@ -62,7 +62,6 @@ public class TrickBowItem extends BowItem implements Vanishable {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        boolean bl2;
         float f;
         if (!(user instanceof PlayerEntity playerEntity)) {
             return;
@@ -79,7 +78,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
         if ((double)(f = TrickBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
             return;
         }
-        boolean bl3 = bl2 = bl && BOW_PROJECTILES.test(itemStack);
+        boolean bl2 = bl && BOW_PROJECTILES.test(itemStack);
         if (!world.isClient) {
             int k;
             int j;
@@ -152,9 +151,8 @@ public class TrickBowItem extends BowItem implements Vanishable {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        boolean bl;
         ItemStack itemStack = user.getStackInHand(hand);
-        boolean bl2 = bl = !getProjectileType(itemStack, user).isEmpty();
+        boolean bl = !getProjectileType(itemStack, user).isEmpty();
         if (user.getAbilities().creativeMode || bl) {
             user.setCurrentHand(hand);
             return TypedActionResult.consume(itemStack);

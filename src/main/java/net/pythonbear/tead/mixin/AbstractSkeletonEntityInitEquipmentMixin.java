@@ -2,10 +2,7 @@ package net.pythonbear.tead.mixin;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.mob.AbstractSkeletonEntity;
-import net.minecraft.entity.mob.DrownedEntity;
-import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.LocalDifficulty;
 import net.pythonbear.tead.init.TeadItems;

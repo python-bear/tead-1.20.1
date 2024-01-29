@@ -39,7 +39,6 @@ public class ShortBowItem extends BowItem implements Vanishable {
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        boolean bl2;
         float f;
         if (!(user instanceof PlayerEntity playerEntity)) {
             return;
@@ -56,7 +55,7 @@ public class ShortBowItem extends BowItem implements Vanishable {
         if ((double)(f = ShortBowItem.getPullProgress(this.getMaxUseTime(stack) - remainingUseTicks)) < 0.1) {
             return;
         }
-        boolean bl3 = bl2 = bl && itemStack.isOf(Items.ARROW);
+        boolean bl2 = bl && itemStack.isOf(Items.ARROW);
         if (!world.isClient) {
             int k;
             int j;
