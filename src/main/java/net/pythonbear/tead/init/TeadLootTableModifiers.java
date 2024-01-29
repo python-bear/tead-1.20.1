@@ -189,7 +189,7 @@ public class TeadLootTableModifiers {
             if (JUNGLE_TEMPLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder1 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .conditionally(RandomChanceLootCondition.builder(0.6f))
                         .with(ItemEntry.builder(TeadItems.WIND_BOW))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 LootPool.Builder poolBuilder2 = LootPool.builder()
@@ -384,7 +384,7 @@ public class TeadLootTableModifiers {
             if (BIG_WATER_RUIN_ID.equals(id)) {
                 LootPool.Builder poolBuilder2 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(TeadItems.WIND_BOW))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder4 = LootPool.builder()
@@ -470,7 +470,7 @@ public class TeadLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder2 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .conditionally(RandomChanceLootCondition.builder(0.7f))
                         .with(ItemEntry.builder(TeadItems.WIND_BOW))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder4 = LootPool.builder()
@@ -502,7 +502,7 @@ public class TeadLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder3 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(TeadItems.TRICK_BOW))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
                 LootPool.Builder poolBuilder4 = LootPool.builder()
