@@ -4,6 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
@@ -30,6 +31,12 @@ public class ShotgunItem extends BowItem {
             user.setCurrentHand(Hand.MAIN_HAND);
             return TypedActionResult.consume(user.getStackInHand(Hand.MAIN_HAND));
         }
+    }
+
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.IRON_INGOT.getDefaultStack() || ingredient == Items.GOLD_INGOT.getDefaultStack() ||
+                super.canRepair(stack, ingredient);
     }
 
     @Override

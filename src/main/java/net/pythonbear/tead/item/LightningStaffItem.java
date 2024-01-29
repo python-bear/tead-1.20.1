@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.Vanishable;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -27,6 +28,12 @@ public class LightningStaffItem extends StaffItem implements Vanishable {
     public LightningStaffItem(Settings settings) {
         super(TeadToolMaterials.COPPER, 2.2f, -2f, 0.5f, 0.4f,
                 settings);
+    }
+
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.COPPER_INGOT.getDefaultStack() ||
+                ingredient == Items.AMETHYST_SHARD.getDefaultStack();
     }
 
     @Override

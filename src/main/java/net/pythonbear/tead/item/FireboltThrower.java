@@ -42,6 +42,11 @@ public class FireboltThrower extends CrossbowItem {
         super(settings);
     }
 
+    @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.STRING.getDefaultStack() || super.canRepair(stack, ingredient);
+    }
+
     public static boolean isCharged(ItemStack stack) {
         NbtCompound nbtCompound = stack.getNbt();
         return nbtCompound != null && nbtCompound.getBoolean(CHARGED_KEY);

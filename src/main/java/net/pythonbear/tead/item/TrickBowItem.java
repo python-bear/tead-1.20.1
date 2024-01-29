@@ -40,6 +40,11 @@ public class TrickBowItem extends BowItem implements Vanishable {
     }
 
     @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.STRING.getDefaultStack() || super.canRepair(stack, ingredient);
+    }
+
+    @Override
     public Predicate<ItemStack> getProjectiles() {
         return BOW_PROJECTILES;
     }

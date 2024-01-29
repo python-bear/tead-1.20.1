@@ -38,6 +38,11 @@ public class BoneBowItem extends BowItem implements Vanishable {
     }
 
     @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.BONE.getDefaultStack() || ingredient == Items.STRING.getDefaultStack();
+    }
+
+    @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
         int i;

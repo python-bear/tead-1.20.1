@@ -28,5 +28,11 @@ public abstract class ModelLoaderMixin {
             JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates,
                              CallbackInfo ci) {
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "stone_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "lead_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "gold_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "wood_hammer_3d", "inventory"));
     }
 }

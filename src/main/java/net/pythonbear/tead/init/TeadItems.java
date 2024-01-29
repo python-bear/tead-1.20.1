@@ -121,12 +121,11 @@ public class TeadItems {
             new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
                     new FabricItemSettings()));
     public static final Item BONE_CLUB = registerItem("bone_club",
-            new StaffItem(TeadToolMaterials.BONE, 3.8f, -2.4f, 1.3f,
+            new StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
                     0.5f, new FabricItemSettings()));
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
-            new StaffItem(ToolMaterials.WOOD, 4, -1.9f, 0.7f, 0.7f,
+            new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
-
     public static final Item SHOTGUN = registerItem("shotgun",
             new ShotgunItem(new FabricItemSettings().maxDamage(325)));
     public static final Item BONE_BOW = registerItem("bone_bow",

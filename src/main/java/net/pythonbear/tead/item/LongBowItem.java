@@ -57,6 +57,12 @@ public class LongBowItem extends BowItem implements Vanishable {
     }
 
     @Override
+    public boolean canRepair(ItemStack stack, ItemStack ingredient) {
+        return ingredient == Items.STICK.getDefaultStack() || ingredient == Items.STRING.getDefaultStack() ||
+                super.canRepair(stack, ingredient);
+    }
+
+    @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
         boolean bl2;
         float f;
