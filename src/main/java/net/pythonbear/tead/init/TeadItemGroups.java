@@ -25,6 +25,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.DARK_BRICK);
 
                         entries.add(TeadItems.AMETHYST_ARROW);
+                        entries.add(TeadItems.TORCH_ARROW);
+                        entries.add(TeadItems.REDSTONE_TORCH_ARROW);
+                        entries.add(TeadItems.SOUL_TORCH_ARROW);
                         entries.add(TeadItems.TNT_ARROW);
                         entries.add(TeadItems.BORING_ARROW);
                         entries.add(TeadItems.COPPER_ARROW);
@@ -87,9 +90,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.LEAD_SICKLE);
                         entries.add(TeadItems.IRON_SICKLE);
-                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.NETHERITE_SICKLE);
+                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
                         entries.add(TeadItems.GOLD_CLAYMORE);
                         entries.add(TeadItems.LEAD_CLAYMORE);
                         entries.add(TeadItems.IRON_CLAYMORE);

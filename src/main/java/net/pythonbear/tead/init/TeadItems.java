@@ -248,6 +248,12 @@ public class TeadItems {
             new RubyArrowItem(new FabricItemSettings()));
     public static final Item TNT_ARROW = registerItem("tnt_arrow",
             new TntArrowItem(new FabricItemSettings()));
+    public static final Item TORCH_ARROW = registerItem("torch_arrow",
+            new TorchArrowItem(new FabricItemSettings()));
+    public static final Item REDSTONE_TORCH_ARROW = registerItem("redstone_torch_arrow",
+            new RedstoneTorchArrowItem(new FabricItemSettings()));
+    public static final Item SOUL_TORCH_ARROW = registerItem("soul_torch_arrow",
+            new SoulTorchArrowItem(new FabricItemSettings()));
     public static final Item BORING_ARROW = registerItem("boring_arrow",
             new BoringArrowItem(new FabricItemSettings()));
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",

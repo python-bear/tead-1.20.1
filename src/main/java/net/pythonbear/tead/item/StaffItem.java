@@ -3,16 +3,20 @@ package net.pythonbear.tead.item;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.item.Vanishable;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 
 public class StaffItem extends SwordItem implements Vanishable {
     private final float knockbackStrength;
@@ -39,21 +43,19 @@ public class StaffItem extends SwordItem implements Vanishable {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (target != attacker) {
-            World world = attacker.getWorld();
+        World world = attacker.getWorld();
 
-            world.getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(this.knockbackRadius),
-                            (livingEntity) -> true)
-                    .forEach((entity) -> {
-                        if (entity != attacker) {
-                            entity.takeKnockback(this.knockbackStrength, -(entity.getX() - attacker.getX()),
-                                    -(entity.getZ() - attacker.getZ()));
-                            if (entity != target) {
-                                entity.animateDamage(attacker.getYaw());
-                            }
+        world.getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(this.knockbackRadius),
+                        (livingEntity) -> true)
+                .forEach((entity) -> {
+                    if (entity != attacker) {
+                        entity.takeKnockback(this.knockbackStrength, -(entity.getX() - attacker.getX()),
+                                -(entity.getZ() - attacker.getZ()));
+                        if (entity != target) {
+                            entity.animateDamage(attacker.getYaw());
                         }
-                    });
-        }
+                    }
+                });
 
         return super.postHit(stack, target, attacker);
     }

@@ -1,7 +1,7 @@
-// 1.20.1	2024-01-29T18:25:38.1540488	tead/World Gen
-d7f4bb28cf229769332d150ff934c91638a2054b data\tead\worldgen\placed_feature\lead_ore_placed.json
+// 1.20.1	2024-02-03T14:49:48.5109911	tead/World Gen
+0a3d8090864dfb97a05d630c53f6ffc07c9ad0cb data\tead\worldgen\placed_feature\lead_ore_placed.json
 2352a497ac661c664d2b39567cc1e326ef934970 data\tead\worldgen\placed_feature\ruby_ore_placed.json
-2b11d6f824f2ef76f64daf15d6300c3f746dd3b6 data\tead\worldgen\configured_feature\deepslate_ruby_ore.json
-8c44bb0b20982964985000004b4528ca75ecf35c data\tead\worldgen\configured_feature\ruby_ore.json
+5daae181466ff06e914b54530b2de325b9181f35 data\tead\worldgen\configured_feature\deepslate_ruby_ore.json
+0f4e1286cee7972dee44ec24cbca50797011b404 data\tead\worldgen\configured_feature\ruby_ore.json
 91eb6fd37f1063abfdbaa3227383cd9ca0f97540 data\tead\worldgen\placed_feature\deepslate_ruby_ore_placed.json
-1478ae860538f7c25c70429ac03d541134c96880 data\tead\worldgen\configured_feature\lead_ore.json
+d2ee5e3af93fe00a3f08ad76bb9a97f56729171a data\tead\worldgen\configured_feature\lead_ore.json

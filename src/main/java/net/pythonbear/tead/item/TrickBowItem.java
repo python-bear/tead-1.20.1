@@ -15,6 +15,7 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.item.arrow.*;
 
@@ -29,6 +30,9 @@ public class TrickBowItem extends BowItem implements Vanishable {
                     stack.getItem() == TeadItems.OBSIDIAN_ARROW ||
                     stack.getItem() == TeadItems.RUBY_ARROW ||
                     stack.getItem() == TeadItems.BORING_ARROW ||
+                    stack.getItem() == TeadItems.TORCH_ARROW ||
+                    stack.getItem() == TeadItems.REDSTONE_TORCH_ARROW ||
+                    stack.getItem() == TeadItems.SOUL_TORCH_ARROW ||
                     stack.getItem() == TeadItems.TNT_ARROW;
     public TrickBowItem(Settings settings) {
         super(settings);
@@ -85,10 +89,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
 
             Item item = itemStack.getItem();
             PersistentProjectileEntity persistentProjectileEntity;
-            if (item instanceof ArrowItem) {
-                ArrowItem arrowItem = (ArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof AmethystArrowItem) {
+            if (item instanceof AmethystArrowItem) {
                 AmethystArrowItem arrowItem = (AmethystArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
             } else if (item instanceof CopperArrowItem) {
@@ -106,6 +107,19 @@ public class TrickBowItem extends BowItem implements Vanishable {
             } else if (item instanceof TntArrowItem) {
                 TntArrowItem arrowItem = (TntArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+            } else if (item instanceof TorchArrowItem) {
+                TorchArrowItem arrowItem = (TorchArrowItem)(itemStack.getItem());
+                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setOnFireFor(100);
+                Tead.LOGGER.info("returned torch");
+            } else if (item instanceof RedstoneTorchArrowItem) {
+                RedstoneTorchArrowItem arrowItem = (RedstoneTorchArrowItem)(itemStack.getItem());
+                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setOnFireFor(100);
+            } else if (item instanceof SoulTorchArrowItem) {
+                SoulTorchArrowItem arrowItem = (SoulTorchArrowItem)(itemStack.getItem());
+                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setOnFireFor(100);
             } else if (item instanceof BoringArrowItem) {
                 BoringArrowItem arrowItem = (BoringArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);

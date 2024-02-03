@@ -15,6 +15,9 @@
   "item.tead.dark_brick": "Dark Brick",
 
   "item.tead.amethyst_arrow": "Amethyst Arrow",
+  "item.tead.torch_arrow": "Torch Arrow",
+  "item.tead.redstone_torch_arrow": "Redstone Torch Arrow",
+  "item.tead.soul_torch_arrow": "Soul Torch Arrow",
   "item.tead.tnt_arrow": "Explosive Arrow",
   "item.tead.copper_arrow": "Lightning Arrow",
   "item.tead.obsidian_arrow": "Obsidian Arrow",

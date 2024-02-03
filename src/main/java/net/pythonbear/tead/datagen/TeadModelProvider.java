@@ -158,6 +158,9 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.TORCH_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.REDSTONE_TORCH_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SOUL_TORCH_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.BORING_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.COPPER_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_ARROW, Models.GENERATED);
@@ -172,7 +175,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SHURIKEN, Models.GENERATED);
 
-        itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
+//        itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_HOE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_PICKAXE, Models.HANDHELD);
@@ -215,8 +218,8 @@ public class TeadModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(TeadItems.NETHERITE_CLAYMORE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.OBSIDIAN_CLAYMORE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
+//        itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
+//        itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.SHOTGUN, Models.HANDHELD);
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.SWIFTNESS_BOOTS));

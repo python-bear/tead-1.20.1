@@ -33,7 +33,7 @@ public class TeadPlacedFeatures {
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(0))));
         register(context, LEAD_ORE_PLACED_KEY,
                 configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.LEAD_ORE_KEY),
-                TeadOrePlacement.modifiersWithCount(8, // veins per chunk
+                TeadOrePlacement.modifiersWithCount(6, // veins per chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
     }
 

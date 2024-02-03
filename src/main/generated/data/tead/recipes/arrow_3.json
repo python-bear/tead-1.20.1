@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "arrow",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "$": {
+      "item": "minecraft:iron_ingot"
+    },
+    "%": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "  $",
+    " # ",
+    "%  "
+  ],
+  "result": {
+    "count": 4,
+    "item": "minecraft:arrow"
+  },
+  "show_notification": true
+}

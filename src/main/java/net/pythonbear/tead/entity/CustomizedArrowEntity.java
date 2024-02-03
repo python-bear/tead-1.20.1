@@ -1,6 +1,7 @@
 package net.pythonbear.tead.entity;
 
 import com.google.common.collect.Sets;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
@@ -12,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.Potions;
+import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
 import net.pythonbear.tead.item.arrow.*;
@@ -64,6 +66,12 @@ public class CustomizedArrowEntity extends ArrowEntity {
             this.customization = "tnt";
         } else if (item instanceof BoringArrowItem) {
             this.customization = "boring";
+        } else if (item instanceof TorchArrowItem) {
+            this.customization = "torch";
+        } else if (item instanceof RedstoneTorchArrowItem) {
+            this.customization = "redstone torch";
+        } else if (item instanceof SoulTorchArrowItem) {
+            this.customization = "soul torch";
         } else {
             this.customization = "none";
         }
@@ -119,6 +127,14 @@ public class CustomizedArrowEntity extends ArrowEntity {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        if (!this.getWorld().isClient && (this.isSubmergedIn(FluidTags.LAVA) || this.isSubmergedIn(FluidTags.WATER))) {
+            this.discard();
+        }
+    }
+
+    @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
         World world = this.getWorld();
@@ -140,8 +156,21 @@ public class CustomizedArrowEntity extends ArrowEntity {
                 world.spawnEntity(tnt);
                 this.kill();
                 break;
+            case "torch":
+                world.setBlockState(this.getBlockPos(), Blocks.TORCH.getDefaultState());
+                this.kill();
+                break;
+            case "redstone torch":
+                world.setBlockState(this.getBlockPos(), Blocks.REDSTONE_TORCH.getDefaultState());
+                this.kill();
+                break;
+            case "soul torch":
+                world.setBlockState(this.getBlockPos(), Blocks.SOUL_TORCH.getDefaultState());
+                this.kill();
+                break;
             case "boring":
-                if (world.getBlockState(blockHitResult.getBlockPos()).getBlock() == Blocks.BEDROCK) {
+                Block belowBlock = world.getBlockState(blockHitResult.getBlockPos()).getBlock();
+                if (belowBlock == Blocks.BEDROCK || belowBlock == Blocks.LAVA || belowBlock == Blocks.WATER) {
                     this.kill();
                 } else {
                     TntEntity boringTnt = new TntEntity(EntityType.TNT, world);
