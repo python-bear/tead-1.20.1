@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 public class ShortBowItem extends BowItem implements Vanishable {
     public static final int TICKS_PER_SECOND = 30;
-    public static final int RANGE = 10;
+    public static final int RANGE = 12;
     public ShortBowItem(Settings settings) {
         super(settings);
     }
@@ -64,7 +64,7 @@ public class ShortBowItem extends BowItem implements Vanishable {
             PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack,
                     playerEntity);
             persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
-                    0.0f, f * 2.6f, 1.2f);
+                    0.0f, f * 2.6f, 1.1f);
             if (f == 1.0f) {
                 persistentProjectileEntity.setCritical(true);
             }

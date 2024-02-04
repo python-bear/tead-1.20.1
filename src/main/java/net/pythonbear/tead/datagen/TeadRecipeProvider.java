@@ -1593,5 +1593,12 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.ROOTED_DIRT, 2)
+                .pattern("%#")
+                .pattern("#%")
+                .input('#', Items.DIRT)
+                .input('%', Items.HANGING_ROOTS)
+                .criterion(hasItem(Items.HANGING_ROOTS), conditionsFromItem(Items.HANGING_ROOTS))
+                .offerTo(exporter);
     }
 }
