@@ -34,6 +34,18 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
     private static final List<ItemConvertible> BROWN_DRY_GRASS_SMELTABLES = List.of(
             TeadBlocks.BROWN_DRY_GRASS
     );
+    private static final List<ItemConvertible> BLOCK_OF_COPPER_SMELTABLES = List.of(
+            Blocks.RAW_COPPER_BLOCK
+    );
+    private static final List<ItemConvertible> BLOCK_OF_IRON_SMELTABLES = List.of(
+            Blocks.RAW_IRON_BLOCK
+    );
+    private static final List<ItemConvertible> BLOCK_OF_GOLD_SMELTABLES = List.of(
+            Blocks.RAW_GOLD_BLOCK
+    );
+    private static final List<ItemConvertible> BLOCK_OF_LEAD_SMELTABLES = List.of(
+            TeadBlocks.BLOCK_OF_GALENA
+    );
 
     public TeadRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -41,14 +53,30 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
+        offerSmelting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f,
+                1800, "copper_block");
+        offerBlasting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f,
+                900, "copper_block");
+        offerSmelting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f,
+                1800, "iron_block");
+        offerBlasting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f,
+                900, "iron_block");
+        offerSmelting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f,
+                1800, "gold_block");
+        offerBlasting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f,
+                900, "gold_block");
+        offerSmelting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.BLOCK_OF_LEAD, 7.2f,
+                1620, "lead_block");
+        offerBlasting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.BLOCK_OF_LEAD, 7.2f,
+                720, "lead_block");
         offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 300,
                 "ruby");
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 150,
                 "ruby");
-        offerSmelting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 2, 150,
-                "lead");
-        offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 2, 80,
-                "lead");
+        offerSmelting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f,
+                180, "lead_ingot");
+        offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f,
+                80, "lead_ingot");
         offerSmelting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
                 150, "dark_brick");
         offerBlasting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
