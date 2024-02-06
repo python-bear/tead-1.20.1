@@ -1,6 +1,6 @@
 
 ![Tead: PythonBear](https://github.com/python-bear/tead-1.20.1/blob/master/src/main/resources/assets/tead/title.png)
-# Tead Wiki Intro
+# Tead Readme
 
 Tead aims to be a Vanilla++ Minecraft mod that adds a few simple features and give more functionality to some items. This mod adds two new ores, lead and ruby ore, many new item types, a few new armor types (with versions for different materials), and some other new items, such as handles, which are now required to craft most tools, fabric, new arrows, throwable items, and other things.
 
