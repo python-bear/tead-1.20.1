@@ -24,6 +24,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_NUGGET);
                         entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
+                        entries.add(TeadItems.HANDLE);
                         entries.add(TeadItems.MUDDY_CLAY_BALL);
                         entries.add(TeadItems.DARK_BRICK);
 
@@ -59,68 +60,73 @@ public class TeadItemGroups {
 
                         entries.add(TeadItems.FIREBOLT_THROWER);
 
-                        entries.add(TeadItems.HANDLE);
+                        entries.add(TeadItems.WOOD_HAMMER);
+                        entries.add(TeadItems.WOOD_DAGGER);
+                        entries.add(TeadItems.WOOD_RAPIER);
+                        entries.add(TeadItems.WOOD_DOUBLE_AXE);
+                        entries.add(TeadItems.WOOD_SICKLE);
+                        entries.add(TeadItems.WOOD_SCYTHE);
+
+                        entries.add(TeadItems.STONE_HAMMER);
+                        entries.add(TeadItems.STONE_DAGGER);
+                        entries.add(TeadItems.STONE_RAPIER);
+                        entries.add(TeadItems.STONE_DOUBLE_AXE);
+                        entries.add(TeadItems.STONE_SICKLE);
+                        entries.add(TeadItems.STONE_SCYTHE);
+                        entries.add(TeadItems.STONE_GREATSWORD);
 
                         entries.add(TeadItems.LEAD_AXE);
                         entries.add(TeadItems.LEAD_HOE);
                         entries.add(TeadItems.LEAD_PICKAXE);
                         entries.add(TeadItems.LEAD_SHOVEL);
                         entries.add(TeadItems.LEAD_SWORD);
-                        entries.add(TeadItems.WOOD_HAMMER);
-                        entries.add(TeadItems.STONE_HAMMER);
-                        entries.add(TeadItems.GOLD_HAMMER);
                         entries.add(TeadItems.LEAD_HAMMER);
-                        entries.add(TeadItems.IRON_HAMMER);
-                        entries.add(TeadItems.DIAMOND_HAMMER);
-                        entries.add(TeadItems.NETHERITE_HAMMER);
-                        entries.add(TeadItems.WOOD_DAGGER);
-                        entries.add(TeadItems.STONE_DAGGER);
-                        entries.add(TeadItems.CORAL_DAGGER);
-                        entries.add(TeadItems.GOLD_DAGGER);
                         entries.add(TeadItems.LEAD_DAGGER);
-                        entries.add(TeadItems.IRON_DAGGER);
-                        entries.add(TeadItems.DIAMOND_DAGGER);
-                        entries.add(TeadItems.NETHERITE_DAGGER);
-                        entries.add(TeadItems.WOOD_RAPIER);
-                        entries.add(TeadItems.STONE_RAPIER);
-                        entries.add(TeadItems.GOLD_RAPIER);
                         entries.add(TeadItems.LEAD_RAPIER);
-                        entries.add(TeadItems.IRON_RAPIER);
-                        entries.add(TeadItems.DIAMOND_RAPIER);
-                        entries.add(TeadItems.NETHERITE_RAPIER);
-                        entries.add(TeadItems.WOOD_DOUBLE_AXE);
-                        entries.add(TeadItems.STONE_DOUBLE_AXE);
-                        entries.add(TeadItems.GOLD_DOUBLE_AXE);
                         entries.add(TeadItems.LEAD_DOUBLE_AXE);
-                        entries.add(TeadItems.IRON_DOUBLE_AXE);
-                        entries.add(TeadItems.DIAMOND_DOUBLE_AXE);
-                        entries.add(TeadItems.NETHERITE_DOUBLE_AXE);
-                        entries.add(TeadItems.WOOD_SICKLE);
-                        entries.add(TeadItems.STONE_SICKLE);
-                        entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.LEAD_SICKLE);
-                        entries.add(TeadItems.IRON_SICKLE);
-                        entries.add(TeadItems.DIAMOND_SICKLE);
-                        entries.add(TeadItems.NETHERITE_SICKLE);
-                        entries.add(TeadItems.WOOD_SCYTHE);
-                        entries.add(TeadItems.STONE_SCYTHE);
-                        entries.add(TeadItems.GOLD_SCYTHE);
                         entries.add(TeadItems.LEAD_SCYTHE);
-                        entries.add(TeadItems.IRON_SCYTHE);
-                        entries.add(TeadItems.DIAMOND_SCYTHE);
-                        entries.add(TeadItems.NETHERITE_SCYTHE);
-                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
-                        entries.add(TeadItems.STONE_GREATSWORD);
-                        entries.add(TeadItems.GOLD_GREATSWORD);
                         entries.add(TeadItems.LEAD_GREATSWORD);
-                        entries.add(TeadItems.IRON_GREATSWORD);
-                        entries.add(TeadItems.DIAMOND_GREATSWORD);
-                        entries.add(TeadItems.NETHERITE_GREATSWORD);
-                        entries.add(TeadItems.GOLD_CLAYMORE);
                         entries.add(TeadItems.LEAD_CLAYMORE);
+
+                        entries.add(TeadItems.GOLD_HAMMER);
+                        entries.add(TeadItems.GOLD_DAGGER);
+                        entries.add(TeadItems.GOLD_RAPIER);
+                        entries.add(TeadItems.GOLD_DOUBLE_AXE);
+                        entries.add(TeadItems.GOLD_SICKLE);
+                        entries.add(TeadItems.GOLD_SCYTHE);
+                        entries.add(TeadItems.GOLD_GREATSWORD);
+                        entries.add(TeadItems.GOLD_CLAYMORE);
+
+                        entries.add(TeadItems.IRON_HAMMER);
+                        entries.add(TeadItems.IRON_DAGGER);
+                        entries.add(TeadItems.IRON_RAPIER);
+                        entries.add(TeadItems.IRON_DOUBLE_AXE);
+                        entries.add(TeadItems.IRON_SICKLE);
+                        entries.add(TeadItems.IRON_SCYTHE);
+                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
+                        entries.add(TeadItems.IRON_GREATSWORD);
                         entries.add(TeadItems.IRON_CLAYMORE);
+
+                        entries.add(TeadItems.DIAMOND_HAMMER);
+                        entries.add(TeadItems.DIAMOND_DAGGER);
+                        entries.add(TeadItems.DIAMOND_RAPIER);
+                        entries.add(TeadItems.DIAMOND_DOUBLE_AXE);
+                        entries.add(TeadItems.DIAMOND_SICKLE);
+                        entries.add(TeadItems.DIAMOND_SCYTHE);
+                        entries.add(TeadItems.DIAMOND_GREATSWORD);
                         entries.add(TeadItems.DIAMOND_CLAYMORE);
+
+                        entries.add(TeadItems.NETHERITE_HAMMER);
+                        entries.add(TeadItems.NETHERITE_DAGGER);
+                        entries.add(TeadItems.NETHERITE_RAPIER);
+                        entries.add(TeadItems.NETHERITE_DOUBLE_AXE);
+                        entries.add(TeadItems.NETHERITE_SICKLE);
+                        entries.add(TeadItems.NETHERITE_SCYTHE);
+                        entries.add(TeadItems.NETHERITE_GREATSWORD);
                         entries.add(TeadItems.NETHERITE_CLAYMORE);
+
+                        entries.add(TeadItems.CORAL_DAGGER);
                         entries.add(TeadItems.OBSIDIAN_CLAYMORE);
                         entries.add(TeadItems.OBSIDIAN_SWORD);
 
@@ -165,23 +171,6 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_PLATE_CHESTPLATE);
                         entries.add(TeadItems.NETHERITE_PLATE_BOOTS);
 
-                        entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
-                        entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
-                        entries.add(TeadItems.MUSIC_DISC_HAIL_AND_KILL);
-                        entries.add(TeadItems.MUSIC_DISC_HOMELAND);
-                        entries.add(TeadItems.MUSIC_DISC_LORD_GIVE_ME_A_SIGN);
-                        entries.add(TeadItems.MUSIC_DISC_LOSE_YOURSELF);
-                        entries.add(TeadItems.MUSIC_DISC_MUTINY);
-                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_GIVE_YOU_UP);
-                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_STOP);
-                        entries.add(TeadItems.MUSIC_DISC_SWORDS_IN_THE_WIND);
-                        entries.add(TeadItems.MUSIC_DISC_THE_GODFATHER);
-                        entries.add(TeadItems.MUSIC_DISC_THE_HEART_ASKS_PLEASURE_FIRST);
-                        entries.add(TeadItems.MUSIC_DISC_THE_PHANTOM_OF_THE_OPERA);
-                        entries.add(TeadItems.MUSIC_DISC_TILL_I_COLLAPSE);
-                        entries.add(TeadItems.MUSIC_DISC_TIME);
-                        entries.add(TeadItems.MUSIC_DISC_UNTOUCHABLE);
-
                         entries.add(TeadBlocks.GOLD_CHAIN);
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);
                         entries.add(TeadBlocks.BLOCK_OF_GALENA);
@@ -209,6 +198,23 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.STONE_PLAQUE);
                         entries.add(TeadBlocks.EMPTY_BOOKSHELF);
                         entries.add(TeadBlocks.OLD_BOOKSHELF);
+
+                        entries.add(TeadItems.MUSIC_DISC_BATTLE_HYMN);
+                        entries.add(TeadItems.MUSIC_DISC_DAY_ONE);
+                        entries.add(TeadItems.MUSIC_DISC_HAIL_AND_KILL);
+                        entries.add(TeadItems.MUSIC_DISC_HOMELAND);
+                        entries.add(TeadItems.MUSIC_DISC_LORD_GIVE_ME_A_SIGN);
+                        entries.add(TeadItems.MUSIC_DISC_LOSE_YOURSELF);
+                        entries.add(TeadItems.MUSIC_DISC_MUTINY);
+                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_GIVE_YOU_UP);
+                        entries.add(TeadItems.MUSIC_DISC_NEVER_GONNA_STOP);
+                        entries.add(TeadItems.MUSIC_DISC_SWORDS_IN_THE_WIND);
+                        entries.add(TeadItems.MUSIC_DISC_THE_GODFATHER);
+                        entries.add(TeadItems.MUSIC_DISC_THE_HEART_ASKS_PLEASURE_FIRST);
+                        entries.add(TeadItems.MUSIC_DISC_THE_PHANTOM_OF_THE_OPERA);
+                        entries.add(TeadItems.MUSIC_DISC_TILL_I_COLLAPSE);
+                        entries.add(TeadItems.MUSIC_DISC_TIME);
+                        entries.add(TeadItems.MUSIC_DISC_UNTOUCHABLE);
                     }).build());
     public static void registerItemGroups() {
         Tead.LOGGER.info("Registering mod items for " + Tead.MOD_ID);
