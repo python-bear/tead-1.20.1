@@ -1,36 +1,36 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blackstone": {
+    "has_black_rock": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:blackstone"
+              "tead:black_rock"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cobbled_deepslate": {
+    "has_rock": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:cobbled_deepslate"
+              "tead:rock"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cobblestone": {
+    "has_slate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:cobblestone"
+              "tead:slate"
             ]
           }
         ]
@@ -46,9 +46,9 @@
   },
   "requirements": [
     [
-      "has_cobbled_deepslate",
-      "has_cobblestone",
-      "has_blackstone",
+      "has_rock",
+      "has_black_rock",
+      "has_slate",
       "has_the_recipe"
     ]
   ],

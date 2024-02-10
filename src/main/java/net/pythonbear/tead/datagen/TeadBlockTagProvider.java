@@ -52,6 +52,18 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.OLD_BOOKSHELF)
                 .add(TeadBlocks.SICK_PUMPKIN);
 
+        getOrCreateTagBuilder(TeadTags.Blocks.SCYTHE_BLOCKS)
+                .forceAddTag(BlockTags.FLOWERS)
+                .add(Blocks.SWEET_BERRY_BUSH)
+                .add(Blocks.NETHER_SPROUTS)
+                .add(Blocks.WARPED_ROOTS)
+                .add(Blocks.CRIMSON_ROOTS)
+                .add(Blocks.DEAD_BUSH)
+                .add(Blocks.LARGE_FERN)
+                .add(Blocks.FERN)
+                .add(Blocks.TALL_GRASS)
+                .add(Blocks.GRASS);
+
         getOrCreateTagBuilder(TeadTags.Blocks.REFINED_BUILDING_BLOCKS)
                 .add(TeadBlocks.BLOCK_OF_LEAD)
                 .add(TeadBlocks.BLOCK_OF_GALENA)
@@ -292,5 +304,25 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(TeadBlocks.LEAD_ORE)
                 .add(TeadBlocks.BLOCK_OF_GALENA);
+
+        getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+                .add(TeadBlocks.BLOCK_OF_RUBY)
+                .add(TeadBlocks.BLOCK_OF_LEAD)
+                .add(Blocks.COPPER_BLOCK)
+                .add(Blocks.WAXED_COPPER_BLOCK)
+                .add(Blocks.CUT_COPPER)
+                .add(Blocks.WAXED_CUT_COPPER)
+                .add(Blocks.EXPOSED_COPPER)
+                .add(Blocks.WAXED_EXPOSED_COPPER)
+                .add(Blocks.EXPOSED_CUT_COPPER)
+                .add(Blocks.WAXED_EXPOSED_CUT_COPPER)
+                .add(Blocks.WEATHERED_COPPER)
+                .add(Blocks.WAXED_WEATHERED_COPPER)
+                .add(Blocks.WEATHERED_CUT_COPPER)
+                .add(Blocks.WAXED_WEATHERED_CUT_COPPER)
+                .add(Blocks.OXIDIZED_COPPER)
+                .add(Blocks.WAXED_OXIDIZED_COPPER)
+                .add(Blocks.OXIDIZED_CUT_COPPER)
+                .add(Blocks.WAXED_OXIDIZED_CUT_COPPER);
     }
 }

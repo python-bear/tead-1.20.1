@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.init.TeadTags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -87,5 +88,10 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.MUSIC_DISC_TILL_I_COLLAPSE)
                 .add(TeadItems.MUSIC_DISC_TIME)
                 .add(TeadItems.MUSIC_DISC_UNTOUCHABLE);
+
+        getOrCreateTagBuilder(TeadTags.Items.ROCKS)
+                .add(TeadItems.ROCK)
+                .add(TeadItems.SLATE)
+                .add(TeadItems.BLACK_ROCK);
     }
 }

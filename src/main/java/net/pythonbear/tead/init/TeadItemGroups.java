@@ -15,6 +15,9 @@ public class TeadItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.tead"))
                     .icon(() -> new ItemStack(TeadItems.RUBY)).entries((displayContext, entries) -> {
                         entries.add(TeadItems.RUBY);
+                        entries.add(TeadItems.ROCK);
+                        entries.add(TeadItems.BLACK_ROCK);
+                        entries.add(TeadItems.SLATE);
                         entries.add(TeadItems.OBSIDIAN_SHARD);
                         entries.add(TeadItems.GALENA);
                         entries.add(TeadItems.LEAD_INGOT);
@@ -78,6 +81,13 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_DAGGER);
                         entries.add(TeadItems.DIAMOND_DAGGER);
                         entries.add(TeadItems.NETHERITE_DAGGER);
+                        entries.add(TeadItems.WOOD_RAPIER);
+                        entries.add(TeadItems.STONE_RAPIER);
+                        entries.add(TeadItems.GOLD_RAPIER);
+                        entries.add(TeadItems.LEAD_RAPIER);
+                        entries.add(TeadItems.IRON_RAPIER);
+                        entries.add(TeadItems.DIAMOND_RAPIER);
+                        entries.add(TeadItems.NETHERITE_RAPIER);
                         entries.add(TeadItems.WOOD_DOUBLE_AXE);
                         entries.add(TeadItems.STONE_DOUBLE_AXE);
                         entries.add(TeadItems.GOLD_DOUBLE_AXE);
@@ -92,7 +102,20 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_SICKLE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.NETHERITE_SICKLE);
+                        entries.add(TeadItems.WOOD_SCYTHE);
+                        entries.add(TeadItems.STONE_SCYTHE);
+                        entries.add(TeadItems.GOLD_SCYTHE);
+                        entries.add(TeadItems.LEAD_SCYTHE);
+                        entries.add(TeadItems.IRON_SCYTHE);
+                        entries.add(TeadItems.DIAMOND_SCYTHE);
+                        entries.add(TeadItems.NETHERITE_SCYTHE);
                         entries.add(TeadItems.IRON_TEMPEST_KNIFE);
+                        entries.add(TeadItems.STONE_GREATSWORD);
+                        entries.add(TeadItems.GOLD_GREATSWORD);
+                        entries.add(TeadItems.LEAD_GREATSWORD);
+                        entries.add(TeadItems.IRON_GREATSWORD);
+                        entries.add(TeadItems.DIAMOND_GREATSWORD);
+                        entries.add(TeadItems.NETHERITE_GREATSWORD);
                         entries.add(TeadItems.GOLD_CLAYMORE);
                         entries.add(TeadItems.LEAD_CLAYMORE);
                         entries.add(TeadItems.IRON_CLAYMORE);

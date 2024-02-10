@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "grenade",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "$": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "%": {
+      "item": "minecraft:tnt"
+    },
+    "&": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "$& ",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "tead:grenade"
+  },
+  "show_notification": true
+}

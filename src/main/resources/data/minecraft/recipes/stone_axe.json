@@ -9,7 +9,7 @@
       "item": "tead:handle"
     },
     "X": {
-      "tag": "minecraft:stone_tool_materials"
+      "tag": "tead:rocks"
     }
   },
   "pattern": [

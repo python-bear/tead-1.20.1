@@ -1,4 +1,5 @@
-// 1.20.1	2024-02-03T14:49:48.4938829	tead/Tags for minecraft:item
+// 1.20.1	2024-02-10T20:25:23.3297149	tead/Tags for minecraft:item
 9a8b88cdbfd6ad375dbea98c45eb304315449842 data\minecraft\tags\items\trimmable_armor.json
 870daac12e447cf4e4d8be5e8ac2bbfca009c33f data\minecraft\tags\items\creeper_drop_music_discs.json
+bb5b757c15e6c4de1dded951c0fb1e2cf99f731d data\tead\tags\items\rocks.json
 870daac12e447cf4e4d8be5e8ac2bbfca009c33f data\minecraft\tags\items\music_discs.json

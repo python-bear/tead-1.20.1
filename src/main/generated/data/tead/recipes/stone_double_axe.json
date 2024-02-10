@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "tag": "minecraft:stone_tool_materials"
+      "tag": "tead:rocks"
     },
     "$": {
       "item": "tead:handle"

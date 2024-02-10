@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "tead:rocks"
+    },
+    "%": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  #",
+    " # ",
+    "%# "
+  ],
+  "result": {
+    "item": "tead:stone_rapier"
+  },
+  "show_notification": true
+}

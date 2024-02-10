@@ -5,6 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.pythonbear.tead.init.*;
+import net.pythonbear.tead.item.scythe.ScytheSwing;
 import net.pythonbear.tead.item.sickle.PlayerBlockBreakHandler;
 import net.pythonbear.tead.item.sickle.UseBlockHandler;
 import net.pythonbear.tead.sound.TeadSounds;
@@ -23,6 +24,8 @@ public class Tead implements ModInitializer {
 
 		UseBlockCallback.EVENT.register(UseBlockHandler::handle);
 		PlayerBlockBreakEvents.AFTER.register(PlayerBlockBreakHandler::handle);
+
+		ScytheSwing.register();
 
 		TeadSounds.registerSounds();
 		TeadItemGroups.registerItemGroups();

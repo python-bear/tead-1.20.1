@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:stone_tool_materials"
+    },
+    "$": {
+      "tag": "tead:rocks"
+    },
+    "%": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "$",
+    "#",
+    "%"
+  ],
+  "result": {
+    "item": "tead:stone_greatsword"
+  },
+  "show_notification": true
+}

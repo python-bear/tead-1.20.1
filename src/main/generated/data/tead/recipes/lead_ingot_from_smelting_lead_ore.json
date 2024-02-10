@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "cookingtime": 150,
-  "experience": 2.0,
-  "group": "lead",
+  "cookingtime": 180,
+  "experience": 0.8,
+  "group": "lead_ingot",
   "ingredient": {
     "item": "tead:lead_ore"
   },
