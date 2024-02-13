@@ -153,6 +153,13 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.OBSIDIAN_SHARD, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.STEEL_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.STEEL_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ROSE_GOLD_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ROSE_GOLD_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.BRONZE_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.BRONZE_NUGGET, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.COPPER_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_BULLET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SHOTGUN_PROJECTILE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);

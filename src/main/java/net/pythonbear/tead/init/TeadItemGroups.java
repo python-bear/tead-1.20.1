@@ -22,6 +22,13 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GALENA);
                         entries.add(TeadItems.LEAD_INGOT);
                         entries.add(TeadItems.LEAD_NUGGET);
+                        entries.add(TeadItems.STEEL_INGOT);
+                        entries.add(TeadItems.STEEL_NUGGET);
+                        entries.add(TeadItems.ROSE_GOLD_INGOT);
+                        entries.add(TeadItems.ROSE_GOLD_NUGGET);
+                        entries.add(TeadItems.BRONZE_INGOT);
+                        entries.add(TeadItems.BRONZE_INGOT);
+                        entries.add(TeadItems.COPPER_NUGGET);
                         entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
                         entries.add(TeadItems.HANDLE);
@@ -108,6 +115,48 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_GREATSWORD);
                         entries.add(TeadItems.IRON_CLAYMORE);
 
+                        entries.add(TeadItems.ROSE_GOLD_AXE);
+                        entries.add(TeadItems.ROSE_GOLD_PICKAXE);
+                        entries.add(TeadItems.ROSE_GOLD_SHOVEL);
+                        entries.add(TeadItems.ROSE_GOLD_HOE);
+                        entries.add(TeadItems.ROSE_GOLD_SWORD);
+                        entries.add(TeadItems.ROSE_GOLD_HAMMER);
+                        entries.add(TeadItems.ROSE_GOLD_DAGGER);
+                        entries.add(TeadItems.ROSE_GOLD_RAPIER);
+                        entries.add(TeadItems.ROSE_GOLD_DOUBLE_AXE);
+                        entries.add(TeadItems.ROSE_GOLD_SICKLE);
+                        entries.add(TeadItems.ROSE_GOLD_SCYTHE);
+                        entries.add(TeadItems.ROSE_GOLD_GREATSWORD);
+                        entries.add(TeadItems.ROSE_GOLD_CLAYMORE);
+
+                        entries.add(TeadItems.BRONZE_AXE);
+                        entries.add(TeadItems.BRONZE_PICKAXE);
+                        entries.add(TeadItems.BRONZE_SHOVEL);
+                        entries.add(TeadItems.BRONZE_HOE);
+                        entries.add(TeadItems.BRONZE_SWORD);
+                        entries.add(TeadItems.BRONZE_HAMMER);
+                        entries.add(TeadItems.BRONZE_DAGGER);
+                        entries.add(TeadItems.BRONZE_RAPIER);
+                        entries.add(TeadItems.BRONZE_DOUBLE_AXE);
+                        entries.add(TeadItems.BRONZE_SICKLE);
+                        entries.add(TeadItems.BRONZE_SCYTHE);
+                        entries.add(TeadItems.BRONZE_GREATSWORD);
+                        entries.add(TeadItems.BRONZE_CLAYMORE);
+
+                        entries.add(TeadItems.STEEL_AXE);
+                        entries.add(TeadItems.STEEL_PICKAXE);
+                        entries.add(TeadItems.STEEL_SHOVEL);
+                        entries.add(TeadItems.STEEL_HOE);
+                        entries.add(TeadItems.STEEL_SWORD);
+                        entries.add(TeadItems.STEEL_HAMMER);
+                        entries.add(TeadItems.STEEL_DAGGER);
+                        entries.add(TeadItems.STEEL_RAPIER);
+                        entries.add(TeadItems.STEEL_DOUBLE_AXE);
+                        entries.add(TeadItems.STEEL_SICKLE);
+                        entries.add(TeadItems.STEEL_SCYTHE);
+                        entries.add(TeadItems.STEEL_GREATSWORD);
+                        entries.add(TeadItems.STEEL_CLAYMORE);
+
                         entries.add(TeadItems.DIAMOND_HAMMER);
                         entries.add(TeadItems.DIAMOND_DAGGER);
                         entries.add(TeadItems.DIAMOND_RAPIER);
@@ -172,6 +221,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_PLATE_BOOTS);
 
                         entries.add(TeadBlocks.GOLD_CHAIN);
+                        entries.add(TeadBlocks.BRONZE_CHAIN);
+                        entries.add(TeadBlocks.ROSE_GOLD_CHAIN);
+                        entries.add(TeadBlocks.STEEL_CHAIN);
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);
                         entries.add(TeadBlocks.BLOCK_OF_GALENA);
                         entries.add(TeadBlocks.BLOCK_OF_LEAD);

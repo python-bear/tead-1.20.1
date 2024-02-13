@@ -20,6 +20,9 @@ public class TeadClient implements ClientModInitializer {
         TeadModelPredicateProvider.registerTeadModels();
 
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.ROSE_GOLD_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRONZE_CHAIN, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);

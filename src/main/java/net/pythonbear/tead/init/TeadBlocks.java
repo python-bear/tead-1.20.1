@@ -32,6 +32,15 @@ public class TeadBlocks {
     public static final Block GOLD_CHAIN = registerBlock("gold_chain",
             new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.GOLD)
                     .strength(4.0f, 5.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
+    public static final Block STEEL_CHAIN = registerBlock("steel_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.GOLD)
+                    .strength(6.0f, 7.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
+    public static final Block ROSE_GOLD_CHAIN = registerBlock("rose_gold_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.BRIGHT_RED)
+                    .strength(5.0f, 6.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
+    public static final Block BRONZE_CHAIN = registerBlock("bronze_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.ORANGE)
+                    .strength(5.0f, 6.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
     public static final Block DRY_GRASS = registerBlock("dry_grass",
             new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
     public static final Block BROWN_DRY_GRASS = registerBlock("brown_dry_grass",

@@ -36,7 +36,10 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.SANDY_COBBLESTONE)
                 .add(TeadBlocks.VERY_SANDY_COBBLESTONE)
 
-                .add(TeadBlocks.GOLD_CHAIN);
+                .add(TeadBlocks.GOLD_CHAIN)
+                .add(TeadBlocks.STEEL_CHAIN)
+                .add(TeadBlocks.ROSE_GOLD_CHAIN)
+                .add(TeadBlocks.BRONZE_CHAIN);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(TeadBlocks.CLAYISH_MUD)
@@ -79,6 +82,9 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.SANDY_COBBLESTONE)
                 .add(TeadBlocks.VERY_SANDY_COBBLESTONE)
                 .add(TeadBlocks.GOLD_CHAIN)
+                .add(TeadBlocks.STEEL_CHAIN)
+                .add(TeadBlocks.ROSE_GOLD_CHAIN)
+                .add(TeadBlocks.BRONZE_CHAIN)
 
                 .add(Blocks.STONECUTTER)
                 .add(Blocks.ANVIL)
@@ -299,7 +305,8 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(TeadBlocks.BLOCK_OF_RUBY)
-                .add(TeadBlocks.GOLD_CHAIN);
+                .add(TeadBlocks.GOLD_CHAIN)
+                .add(TeadBlocks.ROSE_GOLD_CHAIN);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(TeadBlocks.LEAD_ORE)
