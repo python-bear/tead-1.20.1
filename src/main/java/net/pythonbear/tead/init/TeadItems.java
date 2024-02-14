@@ -278,6 +278,30 @@ public class TeadItems {
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
     public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
             new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item STEEL_CHAINMAIL_HELMET = registerItem("steel_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item STEEL_CHAINMAIL_CHESTPLATE = registerItem("steel_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item STEEL_CHAINMAIL_LEGGINGS = registerItem("steel_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item STEEL_CHAINMAIL_BOOTS = registerItem("steel_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item ROSE_GOLD_CHAINMAIL_HELMET = registerItem("rose_gold_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.ROSE_GOLD_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item ROSE_GOLD_CHAINMAIL_CHESTPLATE = registerItem("rose_gold_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.ROSE_GOLD_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item ROSE_GOLD_CHAINMAIL_LEGGINGS = registerItem("rose_gold_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.ROSE_GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item ROSE_GOLD_CHAINMAIL_BOOTS = registerItem("rose_gold_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.ROSE_GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item BRONZE_CHAINMAIL_HELMET = registerItem("bronze_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.BRONZE_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item BRONZE_CHAINMAIL_CHESTPLATE = registerItem("bronze_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.BRONZE_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item BRONZE_CHAINMAIL_LEGGINGS = registerItem("bronze_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.BRONZE_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item BRONZE_CHAINMAIL_BOOTS = registerItem("bronze_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.BRONZE_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item ROBE_HELMET = registerItem("robe_helmet",
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item ROBE_CHESTPLATE = registerItem("robe_chestplate",

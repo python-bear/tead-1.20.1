@@ -27,7 +27,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ROSE_GOLD_INGOT);
                         entries.add(TeadItems.ROSE_GOLD_NUGGET);
                         entries.add(TeadItems.BRONZE_INGOT);
-                        entries.add(TeadItems.BRONZE_INGOT);
+                        entries.add(TeadItems.BRONZE_NUGGET);
                         entries.add(TeadItems.COPPER_NUGGET);
                         entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
@@ -180,13 +180,13 @@ public class TeadItemGroups {
                         entries.add(TeadItems.OBSIDIAN_SWORD);
 
                         entries.add(TeadItems.SWIFTNESS_BOOTS);
+                        entries.add(TeadItems.ROBE_HELMET);
+                        entries.add(TeadItems.ROBE_CHESTPLATE);
+                        entries.add(TeadItems.ROBE_BOOTS);
                         entries.add(TeadItems.GOLD_CHAINMAIL_HELMET);
                         entries.add(TeadItems.GOLD_CHAINMAIL_CHESTPLATE);
                         entries.add(TeadItems.GOLD_CHAINMAIL_LEGGINGS);
                         entries.add(TeadItems.GOLD_CHAINMAIL_BOOTS);
-                        entries.add(TeadItems.ROBE_HELMET);
-                        entries.add(TeadItems.ROBE_CHESTPLATE);
-                        entries.add(TeadItems.ROBE_BOOTS);
                         entries.add(TeadItems.GOLD_STALWART_HELMET);
                         entries.add(TeadItems.GOLD_STALWART_CHESTPLATE);
                         entries.add(TeadItems.GOLD_HIGHLAND_HELMET);
@@ -195,6 +195,10 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_PLATE_HELMET);
                         entries.add(TeadItems.GOLD_PLATE_CHESTPLATE);
                         entries.add(TeadItems.GOLD_PLATE_BOOTS);
+                        entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_HELMET);
+                        entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_CHESTPLATE);
+                        entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_LEGGINGS);
+                        entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_BOOTS);
                         entries.add(TeadItems.IRON_STALWART_HELMET);
                         entries.add(TeadItems.IRON_STALWART_CHESTPLATE);
                         entries.add(TeadItems.IRON_HIGHLAND_HELMET);
@@ -203,6 +207,14 @@ public class TeadItemGroups {
                         entries.add(TeadItems.IRON_PLATE_HELMET);
                         entries.add(TeadItems.IRON_PLATE_CHESTPLATE);
                         entries.add(TeadItems.IRON_PLATE_BOOTS);
+                        entries.add(TeadItems.BRONZE_CHAINMAIL_HELMET);
+                        entries.add(TeadItems.BRONZE_CHAINMAIL_CHESTPLATE);
+                        entries.add(TeadItems.BRONZE_CHAINMAIL_LEGGINGS);
+                        entries.add(TeadItems.BRONZE_CHAINMAIL_BOOTS);
+                        entries.add(TeadItems.STEEL_CHAINMAIL_HELMET);
+                        entries.add(TeadItems.STEEL_CHAINMAIL_CHESTPLATE);
+                        entries.add(TeadItems.STEEL_CHAINMAIL_LEGGINGS);
+                        entries.add(TeadItems.STEEL_CHAINMAIL_BOOTS);
                         entries.add(TeadItems.DIAMOND_STALWART_HELMET);
                         entries.add(TeadItems.DIAMOND_STALWART_CHESTPLATE);
                         entries.add(TeadItems.DIAMOND_HIGHLAND_HELMET);

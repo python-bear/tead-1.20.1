@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:bronze_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    },
+    "%": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "##",
+    " %",
+    " $"
+  ],
+  "result": {
+    "item": "tead:bronze_hoe"
+  },
+  "show_notification": true
+}

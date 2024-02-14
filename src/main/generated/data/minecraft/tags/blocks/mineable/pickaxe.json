@@ -14,6 +14,9 @@
     "tead:stone_plaque",
     "tead:sandy_cobblestone",
     "tead:very_sandy_cobblestone",
-    "tead:gold_chain"
+    "tead:gold_chain",
+    "tead:steel_chain",
+    "tead:rose_gold_chain",
+    "tead:bronze_chain"
   ]
 }

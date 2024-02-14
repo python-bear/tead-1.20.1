@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "tead:block_of_ruby",
-    "tead:gold_chain"
+    "tead:gold_chain",
+    "tead:rose_gold_chain"
   ]
 }

@@ -11,10 +11,10 @@ import net.pythonbear.tead.Tead;
 import java.util.function.Supplier;
 
 public enum TeadArmorMaterials implements ArmorMaterial {
-    SWIFTNESS("swiftness", 10, new int[] {1, 3, 2, 1}, 4,
+    SWIFTNESS("swiftness", 10, new int[] {1, 3, 2, 1}, 17,
             SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0,
             () -> Ingredient.ofItems(Items.LEATHER)),
-    ROBE("robe", 5, new int[] {1, 3, 2, 1}, 15,
+    ROBE("robe", 5, new int[] {1, 3, 2, 1}, 16,
             SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0, 0,
             () -> Ingredient.ofItems(Items.LEATHER)),
     GOLD_STALWART("gold_stalwart", 8, new int[] {1, 5, 3, 2}, 25,
@@ -66,6 +66,15 @@ public enum TeadArmorMaterials implements ArmorMaterial {
             SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4, 0.2f,
             () -> Ingredient.ofItems(Items.NETHERITE_INGOT)),
     GOLD_CHAIN("gold_chain", 7, new int[] {1, 4, 2, 1}, 25,
+    SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
+            () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN)),
+    STEEL_CHAIN("steel_chain", 7, new int[] {1, 4, 2, 1}, 25,
+    SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
+            () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN)),
+    ROSE_GOLD_CHAIN("rose_gold_chain", 7, new int[] {1, 4, 2, 1}, 25,
+    SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
+            () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN)),
+    BRONZE_CHAIN("bronze_chain", 7, new int[] {1, 4, 2, 1}, 25,
     SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0, 0,
             () -> Ingredient.ofItems(TeadBlocks.GOLD_CHAIN));
 

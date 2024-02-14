@@ -8,21 +8,21 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum TeadToolMaterials implements ToolMaterial {
-    LEAD(MiningLevels.STONE, 200, 5.5f, 2.0f, 19,
+    LEAD(MiningLevels.STONE, 200, 5.5f, 2.0f, 0,
             () -> Ingredient.ofItems(TeadItems.LEAD_INGOT)),
-    COPPER(MiningLevels.IRON, 235, 5.9f, 2.0f, 16,
+    COPPER(MiningLevels.IRON, 235, 5.9f, 2.0f, 14,
             () -> Ingredient.ofItems(Items.COPPER_INGOT)),
-    STEEL(MiningLevels.DIAMOND, 1250, 7.0f, 2.5f, 14,
+    STEEL(MiningLevels.DIAMOND, 1250, 7.0f, 2.5f, 13,
             () -> Ingredient.ofItems(TeadItems.STEEL_INGOT)),
-    ROSE_GOLD(MiningLevels.WOOD, 202, 9.0f, 1.0f, 19,
+    ROSE_GOLD(MiningLevels.IRON, 202, 9.0f, 1.0f, 19,
             () -> Ingredient.ofItems(TeadItems.ROSE_GOLD_INGOT)),
-    BRONZE(MiningLevels.IRON, 750, 5.9f, 2.0f, 18,
+    BRONZE(MiningLevels.IRON, 750, 6f, 2.0f, 7,
             () -> Ingredient.ofItems(TeadItems.BRONZE_INGOT)),
-    CORAL(MiningLevels.STONE, 235, 6.5f, 2.0f, 13,
+    CORAL(MiningLevels.STONE, 235, 6.2f, 1.5f, 13,
             () -> Ingredient.ofItems(Items.BRAIN_CORAL)),
-    BONE(MiningLevels.STONE, 115, 4.2f, 2.0f, 5,
+    BONE(MiningLevels.STONE, 115, 4.2f, 1.7f, 16,
             () -> Ingredient.ofItems(Items.BONE)),
-    OBSIDIAN(MiningLevels.NETHERITE, 2031, 13.0f, 4.0f, 3,
+    OBSIDIAN(MiningLevels.DIAMOND, 2045, 8.5f, 3f, 3,
             () -> Ingredient.ofItems(Items.OBSIDIAN));
 
     private final int miningLevel;
