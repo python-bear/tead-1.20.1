@@ -41,6 +41,9 @@ public class TeadBlocks {
     public static final Block BRONZE_CHAIN = registerBlock("bronze_chain",
             new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.ORANGE)
                     .strength(5.0f, 6.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
+    public static final Block COPPER_CHAIN = registerBlock("copper_chain",
+            new ChainBlock(FabricBlockSettings.copyOf(Blocks.CHAIN).mapColor(MapColor.ORANGE)
+                    .strength(4.0f, 5.0f).nonOpaque().solid().requiresTool().dynamicBounds()));
     public static final Block DRY_GRASS = registerBlock("dry_grass",
             new GrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK)));
     public static final Block BROWN_DRY_GRASS = registerBlock("brown_dry_grass",

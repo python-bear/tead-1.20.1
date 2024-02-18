@@ -23,6 +23,7 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.ROSE_GOLD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRONZE_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.COPPER_CHAIN, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
@@ -36,6 +37,10 @@ public class TeadClient implements ClientModInitializer {
                 TeadItems.GOLD_PLATE_HELMET,
                 TeadItems.GOLD_PLATE_CHESTPLATE,
                 TeadItems.GOLD_PLATE_BOOTS,
+                TeadItems.COPPER_HIGHLAND_CHESTPLATE,
+                TeadItems.COPPER_PLATE_HELMET,
+                TeadItems.COPPER_PLATE_CHESTPLATE,
+                TeadItems.COPPER_PLATE_BOOTS,
                 TeadItems.IRON_HIGHLAND_CHESTPLATE,
                 TeadItems.IRON_PLATE_HELMET,
                 TeadItems.IRON_PLATE_CHESTPLATE,

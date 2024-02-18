@@ -388,6 +388,66 @@ public class TeadItems {
             new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item NETHERITE_PLATE_BOOTS = registerItem("netherite_plate_boots",
             new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item COPPER_AXE = registerItem("copper_axe",
+            new AxeItem(TeadToolMaterials.COPPER, 5.0f, -3.2f,  new FabricItemSettings()));
+    public static final Item COPPER_PICKAXE = registerItem("copper_pickaxe",
+            new PickaxeItem(TeadToolMaterials.COPPER, 1, -2.9f,  new FabricItemSettings()));
+    public static final Item COPPER_SWORD = registerItem("copper_sword",
+            new SwordItem(TeadToolMaterials.COPPER, 3, -2.5f,  new FabricItemSettings()));
+    public static final Item COPPER_SHOVEL = registerItem("copper_shovel",
+            new ShovelItem(TeadToolMaterials.COPPER, 1.5f, -3.0f,  new FabricItemSettings()));
+    public static final Item COPPER_HOE = registerItem("copper_hoe",
+            new HoeItem(TeadToolMaterials.COPPER, -2, -1.0f,  new FabricItemSettings()));
+    public static final Item COPPER_DOUBLE_AXE = registerItem("copper_double_axe",
+            new AxeItem(TeadToolMaterials.COPPER, 6.0f, -3.5f,  new FabricItemSettings()));
+    public static final Item COPPER_HAMMER = registerItem("copper_hammer",
+            new HammerItem(TeadToolMaterials.COPPER, 1, -3.2f,  new FabricItemSettings()));
+    public static final Item COPPER_DAGGER = registerItem("copper_dagger",
+            new DaggerItem(TeadToolMaterials.COPPER, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item COPPER_RAPIER = registerItem("copper_rapier",
+            new RapierItem(TeadToolMaterials.COPPER, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item COPPER_GREATSWORD = registerItem("copper_greatsword",
+            new GreatSwordItem(TeadToolMaterials.COPPER, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item COPPER_SCYTHE = registerItem("copper_scythe",
+            new ScytheItem(TeadToolMaterials.COPPER, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item COPPER_SICKLE = registerItem("copper_sickle",
+            new SickleItem(TeadToolMaterials.COPPER, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item COPPER_CLAYMORE = registerItem("copper_claymore",
+            new ClaymoreItem(TeadToolMaterials.COPPER, 3, -2.5f,  new FabricItemSettings()));
+    public static final Item COPPER_CHAINMAIL_HELMET = registerItem("copper_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.COPPER_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_CHAINMAIL_CHESTPLATE = registerItem("copper_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.COPPER_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item COPPER_CHAINMAIL_LEGGINGS = registerItem("copper_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.COPPER_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item COPPER_CHAINMAIL_BOOTS = registerItem("copper_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.COPPER_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item COPPER_HELMET = registerItem("copper_helmet",
+            new ArmorItem(TeadArmorMaterials.COPPER, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_CHESTPLATE = registerItem("copper_chestplate",
+            new ArmorItem(TeadArmorMaterials.COPPER, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item COPPER_LEGGINGS = registerItem("copper_leggings",
+            new ArmorItem(TeadArmorMaterials.COPPER, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item COPPER_BOOTS = registerItem("copper_boots",
+            new ArmorItem(TeadArmorMaterials.COPPER, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item COPPER_STALWART_HELMET = registerItem("copper_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.COPPER_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_STALWART_CHESTPLATE = registerItem("copper_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.COPPER_STALWART, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item COPPER_HIGHLAND_HELMET = registerItem("copper_highland_helmet",
+            new HighlandDyableArmorItem(TeadArmorMaterials.COPPER_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_HIGHLAND_CHESTPLATE = registerItem("copper_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.COPPER_HIGHLAND, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item COPPER_ROYAL_HELMET = registerItem("copper_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.COPPER_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_PLATE_HELMET = registerItem("copper_plate_helmet",
+            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item COPPER_PLATE_CHESTPLATE = registerItem("copper_plate_chestplate",
+            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item COPPER_PLATE_BOOTS = registerItem("copper_plate_boots",
+            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",

@@ -105,6 +105,20 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_GREATSWORD);
                         entries.add(TeadItems.GOLD_CLAYMORE);
 
+                        entries.add(TeadItems.COPPER_AXE);
+                        entries.add(TeadItems.COPPER_HOE);
+                        entries.add(TeadItems.COPPER_PICKAXE);
+                        entries.add(TeadItems.COPPER_SHOVEL);
+                        entries.add(TeadItems.COPPER_SWORD);
+                        entries.add(TeadItems.COPPER_HAMMER);
+                        entries.add(TeadItems.COPPER_DAGGER);
+                        entries.add(TeadItems.COPPER_RAPIER);
+                        entries.add(TeadItems.COPPER_DOUBLE_AXE);
+                        entries.add(TeadItems.COPPER_SICKLE);
+                        entries.add(TeadItems.COPPER_SCYTHE);
+                        entries.add(TeadItems.COPPER_GREATSWORD);
+                        entries.add(TeadItems.COPPER_CLAYMORE);
+
                         entries.add(TeadItems.IRON_HAMMER);
                         entries.add(TeadItems.IRON_DAGGER);
                         entries.add(TeadItems.IRON_RAPIER);
@@ -199,6 +213,22 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_CHESTPLATE);
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_LEGGINGS);
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_BOOTS);
+                        entries.add(TeadItems.COPPER_CHAINMAIL_HELMET);
+                        entries.add(TeadItems.COPPER_CHAINMAIL_CHESTPLATE);
+                        entries.add(TeadItems.COPPER_CHAINMAIL_LEGGINGS);
+                        entries.add(TeadItems.COPPER_CHAINMAIL_BOOTS);
+                        entries.add(TeadItems.COPPER_HELMET);
+                        entries.add(TeadItems.COPPER_CHESTPLATE);
+                        entries.add(TeadItems.COPPER_LEGGINGS);
+                        entries.add(TeadItems.COPPER_BOOTS);
+                        entries.add(TeadItems.COPPER_STALWART_HELMET);
+                        entries.add(TeadItems.COPPER_STALWART_CHESTPLATE);
+                        entries.add(TeadItems.COPPER_HIGHLAND_HELMET);
+                        entries.add(TeadItems.COPPER_HIGHLAND_CHESTPLATE);
+                        entries.add(TeadItems.COPPER_ROYAL_HELMET);
+                        entries.add(TeadItems.COPPER_PLATE_HELMET);
+                        entries.add(TeadItems.COPPER_PLATE_CHESTPLATE);
+                        entries.add(TeadItems.COPPER_PLATE_BOOTS);
                         entries.add(TeadItems.IRON_STALWART_HELMET);
                         entries.add(TeadItems.IRON_STALWART_CHESTPLATE);
                         entries.add(TeadItems.IRON_HIGHLAND_HELMET);
@@ -234,6 +264,7 @@ public class TeadItemGroups {
 
                         entries.add(TeadBlocks.GOLD_CHAIN);
                         entries.add(TeadBlocks.BRONZE_CHAIN);
+                        entries.add(TeadBlocks.COPPER_CHAIN);
                         entries.add(TeadBlocks.ROSE_GOLD_CHAIN);
                         entries.add(TeadBlocks.STEEL_CHAIN);
                         entries.add(TeadBlocks.BLOCK_OF_RUBY);

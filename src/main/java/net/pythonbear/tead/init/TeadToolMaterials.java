@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 public enum TeadToolMaterials implements ToolMaterial {
     LEAD(MiningLevels.STONE, 200, 5.5f, 2.0f, 0,
             () -> Ingredient.ofItems(TeadItems.LEAD_INGOT)),
-    COPPER(MiningLevels.IRON, 235, 5.9f, 2.0f, 14,
+    COPPER(MiningLevels.IRON, 235, 5.9f, 1.8f, 14,
             () -> Ingredient.ofItems(Items.COPPER_INGOT)),
     STEEL(MiningLevels.DIAMOND, 1250, 7.0f, 2.5f, 13,
             () -> Ingredient.ofItems(TeadItems.STEEL_INGOT)),

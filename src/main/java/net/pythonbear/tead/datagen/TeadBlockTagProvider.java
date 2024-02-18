@@ -39,7 +39,8 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.GOLD_CHAIN)
                 .add(TeadBlocks.STEEL_CHAIN)
                 .add(TeadBlocks.ROSE_GOLD_CHAIN)
-                .add(TeadBlocks.BRONZE_CHAIN);
+                .add(TeadBlocks.BRONZE_CHAIN)
+                .add(TeadBlocks.COPPER_CHAIN);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(TeadBlocks.CLAYISH_MUD)
@@ -85,6 +86,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.STEEL_CHAIN)
                 .add(TeadBlocks.ROSE_GOLD_CHAIN)
                 .add(TeadBlocks.BRONZE_CHAIN)
+                .add(TeadBlocks.COPPER_CHAIN)
 
                 .add(Blocks.STONECUTTER)
                 .add(Blocks.ANVIL)
