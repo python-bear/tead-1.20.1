@@ -1,10 +1,11 @@
 package net.pythonbear.tead.item;
 
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.Vanishable;
 
-public class TempestKnifeItem extends BladedWeaponItem implements Vanishable {
-    public TempestKnifeItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings, false);
+public class TempestKnifeItem extends BladedWeaponItem {
+    public TempestKnifeItem(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, toolMaterial.getAttackDamage() + 4, 1.6f, 0,
+                0, 0, 0, 1.5f, false,
+                settings.maxDamage(toolMaterial.getDurability() + 16));
     }
 }

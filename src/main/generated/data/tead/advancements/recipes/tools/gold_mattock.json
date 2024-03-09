@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "tead:gold_rapier"
+        "recipe": "tead:gold_mattock"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "tead:gold_rapier"
+      "tead:gold_mattock"
     ]
   },
   "sends_telemetry_event": false

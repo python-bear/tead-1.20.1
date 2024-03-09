@@ -1,10 +1,11 @@
 package net.pythonbear.tead.item;
 
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.Vanishable;
 
-public class CrescentDaggerItem extends BladedWeaponItem implements Vanishable {
-    public CrescentDaggerItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings, true);
+public class CrescentDaggerItem extends BladedWeaponItem {
+    public CrescentDaggerItem(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, toolMaterial.getAttackDamage() + 3.5f, 1.9f, 0,
+                0, 0, 0, 1.5f, true,
+                settings.maxDamage(toolMaterial.getDurability()));
     }
 }

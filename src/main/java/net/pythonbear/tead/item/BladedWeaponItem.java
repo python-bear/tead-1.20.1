@@ -2,28 +2,46 @@ package net.pythonbear.tead.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 
+import net.minecraft.world.World;
 import net.pythonbear.tead.init.CustomAttacking;
 
 public class BladedWeaponItem extends SwordItem implements Vanishable {
     private final float attackDamage;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
     public final boolean dualWielded;
+    public final float knockbackMagnitude;
+    public final float knockbackRadius;
+    public final int slownessAmplifier;
+    public final int slownessDuration;
+    public final float miningSpeed;
 
-    public BladedWeaponItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Item.Settings settings,
-                            boolean dualWielded) {
-        super(toolMaterial, (int)attackDamage, attackSpeed, settings);
+    public BladedWeaponItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, float knockbackMagnitude,
+                            float knockbackRadius, int slownessAmplifier, int slownessDuration, float miningSpeed,
+                            boolean dualWielded, Item.Settings settings) {
+        super(toolMaterial, (int)attackDamage - 1, attackSpeed, settings);
+        this.knockbackMagnitude = knockbackMagnitude;
+        this.knockbackRadius = knockbackRadius;
+        this.slownessAmplifier = slownessAmplifier;
+        this.slownessDuration = slownessDuration;
+        this.miningSpeed = miningSpeed;
         this.dualWielded = dualWielded;
-        this.attackDamage = attackDamage + toolMaterial.getAttackDamage();
+        this.attackDamage = attackDamage + toolMaterial.getAttackDamage() - 1;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
@@ -66,5 +84,42 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
         } else {
             return ActionResult.PASS;
         }
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if ((target instanceof PlayerEntity || target instanceof MobEntity) &
+                (this.knockbackMagnitude > 0  || this.slownessDuration > 0)) {
+            World world = attacker.getWorld();
+
+            doAttackKnockback(world, target, attacker, this.knockbackMagnitude, this.knockbackRadius);
+            attacker.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, this.slownessDuration,
+                    slownessAmplifier, false, false, false));
+        }
+
+        return super.postHit(stack, target, attacker);
+    }
+
+    private void doAttackKnockback(World world, LivingEntity target, LivingEntity attacker,
+                                   Float knockbackStrength, Float knockbackRadius) {
+        world.getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(knockbackRadius),
+                        (livingEntity) -> true)
+            .forEach((entity) -> {
+                if (entity != attacker) {
+                    entity.takeKnockback(knockbackStrength, -(entity.getX() - attacker.getX()),
+                            -(entity.getZ() - attacker.getZ()));
+                    if (entity != target) {
+                        entity.animateDamage(attacker.getYaw());
+                    }
+                }
+            });
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
+        if (state.isOf(Blocks.COBWEB)) {
+            return 13.5f + this.miningSpeed;
+        }
+        return state.isIn(BlockTags.SWORD_EFFICIENT) ? this.miningSpeed : 1.0f;
     }
 }

@@ -1,10 +1,11 @@
 package net.pythonbear.tead.item;
 
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.Vanishable;
 
-public class RanseurItem extends BladedWeaponItem implements Vanishable {
-    public RanseurItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings, false);
+public class RanseurItem extends BladedWeaponItem {
+    public RanseurItem(ToolMaterial toolMaterial, Settings settings) {
+        super(toolMaterial, toolMaterial.getAttackDamage() + 3.5f, 1.8f, 0,
+                0, 0, 0, 1, false,
+                settings.maxDamage(toolMaterial.getDurability() + 8));
     }
 }

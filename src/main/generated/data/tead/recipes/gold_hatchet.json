@@ -5,17 +5,17 @@
     "#": {
       "item": "minecraft:gold_ingot"
     },
-    "%": {
+    "$": {
       "item": "tead:handle"
     }
   },
   "pattern": [
-    "  #",
-    " # ",
-    "%# "
+    "## ",
+    "#$ ",
+    "   "
   ],
   "result": {
-    "item": "tead:gold_rapier"
+    "item": "tead:gold_hatchet"
   },
   "show_notification": true
 }

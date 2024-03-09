@@ -3,22 +3,19 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:gold_block"
-    },
-    "$": {
       "item": "minecraft:gold_ingot"
     },
-    "%": {
-      "item": "tead:handle"
+    "$": {
+      "item": "minecraft:string"
     }
   },
   "pattern": [
-    "$",
-    "#",
-    "%"
+    " #$",
+    "# $",
+    " #$"
   ],
   "result": {
-    "item": "tead:gold_greatsword"
+    "item": "tead:gold_power_bow"
   },
   "show_notification": true
 }

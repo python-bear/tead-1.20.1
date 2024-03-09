@@ -14,11 +14,11 @@
   },
   "pattern": [
     "###",
-    "#%#",
+    " %#",
     " $ "
   ],
   "result": {
-    "item": "tead:gold_hammer"
+    "item": "tead:gold_mattock"
   },
   "show_notification": true
 }

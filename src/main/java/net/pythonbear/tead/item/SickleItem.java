@@ -8,13 +8,13 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadTags;
 
-public class SickleItem extends BladedWeaponItem implements Vanishable {
+public class SickleItem extends BladedWeaponItem {
     private final TagKey<Block> effectiveBlocks;
     protected final float miningSpeed;
-    public SickleItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, Item.Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings, true);
+    public SickleItem(ToolMaterial toolMaterial, Item.Settings settings) {
+        super(toolMaterial, toolMaterial.getAttackDamage() + 2, 2, 0,
+                0, 0, 0, 0, true, settings);
         this.effectiveBlocks = BlockTags.HOE_MINEABLE;
         this.miningSpeed = toolMaterial.getMiningSpeedMultiplier();
     }

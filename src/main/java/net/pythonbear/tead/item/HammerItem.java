@@ -1,8 +1,15 @@
 package net.pythonbear.tead.item;
 
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.*;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.TagKey;
@@ -12,7 +19,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
 import net.pythonbear.tead.init.TeadTags;
 
@@ -21,6 +27,10 @@ import java.util.Optional;
 
 public class HammerItem extends MiningToolItem implements Vanishable  {
     protected final float miningSpeed;
+    private final float attackDamage;
+    public final float knockbackMagnitude = 0.2f;
+    public final float knockbackRadius = 0.5f;
+    private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
     private final TagKey<Block> effectiveBlocks;
     protected static final Map<Block, Block> CRACKED_BLOCKS = new ImmutableMap.Builder<Block, Block>()
             .put(Blocks.STONE, Blocks.COBBLESTONE)
@@ -85,10 +95,19 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
             .build();
 
 
-    public HammerItem(ToolMaterial material, int attackDamage, float attackSpeed, Item.Settings settings) {
-        super(attackDamage, attackSpeed, material, TeadTags.Blocks.REFINED_BUILDING_BLOCKS, settings);
-        this.miningSpeed = material.getMiningSpeedMultiplier() + 1;
+    public HammerItem(ToolMaterial toolMaterial, Item.Settings settings) {
+        super(toolMaterial.getAttackDamage() + 3.5f, 0.7f, toolMaterial,
+                TeadTags.Blocks.REFINED_BUILDING_BLOCKS,
+                settings.maxDamage(toolMaterial.getDurability() + 16));
+        this.miningSpeed = toolMaterial.getMiningSpeedMultiplier() + 1;
         this.effectiveBlocks = TeadTags.Blocks.REFINED_BUILDING_BLOCKS;
+        this.attackDamage = toolMaterial.getAttackDamage() + 3.5f;
+        ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
+        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
+                "Tool modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
+        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
+                "Tool modifier", 0.7f, EntityAttributeModifier.Operation.ADDITION));
+        this.attributeModifiers = builder.build();
     }
 
     @Override
@@ -112,10 +131,10 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
             if (playerEntity instanceof ServerPlayerEntity) {
                 Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos, itemStack);
             }
-            world.setBlockState(blockPos, (BlockState)optional.get(),
+            world.setBlockState(blockPos, optional.get(),
                     Block.NOTIFY_ALL | Block.REDRAW_ON_MAIN_THREAD);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, blockPos, GameEvent.Emitter.of(playerEntity, 
-                    (BlockState)optional.get()));
+                    optional.get()));
             if (playerEntity != null) {
                 itemStack.damage(1, playerEntity, p -> p.sendToolBreakStatus(context.getHand()));
             }
@@ -126,6 +145,36 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
 
     private Optional<BlockState> getCrackedState(BlockState state) {
         return Optional.ofNullable(CRACKED_BLOCKS.get(state.getBlock()))
-                .map(block -> (BlockState)block.getDefaultState());
+                .map(Block::getDefaultState);
+    }
+
+    public float getAttackDamage() {
+        return this.attackDamage;
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (target instanceof PlayerEntity || target instanceof MobEntity) {
+            World world = attacker.getWorld();
+
+            doAttackKnockback(world, target, attacker, this.knockbackMagnitude, this.knockbackRadius);
+        }
+
+        return super.postHit(stack, target, attacker);
+    }
+
+    private void doAttackKnockback(World world, LivingEntity target, LivingEntity attacker,
+                                   Float knockbackStrength, Float knockbackRadius) {
+        world.getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(knockbackRadius),
+                        (livingEntity) -> true)
+                .forEach((entity) -> {
+                    if (entity != attacker) {
+                        entity.takeKnockback(knockbackStrength, -(entity.getX() - attacker.getX()),
+                                -(entity.getZ() - attacker.getZ()));
+                        if (entity != target) {
+                            entity.animateDamage(attacker.getYaw());
+                        }
+                    }
+                });
     }
 }

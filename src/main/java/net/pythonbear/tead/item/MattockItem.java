@@ -3,11 +3,14 @@ package net.pythonbear.tead.item;
 import net.minecraft.item.Item;
 import net.minecraft.item.MiningToolItem;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.registry.tag.BlockTags;
+import net.pythonbear.tead.init.TeadTags;
 
 public class MattockItem
         extends MiningToolItem {
-    public MattockItem(ToolMaterial material, int attackDamage, float attackSpeed, Item.Settings settings) {
-        super(attackDamage, attackSpeed, material, BlockTags.PICKAXE_MINEABLE, settings);
+    protected final float miningSpeed;
+    public MattockItem(ToolMaterial material, Item.Settings settings) {
+        super(material.getAttackDamage() + 0.5f, 1.1f, material, TeadTags.Blocks.MATTOCK_MINEABLE,
+                settings.maxDamage(material.getDurability() + 16));
+        this.miningSpeed = material.getMiningSpeedMultiplier() - 0.4f;
     }
 }

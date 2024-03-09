@@ -13,12 +13,12 @@
     }
   },
   "pattern": [
-    "###",
-    "#%#",
-    " $ "
+    "  #",
+    " $ ",
+    "%  "
   ],
   "result": {
-    "item": "tead:gold_hammer"
+    "item": "tead:gold_spear"
   },
   "show_notification": true
 }

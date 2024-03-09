@@ -333,5 +333,9 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.WAXED_OXIDIZED_COPPER)
                 .add(Blocks.OXIDIZED_CUT_COPPER)
                 .add(Blocks.WAXED_OXIDIZED_CUT_COPPER);
+
+        getOrCreateTagBuilder(TeadTags.Blocks.MATTOCK_MINEABLE)
+                .addOptionalTag(BlockTags.PICKAXE_MINEABLE)
+                .addOptionalTag(BlockTags.AXE_MINEABLE);
     }
 }
