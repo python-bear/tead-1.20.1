@@ -6,7 +6,7 @@
       "tag": "minecraft:planks"
     },
     "%": {
-      "item": "tead:handle"
+      "item": "minecraft:stick"
     }
   },
   "pattern": [

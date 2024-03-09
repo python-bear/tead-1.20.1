@@ -601,6 +601,17 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .group("ruby_arrow")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "ruby_arrow_2"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.ARROW, 4)
+                .pattern("$")
+                .pattern("#")
+                .pattern("%")
+                .input('%', Items.FEATHER)
+                .input('#', Items.STICK)
+                .input('$', Items.FLINT)
+                .criterion(hasItem(Items.FEATHER), conditionsFromItem(Items.FEATHER))
+                .criterion(hasItem(Items.FLINT), conditionsFromItem(Items.FLINT))
+                .group("arrow")
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "arrow_1"));
+        ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, Items.ARROW, 4)
                 .pattern("  $")
                 .pattern(" # ")
                 .pattern("%  ")
@@ -839,7 +850,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern(" %%")
                 .pattern("%  ")
-                .input('%', TeadItems.HANDLE)
+                .input('%', Items.STICK)
                 .input('#', ItemTags.PLANKS)
                 .criterion(hasItem(Items.ACACIA_PLANKS), conditionsFromItem(Items.ACACIA_PLANKS))
                 .criterion(hasItem(Items.BAMBOO_PLANKS), conditionsFromItem(Items.BAMBOO_PLANKS))
@@ -976,7 +987,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern(" %%")
                 .pattern("%  ")
-                .input('%', TeadItems.HANDLE)
+                .input('%', Items.STICK)
                 .input('#', Items.GOLD_INGOT)
                 .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
                 .offerTo(exporter);
@@ -1042,7 +1053,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern(" %%")
                 .pattern("%  ")
-                .input('%', TeadItems.HANDLE)
+                .input('%', Items.STICK)
                 .input('#', Items.IRON_INGOT)
                 .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
                 .offerTo(exporter);
@@ -1357,7 +1368,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("###")
                 .pattern(" %%")
                 .pattern("%  ")
-                .input('%', TeadItems.HANDLE)
+                .input('%', Items.STICK)
                 .input('#', Items.DIAMOND)
                 .criterion(hasItem(Items.DIAMOND), conditionsFromItem(Items.DIAMOND))
                 .offerTo(exporter);

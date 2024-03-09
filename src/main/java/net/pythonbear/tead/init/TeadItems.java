@@ -172,22 +172,60 @@ public class TeadItems {
             new ScytheItem(ToolMaterials.STONE, 3, -2.4f,  new FabricItemSettings()));
     public static final Item STONE_SICKLE = registerItem("stone_sickle",
             new SickleItem(ToolMaterials.STONE, 0.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_HATCHET = registerItem("gold_hatchet",
+            new HatchetItem(ToolMaterials.GOLD, 6.5f, -3.3f,  new FabricItemSettings()));
     public static final Item GOLD_DOUBLE_AXE = registerItem("gold_double_axe",
             new AxeItem(ToolMaterials.GOLD, 6.5f, -3.3f,  new FabricItemSettings()));
+    public static final Item GOLD_DOUBLE_HIGHLAND_AXE = registerItem("gold_double_highland_axe",
+            new HighlandAxeItem(ToolMaterials.GOLD, 6.5f, -3.3f,  new FabricItemSettings()));
+    public static final Item GOLD_HIGHLAND_AXE = registerItem("gold_highland_axe",
+            new HighlandAxeItem(ToolMaterials.GOLD, 6.5f, -3.3f,  new FabricItemSettings()));
     public static final Item GOLD_HAMMER = registerItem("gold_hammer",
             new HammerItem(ToolMaterials.GOLD, 2, -3.1f,  new FabricItemSettings()));
+    public static final Item GOLD_MOUNTAINEER_PICK = registerItem("gold_mountaineer_pick",
+            new MountaineerPickItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_MATTOCK = registerItem("gold_mattock",
+            new MattockItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_MACE = registerItem("gold_mace",
+            new MaceItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item GOLD_DAGGER = registerItem("gold_dagger",
             new DaggerItem(ToolMaterials.GOLD, 2.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_HOLLOW_DAGGER = registerItem("gold_hollow_dagger",
+            new HollowDaggerItem(ToolMaterials.GOLD, 2.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_RITE_DAGGER = registerItem("gold_rite_dagger",
+            new RiteDaggerItem(ToolMaterials.GOLD, 2.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_CRESCENT_DAGGER = registerItem("gold_crescent_dagger",
+            new CrescentDaggerItem(ToolMaterials.GOLD, 2.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_TRUTHSEEKER = registerItem("gold_truthseeker",
+            new TruthseekerItem(ToolMaterials.GOLD, 2.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_TEMPEST_KNIFE = registerItem("gold_tempest_knife",
+            new TempestKnifeItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_CUTLASS = registerItem("gold_cutlass",
+            new CutlassItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item GOLD_RAPIER = registerItem("gold_rapier",
             new RapierItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_KATANA = registerItem("gold_katana",
+            new KatanaItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item GOLD_GREATSWORD = registerItem("gold_greatsword",
             new GreatSwordItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_BROADSWORD = registerItem("gold_broadsword",
+            new BroadswordItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_LONGSWORD = registerItem("gold_longsword",
+            new LongswordItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_CLAYMORE = registerItem("gold_claymore",
+            new ClaymoreItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item GOLD_SCYTHE = registerItem("gold_scythe",
             new ScytheItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
     public static final Item GOLD_SICKLE = registerItem("gold_sickle",
             new SickleItem(ToolMaterials.GOLD, 1.5f, -1f,  new FabricItemSettings()));
-    public static final Item GOLD_CLAYMORE = registerItem("gold_claymore",
-            new ClaymoreItem(ToolMaterials.GOLD, 3, -2.4f,  new FabricItemSettings()));
+    public static final Item GOLD_SPEAR = registerItem("gold_spear",
+            new SpearItem(ToolMaterials.GOLD, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_RANSEUR = registerItem("gold_ranseur",
+            new RanseurItem(ToolMaterials.GOLD, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_GLAIVE = registerItem("gold_glaive",
+            new GlaiveItem(ToolMaterials.GOLD, 1.5f, -1f,  new FabricItemSettings()));
+    public static final Item GOLD_POWER_BOW = registerItem("gold_power_bow",
+            new PowerBowItem(ToolMaterials.GOLD, new FabricItemSettings()));
     public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
             new AxeItem(ToolMaterials.IRON, 6.5f, -3.4f,  new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
@@ -270,14 +308,6 @@ public class TeadItems {
             new FireboltThrower(new FabricItemSettings().maxDamage(427)));
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
             new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
-    public static final Item GOLD_CHAINMAIL_HELMET = registerItem("gold_chainmail_helmet",
-            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item GOLD_CHAINMAIL_CHESTPLATE = registerItem("gold_chainmail_chestplate",
-            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item GOLD_CHAINMAIL_LEGGINGS = registerItem("gold_chainmail_leggings",
-            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
-            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item STEEL_CHAINMAIL_HELMET = registerItem("steel_chainmail_helmet",
             new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item STEEL_CHAINMAIL_CHESTPLATE = registerItem("steel_chainmail_chestplate",
@@ -308,11 +338,6 @@ public class TeadItems {
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item ROBE_BOOTS = registerItem("robe_boots",
             new RobeArmorItem(TeadArmorMaterials.ROBE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
-    public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",
-            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item GOLD_STALWART_CHESTPLATE = registerItem("gold_stalwart_chestplate",
-            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.CHESTPLATE,
-                    new FabricItemSettings()));
     public static final Item IRON_STALWART_HELMET = registerItem("iron_stalwart_helmet",
             new StalwartArmorItem(TeadArmorMaterials.IRON_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item IRON_STALWART_CHESTPLATE = registerItem("iron_stalwart_chestplate",
@@ -329,11 +354,6 @@ public class TeadItems {
                     new FabricItemSettings()));
     public static final Item NETHERITE_STALWART_CHESTPLATE = registerItem("netherite_stalwart_chestplate",
             new StalwartArmorItem(TeadArmorMaterials.NETHERITE_STALWART, ArmorItem.Type.CHESTPLATE,
-                    new FabricItemSettings()));
-    public static final Item GOLD_HIGHLAND_HELMET = registerItem("gold_highland_helmet",
-            new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item GOLD_HIGHLAND_CHESTPLATE = registerItem("gold_highland_chestplate",
-            new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
     public static final Item IRON_HIGHLAND_HELMET = registerItem("iron_highland_helmet",
             new HighlandDyableArmorItem(TeadArmorMaterials.IRON_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
@@ -352,8 +372,6 @@ public class TeadItems {
     public static final Item NETHERITE_HIGHLAND_CHESTPLATE = registerItem("netherite_highland_chestplate",
             new HighlandDyableArmorItem(TeadArmorMaterials.NETHERITE_HIGHLAND, ArmorItem.Type.CHESTPLATE,
                     new FabricItemSettings()));
-    public static final Item GOLD_ROYAL_HELMET = registerItem("gold_royal_helmet",
-            new RoyalArmorItem(TeadArmorMaterials.GOLD_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item IRON_ROYAL_HELMET = registerItem("iron_royal_helmet",
             new RoyalArmorItem(TeadArmorMaterials.IRON_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item DIAMOND_ROYAL_HELMET = registerItem("diamond_royal_helmet",
@@ -362,32 +380,98 @@ public class TeadItems {
     public static final Item NETHERITE_ROYAL_HELMET = registerItem("netherite_royal_helmet",
             new RoyalArmorItem(TeadArmorMaterials.NETHERITE_ROYAL, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
-    public static final Item GOLD_PLATE_HELMET = registerItem("gold_plate_helmet",
-            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final Item GOLD_PLATE_CHESTPLATE = registerItem("gold_plate_chestplate",
-            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final Item GOLD_PLATE_BOOTS = registerItem("gold_plate_boots",
-            new PlateArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item IRON_PLATE_HELMET = registerItem("iron_plate_helmet",
-            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item IRON_PLATE_CHESTPLATE = registerItem("iron_plate_chestplate",
-            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item IRON_PLATE_BOOTS = registerItem("iron_plate_boots",
-            new PlateArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.IRON_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item DIAMOND_PLATE_HELMET = registerItem("diamond_plate_helmet",
-            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.HELMET,
+            new PlateDyeableArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
     public static final Item DIAMOND_PLATE_CHESTPLATE = registerItem("diamond_plate_chestplate",
-            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item DIAMOND_PLATE_BOOTS = registerItem("diamond_plate_boots",
-            new PlateArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.DIAMOND_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item NETHERITE_PLATE_HELMET = registerItem("netherite_plate_helmet",
-            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.HELMET,
+            new PlateDyeableArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.HELMET,
                     new FabricItemSettings()));
     public static final Item NETHERITE_PLATE_CHESTPLATE = registerItem("netherite_plate_chestplate",
-            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item NETHERITE_PLATE_BOOTS = registerItem("netherite_plate_boots",
-            new PlateArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.NETHERITE_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_HELMET = registerItem("gold_chainmail_helmet",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_CHESTPLATE = registerItem("gold_chainmail_chestplate",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_LEGGINGS = registerItem("gold_chainmail_leggings",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
+    public static final Item GOLD_CHAINMAIL_BOOTS = registerItem("gold_chainmail_boots",
+            new ArmorItem(TeadArmorMaterials.GOLD_CHAIN, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_REINFORCED_MAIL_HELMET = registerItem("gold_reinforced_mail_helmet",
+            new ReinforcedMailArmorItem(TeadArmorMaterials.GOLD_REINFORCED_MAIL, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item GOLD_REINFORCED_MAIL_CHESTPLATE = registerItem("gold_reinforced_mail_chestplate",
+            new ReinforcedMailArmorItem(TeadArmorMaterials.GOLD_REINFORCED_MAIL, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_STALWART_HELMET = registerItem("gold_stalwart_helmet",
+            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_STALWART_CHESTPLATE = registerItem("gold_stalwart_chestplate",
+            new StalwartArmorItem(TeadArmorMaterials.GOLD_STALWART, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_SPANGENHELM_HELMET = registerItem("gold_spangenhelm_helmet",
+            new SpangenhelmArmorItem(TeadArmorMaterials.GOLD_SPANGENHELM, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item GOLD_HIGHLAND_HELMET = registerItem("gold_highland_helmet",
+            new HighlandArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_HIGHLAND_CHESTPLATE = registerItem("gold_highland_chestplate",
+            new HighlandDyableArmorItem(TeadArmorMaterials.GOLD_HIGHLAND, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_ROYAL_HELMET = registerItem("gold_royal_helmet",
+            new RoyalArmorItem(TeadArmorMaterials.GOLD_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_THIEF_HELMET = registerItem("gold_thief_helmet",
+            new ThiefDyableArmorItem(TeadArmorMaterials.GOLD_THIEF, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_THIEF_CHESTPLATE = registerItem("gold_thief_chestplate",
+            new ThiefDyableArmorItem(TeadArmorMaterials.GOLD_THIEF, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_GUARD_HELMET = registerItem("gold_guard_helmet",
+            new GuardDyableArmorItem(TeadArmorMaterials.GOLD_GUARD, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_GUARD_CHESTPLATE = registerItem("gold_guard_chestplate",
+            new GuardDyableArmorItem(TeadArmorMaterials.GOLD_GUARD, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_MERCENARY_HELMET = registerItem("gold_mercenary_helmet",
+            new MercenaryArmorItem(TeadArmorMaterials.GOLD_MERCENARY, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_PLATE_HELMET = registerItem("gold_plate_helmet",
+            new PlateDyeableArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    public static final Item GOLD_PLATE_CHESTPLATE = registerItem("gold_plate_chestplate",
+            new PlateDyeableArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GOLD_PLATE_BOOTS = registerItem("gold_plate_boots",
+            new PlateDyeableArmorItem(TeadArmorMaterials.GOLD_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_GHOSTLY_HELMET = registerItem("gold_ghostly_helmet",
+            new GhostlyDyableArmorItem(TeadArmorMaterials.GOLD_GHOSTLY, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item GOLD_GHOSTLY_CHESTPLATE = registerItem("gold_ghostly_chestplate",
+            new GhostlyDyableArmorItem(TeadArmorMaterials.GOLD_GHOSTLY, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_GHOSTLY_BOOTS = registerItem("gold_ghostly_boots",
+            new GhostlyDyableArmorItem(TeadArmorMaterials.GOLD_GHOSTLY, ArmorItem.Type.BOOTS,
+                    new FabricItemSettings()));
+    public static final Item GOLD_GARMENT_CHESTPLATE = registerItem("gold_garment_chestplate",
+            new GarmentArmorItem(TeadArmorMaterials.GOLD_GARMENT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+    public static final Item GOLD_GARMENT_BOOTS = registerItem("gold_garment_boots",
+            new GarmentArmorItem(TeadArmorMaterials.GOLD_GARMENT, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    public static final Item GOLD_WOOLEN_HELMET = registerItem("gold_woolen_helmet",
+            new WoolenDyableArmorItem(TeadArmorMaterials.GOLD_WOOLEN, ArmorItem.Type.HELMET,
+                    new FabricItemSettings()));
+    public static final Item GOLD_WOOLEN_CHESTPLATE = registerItem("gold_woolen_chestplate",
+            new WoolenDyableArmorItem(TeadArmorMaterials.GOLD_WOOLEN, ArmorItem.Type.CHESTPLATE,
+                    new FabricItemSettings()));
+    public static final Item GOLD_WOOLEN_LEGGINGS = registerItem("gold_woolen_leggings",
+            new WoolenDyableArmorItem(TeadArmorMaterials.GOLD_WOOLEN, ArmorItem.Type.LEGGINGS,
+                    new FabricItemSettings()));
+    public static final Item GOLD_WOOLEN_BOOTS = registerItem("gold_woolen_boots",
+            new WoolenDyableArmorItem(TeadArmorMaterials.GOLD_WOOLEN, ArmorItem.Type.BOOTS,
+                    new FabricItemSettings()));
     public static final Item COPPER_AXE = registerItem("copper_axe",
             new AxeItem(TeadToolMaterials.COPPER, 5.0f, -3.2f,  new FabricItemSettings()));
     public static final Item COPPER_PICKAXE = registerItem("copper_pickaxe",
@@ -443,11 +527,11 @@ public class TeadItems {
     public static final Item COPPER_ROYAL_HELMET = registerItem("copper_royal_helmet",
             new RoyalArmorItem(TeadArmorMaterials.COPPER_ROYAL, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item COPPER_PLATE_HELMET = registerItem("copper_plate_helmet",
-            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item COPPER_PLATE_CHESTPLATE = registerItem("copper_plate_chestplate",
-            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item COPPER_PLATE_BOOTS = registerItem("copper_plate_boots",
-            new PlateArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new PlateDyeableArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",

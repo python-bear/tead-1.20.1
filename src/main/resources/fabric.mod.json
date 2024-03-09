@@ -3,7 +3,7 @@
 	"id": "tead",
 	"version": "${version}",
 	"name": "tead",
-	"description": "This mod adds lead, double axes, a shotgun, some new potions effects and many other misc things.",
+	"description": "Adds a range of smaller additions to Minecraft, new weapons, tools, armor types, etc. Heavily inspired by Minecraft Dungeons.",
 	"authors": [
 		"Python-Bear"
 	],
@@ -11,7 +11,7 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "MIT",
+	"license": "GPL-3.0",
 	"icon": "assets/tead/icon.png",
 	"environment": "*",
 	"entrypoints": {

@@ -33,10 +33,6 @@ public class TeadClient implements ClientModInitializer {
                 TeadItems.ROBE_BOOTS,
                 TeadItems.ROBE_HELMET,
                 TeadItems.ROBE_CHESTPLATE,
-                TeadItems.GOLD_HIGHLAND_CHESTPLATE,
-                TeadItems.GOLD_PLATE_HELMET,
-                TeadItems.GOLD_PLATE_CHESTPLATE,
-                TeadItems.GOLD_PLATE_BOOTS,
                 TeadItems.COPPER_HIGHLAND_CHESTPLATE,
                 TeadItems.COPPER_PLATE_HELMET,
                 TeadItems.COPPER_PLATE_CHESTPLATE,
@@ -52,7 +48,22 @@ public class TeadClient implements ClientModInitializer {
                 TeadItems.NETHERITE_HIGHLAND_CHESTPLATE,
                 TeadItems.NETHERITE_PLATE_HELMET,
                 TeadItems.NETHERITE_PLATE_CHESTPLATE,
-                TeadItems.NETHERITE_PLATE_BOOTS
+                TeadItems.NETHERITE_PLATE_BOOTS,
+                TeadItems.GOLD_HIGHLAND_CHESTPLATE,
+                TeadItems.GOLD_GUARD_CHESTPLATE,
+                TeadItems.GOLD_PLATE_HELMET,
+                TeadItems.GOLD_PLATE_CHESTPLATE,
+                TeadItems.GOLD_PLATE_BOOTS,
+                TeadItems.GOLD_THIEF_HELMET,
+                TeadItems.GOLD_GHOSTLY_HELMET,
+                TeadItems.GOLD_GHOSTLY_CHESTPLATE
+        );
+        ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
+                        ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
+                TeadItems.GOLD_WOOLEN_HELMET,
+                TeadItems.GOLD_WOOLEN_CHESTPLATE,
+                TeadItems.GOLD_WOOLEN_LEGGINGS,
+                TeadItems.GOLD_WOOLEN_BOOTS
         );
 
         Tead.LOGGER.info("Client mod for " + Tead.MOD_ID + " fully initialized");

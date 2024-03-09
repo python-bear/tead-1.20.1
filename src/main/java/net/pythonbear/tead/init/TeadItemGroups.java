@@ -13,7 +13,7 @@ public class TeadItemGroups {
     public static final ItemGroup TEAD_GROUP = Registry.register(Registries.ITEM_GROUP,
             new Identifier(Tead.MOD_ID, "tead"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.tead"))
-                    .icon(() -> new ItemStack(TeadItems.RUBY)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(TeadItems.GOLD_HAMMER)).entries((displayContext, entries) -> {
                         entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.ROCK);
                         entries.add(TeadItems.BLACK_ROCK);
@@ -60,6 +60,7 @@ public class TeadItemGroups {
                         entries.add(TeadItems.SHOTGUN);
 
                         entries.add(TeadItems.BONE_BOW);
+                        entries.add(TeadItems.GOLD_POWER_BOW);
                         entries.add(TeadItems.TRICK_BOW);
                         entries.add(TeadItems.WIND_BOW);
                         entries.add(TeadItems.SHORT_BOW);
@@ -96,13 +97,28 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_GREATSWORD);
                         entries.add(TeadItems.LEAD_CLAYMORE);
 
+                        entries.add(TeadItems.GOLD_HATCHET);
                         entries.add(TeadItems.GOLD_HAMMER);
+                        entries.add(TeadItems.GOLD_MOUNTAINEER_PICK);
+                        entries.add(TeadItems.GOLD_MATTOCK);
+                        entries.add(TeadItems.GOLD_MACE);
                         entries.add(TeadItems.GOLD_DAGGER);
+                        entries.add(TeadItems.GOLD_HOLLOW_DAGGER);
+                        entries.add(TeadItems.GOLD_RITE_DAGGER);
+                        entries.add(TeadItems.GOLD_CRESCENT_DAGGER);
+                        entries.add(TeadItems.GOLD_TRUTHSEEKER);
+                        entries.add(TeadItems.GOLD_TEMPEST_KNIFE);
+                        entries.add(TeadItems.GOLD_CUTLASS);
                         entries.add(TeadItems.GOLD_RAPIER);
+                        entries.add(TeadItems.GOLD_KATANA);
+                        entries.add(TeadItems.GOLD_HIGHLAND_AXE);
                         entries.add(TeadItems.GOLD_DOUBLE_AXE);
+                        entries.add(TeadItems.GOLD_DOUBLE_HIGHLAND_AXE);
                         entries.add(TeadItems.GOLD_SICKLE);
                         entries.add(TeadItems.GOLD_SCYTHE);
                         entries.add(TeadItems.GOLD_GREATSWORD);
+                        entries.add(TeadItems.GOLD_BROADSWORD);
+                        entries.add(TeadItems.GOLD_LONGSWORD);
                         entries.add(TeadItems.GOLD_CLAYMORE);
 
                         entries.add(TeadItems.COPPER_AXE);
@@ -197,18 +213,35 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ROBE_HELMET);
                         entries.add(TeadItems.ROBE_CHESTPLATE);
                         entries.add(TeadItems.ROBE_BOOTS);
+                        entries.add(TeadItems.GOLD_GARMENT_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_GARMENT_BOOTS);
                         entries.add(TeadItems.GOLD_CHAINMAIL_HELMET);
                         entries.add(TeadItems.GOLD_CHAINMAIL_CHESTPLATE);
                         entries.add(TeadItems.GOLD_CHAINMAIL_LEGGINGS);
                         entries.add(TeadItems.GOLD_CHAINMAIL_BOOTS);
+                        entries.add(TeadItems.GOLD_GUARD_HELMET);
+                        entries.add(TeadItems.GOLD_GUARD_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_WOOLEN_HELMET);
+                        entries.add(TeadItems.GOLD_WOOLEN_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_WOOLEN_LEGGINGS);
+                        entries.add(TeadItems.GOLD_WOOLEN_BOOTS);
+                        entries.add(TeadItems.GOLD_THIEF_HELMET);
+                        entries.add(TeadItems.GOLD_THIEF_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_REINFORCED_MAIL_HELMET);
+                        entries.add(TeadItems.GOLD_REINFORCED_MAIL_CHESTPLATE);
                         entries.add(TeadItems.GOLD_STALWART_HELMET);
                         entries.add(TeadItems.GOLD_STALWART_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_SPANGENHELM_HELMET);
                         entries.add(TeadItems.GOLD_HIGHLAND_HELMET);
                         entries.add(TeadItems.GOLD_HIGHLAND_CHESTPLATE);
                         entries.add(TeadItems.GOLD_ROYAL_HELMET);
+                        entries.add(TeadItems.GOLD_MERCENARY_HELMET);
                         entries.add(TeadItems.GOLD_PLATE_HELMET);
                         entries.add(TeadItems.GOLD_PLATE_CHESTPLATE);
                         entries.add(TeadItems.GOLD_PLATE_BOOTS);
+                        entries.add(TeadItems.GOLD_GHOSTLY_HELMET);
+                        entries.add(TeadItems.GOLD_GHOSTLY_CHESTPLATE);
+                        entries.add(TeadItems.GOLD_GHOSTLY_BOOTS);
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_HELMET);
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_CHESTPLATE);
                         entries.add(TeadItems.ROSE_GOLD_CHAINMAIL_LEGGINGS);
