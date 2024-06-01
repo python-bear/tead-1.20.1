@@ -31,6 +31,7 @@ public class Tead implements ModInitializer {
 		TeadItemGroups.registerItemGroups();
 		TeadItems.registerItems();
 		TeadBlocks.registerBlocks();
+		TeadBlockEntities.registerBlockEntities();
 		TeadLootTableModifiers.modifyLootTables();
 
 		TeadWorldGeneration.generateTeadWorldGen();

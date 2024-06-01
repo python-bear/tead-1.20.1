@@ -2,9 +2,6 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "#": {
-      "item": "minecraft:golden_boots"
-    },
     "$": {
       "item": "minecraft:gold_ingot"
     },
@@ -13,9 +10,8 @@
     }
   },
   "pattern": [
-    " $ ",
-    "%#%",
-    " $ "
+    "% %",
+    "$ $"
   ],
   "result": {
     "item": "tead:gold_plate_boots"

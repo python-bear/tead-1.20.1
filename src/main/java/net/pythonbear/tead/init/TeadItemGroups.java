@@ -49,6 +49,20 @@ public class TeadItemGroups {
                         entries.add(TeadItems.JERKY);
                         entries.add(TeadItems.LEAD_APPLE);
 
+                        entries.add(TeadItems.SMITHING_GUIDE_GREAT_SWORD);
+                        entries.add(TeadItems.SMITHING_GUIDE_RAPIER);
+                        entries.add(TeadItems.SMITHING_GUIDE_TEMPEST_KNIFE);
+                        entries.add(TeadItems.SMITHING_GUIDE_TRUTHSEEKER);
+                        entries.add(TeadItems.SMITHING_GUIDE_GLAIVE);
+                        entries.add(TeadItems.SMITHING_GUIDE_RANSEUR);
+                        entries.add(TeadItems.SMITHING_GUIDE_CRESCENT_DAGGER);
+                        entries.add(TeadItems.SMITHING_GUIDE_HOLLOW_DAGGER);
+                        entries.add(TeadItems.SMITHING_GUIDE_RITE_DAGGER);
+                        entries.add(TeadItems.SMITHING_GUIDE_MOUNTAINEER_PICK);
+                        entries.add(TeadItems.SMITHING_GUIDE_HIGHLAND_AXE);
+                        entries.add(TeadItems.SMITHING_GUIDE_HIGHLAND_DOUBLE_AXE);
+                        entries.add(TeadItems.SMITHING_GUIDE_BROADSWORD);
+
                         entries.add(TeadItems.GRENADE);
                         entries.add(TeadItems.SHURIKEN);
 
@@ -120,6 +134,9 @@ public class TeadItemGroups {
                         entries.add(TeadItems.GOLD_BROADSWORD);
                         entries.add(TeadItems.GOLD_LONGSWORD);
                         entries.add(TeadItems.GOLD_CLAYMORE);
+                        entries.add(TeadItems.GOLD_SPEAR);
+                        entries.add(TeadItems.GOLD_RANSEUR);
+                        entries.add(TeadItems.GOLD_GLAIVE);
 
                         entries.add(TeadItems.COPPER_AXE);
                         entries.add(TeadItems.COPPER_HOE);
@@ -307,6 +324,8 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.LEAD_ORE);
                         entries.add(TeadBlocks.RUBY_ORE);
                         entries.add(TeadBlocks.DEEPSLATE_RUBY_ORE);
+
+                        entries.add(TeadBlocks.SMELTER);
 
                         entries.add(TeadBlocks.SICK_PUMPKIN);
 

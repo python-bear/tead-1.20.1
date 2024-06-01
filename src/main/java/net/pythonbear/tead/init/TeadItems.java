@@ -12,6 +12,32 @@ import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
     public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_BROADSWORD = registerItem("smithing_guide_broadsword",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_CRESCENT_DAGGER = registerItem("smithing_guide_crescent_dagger",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_GLAIVE = registerItem("smithing_guide_glaive",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_GREAT_SWORD = registerItem("smithing_guide_great_sword",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_HIGHLAND_AXE = registerItem("smithing_guide_highland_axe",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_HIGHLAND_DOUBLE_AXE =
+            registerItem("smithing_guide_highland_double_axe", new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_HOLLOW_DAGGER = registerItem("smithing_guide_hollow_dagger",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_MOUNTAINEER_PICK = registerItem("smithing_guide_mountaineer_pick",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_RANSEUR = registerItem("smithing_guide_ranseur",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_RAPIER = registerItem("smithing_guide_rapier",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_RITE_DAGGER = registerItem("smithing_guide_rite_dagger",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_TEMPEST_KNIFE = registerItem("smithing_guide_tempest_knife",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_TRUTHSEEKER = registerItem("smithing_guide_truthseeker",
+            new Item(new FabricItemSettings()));
     public static final Item ROCK = registerItem("rock", new Item(new FabricItemSettings()));
     public static final Item SLATE = registerItem("slate", new Item(new FabricItemSettings()));
     public static final Item BLACK_ROCK = registerItem("black_rock", new Item(new FabricItemSettings()));

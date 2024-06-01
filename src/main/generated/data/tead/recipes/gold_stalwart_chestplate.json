@@ -3,19 +3,15 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "minecraft:golden_chestplate"
-    },
-    "$": {
       "item": "minecraft:gold_ingot"
     },
     "%": {
-      "item": "minecraft:leather"
+      "item": "tead:gold_reinforced_mail_chestplate"
     }
   },
   "pattern": [
-    "$$$",
-    "$#$",
-    "%$%"
+    "#%#",
+    " # "
   ],
   "result": {
     "item": "tead:gold_stalwart_chestplate"

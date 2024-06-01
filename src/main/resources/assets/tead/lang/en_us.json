@@ -23,6 +23,20 @@
   "item.tead.muddy_clay_ball": "Muddy Clay Ball",
   "item.tead.dark_brick": "Dark Brick",
 
+  "item.tead.smithing_guide_broadsword": "Broadsword Smithing Guide",
+  "item.tead.smithing_guide_crescent_dagger": "Crescent Dagger Smithing Guide",
+  "item.tead.smithing_guide_glaive": "Glaive Smithing Guide",
+  "item.tead.smithing_guide_great_sword": "Great Sword Smithing Guide",
+  "item.tead.smithing_guide_highland_axe": "Highland Axe Smithing Guide",
+  "item.tead.smithing_guide_highland_double_axe": "Highland Double Axe Smithing Guide",
+  "item.tead.smithing_guide_hollow_dagger": "Hollow Dagger Smithing Guide",
+  "item.tead.smithing_guide_mountaineer_pick": "Mountaineer Pick Smithing Guide",
+  "item.tead.smithing_guide_ranseur": "Ranseur Smithing Guide",
+  "item.tead.smithing_guide_rapier": "Rapier Smithing Guide",
+  "item.tead.smithing_guide_rite_dagger": "Rite Dagger Smithing Guide",
+  "item.tead.smithing_guide_tempest_knife": "Tempest Knife Smithing Guide",
+  "item.tead.smithing_guide_truthseeker": "Truthseeker Smithing Guide",
+
   "item.tead.amethyst_arrow": "Amethyst Arrow",
   "item.tead.torch_arrow": "Torch Arrow",
   "item.tead.redstone_torch_arrow": "Redstone Torch Arrow",
@@ -364,5 +378,7 @@
   "item.tead.copper_plate_chestplate": "Copper Plate Chestplate",
   "item.tead.copper_plate_boots": "Copper Plate Boots",
 
-  "block.tead.copper_chain": "Copper Chain"
+  "block.tead.copper_chain": "Copper Chain",
+
+  "container.tead.smelter": "Smelter"
 }

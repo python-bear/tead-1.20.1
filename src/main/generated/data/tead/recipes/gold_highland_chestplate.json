@@ -6,7 +6,7 @@
       "item": "minecraft:gold_ingot"
     },
     "%": {
-      "item": "minecraft:leather"
+      "item": "tead:fabric"
     }
   },
   "pattern": [

@@ -11,6 +11,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.block.custom.SmelterBlock;
 
 public class TeadBlocks {
     public static final Block BLOCK_OF_RUBY = registerBlock("block_of_ruby",
@@ -78,6 +79,8 @@ public class TeadBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)));
     public static final Block OLD_BOOKSHELF = registerBlock("old_bookshelf",
             new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF)));
+    public static final Block SMELTER = registerBlock("smelter",
+            new SmelterBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

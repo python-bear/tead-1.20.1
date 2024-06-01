@@ -5,16 +5,13 @@
     "#": {
       "item": "minecraft:gold_ingot"
     },
-    "$": {
-      "item": "minecraft:golden_helmet"
-    },
     "%": {
-      "item": "minecraft:leather"
+      "item": "tead:fabric"
     }
   },
   "pattern": [
-    "#$#",
-    " % "
+    "###",
+    "% %"
   ],
   "result": {
     "item": "tead:gold_highland_helmet"

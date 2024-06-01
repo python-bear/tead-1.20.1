@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:gold_garment_chestplate"
+    },
+    "$": {
+      "item": "minecraft:leather"
+    },
+    "%": {
+      "item": "tead:fabric"
+    }
+  },
+  "pattern": [
+    "% %",
+    "%$%",
+    "%#%"
+  ],
+  "result": {
+    "item": "tead:gold_ghostly_chestplate"
+  },
+  "show_notification": true
+}
