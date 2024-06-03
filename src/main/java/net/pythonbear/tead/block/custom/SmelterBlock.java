@@ -30,7 +30,7 @@ public class SmelterBlock extends AbstractFurnaceBlock implements BlockEntityPro
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new SmelterBlockEntity(pos, state, RecipeType.SMELTING);
+        return new SmelterBlockEntity(pos, state);
     }
 
     @Override
@@ -43,8 +43,7 @@ public class SmelterBlock extends AbstractFurnaceBlock implements BlockEntityPro
     protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if (blockEntity instanceof BlastFurnaceBlockEntity) {
-            player.openHandledScreen((NamedScreenHandlerFactory)((Object)blockEntity));
-            player.incrementStat(Stats.INTERACT_WITH_BLAST_FURNACE);
+            player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
         }
     }
 

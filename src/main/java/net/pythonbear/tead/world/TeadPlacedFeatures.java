@@ -16,9 +16,13 @@ import java.util.List;
 
 public class TeadPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registryKey("ruby_ore_placed");
-    public static final RegistryKey<PlacedFeature> DEEPSLATE_RUBY_ORE_PLACED_KEY =
-            registryKey("deepslate_ruby_ore_placed");
+    public static final RegistryKey<PlacedFeature> RUBY_DEEPSLATE_ORE_PLACED_KEY =
+            registryKey("ruby_deepslate_ore_placed");
     public static final RegistryKey<PlacedFeature> LEAD_ORE_PLACED_KEY = registryKey("lead_ore_placed");
+    public static final RegistryKey<PlacedFeature> LEAD_DEEPSLATE_ORE_PLACED_KEY =
+            registryKey("lead_deepslate_ore_placed");
+    public static final RegistryKey<PlacedFeature> WHITE_GOLD_NETHER_ORE_PLACED_KEY =
+            registryKey("white_gold_nether_ore_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {
         var configureFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -27,14 +31,22 @@ public class TeadPlacedFeatures {
                 configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.RUBY_ORE_KEY),
                 TeadOrePlacement.modifiersWithCount(1, // veins per chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(232))));
-        register(context, DEEPSLATE_RUBY_ORE_PLACED_KEY,
-                configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.DEEPSLATE_RUBY_ORE_KEY),
+        register(context, RUBY_DEEPSLATE_ORE_PLACED_KEY,
+                configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.RUBY_DEEPSLATE_ORE_KEY),
                 TeadOrePlacement.modifiersWithCount(1, // veins per chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(0))));
         register(context, LEAD_ORE_PLACED_KEY,
                 configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.LEAD_ORE_KEY),
-                TeadOrePlacement.modifiersWithCount(6, // veins per chunk
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(64))));
+                TeadOrePlacement.modifiersWithCount(3, // veins per chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(0), YOffset.fixed(43))));
+        register(context, LEAD_DEEPSLATE_ORE_PLACED_KEY,
+                configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.LEAD_DEEPSLATE_ORE_KEY),
+                TeadOrePlacement.modifiersWithCount(3, // veins per chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(-64), YOffset.fixed(0))));
+        register(context, WHITE_GOLD_NETHER_ORE_PLACED_KEY,
+                configureFeatureRegistryEntryLookup.getOrThrow(TeadConfiguredFeatures.WHITE_GOLD_NETHER_ORE_KEY),
+                TeadOrePlacement.modifiersWithCount(3, // veins per chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(10), YOffset.fixed(117))));
     }
 
     public static RegistryKey<PlacedFeature> registryKey(String name) {

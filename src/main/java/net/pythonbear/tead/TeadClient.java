@@ -1,9 +1,12 @@
 package net.pythonbear.tead;
 
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.item.DyeableItem;
@@ -11,19 +14,27 @@ import net.pythonbear.tead.entity.TeadEntities;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.init.TeadModelPredicateProvider;
+import net.pythonbear.tead.init.TeadScreenHandlers;
 import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
 import net.pythonbear.tead.rendering.ShotgunProjectileRenderer;
+import net.pythonbear.tead.screen.SmelterScreen;
+import net.pythonbear.tead.screen.SmelterScreenHandler;
 
+@Environment(EnvType.CLIENT)
 public class TeadClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         TeadModelPredicateProvider.registerTeadModels();
 
-        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.ROSE_GOLD_CHAIN, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRONZE_CHAIN, RenderLayer.getCutout());
+        ScreenRegistry.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);
+
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.COPPER_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRONZE_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRASS_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.ROSE_GOLD_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.WHITE_GOLD_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);

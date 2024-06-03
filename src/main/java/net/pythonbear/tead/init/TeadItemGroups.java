@@ -14,21 +14,29 @@ public class TeadItemGroups {
             new Identifier(Tead.MOD_ID, "tead"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.tead"))
                     .icon(() -> new ItemStack(TeadItems.GOLD_HAMMER)).entries((displayContext, entries) -> {
-                        entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.ROCK);
                         entries.add(TeadItems.BLACK_ROCK);
                         entries.add(TeadItems.SLATE);
                         entries.add(TeadItems.OBSIDIAN_SHARD);
+                        entries.add(TeadItems.OBSIDIAN_INGOT);
                         entries.add(TeadItems.GALENA);
                         entries.add(TeadItems.LEAD_INGOT);
                         entries.add(TeadItems.LEAD_NUGGET);
-                        entries.add(TeadItems.STEEL_INGOT);
-                        entries.add(TeadItems.STEEL_NUGGET);
+                        entries.add(TeadItems.COPPER_NUGGET);
                         entries.add(TeadItems.ROSE_GOLD_INGOT);
                         entries.add(TeadItems.ROSE_GOLD_NUGGET);
+                        entries.add(TeadItems.WHITE_GOLD_INGOT);
+                        entries.add(TeadItems.WHITE_GOLD_NUGGET);
+                        entries.add(TeadItems.BRASS_INGOT);
+                        entries.add(TeadItems.BRASS_NUGGET);
                         entries.add(TeadItems.BRONZE_INGOT);
                         entries.add(TeadItems.BRONZE_NUGGET);
-                        entries.add(TeadItems.COPPER_NUGGET);
+                        entries.add(TeadItems.STEEL_INGOT);
+                        entries.add(TeadItems.STEEL_NUGGET);
+                        entries.add(TeadItems.RUBY);
+                        entries.add(TeadItems.RUBY_INGOT);
+                        entries.add(TeadItems.ROSE_NETHERITE_INGOT);
+                        entries.add(TeadItems.WHITE_NETHERITE_INGOT);
                         entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
                         entries.add(TeadItems.HANDLE);
@@ -70,6 +78,12 @@ public class TeadItemGroups {
                         entries.add(TeadItems.QUARTERSTAFF);
                         entries.add(TeadItems.BATTLE_STAFF);
                         entries.add(TeadItems.BONE_CLUB);
+                        entries.add(TeadItems.GRAVITY_HAMMER);
+                        entries.add(TeadItems.SINISTER_SWORD);
+                        entries.add(TeadItems.FROST_CLAYMORE);
+                        entries.add(TeadItems.OBSIDIAN_BLADE);
+                        entries.add(TeadItems.STARLESS_NIGHT);
+                        entries.add(TeadItems.CORAL_DAGGER);
 
                         entries.add(TeadItems.SHOTGUN);
 
@@ -222,10 +236,6 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_GREATSWORD);
                         entries.add(TeadItems.NETHERITE_CLAYMORE);
 
-                        entries.add(TeadItems.CORAL_DAGGER);
-                        entries.add(TeadItems.OBSIDIAN_CLAYMORE);
-                        entries.add(TeadItems.OBSIDIAN_SWORD);
-
                         entries.add(TeadItems.SWIFTNESS_BOOTS);
                         entries.add(TeadItems.ROBE_HELMET);
                         entries.add(TeadItems.ROBE_CHESTPLATE);
@@ -313,15 +323,39 @@ public class TeadItemGroups {
                         entries.add(TeadItems.NETHERITE_PLATE_BOOTS);
 
                         entries.add(TeadBlocks.GOLD_CHAIN);
-                        entries.add(TeadBlocks.BRONZE_CHAIN);
+                        entries.add(TeadBlocks.LEAD_CHAIN);
                         entries.add(TeadBlocks.COPPER_CHAIN);
                         entries.add(TeadBlocks.ROSE_GOLD_CHAIN);
+                        entries.add(TeadBlocks.WHITE_GOLD_CHAIN);
+                        entries.add(TeadBlocks.BRASS_CHAIN);
+                        entries.add(TeadBlocks.BRONZE_CHAIN);
                         entries.add(TeadBlocks.STEEL_CHAIN);
-                        entries.add(TeadBlocks.BLOCK_OF_RUBY);
-                        entries.add(TeadBlocks.BLOCK_OF_GALENA);
-                        entries.add(TeadBlocks.BLOCK_OF_LEAD);
+
+                        entries.add(TeadBlocks.RAW_LEAD_BLOCK);
+                        entries.add(TeadBlocks.LEAD_BLOCK);
+                        entries.add(TeadBlocks.LEAD_CUT_BLOCK);
+                        entries.add(TeadBlocks.LEAD_CUT_SLAB);
+                        entries.add(TeadBlocks.LEAD_CUT_STAIRS);
+                        entries.add(TeadBlocks.LEAD_TILED_BLOCK);
+                        entries.add(TeadBlocks.LEAD_CHISELED_BLOCK);
+                        entries.add(TeadBlocks.ROSE_GOLD_BLOCK);
+                        entries.add(TeadBlocks.WHITE_GOLD_BLOCK);
+                        entries.add(TeadBlocks.BRASS_BLOCK);
+                        entries.add(TeadBlocks.BRASS_CUT_BLOCK);
+                        entries.add(TeadBlocks.BRASS_CUT_SLAB);
+                        entries.add(TeadBlocks.BRASS_CUT_STAIRS);
+                        entries.add(TeadBlocks.BRONZE_BLOCK);
+                        entries.add(TeadBlocks.BRONZE_CUT_BLOCK);
+                        entries.add(TeadBlocks.BRONZE_CUT_SLAB);
+                        entries.add(TeadBlocks.BRONZE_CUT_STAIRS);
+                        entries.add(TeadBlocks.STEEL_BLOCK);
+                        entries.add(TeadBlocks.RUBY_BLOCK);
+                        entries.add(TeadBlocks.ROSE_NETHERITE_BLOCK);
+                        entries.add(TeadBlocks.WHITE_NETHERITE_BLOCK);
 
                         entries.add(TeadBlocks.LEAD_ORE);
+                        entries.add(TeadBlocks.LEAD_DEEPSLATE_ORE);
+                        entries.add(TeadBlocks.WHITE_GOLD_NETHER_ORE);
                         entries.add(TeadBlocks.RUBY_ORE);
                         entries.add(TeadBlocks.DEEPSLATE_RUBY_ORE);
 
@@ -331,18 +365,7 @@ public class TeadItemGroups {
 
                         entries.add(TeadBlocks.CLAYISH_MUD);
                         entries.add(TeadBlocks.SLUDGE);
-                        entries.add(TeadBlocks.DRY_DIRT);
-                        entries.add(TeadBlocks.VERY_SPARSE_GRASS);
-                        entries.add(TeadBlocks.SPARSE_GRASS);
-                        entries.add(TeadBlocks.DRY_GRASS);
-                        entries.add(TeadBlocks.BROWN_DRY_GRASS);
                         entries.add(TeadBlocks.DARK_BRICKS);
-                        entries.add(TeadBlocks.DARK_COBBLESTONE);
-                        entries.add(TeadBlocks.DIRTY_COBBLESTONE);
-                        entries.add(TeadBlocks.DIRTY_STONE_PLAQUE);
-                        entries.add(TeadBlocks.SANDY_COBBLESTONE);
-                        entries.add(TeadBlocks.VERY_SANDY_COBBLESTONE);
-                        entries.add(TeadBlocks.STONE_PLAQUE);
                         entries.add(TeadBlocks.EMPTY_BOOKSHELF);
                         entries.add(TeadBlocks.OLD_BOOKSHELF);
 

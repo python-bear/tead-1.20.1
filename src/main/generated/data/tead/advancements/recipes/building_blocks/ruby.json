@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block_of_ruby": {
+    "has_ruby_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tead:block_of_ruby"
+              "tead:ruby_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_block_of_ruby",
+      "has_ruby_block",
       "has_the_recipe"
     ]
   ],

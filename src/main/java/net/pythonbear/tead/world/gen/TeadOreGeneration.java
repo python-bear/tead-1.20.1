@@ -10,8 +10,12 @@ public class TeadOreGeneration {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                 TeadPlacedFeatures.RUBY_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
-                TeadPlacedFeatures.DEEPSLATE_RUBY_ORE_PLACED_KEY);
+                TeadPlacedFeatures.RUBY_DEEPSLATE_ORE_PLACED_KEY);
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
                 TeadPlacedFeatures.LEAD_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+                TeadPlacedFeatures.LEAD_DEEPSLATE_ORE_PLACED_KEY);
+        BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES,
+                TeadPlacedFeatures.WHITE_GOLD_NETHER_ORE_PLACED_KEY);
     }
 }

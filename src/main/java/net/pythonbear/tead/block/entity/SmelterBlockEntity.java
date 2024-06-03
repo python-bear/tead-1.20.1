@@ -27,6 +27,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.pythonbear.tead.init.TeadBlockEntities;
+import net.pythonbear.tead.init.TeadRecipeTypes;
+import net.pythonbear.tead.screen.SmelterScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class SmelterBlockEntity extends AbstractFurnaceBlockEntity implements ExtendedScreenHandlerFactory,
@@ -82,9 +84,9 @@ public class SmelterBlockEntity extends AbstractFurnaceBlockEntity implements Ex
         }
     };
 
-    public SmelterBlockEntity(BlockPos pos, BlockState state, RecipeType<? extends AbstractCookingRecipe> recipeType) {
-        super(TeadBlockEntities.SMELTER_BLOCK_ENTITY, pos, state, RecipeType.SMELTING);
-        this.matchGetter = RecipeManager.createCachedMatchGetter(recipeType);
+    public SmelterBlockEntity(BlockPos pos, BlockState state) {
+        super(TeadBlockEntities.SMELTER_BLOCK_ENTITY, pos, state, TeadRecipeTypes.ALLOYING);
+        this.matchGetter = RecipeManager.createCachedMatchGetter(TeadRecipeTypes.ALLOYING);
     }
 
     @Override
@@ -110,7 +112,7 @@ public class SmelterBlockEntity extends AbstractFurnaceBlockEntity implements Ex
 
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return null;
+        return new SmelterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     @Override

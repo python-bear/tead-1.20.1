@@ -153,12 +153,7 @@ public class TeadLootTableModifiers {
                 LootPool.Builder poolBuilder1 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
-                        .with(ItemEntry.builder(TeadItems.OBSIDIAN_CLAYMORE))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
-                LootPool.Builder poolBuilder2 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(TeadItems.OBSIDIAN_SWORD))
+                        .with(ItemEntry.builder(TeadItems.OBSIDIAN_BLADE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder3 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -172,7 +167,6 @@ public class TeadLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 24.0f)));
 
                 tableBuilder.pool(poolBuilder1);
-                tableBuilder.pool(poolBuilder2);
                 tableBuilder.pool(poolBuilder3);
                 tableBuilder.pool(poolBuilder4);
             }
@@ -303,11 +297,6 @@ public class TeadLootTableModifiers {
                 tableBuilder.pool(poolBuilder7);
             }
             if (STRONGHOLD_CROSSING_ID.equals(id)) {
-                LootPool.Builder poolBuilder4 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.08f))
-                        .with(ItemEntry.builder(TeadItems.OBSIDIAN_SWORD))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder5 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
@@ -319,7 +308,6 @@ public class TeadLootTableModifiers {
                         .with(ItemEntry.builder(TeadItems.IRON_HAMMER))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
-                tableBuilder.pool(poolBuilder4);
                 tableBuilder.pool(poolBuilder5);
                 tableBuilder.pool(poolBuilder6);
             }

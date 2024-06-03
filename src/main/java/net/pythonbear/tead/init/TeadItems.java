@@ -11,7 +11,6 @@ import net.pythonbear.tead.item.arrow.*;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
-    public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_BROADSWORD = registerItem("smithing_guide_broadsword",
             new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_CRESCENT_DAGGER = registerItem("smithing_guide_crescent_dagger",
@@ -38,6 +37,7 @@ public class TeadItems {
             new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_TRUTHSEEKER = registerItem("smithing_guide_truthseeker",
             new Item(new FabricItemSettings()));
+    public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
     public static final Item ROCK = registerItem("rock", new Item(new FabricItemSettings()));
     public static final Item SLATE = registerItem("slate", new Item(new FabricItemSettings()));
     public static final Item BLACK_ROCK = registerItem("black_rock", new Item(new FabricItemSettings()));
@@ -46,19 +46,29 @@ public class TeadItems {
     public static final Item DARK_BRICK = registerItem("dark_brick", new Item(new FabricItemSettings()));
     public static final Item JERKY = registerItem("jerky", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.JERKY)));
-    public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
-    public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard", new Item(new FabricItemSettings()));
+    public static final Item OBSIDIAN_INGOT = registerItem("obsidian_ingot", new Item(new FabricItemSettings()));
     public static final Item GALENA = registerItem("galena", new Item(new FabricItemSettings()));
     public static final Item LEAD_INGOT = registerItem("lead_ingot", new Item(new FabricItemSettings()));
     public static final Item LEAD_NUGGET = registerItem("lead_nugget", new Item(new FabricItemSettings()));
-    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
-    public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
+    public static final Item COPPER_NUGGET = registerItem("copper_nugget", new Item(new FabricItemSettings()));
     public static final Item ROSE_GOLD_INGOT = registerItem("rose_gold_ingot", new Item(new FabricItemSettings()));
     public static final Item ROSE_GOLD_NUGGET = registerItem("rose_gold_nugget", new Item(new FabricItemSettings()));
+    public static final Item WHITE_GOLD_INGOT = registerItem("white_gold_ingot", new Item(new FabricItemSettings()));
+    public static final Item WHITE_GOLD_NUGGET = registerItem("white_gold_nugget", new Item(new FabricItemSettings()));
+    public static final Item BRASS_INGOT = registerItem("brass_ingot", new Item(new FabricItemSettings()));
+    public static final Item BRASS_NUGGET = registerItem("brass_nugget", new Item(new FabricItemSettings()));
     public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(new FabricItemSettings()));
     public static final Item BRONZE_NUGGET = registerItem("bronze_nugget", new Item(new FabricItemSettings()));
-    public static final Item COPPER_NUGGET = registerItem("copper_nugget", new Item(new FabricItemSettings()));
+    public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
+    public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
+    public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
+    public static final Item RUBY_INGOT = registerItem("ruby_ingot", new Item(new FabricItemSettings()));
+    public static final Item ROSE_NETHERITE_INGOT = registerItem("rose_netherite_ingot",
+            new Item(new FabricItemSettings().fireproof()));
+    public static final Item WHITE_NETHERITE_INGOT = registerItem("white_netherite_ingot",
+            new Item(new FabricItemSettings().fireproof()));
+    public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item LEAD_BULLET = registerItem("lead_bullet", new Item(new FabricItemSettings()));
     public static final Item SHOTGUN_PROJECTILE = registerItem("shotgun_projectile",
             new Item(new FabricItemSettings()));
@@ -66,6 +76,17 @@ public class TeadItems {
     public static final Item SHURIKEN = registerItem("shuriken", new ShurikenItem(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
             new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
+    public static final Item FROST_CLAYMORE = registerItem("frost_claymore",
+            new FrostClaymoreItem(new Item.Settings().fireproof()));
+    public static final Item GRAVITY_HAMMER = registerItem("gravity_hammer",
+            new GravityHammerItem(new Item.Settings().fireproof()));
+    public static final Item SINISTER_SWORD = registerItem("sinister_sword",
+            new SinisterSwordItem(TeadToolMaterials.WHITE_NETHERITE, 3, -2.4f,
+                    new Item.Settings().fireproof()));
+    public static final Item OBSIDIAN_BLADE = registerItem("obsidian_blade",
+            new BroadswordItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
+    public static final Item STARLESS_NIGHT = registerItem("starless_night",
+            new StarlessNightItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.LEAD_APPLE)));
     public static final Item LEAD_AXE = registerItem("lead_axe",
@@ -306,10 +327,6 @@ public class TeadItems {
             new ClaymoreItem(ToolMaterials.NETHERITE, new FabricItemSettings()));
     public static final Item CORAL_DAGGER = registerItem("coral_dagger",
             new DaggerItem(TeadToolMaterials.CORAL, new FabricItemSettings()));
-    public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
-            new SwordItem(TeadToolMaterials.OBSIDIAN, 4, -2.5f,  new FabricItemSettings()));
-    public static final Item OBSIDIAN_CLAYMORE = registerItem("obsidian_claymore",
-            new ClaymoreItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
             new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
                     new FabricItemSettings()));

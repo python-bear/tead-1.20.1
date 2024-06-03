@@ -8,4 +8,5 @@ public class TempestKnifeItem extends BladedWeaponItem {
                 0, 0, 0, 1.5f, false,
                 settings.maxDamage(toolMaterial.getDurability() + 16));
     }
+    // double speed for one and a half seconds after killing a mob
 }

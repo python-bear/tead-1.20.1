@@ -13,6 +13,7 @@
   "mixins": [
     "AbstractSkeletonEntityInitEquipmentMixin",
     "DrownedInitEquipmentMixin",
+    "FireTrailMixin",
     "PiglinInitEquipmentMixin",
     "VindicatorInitEquipmentMixin",
     "WitherSkeletonInitEquipmentMixin",

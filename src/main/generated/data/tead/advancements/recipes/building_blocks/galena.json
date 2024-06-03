@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_block_of_galena": {
+    "has_raw_lead_block": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tead:block_of_galena"
+              "tead:raw_lead_block"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_block_of_galena",
+      "has_raw_lead_block",
       "has_the_recipe"
     ]
   ],

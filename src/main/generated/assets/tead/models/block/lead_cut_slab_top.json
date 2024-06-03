@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "tead:block/lead_cut_block",
+    "side": "tead:block/lead_cut_block",
+    "top": "tead:block/lead_cut_block"
+  }
+}

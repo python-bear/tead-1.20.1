@@ -24,23 +24,28 @@ public class TeadLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        // Blocks that droop themselves
-        addDrop(TeadBlocks.BLOCK_OF_LEAD);
-        addDrop(TeadBlocks.BLOCK_OF_RUBY);
-        addDrop(TeadBlocks.BLOCK_OF_GALENA);
-        addDrop(TeadBlocks.SPARSE_GRASS);
-        addDrop(TeadBlocks.DRY_GRASS);
-        addDrop(TeadBlocks.BROWN_DRY_GRASS);
-        addDrop(TeadBlocks.VERY_SPARSE_GRASS);
-        addDrop(TeadBlocks.DRY_DIRT);
-        addDrop(TeadBlocks.DARK_BRICKS);
-        addDrop(TeadBlocks.DARK_COBBLESTONE);
-        addDrop(TeadBlocks.DIRTY_COBBLESTONE);
-        addDrop(TeadBlocks.DIRTY_STONE_PLAQUE);
-        addDrop(TeadBlocks.STONE_PLAQUE);
-        addDrop(TeadBlocks.SLUDGE);
-        addDrop(TeadBlocks.SANDY_COBBLESTONE);
-        addDrop(TeadBlocks.VERY_SANDY_COBBLESTONE);
+        // Blocks that drop themselves
+        addDrop(TeadBlocks.RAW_LEAD_BLOCK);
+        addDrop(TeadBlocks.LEAD_BLOCK);
+        addDrop(TeadBlocks.LEAD_CUT_BLOCK);
+        addDrop(TeadBlocks.LEAD_CUT_SLAB, slabDrops(TeadBlocks.LEAD_CUT_SLAB));
+        addDrop(TeadBlocks.LEAD_CUT_STAIRS);
+        addDrop(TeadBlocks.LEAD_TILED_BLOCK);
+        addDrop(TeadBlocks.LEAD_CHISELED_BLOCK);
+        addDrop(TeadBlocks.ROSE_GOLD_BLOCK);
+        addDrop(TeadBlocks.WHITE_GOLD_BLOCK);
+        addDrop(TeadBlocks.BRASS_BLOCK);
+        addDrop(TeadBlocks.BRASS_CUT_BLOCK);
+        addDrop(TeadBlocks.BRASS_CUT_SLAB, slabDrops(TeadBlocks.BRASS_CUT_SLAB));
+        addDrop(TeadBlocks.BRASS_CUT_STAIRS);
+        addDrop(TeadBlocks.BRONZE_BLOCK);
+        addDrop(TeadBlocks.BRONZE_CUT_BLOCK);
+        addDrop(TeadBlocks.BRONZE_CUT_SLAB, slabDrops(TeadBlocks.BRONZE_CUT_SLAB));
+        addDrop(TeadBlocks.BRONZE_CUT_STAIRS);
+        addDrop(TeadBlocks.STEEL_BLOCK);
+        addDrop(TeadBlocks.RUBY_BLOCK);
+        addDrop(TeadBlocks.ROSE_NETHERITE_BLOCK);
+        addDrop(TeadBlocks.WHITE_NETHERITE_BLOCK);
         addDrop(TeadBlocks.EMPTY_BOOKSHELF);
 
         // Ores that drop more than one resource
@@ -52,6 +57,10 @@ public class TeadLootTableProvider extends FabricBlockLootTableProvider {
                 4f));
 
         addDrop(TeadBlocks.LEAD_ORE, copperLikeOreDrops(TeadBlocks.LEAD_ORE, TeadItems.GALENA, 1f, 3f));
+        addDrop(TeadBlocks.LEAD_DEEPSLATE_ORE, copperLikeOreDrops(TeadBlocks.LEAD_ORE, TeadItems.GALENA, 2f,
+                3f));
+        addDrop(TeadBlocks.WHITE_GOLD_NETHER_ORE, copperLikeOreDrops(TeadBlocks.WHITE_GOLD_NETHER_ORE,
+                TeadItems.WHITE_GOLD_NUGGET, 3f, 7f));
         addDrop(TeadBlocks.RUBY_ORE, copperLikeOreDrops(TeadBlocks.RUBY_ORE, TeadItems.RUBY, 1f, 2f));
         addDrop(TeadBlocks.DEEPSLATE_RUBY_ORE, copperLikeOreDrops(TeadBlocks.DEEPSLATE_RUBY_ORE, TeadItems.RUBY,
                 1f, 3f));

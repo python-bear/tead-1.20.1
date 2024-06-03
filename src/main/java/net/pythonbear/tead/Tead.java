@@ -28,8 +28,12 @@ public class Tead implements ModInitializer {
 		ScytheSwing.register();
 
 		TeadSounds.registerSounds();
+		TeadEnchantments.registerModEnchantments();
 		TeadItemGroups.registerItemGroups();
 		TeadItems.registerItems();
+		TeadRecipeTypes.registerRecipeTypes();
+		TeadRecipeSerializers.registerRecipeSerializers();
+		TeadScreenHandlers.registerScreenHandlers();
 		TeadBlocks.registerBlocks();
 		TeadBlockEntities.registerBlockEntities();
 		TeadLootTableModifiers.modifyLootTables();
