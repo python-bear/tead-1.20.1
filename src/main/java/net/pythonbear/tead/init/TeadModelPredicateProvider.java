@@ -9,7 +9,7 @@ import net.pythonbear.tead.item.FireboltThrower;
 public class TeadModelPredicateProvider {
     public static void registerTeadModels() {
         registerBow(TeadItems.BONE_BOW);
-        registerBow(TeadItems.GOLD_POWER_BOW);
+        registerBow(TeadItems.RUBY_POWER_BOW);
         registerBow(TeadItems.TRICK_BOW);
         registerBow(TeadItems.WIND_BOW);
         registerBow(TeadItems.SHORT_BOW);

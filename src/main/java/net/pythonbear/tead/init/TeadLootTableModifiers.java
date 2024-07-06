@@ -98,8 +98,14 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
                         .with(ItemEntry.builder(TeadItems.DIAMOND_HAMMER))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
+                LootPool.Builder poolBuilder2 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05f))
+                        .with(ItemEntry.builder(TeadItems.TRANSMUTATION_GRIMOIRE))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
 
                 tableBuilder.pool(poolBuilder1);
+                tableBuilder.pool(poolBuilder2);
             }
             if (BASTION_OTHER_ID.equals(id)) {
                 LootPool.Builder poolBuilder1 = LootPool.builder()

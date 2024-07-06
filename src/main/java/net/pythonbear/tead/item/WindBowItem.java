@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 import net.pythonbear.tead.entity.WindArrowEntity;
+import net.pythonbear.tead.init.TeadItems;
 
 public class WindBowItem extends BowItem implements Vanishable {
     public WindBowItem(Settings settings) {
@@ -32,7 +33,7 @@ public class WindBowItem extends BowItem implements Vanishable {
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
-        return ingredient == Items.STRING.getDefaultStack() || super.canRepair(stack, ingredient);
+        return ingredient == Items.STRING.getDefaultStack() || ingredient == TeadItems.BRASS_INGOT.getDefaultStack();
     }
 
     @Override

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:ruby"
+  },
+  "base": {
+    "item": "tead:ruby"
+  },
+  "template": {
+    "item": "tead:transmutation_grimoire"
+  },
+  "result": {
+    "item": "tead:ruby_ingot"
+  }
+}

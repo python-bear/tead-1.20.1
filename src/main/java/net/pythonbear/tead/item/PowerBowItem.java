@@ -22,7 +22,7 @@ public class PowerBowItem extends BowItem implements Vanishable {
     public PowerBowItem(ToolMaterial toolMaterial, Settings settings) {
         super(settings);
         this.maxDamage = toolMaterial.getDurability();
-        this.attackDamage = toolMaterial.getAttackDamage();
+        this.attackDamage = toolMaterial.getAttackDamage() / 4;
     }
 
     public static float getPullProgress(int useTicks) {
@@ -92,7 +92,7 @@ public class PowerBowItem extends BowItem implements Vanishable {
                 persistentProjectileEntity.setCritical(true);
             }
             if ((j = EnchantmentHelper.getLevel(Enchantments.POWER, stack)) + 1 > 0) {
-                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5 + 0.5);
+                persistentProjectileEntity.setDamage(persistentProjectileEntity.getDamage() + (double)j * 0.5);
             }
             if ((k = EnchantmentHelper.getLevel(Enchantments.PUNCH, stack)) > 0) {
                 persistentProjectileEntity.setPunch(k);

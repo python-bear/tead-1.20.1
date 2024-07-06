@@ -37,7 +37,6 @@ public class TeadItemGroups {
                         entries.add(TeadItems.RUBY_INGOT);
                         entries.add(TeadItems.ROSE_NETHERITE_INGOT);
                         entries.add(TeadItems.WHITE_NETHERITE_INGOT);
-                        entries.add(TeadItems.LEAD_BULLET);
                         entries.add(TeadItems.FABRIC);
                         entries.add(TeadItems.HANDLE);
                         entries.add(TeadItems.MUDDY_CLAY_BALL);
@@ -55,7 +54,11 @@ public class TeadItemGroups {
                         entries.add(TeadItems.RUBY_ARROW);
 
                         entries.add(TeadItems.JERKY);
+                        entries.add(TeadItems.ROSE_GOLD_BEETROOT);
+                        entries.add(TeadItems.WHITE_GOLD_POTATO);
                         entries.add(TeadItems.LEAD_APPLE);
+
+                        entries.add(TeadItems.TRANSMUTATION_GRIMOIRE);
 
                         entries.add(TeadItems.SMITHING_GUIDE_GREAT_SWORD);
                         entries.add(TeadItems.SMITHING_GUIDE_RAPIER);
@@ -85,10 +88,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.STARLESS_NIGHT);
                         entries.add(TeadItems.CORAL_DAGGER);
 
-                        entries.add(TeadItems.SHOTGUN);
-
                         entries.add(TeadItems.BONE_BOW);
-                        entries.add(TeadItems.GOLD_POWER_BOW);
+                        entries.add(TeadItems.RUBY_POWER_BOW);
                         entries.add(TeadItems.TRICK_BOW);
                         entries.add(TeadItems.WIND_BOW);
                         entries.add(TeadItems.SHORT_BOW);

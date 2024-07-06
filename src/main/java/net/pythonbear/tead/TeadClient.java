@@ -16,9 +16,7 @@ import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.init.TeadModelPredicateProvider;
 import net.pythonbear.tead.init.TeadScreenHandlers;
 import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
-import net.pythonbear.tead.rendering.ShotgunProjectileRenderer;
 import net.pythonbear.tead.screen.SmelterScreen;
-import net.pythonbear.tead.screen.SmelterScreenHandler;
 
 @Environment(EnvType.CLIENT)
 public class TeadClient implements ClientModInitializer {
@@ -29,6 +27,7 @@ public class TeadClient implements ClientModInitializer {
         ScreenRegistry.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);
 
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.COPPER_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.LEAD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRONZE_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.BRASS_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
@@ -38,7 +37,6 @@ public class TeadClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
-        EntityRendererRegistry.register(TeadEntities.SHOTGUN_PROJECTILE, ShotgunProjectileRenderer::new);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,

@@ -105,20 +105,6 @@ public class TeadModelProvider extends FabricModelProvider {
 
                     return textureMap;
                 });
-        blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.SMELTER, TeadBlocks.SMELTER,
-                (block, block2) -> {
-                    TextureMap textureMap = new TextureMap();
-
-                    textureMap.put(TextureKey.UP, new Identifier("tead:block/smelter_top"));
-                    textureMap.put(TextureKey.DOWN, new Identifier("block/copper_block"));
-                    textureMap.put(TextureKey.NORTH, new Identifier("tead:block/smelter_front_off"));
-                    textureMap.put(TextureKey.EAST, new Identifier("tead:block/smelter_side"));
-                    textureMap.put(TextureKey.SOUTH, new Identifier("tead:block/smelter_side"));
-                    textureMap.put(TextureKey.WEST, new Identifier("tead:block/smelter_side"));
-                    textureMap.put(TextureKey.PARTICLE, new Identifier("tead:block/smelter_side"));
-
-                    return textureMap;
-                });
         blockStateModelGenerator.registerCubeWithCustomTextures(TeadBlocks.CLAYISH_MUD, TeadBlocks.CLAYISH_MUD,
                 (block, block2) -> {
                     TextureMap textureMap = new TextureMap();
@@ -170,9 +156,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.STEEL_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.ROSE_NETHERITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_INGOT, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.LEAD_BULLET, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SHOTGUN_PROJECTILE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.TRANSMUTATION_GRIMOIRE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TORCH_ARROW, Models.GENERATED);
@@ -185,6 +170,8 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.AMETHYST_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.ENDER_PEARL_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.WHITE_GOLD_POTATO, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ROSE_GOLD_BEETROOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_APPLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.ROCK, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SLATE, Models.GENERATED);
@@ -265,7 +252,6 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.ROSE_GOLD_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.SHOTGUN, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_CLAYMORE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_DAGGER, Models.HANDHELD);

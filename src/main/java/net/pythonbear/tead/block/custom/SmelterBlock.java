@@ -21,8 +21,6 @@ import net.pythonbear.tead.init.TeadBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
 public class SmelterBlock extends AbstractFurnaceBlock implements BlockEntityProvider {
-
-
     public SmelterBlock(AbstractBlock.Settings settings) {
         super(settings);
     }

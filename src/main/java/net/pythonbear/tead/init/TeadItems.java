@@ -5,6 +5,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.*;
 import net.pythonbear.tead.item.arrow.*;
@@ -63,15 +64,15 @@ public class TeadItems {
     public static final Item STEEL_INGOT = registerItem("steel_ingot", new Item(new FabricItemSettings()));
     public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
-    public static final Item RUBY_INGOT = registerItem("ruby_ingot", new Item(new FabricItemSettings()));
+    public static final Item RUBY_INGOT = registerItem("ruby_ingot",
+            new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item ROSE_NETHERITE_INGOT = registerItem("rose_netherite_ingot",
             new Item(new FabricItemSettings().fireproof()));
     public static final Item WHITE_NETHERITE_INGOT = registerItem("white_netherite_ingot",
             new Item(new FabricItemSettings().fireproof()));
+    public static final Item TRANSMUTATION_GRIMOIRE = registerItem("transmutation_grimoire",
+            new GlintedItem(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
-    public static final Item LEAD_BULLET = registerItem("lead_bullet", new Item(new FabricItemSettings()));
-    public static final Item SHOTGUN_PROJECTILE = registerItem("shotgun_projectile",
-            new Item(new FabricItemSettings()));
     public static final Item GRENADE = registerItem("grenade", new GrenadeItem(new FabricItemSettings()));
     public static final Item SHURIKEN = registerItem("shuriken", new ShurikenItem(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
@@ -87,6 +88,10 @@ public class TeadItems {
             new BroadswordItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
     public static final Item STARLESS_NIGHT = registerItem("starless_night",
             new StarlessNightItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
+    public static final Item WHITE_GOLD_POTATO = registerItem("white_gold_potato", new Item(new FabricItemSettings()
+            .food(TeadFoodComponents.WHITE_GOLD_POTATO)));
+    public static final Item ROSE_GOLD_BEETROOT = registerItem("rose_gold_beetroot", new Item(new FabricItemSettings()
+            .food(TeadFoodComponents.ROSE_GOLD_BEETROOT)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
             .food(TeadFoodComponents.LEAD_APPLE)));
     public static final Item LEAD_AXE = registerItem("lead_axe",
@@ -271,8 +276,8 @@ public class TeadItems {
             new RanseurItem(ToolMaterials.GOLD, new FabricItemSettings()));
     public static final Item GOLD_GLAIVE = registerItem("gold_glaive",
             new GlaiveItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_POWER_BOW = registerItem("gold_power_bow",
-            new PowerBowItem(ToolMaterials.GOLD, new FabricItemSettings()));
+    public static final Item RUBY_POWER_BOW = registerItem("ruby_power_bow",
+            new PowerBowItem(TeadToolMaterials.RUBY, new FabricItemSettings()));
     public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
             new AxeItem(ToolMaterials.IRON, 6.5f, -3.4f,  new FabricItemSettings()));
     public static final Item IRON_HAMMER = registerItem("iron_hammer",
@@ -336,8 +341,6 @@ public class TeadItems {
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
             new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
-    public static final Item SHOTGUN = registerItem("shotgun",
-            new ShotgunItem(new FabricItemSettings().maxDamage(325)));
     public static final Item BONE_BOW = registerItem("bone_bow",
             new BoneBowItem(new FabricItemSettings().maxDamage(415)));
     public static final Item WIND_BOW = registerItem("wind_bow",
