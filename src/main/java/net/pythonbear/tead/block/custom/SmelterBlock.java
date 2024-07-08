@@ -1,10 +1,7 @@
 package net.pythonbear.tead.block.custom;
 
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlastFurnaceBlockEntity;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.RecipeType;
@@ -16,6 +13,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
 import net.pythonbear.tead.init.TeadBlockEntities;
 import org.jetbrains.annotations.Nullable;
@@ -34,14 +32,20 @@ public class SmelterBlock extends AbstractFurnaceBlock implements BlockEntityPro
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return SmelterBlock.checkType(world, type, TeadBlockEntities.SMELTER_BLOCK_ENTITY);
+        return SmelterBlock.newCheckType(world, type, TeadBlockEntities.SMELTER_BLOCK_ENTITY);
+    }
+
+    @Nullable
+    protected static <T extends BlockEntity> BlockEntityTicker<T> newCheckType(World world, BlockEntityType<T> givenType, BlockEntityType<SmelterBlockEntity> expectedType) {
+        return world.isClient ? null : SmelterBlock.checkType(givenType, expectedType, SmelterBlockEntity::tick);
     }
 
     @Override
     protected void openScreen(World world, BlockPos pos, PlayerEntity player) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof BlastFurnaceBlockEntity) {
-            player.openHandledScreen((NamedScreenHandlerFactory)blockEntity);
+        NamedScreenHandlerFactory screenHandlerFactory = ((SmelterBlockEntity) world.getBlockEntity(pos));
+        if (screenHandlerFactory != null && blockEntity instanceof SmelterBlockEntity) {
+            player.openHandledScreen(screenHandlerFactory);
         }
     }
 
@@ -61,9 +65,9 @@ public class SmelterBlock extends AbstractFurnaceBlock implements BlockEntityPro
         Direction.Axis axis = direction.getAxis();
         double g = 0.52;
         double h = random.nextDouble() * 0.6 - 0.3;
-        double i = axis == Direction.Axis.X ? (double)direction.getOffsetX() * 0.52 : h;
+        double i = axis == Direction.Axis.X ? (double)direction.getOffsetX() * g : h;
         double j = random.nextDouble() * 9.0 / 16.0;
-        double k = axis == Direction.Axis.Z ? (double)direction.getOffsetZ() * 0.52 : h;
+        double k = axis == Direction.Axis.Z ? (double)direction.getOffsetZ() * g : h;
         world.addParticle(ParticleTypes.SMOKE, d + i, e + j, f + k, 0.0, 0.0, 0.0);
     }
 }

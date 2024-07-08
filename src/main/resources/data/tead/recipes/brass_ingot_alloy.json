@@ -1,0 +1,16 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    {
+      "item": "minecraft:copper_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "tead:brass_ingot"
+  },
+  "cookingtime": 650,
+  "experience": 0.5
+}

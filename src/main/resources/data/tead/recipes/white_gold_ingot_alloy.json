@@ -1,0 +1,16 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "tead:white_gold_ingot"
+  },
+  "cookingtime": 650,
+  "experience": 0.5
+}

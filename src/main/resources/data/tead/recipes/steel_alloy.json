@@ -1,8 +1,0 @@
-{
-  "type": "tead:smelter",
-  "ingredient": {
-    "item": "minecraft:iron_ingot"
-  },
-  "result": "tead:steel_ingot",
-  "experience": 0.2
-}

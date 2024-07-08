@@ -1,0 +1,17 @@
+{
+  "type": "tead:alloy_smelting",
+  "group": "steel_ingot",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "tead:steel_ingot"
+  },
+  "cookingtime": 650,
+  "experience": 0.5
+}

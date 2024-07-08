@@ -70,6 +70,8 @@ public class TeadItems {
             new Item(new FabricItemSettings().fireproof()));
     public static final Item WHITE_NETHERITE_INGOT = registerItem("white_netherite_ingot",
             new Item(new FabricItemSettings().fireproof()));
+    public static final Item GRAVITY_PEARL = registerItem("gravity_pearl",
+            new GravityPearl(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item TRANSMUTATION_GRIMOIRE = registerItem("transmutation_grimoire",
             new GlintedItem(new FabricItemSettings().rarity(Rarity.EPIC)));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));

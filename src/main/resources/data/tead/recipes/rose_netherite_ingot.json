@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rose_netherite_ingot",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "tead:rose_gold_ingot"
+    },
+    {
+      "item": "tead:rose_gold_ingot"
+    },
+    {
+      "item": "tead:rose_gold_ingot"
+    },
+    {
+      "item": "tead:rose_gold_ingot"
+    }
+  ],
+  "result": {
+    "item": "tead:rose_netherite_ingot"
+  }
+}

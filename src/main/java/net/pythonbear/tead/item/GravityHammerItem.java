@@ -48,6 +48,7 @@ public class GravityHammerItem extends HammerItem  {
                 double strength = (1.0 / (distance + 0.1)) * ((double) 4 / 3); // Increase pull strength with level
 
                 entity.addVelocity(dx * strength, dy * strength, dz * strength);
+                entity.velocityModified = true;
             }
         }
 

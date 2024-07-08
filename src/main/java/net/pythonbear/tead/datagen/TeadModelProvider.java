@@ -157,6 +157,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.ROSE_NETHERITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.GRAVITY_PEARL, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TRANSMUTATION_GRIMOIRE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);

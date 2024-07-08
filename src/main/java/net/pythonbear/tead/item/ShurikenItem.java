@@ -10,7 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.pythonbear.tead.entity.ShurikenProjectileEntity;
-import net.pythonbear.tead.entity.TeadEntities;
+import net.pythonbear.tead.init.TeadEntityTypes;
 
 
 public class ShurikenItem extends Item {
@@ -25,7 +25,7 @@ public class ShurikenItem extends Item {
         world.playSound(null, user.getX(), user.getY(), user.getZ(), SoundEvents.ITEM_TRIDENT_THROW,
                 SoundCategory.NEUTRAL, 0.4f, 0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
         if (!world.isClient) {
-            ShurikenProjectileEntity shurikenEntity = new ShurikenProjectileEntity(TeadEntities.SHURIKEN_PROJECTILE,
+            ShurikenProjectileEntity shurikenEntity = new ShurikenProjectileEntity(TeadEntityTypes.SHURIKEN_PROJECTILE,
                     user, world);
             shurikenEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0f, 1.5f, 0.1f);
             world.spawnEntity(shurikenEntity);

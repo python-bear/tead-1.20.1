@@ -6,11 +6,11 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.item.DyeableItem;
-import net.pythonbear.tead.entity.TeadEntities;
+import net.pythonbear.tead.init.TeadEntityTypes;
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.init.TeadModelPredicateProvider;
@@ -24,7 +24,7 @@ public class TeadClient implements ClientModInitializer {
     public void onInitializeClient() {
         TeadModelPredicateProvider.registerTeadModels();
 
-        ScreenRegistry.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);
+        HandledScreens.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);
 
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.COPPER_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.LEAD_CHAIN, RenderLayer.getCutout());
@@ -35,8 +35,9 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.WHITE_GOLD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
 
-        EntityRendererRegistry.register(TeadEntities.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
-        EntityRendererRegistry.register(TeadEntities.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.GRAVITY_PEARL, FlyingItemEntityRenderer::new);
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,

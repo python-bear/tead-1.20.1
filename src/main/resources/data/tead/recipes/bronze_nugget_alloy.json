@@ -1,0 +1,16 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    {
+      "item": "tead:copper_nugget"
+    },
+    {
+      "item": "tead:lead_nugget"
+    }
+  ],
+  "result": {
+    "item": "tead:bronze_nugget"
+  },
+  "cookingtime": 330,
+  "experience": 0.1
+}

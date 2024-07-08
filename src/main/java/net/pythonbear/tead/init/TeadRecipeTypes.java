@@ -8,10 +8,10 @@ import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 
 public class TeadRecipeTypes {
-    public static final RecipeType<AlloyCookingRecipe> ALLOYING  = Registry.register(Registries.RECIPE_TYPE,
-            new Identifier(Tead.MOD_ID, "smelter"), new RecipeType<AlloyCookingRecipe>() {
+    public static final RecipeType<AlloyCookingRecipe> ALLOYING = Registry.register(Registries.RECIPE_TYPE,
+            new Identifier(Tead.MOD_ID, "alloy_smelting"), new RecipeType<AlloyCookingRecipe>() {
                 @Override
-                public String toString() {return "smelter";}
+                public String toString() {return "alloy_smelting";}
     });
 
     public static void registerRecipeTypes() {

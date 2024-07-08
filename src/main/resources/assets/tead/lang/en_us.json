@@ -380,5 +380,7 @@
 
   "block.tead.copper_chain": "Copper Chain",
 
-  "container.tead.smelter": "Smelter"
+  "container.tead.smelter": "Smelter",
+
+  "gui.recipebook.toggleRecipes.smeltable": "Showing Smeltable"
 }

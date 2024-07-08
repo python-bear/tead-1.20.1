@@ -1,0 +1,16 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    {
+      "item": "tead:copper_nugget"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "tead:brass_nugget"
+  },
+  "cookingtime": 330,
+  "experience": 0.1
+}

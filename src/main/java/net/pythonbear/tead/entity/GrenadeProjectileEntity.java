@@ -11,6 +11,7 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
+import net.pythonbear.tead.init.TeadEntityTypes;
 import net.pythonbear.tead.init.TeadItems;
 
 public class GrenadeProjectileEntity extends ThrownItemEntity {
@@ -19,7 +20,7 @@ public class GrenadeProjectileEntity extends ThrownItemEntity {
     }
 
     public GrenadeProjectileEntity(LivingEntity livingEntity, World world) {
-        super(TeadEntities.GRENADE_PROJECTILE, livingEntity, world);
+        super(TeadEntityTypes.GRENADE_PROJECTILE, livingEntity, world);
     }
 
     @Override

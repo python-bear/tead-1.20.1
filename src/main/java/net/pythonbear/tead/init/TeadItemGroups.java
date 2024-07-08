@@ -58,6 +58,8 @@ public class TeadItemGroups {
                         entries.add(TeadItems.WHITE_GOLD_POTATO);
                         entries.add(TeadItems.LEAD_APPLE);
 
+                        entries.add(TeadItems.GRAVITY_PEARL);
+
                         entries.add(TeadItems.TRANSMUTATION_GRIMOIRE);
 
                         entries.add(TeadItems.SMITHING_GUIDE_GREAT_SWORD);
