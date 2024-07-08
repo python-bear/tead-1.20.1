@@ -13,15 +13,17 @@ public class SickleItem extends BladedWeaponItem {
     private final TagKey<Block> effectiveBlocks;
     protected final float miningSpeed;
     public SickleItem(ToolMaterial toolMaterial, Item.Settings settings) {
-        super(toolMaterial, toolMaterial.getAttackDamage() + 2, 2, 0,
+        super(toolMaterial, 2, 2, 0,
                 0, 0, 0, 0, true, settings);
         this.effectiveBlocks = BlockTags.HOE_MINEABLE;
         this.miningSpeed = toolMaterial.getMiningSpeedMultiplier();
     }
+
     @Override
     public boolean isSuitableFor(BlockState state) {
         return state.isIn(BlockTags.HOE_MINEABLE);
     }
+
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
         return state.isIn(this.effectiveBlocks) ? this.miningSpeed * 2 : 1.0f;

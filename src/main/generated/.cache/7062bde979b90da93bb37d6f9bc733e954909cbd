@@ -1,8 +1,8 @@
-// 1.20.1	2024-07-07T18:57:49.5664185	tead/Block Loot Tables
+// 1.20.1	2024-07-08T14:08:01.2464418	tead/Block Loot Tables
 3c079cfcdd9b60af318e1684f7e6d74a7f3d7ed1 data\tead\loot_tables\blocks\bronze_cut_slab.json
 921ac0bd13ba01497f064a862b7d0d7e921dd6ad data\tead\loot_tables\blocks\sick_pumpkin.json
-af455ebaddb213c26102a3ddb413b5865ab94560 data\tead\loot_tables\blocks\ruby_ore.json
 72037b9c16b0521bede6dc2531edffa0064be4bc data\tead\loot_tables\blocks\white_netherite_block.json
+af455ebaddb213c26102a3ddb413b5865ab94560 data\tead\loot_tables\blocks\ruby_ore.json
 4f397bdd8a4a4dc98e6315dce4cb8d8524665bc9 data\tead\loot_tables\blocks\deepslate_ruby_ore.json
 00e480054ee9f15de3e63558441db84a62a4a355 data\tead\loot_tables\blocks\lead_cut_stairs.json
 3a3a9c6307256850d84d5c9877dc6990f3d9cb7e data\tead\loot_tables\blocks\rose_netherite_block.json

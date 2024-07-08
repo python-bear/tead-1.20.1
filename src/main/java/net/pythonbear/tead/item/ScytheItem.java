@@ -11,15 +11,17 @@ public class ScytheItem extends BladedWeaponItem {
     private final TagKey<Block> effectiveBlocks;
     protected final float miningSpeed;
     public ScytheItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, toolMaterial.getAttackDamage() + 3, 0.8f, 0,
-                0, 0, 0, 0, false, settings);
+        super(toolMaterial, 3, 0.8f, 0, 0, 0,
+                0, -0.2f, false, settings);
         this.effectiveBlocks = BlockTags.HOE_MINEABLE;
         this.miningSpeed = toolMaterial.getMiningSpeedMultiplier() - 0.2f;
     }
+
     @Override
     public boolean isSuitableFor(BlockState state) {
         return state.isIn(BlockTags.HOE_MINEABLE);
     }
+
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
         return state.isIn(this.effectiveBlocks) ? this.miningSpeed : 1.0f;

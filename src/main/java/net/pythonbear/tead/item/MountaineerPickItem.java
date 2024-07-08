@@ -1,19 +1,29 @@
 package net.pythonbear.tead.item;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class MountaineerPickItem
-        extends MiningToolItem {
+public class MountaineerPickItem extends MiningToolItem {
     protected final float miningSpeed;
+    private final TagKey<Block> effectiveBlocks;
+
     public MountaineerPickItem(ToolMaterial material, Item.Settings settings) {
-        super(material.getAttackDamage() + 2, 1.3f, material, BlockTags.PICKAXE_MINEABLE,
+        super(3, 1.3f, material, BlockTags.PICKAXE_MINEABLE,
                 settings.maxDamage(material.getDurability() + 32));
-        this.miningSpeed = material.getMiningSpeedMultiplier();
+        this.effectiveBlocks = BlockTags.PICKAXE_MINEABLE;
+        this.miningSpeed = material.getMiningSpeedMultiplier() - 1;
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
+        return state.isIn(this.effectiveBlocks) ? this.miningSpeed : 1.0f;
     }
 
     @Override

@@ -108,6 +108,13 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         createStairsRecipe(TeadBlocks.BRONZE_CUT_STAIRS, Ingredient.ofItems(TeadBlocks.BRONZE_CUT_BLOCK))
                 .criterion(hasItem(TeadBlocks.BRONZE_CUT_BLOCK), conditionsFromItem(TeadBlocks.BRONZE_CUT_BLOCK))
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "bronze_cut_stairs"));
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, TeadItems.GRAVITY_PEARL)
+                .input(Items.BLAZE_POWDER)
+                .input(Items.ENDER_PEARL)
+                .input(Items.CHORUS_FRUIT)
+                .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
+                .criterion(hasItem(Items.ENDER_PEARL), conditionsFromItem(Items.ENDER_PEARL))
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gravity_pearl"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.HANDLE)
                 .input(Items.STICK)
                 .input(Items.LEATHER)

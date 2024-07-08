@@ -12,10 +12,10 @@ import net.minecraft.item.ToolMaterial;
 public class DoubleAxeItem extends AxeItem {
     private final float attackDamage;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
+
     public DoubleAxeItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, toolMaterial.getAttackDamage() + 7, 0.6f,
-                settings.maxDamage(toolMaterial.getDurability()));
-        this.attackDamage = toolMaterial.getAttackDamage() + 7;
+        super(toolMaterial, 8, 0.6f, settings.maxDamage(toolMaterial.getDurability()));
+        this.attackDamage = toolMaterial.getAttackDamage() + 8;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
@@ -23,6 +23,7 @@ public class DoubleAxeItem extends AxeItem {
                 "Weapon modifier", 0.6f, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
+
     public float getAttackDamage() {
         return this.attackDamage;
     }

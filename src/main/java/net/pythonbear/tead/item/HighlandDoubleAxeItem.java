@@ -19,12 +19,12 @@ public class HighlandDoubleAxeItem extends AxeItem {
     public final float knockbackMagnitude;
     public final float knockbackRadius;
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
+
     public HighlandDoubleAxeItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, toolMaterial.getAttackDamage() + 7, 0.7f,
-                settings.maxDamage(toolMaterial.getDurability() + 16));
+        super(toolMaterial, 8, 0.7f, settings.maxDamage(toolMaterial.getDurability() + 16));
         this.knockbackMagnitude = 0.2f;
         this.knockbackRadius = 0.6f;
-        this.attackDamage = toolMaterial.getAttackDamage() + 7;
+        this.attackDamage = toolMaterial.getAttackDamage() + 8;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
@@ -32,6 +32,7 @@ public class HighlandDoubleAxeItem extends AxeItem {
                 "Weapon modifier", 0.7f, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
+
     public float getAttackDamage() {
         return this.attackDamage;
     }
@@ -43,6 +44,7 @@ public class HighlandDoubleAxeItem extends AxeItem {
         }
         return super.getAttributeModifiers(slot);
     }
+
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target instanceof PlayerEntity || target instanceof MobEntity) {

@@ -61,13 +61,15 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
         }
         return super.getAttributeModifiers(slot);
     }
+
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity user, LivingEntity entity, Hand hand) {
         Item mainHandItem = user.getStackInHand(Hand.MAIN_HAND).getItem();
 
-        if (hand == Hand.OFF_HAND && stack.getItem() instanceof BladedWeaponItem && ((BladedWeaponItem)
-                stack.getItem()).dualWielded && ((mainHandItem instanceof BladedWeaponItem && ((BladedWeaponItem)
-                mainHandItem).dualWielded)) || user.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
+        if (hand == Hand.OFF_HAND && stack.getItem() instanceof BladedWeaponItem && ((BladedWeaponItem)stack.getItem()).dualWielded
+                && (((mainHandItem instanceof BladedWeaponItem && ((BladedWeaponItem)mainHandItem).dualWielded))
+                || ((mainHandItem instanceof HatchetItem && ((HatchetItem)mainHandItem).dualWielded)))
+                || user.getStackInHand(Hand.MAIN_HAND).isEmpty()) {
             if (!user.getWorld().isClient()) {
                 if (user.getItemCooldownManager().isCoolingDown(this)) {
                     return ActionResult.FAIL;
@@ -75,8 +77,11 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
                     user.getStackInHand(Hand.OFF_HAND).damage(1, user,
                             playerEntity -> playerEntity.sendToolBreakStatus(Hand.OFF_HAND));
                     user.getItemCooldownManager().set(this, 20);
-                    CustomAttacking.attack(user, entity, Hand.OFF_HAND,
-                            ((BladedWeaponItem) stack.getItem()).getAttackDamage());
+                    if (stack.getItem() instanceof BladedWeaponItem) {
+                        CustomAttacking.attack(user, entity, Hand.OFF_HAND, ((BladedWeaponItem) stack.getItem()).getAttackDamage());
+                    } else {
+                        CustomAttacking.attack(user, entity, Hand.OFF_HAND, ((HatchetItem) stack.getItem()).getAttackDamage());
+                    }
                     return ActionResult.SUCCESS;
                 }
             }
