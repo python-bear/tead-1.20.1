@@ -1,23 +1,30 @@
 package net.pythonbear.tead.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.pythonbear.tead.sound.TeadSounds;
+
+import java.util.List;
 
 public class WindArrowEntity extends ArrowEntity {
-    private Double startingXPos;
-    private Double startingZPos;
     public WindArrowEntity(EntityType<? extends ArrowEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public WindArrowEntity(World world, double x, double y, double z) {
         super(world, x, y, z);
-        this.startingXPos = x;
-        this.startingZPos = z;
     }
 
     public WindArrowEntity(World world, LivingEntity owner) {
@@ -26,23 +33,85 @@ public class WindArrowEntity extends ArrowEntity {
 
     public WindArrowEntity(World world, LivingEntity owner, double x, double y, double z) {
         super(world, owner);
-        this.startingXPos = x;
-        this.startingZPos = z;
+    }
+
+    @Override
+    protected void onBlockHit(BlockHitResult blockHitResult) {
+        super.onBlockHit(blockHitResult);
+        ServerWorld world = (ServerWorld) this.getWorld();
+        Vec3d pos = blockHitResult.getPos();
+
+        double range = 2.5;
+
+        List<Entity> entities = world.getEntitiesByClass(
+                Entity.class,
+                this.getBoundingBox().expand(range),
+                e -> !(e instanceof ProjectileEntity)
+        );
+
+        summonWindParticles(world, pos);
+        world.playSound(null, blockHitResult.getBlockPos(), TeadSounds.BREEZE, SoundCategory.PLAYERS);
+
+        for (Entity entity : entities) {
+            double dx = entity.getX() - pos.getX();
+            double dy = entity.getY() - pos.getY() ;
+            double dz = entity.getZ() - pos.getZ();
+            double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+            double strength = (1.0 / (distance + 0.1)) * ((double) 6 / 3);
+
+            entity.addVelocity(dx * strength, dy * strength, dz * strength);
+            entity.velocityModified = true;
+        }
     }
 
     @Override
     protected void onHit(LivingEntity target) {
         super.onHit(target);
-        if (this.startingXPos != null && this.startingZPos != null) {
-            double xDelta = this.startingXPos - target.getX();
-            double zDelta = this.startingZPos - target.getZ();
+        ServerWorld world = (ServerWorld) target.getWorld();
 
-            double pullStrength = 0.5;
-            double pullX = pullStrength * xDelta;
-            double pullZ = pullStrength * zDelta;
+        double range = 2.5;
 
-            target.move(MovementType.SELF, new Vec3d(pullX, 0.5, pullZ));
+        List<Entity> entities = world.getEntitiesByClass(
+                Entity.class,
+                target.getBoundingBox().expand(range),
+                e -> e != target && !(e instanceof ProjectileEntity)
+        );
+
+        summonWindParticles(world, target.getPos());
+        world.playSound(null, target.getBlockPos(), TeadSounds.BREEZE, SoundCategory.PLAYERS);
+
+        for (Entity entity : entities) {
+            double dx = entity.getX() - target.getX();
+            double dy = entity.getY() - target.getY() ;
+            double dz = entity.getZ() - target.getZ();
+            double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+            double strength = (1.0 / (distance + 0.1)) * ((double) 6 / 3);
+
+            entity.addVelocity(dx * strength, dy * strength, dz * strength);
+            entity.velocityModified = true;
         }
     }
 
+    private void summonWindParticles(ServerWorld world, Vec3d targetPos) {
+        for (int i = 0; i < 30; i++) {
+            double angle = 2 * Math.PI * i / 30;
+            double radius = 3;
+
+            double offsetX = MathHelper.cos((float) angle) * radius;
+            double offsetZ = MathHelper.sin((float) angle) * radius;
+
+            Vec3d particlePos = new Vec3d(targetPos.x + offsetX, targetPos.y + 0.5, targetPos.z + offsetZ);
+
+            world.spawnParticles(
+                    ParticleTypes.EFFECT, particlePos.x, particlePos.y, particlePos.z, 1,
+                    -(offsetX / 5), 0.02 + world.getRandom().nextDouble(), -(offsetZ / 5), 0.1
+            );
+            world.spawnParticles(
+                    ParticleTypes.EXPLOSION, particlePos.x, particlePos.y, particlePos.z, 1,
+                    -(offsetX / 5), 0.02 + world.getRandom().nextDouble(), -(offsetZ / 5), 0.2
+            );
+        }
+    }
 }

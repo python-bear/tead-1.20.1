@@ -1,24 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "tead:gold_garment_chestplate"
-    },
-    "$": {
-      "item": "minecraft:leather"
-    },
-    "%": {
-      "item": "tead:fabric"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
   },
-  "pattern": [
-    "% %",
-    "%$%",
-    "%#%"
-  ],
+  "base": {
+    "item": "minecraft:golden_chestplate"
+  },
   "result": {
     "item": "tead:gold_ghostly_chestplate"
   },
-  "show_notification": true
+  "template": {
+    "item": "tead:smithing_guide_spooky"
+  }
 }

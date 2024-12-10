@@ -22,7 +22,7 @@ public class HighlandAxeItem extends AxeItem {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     public HighlandAxeItem(ToolMaterial toolMaterial, Item.Settings settings) {
-        super(toolMaterial, 7, 0.9f, settings.maxDamage(toolMaterial.getDurability() + 16));
+        super(toolMaterial, 7, 0.9f - 4, settings.maxDamage(toolMaterial.getDurability() + 16));
         this.knockbackMagnitude = 0.1f;
         this.knockbackRadius = 0.6f;
         this.attackDamage = toolMaterial.getAttackDamage() + 7;
@@ -30,7 +30,7 @@ public class HighlandAxeItem extends AxeItem {
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
-                "Weapon modifier", 0.9f, EntityAttributeModifier.Operation.ADDITION));
+                "Weapon modifier", 0.9f - 4, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 

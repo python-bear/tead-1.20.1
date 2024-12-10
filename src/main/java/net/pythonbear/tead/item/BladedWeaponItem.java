@@ -20,6 +20,7 @@ import net.minecraft.util.Hand;
 
 import net.minecraft.world.World;
 import net.pythonbear.tead.init.CustomAttacking;
+import net.pythonbear.tead.init.TeadBlocks;
 
 public class BladedWeaponItem extends SwordItem implements Vanishable {
     private final float attackDamage;
@@ -34,7 +35,7 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
     public BladedWeaponItem(ToolMaterial toolMaterial, float attackDamage, float attackSpeed, float knockbackMagnitude,
                             float knockbackRadius, int slownessAmplifier, int slownessDuration, float miningSpeed,
                             boolean dualWielded, Item.Settings settings) {
-        super(toolMaterial, (int)attackDamage - 1, attackSpeed, settings);
+        super(toolMaterial, (int)attackDamage - 1, attackSpeed - 4, settings);
         this.knockbackMagnitude = knockbackMagnitude;
         this.knockbackRadius = knockbackRadius;
         this.slownessAmplifier = slownessAmplifier;
@@ -46,7 +47,7 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
-                "Weapon modifier", attackSpeed, EntityAttributeModifier.Operation.ADDITION));
+                "Weapon modifier", attackSpeed - 4, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 
@@ -93,7 +94,7 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if ((target instanceof PlayerEntity || target instanceof MobEntity) &
+        if ((target instanceof PlayerEntity || target instanceof MobEntity) &&
                 (this.knockbackMagnitude > 0  || this.slownessDuration > 0)) {
             World world = attacker.getWorld();
 
@@ -105,7 +106,7 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
         return super.postHit(stack, target, attacker);
     }
 
-    private void doAttackKnockback(World world, LivingEntity target, LivingEntity attacker,
+    public void doAttackKnockback(World world, LivingEntity target, LivingEntity attacker,
                                    Float knockbackStrength, Float knockbackRadius) {
         world.getEntitiesByClass(LivingEntity.class, target.getBoundingBox().expand(knockbackRadius),
                         (livingEntity) -> true)
@@ -122,7 +123,7 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
 
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        if (state.isOf(Blocks.COBWEB)) {
+        if (state.isOf(Blocks.COBWEB) || state.isOf(TeadBlocks.WEAK_COBWEB)) {
             return 13.5f + this.miningSpeed;
         }
         return state.isIn(BlockTags.SWORD_EFFICIENT) ? this.miningSpeed : 1.0f;

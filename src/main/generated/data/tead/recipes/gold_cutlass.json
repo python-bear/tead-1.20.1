@@ -1,21 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "minecraft:gold_ingot"
-    },
-    "%": {
-      "item": "tead:handle"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
   },
-  "pattern": [
-    "  #",
-    " # ",
-    " % "
-  ],
+  "base": {
+    "item": "minecraft:golden_sword"
+  },
   "result": {
     "item": "tead:gold_cutlass"
   },
-  "show_notification": true
+  "template": {
+    "item": "tead:smithing_guide_mercenary"
+  }
 }

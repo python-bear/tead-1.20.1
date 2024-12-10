@@ -5,13 +5,13 @@
     "#": {
       "tag": "tead:rocks"
     },
-    "%": {
+    "$": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
     " #",
-    "% "
+    "$ "
   ],
   "result": {
     "item": "tead:stone_dagger"

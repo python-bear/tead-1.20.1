@@ -7,6 +7,9 @@ import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
 
 public class TeadSounds {
+    public static final SoundEvent ICE_SMASH = registerSoundEvent("ice_smash");
+    public static final SoundEvent BREEZE = registerSoundEvent("breeze");
+
     public static final SoundEvent BATTLE_HYMN = registerSoundEvent("battle_hymn");
     public static final SoundEvent DAY_ONE = registerSoundEvent("day_one");
     public static final SoundEvent HAIL_AND_KILL = registerSoundEvent("hail_and_kill");

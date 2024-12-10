@@ -166,7 +166,6 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
             if (this.getWorld() != null) {
                 this.getWorld().getEntitiesByClass(LivingEntity.class, this.getBoundingBox().expand(gravityDistance),
                         livingEntity -> true).forEach((entity) -> {
-                    Tead.LOGGER.info("Found entity " + entity.toString());
                     double distance = this.distanceTo(entity);
                     double pullFactor;
                     if (distance <= 0.5) {
@@ -177,7 +176,6 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
                         pullFactor = (1 / (distance - 1)) * 0.3;
                     }
 
-                    Tead.LOGGER.info("pull factor: " + pullFactor + ", distance: " + distance + ", entity speed: " + entity.getVelocity().length() + 0.4);
                     Vec3d direction = new Vec3d(this.getX() - entity.getX(), this.getY() - entity.getY(), this.getZ() - entity.getZ()).normalize();
                     double entitySpeed = entity.getVelocity().length() + 0.4;
                     Vec3d pullVelocity = direction.multiply(Math.min(entitySpeed, 3) * pullFactor);

@@ -12,6 +12,7 @@ public class TeadModelPredicateProvider {
         registerBow(TeadItems.RUBY_POWER_BOW);
         registerBow(TeadItems.TRICK_BOW);
         registerBow(TeadItems.WIND_BOW);
+        registerBow(TeadItems.WEBBED_BOW);
         registerBow(TeadItems.SHORT_BOW);
         registerBow(TeadItems.LONG_BOW);
         registerFireboltThrower(TeadItems.FIREBOLT_THROWER);

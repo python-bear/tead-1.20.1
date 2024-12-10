@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
+
 import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 
@@ -16,6 +18,7 @@ public class TeadModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+        blockStateModelGenerator.registerTintableCrossBlockStateWithStages(TeadBlocks.WEAK_COBWEB, BlockStateModelGenerator.TintType.NOT_TINTED, Properties.AGE_3, 0, 1, 2, 3);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RAW_LEAD_BLOCK);
@@ -123,13 +126,10 @@ public class TeadModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(TeadItems.FABRIC, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_BROADSWORD, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_CRESCENT_DAGGER, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_STURDY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_SPOOKY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_GLAIVE, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_GREAT_SWORD, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_HIGHLAND_AXE, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_HIGHLAND_DOUBLE_AXE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_HIGHLAND, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_HOLLOW_DAGGER, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_MOUNTAINEER_PICK, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_RANSEUR, Models.GENERATED);
@@ -137,6 +137,10 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_RITE_DAGGER, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_TEMPEST_KNIFE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_TRUTHSEEKER, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_MERCENARY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SMITHING_GUIDE_KATANA, Models.GENERATED);
+
+        itemModelGenerator.register(TeadItems.FABRIC, Models.GENERATED);
         itemModelGenerator.register(TeadItems.RUBY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.RUBY_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SHARD, Models.GENERATED);
@@ -157,19 +161,10 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.ROSE_NETHERITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.JERKY, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.BUFFERED_PEARL, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GRAVITY_PEARL, Models.GENERATED);
         itemModelGenerator.register(TeadItems.TRANSMUTATION_GRIMOIRE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.HANDLE, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.TORCH_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.REDSTONE_TORCH_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.SOUL_TORCH_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.BORING_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.COPPER_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.OBSIDIAN_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.RUBY_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.AMETHYST_ARROW, Models.GENERATED);
-        itemModelGenerator.register(TeadItems.ENDER_PEARL_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GALENA, Models.GENERATED);
         itemModelGenerator.register(TeadItems.WHITE_GOLD_POTATO, Models.GENERATED);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_BEETROOT, Models.GENERATED);
@@ -180,15 +175,29 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.MUDDY_CLAY_BALL, Models.GENERATED);
         itemModelGenerator.register(TeadItems.DARK_BRICK, Models.GENERATED);
 
+        itemModelGenerator.register(TeadItems.TNT_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.TORCH_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.REDSTONE_TORCH_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SOUL_TORCH_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.BORING_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.COPPER_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.OBSIDIAN_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.RUBY_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.TRANSMORPHING_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.AMETHYST_ARROW, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ENDER_PEARL_ARROW, Models.GENERATED);
+
         itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SHURIKEN, Models.GENERATED);
 
-//        itemModelGenerator.register(TeadItems.LIGHTNING_STAFF, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.FROST_CLAYMORE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.FRIGID_HILT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SOUL, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.SOUL_BOTTLE, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.EXCALIBUR_TOTEM, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SINISTER_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.GRAVITY_HAMMER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STARLESS_NIGHT, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
+
         itemModelGenerator.register(TeadItems.BRONZE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BRONZE_CLAYMORE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BRONZE_DAGGER, Models.HANDHELD);
@@ -202,33 +211,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.BRONZE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BRONZE_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BRONZE_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.DIAMOND_DOUBLE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.DIAMOND_GREATSWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.DIAMOND_SICKLE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_BROADSWORD, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_CRESCENT_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_CUTLASS, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_DOUBLE_AXE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_DOUBLE_HIGHLAND_AXE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_GLAIVE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_GREATSWORD, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_HATCHET, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_HIGHLAND_AXE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_HOLLOW_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_KATANA, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_LONGSWORD, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_MATTOCK, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_MOUNTAINEER_PICK, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_RANSEUR, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_RITE_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_SICKLE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_SPEAR, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_TEMPEST_KNIFE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.GOLD_TRUTHSEEKER, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.IRON_DOUBLE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.IRON_GREATSWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.IRON_SICKLE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.IRON_TEMPEST_KNIFE, Models.HANDHELD);
+
         itemModelGenerator.register(TeadItems.LEAD_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_GREATSWORD, Models.HANDHELD);
@@ -245,7 +228,6 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.ROSE_GOLD_DAGGER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_DOUBLE_AXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_GREATSWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.ROSE_GOLD_HAMMER, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_HOE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.ROSE_GOLD_RAPIER, Models.HANDHELD);
@@ -266,11 +248,6 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.STEEL_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_SICKLE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.STONE_DOUBLE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.STONE_GREATSWORD, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.STONE_SICKLE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.WOOD_DOUBLE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(TeadItems.WOOD_SICKLE, Models.HANDHELD);
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.BRONZE_CHAINMAIL_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.BRONZE_CHAINMAIL_CHESTPLATE));
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.BRONZE_CHAINMAIL_HELMET));
@@ -312,21 +289,11 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) TeadItems.SWIFTNESS_BOOTS));
 //        itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.CORAL_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.DIAMOND_CLAYMORE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.DIAMOND_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.DIAMOND_HAMMER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.DIAMOND_RAPIER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.DIAMOND_SCYTHE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.GOLD_CLAYMORE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.GOLD_DAGGER, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.GOLD_HAMMER, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.GOLD_RAPIER, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.GOLD_SCYTHE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.IRON_CLAYMORE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.IRON_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.IRON_HAMMER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.IRON_RAPIER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.IRON_SCYTHE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.LEAD_CLAYMORE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.LEAD_DAGGER, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.LEAD_HAMMER, Models.HANDHELD);
@@ -339,14 +306,6 @@ public class TeadModelProvider extends FabricModelProvider {
 //        itemModelGenerator.register(TeadItems.NETHERITE_SCYTHE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.OBSIDIAN_CLAYMORE, Models.HANDHELD);
 //        itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.STONE_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.STONE_HAMMER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.STONE_RAPIER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.STONE_SCYTHE, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.WOOD_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.WOOD_HAMMER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.WOOD_RAPIER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.WOOD_SCYTHE, Models.HANDHELD);
 //        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_HIGHLAND_CHESTPLATE));
 //        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_PLATE_BOOTS));
 //        itemModelGenerator.registerArmor(((ArmorItem) TeadItems.DIAMOND_PLATE_CHESTPLATE));

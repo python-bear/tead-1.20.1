@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_sword"
+  },
+  "result": {
+    "item": "tead:iron_tempest_knife"
+  },
+  "template": {
+    "item": "tead:smithing_guide_tempest_knife"
+  }
+}

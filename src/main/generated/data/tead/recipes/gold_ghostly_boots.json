@@ -1,20 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "item": "minecraft:gold_ingot"
-    },
-    "%": {
-      "item": "tead:fabric"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
   },
-  "pattern": [
-    "# #",
-    "% %"
-  ],
+  "base": {
+    "item": "minecraft:golden_boots"
+  },
   "result": {
     "item": "tead:gold_ghostly_boots"
   },
-  "show_notification": true
+  "template": {
+    "item": "tead:smithing_guide_spooky"
+  }
 }

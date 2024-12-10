@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "tead:iron_longsword"
+  },
+  "result": {
+    "item": "tead:iron_broadsword"
+  },
+  "template": {
+    "item": "tead:smithing_guide_sturdy"
+  }
+}

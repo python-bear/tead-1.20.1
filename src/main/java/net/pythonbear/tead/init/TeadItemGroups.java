@@ -20,19 +20,19 @@ public class TeadItemGroups {
                         entries.add(TeadItems.OBSIDIAN_SHARD);
                         entries.add(TeadItems.OBSIDIAN_INGOT);
                         entries.add(TeadItems.GALENA);
-                        entries.add(TeadItems.LEAD_INGOT);
                         entries.add(TeadItems.LEAD_NUGGET);
+                        entries.add(TeadItems.LEAD_INGOT);
                         entries.add(TeadItems.COPPER_NUGGET);
-                        entries.add(TeadItems.ROSE_GOLD_INGOT);
                         entries.add(TeadItems.ROSE_GOLD_NUGGET);
-                        entries.add(TeadItems.WHITE_GOLD_INGOT);
+                        entries.add(TeadItems.ROSE_GOLD_INGOT);
                         entries.add(TeadItems.WHITE_GOLD_NUGGET);
-                        entries.add(TeadItems.BRASS_INGOT);
+                        entries.add(TeadItems.WHITE_GOLD_INGOT);
                         entries.add(TeadItems.BRASS_NUGGET);
-                        entries.add(TeadItems.BRONZE_INGOT);
+                        entries.add(TeadItems.BRASS_INGOT);
                         entries.add(TeadItems.BRONZE_NUGGET);
-                        entries.add(TeadItems.STEEL_INGOT);
+                        entries.add(TeadItems.BRONZE_INGOT);
                         entries.add(TeadItems.STEEL_NUGGET);
+                        entries.add(TeadItems.STEEL_INGOT);
                         entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.RUBY_INGOT);
                         entries.add(TeadItems.ROSE_NETHERITE_INGOT);
@@ -52,29 +52,31 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ENDER_PEARL_ARROW);
                         entries.add(TeadItems.OBSIDIAN_ARROW);
                         entries.add(TeadItems.RUBY_ARROW);
+                        entries.add(TeadItems.TRANSMORPHING_ARROW);
 
                         entries.add(TeadItems.JERKY);
                         entries.add(TeadItems.ROSE_GOLD_BEETROOT);
                         entries.add(TeadItems.WHITE_GOLD_POTATO);
                         entries.add(TeadItems.LEAD_APPLE);
 
+                        entries.add(TeadItems.BUFFERED_PEARL);
                         entries.add(TeadItems.GRAVITY_PEARL);
 
                         entries.add(TeadItems.TRANSMUTATION_GRIMOIRE);
 
-                        entries.add(TeadItems.SMITHING_GUIDE_GREAT_SWORD);
                         entries.add(TeadItems.SMITHING_GUIDE_RAPIER);
                         entries.add(TeadItems.SMITHING_GUIDE_TEMPEST_KNIFE);
                         entries.add(TeadItems.SMITHING_GUIDE_TRUTHSEEKER);
+                        entries.add(TeadItems.SMITHING_GUIDE_KATANA);
                         entries.add(TeadItems.SMITHING_GUIDE_GLAIVE);
                         entries.add(TeadItems.SMITHING_GUIDE_RANSEUR);
-                        entries.add(TeadItems.SMITHING_GUIDE_CRESCENT_DAGGER);
                         entries.add(TeadItems.SMITHING_GUIDE_HOLLOW_DAGGER);
                         entries.add(TeadItems.SMITHING_GUIDE_RITE_DAGGER);
                         entries.add(TeadItems.SMITHING_GUIDE_MOUNTAINEER_PICK);
-                        entries.add(TeadItems.SMITHING_GUIDE_HIGHLAND_AXE);
-                        entries.add(TeadItems.SMITHING_GUIDE_HIGHLAND_DOUBLE_AXE);
-                        entries.add(TeadItems.SMITHING_GUIDE_BROADSWORD);
+                        entries.add(TeadItems.SMITHING_GUIDE_MERCENARY);
+                        entries.add(TeadItems.SMITHING_GUIDE_SPOOKY);
+                        entries.add(TeadItems.SMITHING_GUIDE_HIGHLAND);
+                        entries.add(TeadItems.SMITHING_GUIDE_STURDY);
 
                         entries.add(TeadItems.GRENADE);
                         entries.add(TeadItems.SHURIKEN);
@@ -85,7 +87,12 @@ public class TeadItemGroups {
                         entries.add(TeadItems.BONE_CLUB);
                         entries.add(TeadItems.GRAVITY_HAMMER);
                         entries.add(TeadItems.SINISTER_SWORD);
+                        entries.add(TeadItems.FRIGID_HILT);
                         entries.add(TeadItems.FROST_CLAYMORE);
+                        entries.add(TeadItems.SOUL);
+                        entries.add(TeadItems.SOUL_BOTTLE);
+                        entries.add(TeadItems.EXCALIBUR_TOTEM);
+                        entries.add(TeadItems.EXCALIBUR);
                         entries.add(TeadItems.OBSIDIAN_BLADE);
                         entries.add(TeadItems.STARLESS_NIGHT);
                         entries.add(TeadItems.CORAL_DAGGER);
@@ -94,25 +101,62 @@ public class TeadItemGroups {
                         entries.add(TeadItems.RUBY_POWER_BOW);
                         entries.add(TeadItems.TRICK_BOW);
                         entries.add(TeadItems.WIND_BOW);
+                        entries.add(TeadItems.WEBBED_BOW);
                         entries.add(TeadItems.SHORT_BOW);
                         entries.add(TeadItems.LONG_BOW);
 
                         entries.add(TeadItems.FIREBOLT_THROWER);
 
+                        entries.add(TeadItems.WOOD_HATCHET);
                         entries.add(TeadItems.WOOD_HAMMER);
+                        entries.add(TeadItems.WOOD_MACE);
                         entries.add(TeadItems.WOOD_DAGGER);
+                        entries.add(TeadItems.WOOD_HOLLOW_DAGGER);
+                        entries.add(TeadItems.WOOD_RITE_DAGGER);
+                        entries.add(TeadItems.WOOD_CRESCENT_DAGGER);
+                        entries.add(TeadItems.WOOD_TRUTHSEEKER);
+                        entries.add(TeadItems.WOOD_TEMPEST_KNIFE);
+                        entries.add(TeadItems.WOOD_CUTLASS);
                         entries.add(TeadItems.WOOD_RAPIER);
+                        entries.add(TeadItems.WOOD_KATANA);
+                        entries.add(TeadItems.WOOD_HIGHLAND_AXE);
                         entries.add(TeadItems.WOOD_DOUBLE_AXE);
+                        entries.add(TeadItems.WOOD_DOUBLE_HIGHLAND_AXE);
                         entries.add(TeadItems.WOOD_SICKLE);
                         entries.add(TeadItems.WOOD_SCYTHE);
+                        entries.add(TeadItems.WOOD_GREATSWORD);
+                        entries.add(TeadItems.WOOD_LONGSWORD);
+                        entries.add(TeadItems.WOOD_BROADSWORD);
+                        entries.add(TeadItems.WOOD_CLAYMORE);
+                        entries.add(TeadItems.WOOD_SPEAR);
+                        entries.add(TeadItems.WOOD_RANSEUR);
+                        entries.add(TeadItems.WOOD_GLAIVE);
 
+                        entries.add(TeadItems.STONE_HATCHET);
                         entries.add(TeadItems.STONE_HAMMER);
+                        entries.add(TeadItems.STONE_MATTOCK);
+                        entries.add(TeadItems.STONE_MACE);
                         entries.add(TeadItems.STONE_DAGGER);
+                        entries.add(TeadItems.STONE_HOLLOW_DAGGER);
+                        entries.add(TeadItems.STONE_RITE_DAGGER);
+                        entries.add(TeadItems.STONE_CRESCENT_DAGGER);
+                        entries.add(TeadItems.STONE_TRUTHSEEKER);
+                        entries.add(TeadItems.STONE_TEMPEST_KNIFE);
+                        entries.add(TeadItems.STONE_CUTLASS);
                         entries.add(TeadItems.STONE_RAPIER);
+                        entries.add(TeadItems.STONE_KATANA);
+                        entries.add(TeadItems.STONE_HIGHLAND_AXE);
                         entries.add(TeadItems.STONE_DOUBLE_AXE);
+                        entries.add(TeadItems.STONE_DOUBLE_HIGHLAND_AXE);
                         entries.add(TeadItems.STONE_SICKLE);
                         entries.add(TeadItems.STONE_SCYTHE);
                         entries.add(TeadItems.STONE_GREATSWORD);
+                        entries.add(TeadItems.STONE_BROADSWORD);
+                        entries.add(TeadItems.STONE_LONGSWORD);
+                        entries.add(TeadItems.STONE_CLAYMORE);
+                        entries.add(TeadItems.STONE_SPEAR);
+                        entries.add(TeadItems.STONE_RANSEUR);
+                        entries.add(TeadItems.STONE_GLAIVE);
 
                         entries.add(TeadItems.LEAD_AXE);
                         entries.add(TeadItems.LEAD_HOE);
@@ -127,6 +171,33 @@ public class TeadItemGroups {
                         entries.add(TeadItems.LEAD_SCYTHE);
                         entries.add(TeadItems.LEAD_GREATSWORD);
                         entries.add(TeadItems.LEAD_CLAYMORE);
+
+                        entries.add(TeadItems.IRON_HATCHET);
+                        entries.add(TeadItems.IRON_HAMMER);
+                        entries.add(TeadItems.IRON_MOUNTAINEER_PICK);
+                        entries.add(TeadItems.IRON_MATTOCK);
+                        entries.add(TeadItems.IRON_MACE);
+                        entries.add(TeadItems.IRON_DAGGER);
+                        entries.add(TeadItems.IRON_HOLLOW_DAGGER);
+                        entries.add(TeadItems.IRON_RITE_DAGGER);
+                        entries.add(TeadItems.IRON_CRESCENT_DAGGER);
+                        entries.add(TeadItems.IRON_TRUTHSEEKER);
+                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
+                        entries.add(TeadItems.IRON_CUTLASS);
+                        entries.add(TeadItems.IRON_RAPIER);
+                        entries.add(TeadItems.IRON_KATANA);
+                        entries.add(TeadItems.IRON_HIGHLAND_AXE);
+                        entries.add(TeadItems.IRON_DOUBLE_AXE);
+                        entries.add(TeadItems.IRON_DOUBLE_HIGHLAND_AXE);
+                        entries.add(TeadItems.IRON_SICKLE);
+                        entries.add(TeadItems.IRON_SCYTHE);
+                        entries.add(TeadItems.IRON_GREATSWORD);
+                        entries.add(TeadItems.IRON_BROADSWORD);
+                        entries.add(TeadItems.IRON_LONGSWORD);
+                        entries.add(TeadItems.IRON_CLAYMORE);
+                        entries.add(TeadItems.IRON_SPEAR);
+                        entries.add(TeadItems.IRON_RANSEUR);
+                        entries.add(TeadItems.IRON_GLAIVE);
 
                         entries.add(TeadItems.GOLD_HATCHET);
                         entries.add(TeadItems.GOLD_HAMMER);
@@ -168,16 +239,6 @@ public class TeadItemGroups {
                         entries.add(TeadItems.COPPER_SCYTHE);
                         entries.add(TeadItems.COPPER_GREATSWORD);
                         entries.add(TeadItems.COPPER_CLAYMORE);
-
-                        entries.add(TeadItems.IRON_HAMMER);
-                        entries.add(TeadItems.IRON_DAGGER);
-                        entries.add(TeadItems.IRON_RAPIER);
-                        entries.add(TeadItems.IRON_DOUBLE_AXE);
-                        entries.add(TeadItems.IRON_SICKLE);
-                        entries.add(TeadItems.IRON_SCYTHE);
-                        entries.add(TeadItems.IRON_TEMPEST_KNIFE);
-                        entries.add(TeadItems.IRON_GREATSWORD);
-                        entries.add(TeadItems.IRON_CLAYMORE);
 
                         entries.add(TeadItems.ROSE_GOLD_AXE);
                         entries.add(TeadItems.ROSE_GOLD_PICKAXE);
@@ -221,14 +282,32 @@ public class TeadItemGroups {
                         entries.add(TeadItems.STEEL_GREATSWORD);
                         entries.add(TeadItems.STEEL_CLAYMORE);
 
+                        entries.add(TeadItems.DIAMOND_HATCHET);
                         entries.add(TeadItems.DIAMOND_HAMMER);
+                        entries.add(TeadItems.DIAMOND_MOUNTAINEER_PICK);
+                        entries.add(TeadItems.DIAMOND_MATTOCK);
+                        entries.add(TeadItems.DIAMOND_MACE);
                         entries.add(TeadItems.DIAMOND_DAGGER);
+                        entries.add(TeadItems.DIAMOND_HOLLOW_DAGGER);
+                        entries.add(TeadItems.DIAMOND_RITE_DAGGER);
+                        entries.add(TeadItems.DIAMOND_CRESCENT_DAGGER);
+                        entries.add(TeadItems.DIAMOND_TRUTHSEEKER);
+                        entries.add(TeadItems.DIAMOND_TEMPEST_KNIFE);
+                        entries.add(TeadItems.DIAMOND_CUTLASS);
                         entries.add(TeadItems.DIAMOND_RAPIER);
+                        entries.add(TeadItems.DIAMOND_KATANA);
+                        entries.add(TeadItems.DIAMOND_HIGHLAND_AXE);
                         entries.add(TeadItems.DIAMOND_DOUBLE_AXE);
+                        entries.add(TeadItems.DIAMOND_DOUBLE_HIGHLAND_AXE);
                         entries.add(TeadItems.DIAMOND_SICKLE);
                         entries.add(TeadItems.DIAMOND_SCYTHE);
                         entries.add(TeadItems.DIAMOND_GREATSWORD);
+                        entries.add(TeadItems.DIAMOND_BROADSWORD);
+                        entries.add(TeadItems.DIAMOND_LONGSWORD);
                         entries.add(TeadItems.DIAMOND_CLAYMORE);
+                        entries.add(TeadItems.DIAMOND_SPEAR);
+                        entries.add(TeadItems.DIAMOND_RANSEUR);
+                        entries.add(TeadItems.DIAMOND_GLAIVE);
 
                         entries.add(TeadItems.NETHERITE_HAMMER);
                         entries.add(TeadItems.NETHERITE_DAGGER);

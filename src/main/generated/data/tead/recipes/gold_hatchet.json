@@ -10,9 +10,8 @@
     }
   },
   "pattern": [
-    "## ",
-    "#$ ",
-    "   "
+    "##",
+    "#$"
   ],
   "result": {
     "item": "tead:gold_hatchet"

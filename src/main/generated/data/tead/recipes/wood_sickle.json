@@ -5,14 +5,14 @@
     "#": {
       "tag": "minecraft:planks"
     },
-    "%": {
+    "$": {
       "item": "tead:handle"
     }
   },
   "pattern": [
     " # ",
     "  #",
-    "%# "
+    "$# "
   ],
   "result": {
     "item": "tead:wood_sickle"

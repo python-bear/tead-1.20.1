@@ -12,18 +12,15 @@ import net.pythonbear.tead.item.arrow.*;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class TeadItems {
-    public static final Item SMITHING_GUIDE_BROADSWORD = registerItem("smithing_guide_broadsword",
+    // Custom Smithing Guides
+    public static final Item SMITHING_GUIDE_STURDY = registerItem("smithing_guide_sturdy",
             new Item(new FabricItemSettings()));
-    public static final Item SMITHING_GUIDE_CRESCENT_DAGGER = registerItem("smithing_guide_crescent_dagger",
+    public static final Item SMITHING_GUIDE_SPOOKY = registerItem("smithing_guide_spooky",
             new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_GLAIVE = registerItem("smithing_guide_glaive",
             new Item(new FabricItemSettings()));
-    public static final Item SMITHING_GUIDE_GREAT_SWORD = registerItem("smithing_guide_great_sword",
+    public static final Item SMITHING_GUIDE_HIGHLAND = registerItem("smithing_guide_highland",
             new Item(new FabricItemSettings()));
-    public static final Item SMITHING_GUIDE_HIGHLAND_AXE = registerItem("smithing_guide_highland_axe",
-            new Item(new FabricItemSettings()));
-    public static final Item SMITHING_GUIDE_HIGHLAND_DOUBLE_AXE =
-            registerItem("smithing_guide_highland_double_axe", new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_HOLLOW_DAGGER = registerItem("smithing_guide_hollow_dagger",
             new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_MOUNTAINEER_PICK = registerItem("smithing_guide_mountaineer_pick",
@@ -38,6 +35,12 @@ public class TeadItems {
             new Item(new FabricItemSettings()));
     public static final Item SMITHING_GUIDE_TRUTHSEEKER = registerItem("smithing_guide_truthseeker",
             new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_MERCENARY = registerItem("smithing_guide_mercenary",
+            new Item(new FabricItemSettings()));
+    public static final Item SMITHING_GUIDE_KATANA = registerItem("smithing_guide_katana",
+            new Item(new FabricItemSettings()));
+
+    // Misc Items
     public static final Item FABRIC = registerItem("fabric", new Item(new FabricItemSettings()));
     public static final Item ROCK = registerItem("rock", new Item(new FabricItemSettings()));
     public static final Item SLATE = registerItem("slate", new Item(new FabricItemSettings()));
@@ -45,8 +48,6 @@ public class TeadItems {
     public static final Item MUDDY_CLAY_BALL = registerItem("muddy_clay_ball",
             new Item(new FabricItemSettings()));
     public static final Item DARK_BRICK = registerItem("dark_brick", new Item(new FabricItemSettings()));
-    public static final Item JERKY = registerItem("jerky", new Item(new FabricItemSettings()
-            .food(TeadFoodComponents.JERKY)));
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_INGOT = registerItem("obsidian_ingot", new Item(new FabricItemSettings()));
     public static final Item GALENA = registerItem("galena", new Item(new FabricItemSettings()));
@@ -65,37 +66,65 @@ public class TeadItems {
     public static final Item STEEL_NUGGET = registerItem("steel_nugget", new Item(new FabricItemSettings()));
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item RUBY_INGOT = registerItem("ruby_ingot",
-            new Item(new FabricItemSettings().rarity(Rarity.EPIC)));
+            new RubyIngotItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item ROSE_NETHERITE_INGOT = registerItem("rose_netherite_ingot",
             new Item(new FabricItemSettings().fireproof()));
     public static final Item WHITE_NETHERITE_INGOT = registerItem("white_netherite_ingot",
             new Item(new FabricItemSettings().fireproof()));
+    public static final Item BUFFERED_PEARL = registerItem("buffered_pearl",
+            new BufferedPearl(new FabricItemSettings().maxCount(16)));
     public static final Item GRAVITY_PEARL = registerItem("gravity_pearl",
-            new GravityPearl(new FabricItemSettings().rarity(Rarity.RARE)));
+            new GravityPearl(new FabricItemSettings()));
     public static final Item TRANSMUTATION_GRIMOIRE = registerItem("transmutation_grimoire",
-            new GlintedItem(new FabricItemSettings().rarity(Rarity.EPIC)));
+            new GlintedItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
     public static final Item GRENADE = registerItem("grenade", new GrenadeItem(new FabricItemSettings()));
     public static final Item SHURIKEN = registerItem("shuriken", new ShurikenItem(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",
-            new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64)));
+            new LightningStaffItem(new FabricItemSettings().maxCount(1).maxDamage(64).rarity(Rarity.EPIC).fireproof()));
+    public static final Item FRIGID_HILT = registerItem("frigid_hilt",
+            new Item(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item FROST_CLAYMORE = registerItem("frost_claymore",
-            new FrostClaymoreItem(new Item.Settings().fireproof()));
+            new FrostClaymoreItem(new Item.Settings().fireproof().rarity(Rarity.RARE)));
     public static final Item GRAVITY_HAMMER = registerItem("gravity_hammer",
-            new GravityHammerItem(new Item.Settings().fireproof()));
+            new GravityHammerItem(new Item.Settings().fireproof().rarity(Rarity.UNCOMMON)));
     public static final Item SINISTER_SWORD = registerItem("sinister_sword",
             new SinisterSwordItem(TeadToolMaterials.WHITE_NETHERITE, 3, -2.4f,
-                    new Item.Settings().fireproof()));
+                    new Item.Settings().fireproof().rarity(Rarity.EPIC)));
+    public static final Item SOUL = registerItem("soul", new Item(new Item.Settings()));
+    public static final Item SOUL_BOTTLE = registerItem("soul_bottle", new Item(new Item.Settings().rarity(Rarity.UNCOMMON)));
+    public static final Item EXCALIBUR = registerItem("excalibur",
+            new ExcaliburItem(TeadToolMaterials.STEEL, new Item.Settings().fireproof().rarity(Rarity.EPIC).maxDamage(0)));
+    public static final Item EXCALIBUR_TOTEM = registerItem("excalibur_totem",
+            new ExcaliburTotemItem(new Item.Settings().fireproof().rarity(Rarity.UNCOMMON).maxDamage(0)));
     public static final Item OBSIDIAN_BLADE = registerItem("obsidian_blade",
             new BroadswordItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
     public static final Item STARLESS_NIGHT = registerItem("starless_night",
-            new StarlessNightItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings()));
+            new StarlessNightItem(TeadToolMaterials.OBSIDIAN, new FabricItemSettings().rarity(Rarity.RARE)));
+    public static final Item CORAL_DAGGER = registerItem("coral_dagger",
+            new DaggerItem(TeadToolMaterials.CORAL, new FabricItemSettings()));
+
+    // Food And Consumables
+    public static final Item JERKY = registerItem("jerky", new Item(new FabricItemSettings()
+            .food(TeadFoodComponents.JERKY)));
     public static final Item WHITE_GOLD_POTATO = registerItem("white_gold_potato", new Item(new FabricItemSettings()
-            .food(TeadFoodComponents.WHITE_GOLD_POTATO)));
+            .food(TeadFoodComponents.WHITE_GOLD_POTATO).rarity(Rarity.UNCOMMON)));
     public static final Item ROSE_GOLD_BEETROOT = registerItem("rose_gold_beetroot", new Item(new FabricItemSettings()
-            .food(TeadFoodComponents.ROSE_GOLD_BEETROOT)));
+            .food(TeadFoodComponents.ROSE_GOLD_BEETROOT).rarity(Rarity.UNCOMMON)));
     public static final Item LEAD_APPLE = registerItem("lead_apple", new Item(new FabricItemSettings()
-            .food(TeadFoodComponents.LEAD_APPLE)));
+            .food(TeadFoodComponents.LEAD_APPLE).rarity(Rarity.UNCOMMON)));
+
+    // Staffs
+    public static final Item BATTLE_STAFF = registerItem("battle_staff",
+            new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
+                    new FabricItemSettings()));
+    public static final Item BONE_CLUB = registerItem("bone_club",
+            new StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
+                    0.5f, new FabricItemSettings()));
+    public static final Item QUARTERSTAFF = registerItem("quarterstaff",
+            new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
+                    new FabricItemSettings()));
+
     public static final Item LEAD_AXE = registerItem("lead_axe",
             new AxeItem(TeadToolMaterials.LEAD, 5.0f, -3.2f,  new FabricItemSettings()));
     public static final Item LEAD_PICKAXE = registerItem("lead_pickaxe",
@@ -115,7 +144,7 @@ public class TeadItems {
     public static final Item LEAD_RAPIER = registerItem("lead_rapier",
             new RapierItem(TeadToolMaterials.LEAD, new FabricItemSettings()));
     public static final Item LEAD_GREATSWORD = registerItem("lead_greatsword",
-            new GreatSwordItem(TeadToolMaterials.LEAD,  new FabricItemSettings()));
+            new GreatswordItem(TeadToolMaterials.LEAD,  new FabricItemSettings()));
     public static final Item LEAD_SCYTHE = registerItem("lead_scythe",
             new ScytheItem(TeadToolMaterials.LEAD,  new FabricItemSettings()));
     public static final Item LEAD_SICKLE = registerItem("lead_sickle",
@@ -141,7 +170,7 @@ public class TeadItems {
     public static final Item STEEL_RAPIER = registerItem("steel_rapier",
             new RapierItem(TeadToolMaterials.STEEL, new FabricItemSettings()));
     public static final Item STEEL_GREATSWORD = registerItem("steel_greatsword",
-            new GreatSwordItem(TeadToolMaterials.STEEL, new FabricItemSettings()));
+            new GreatswordItem(TeadToolMaterials.STEEL, new FabricItemSettings()));
     public static final Item STEEL_SCYTHE = registerItem("steel_scythe",
             new ScytheItem(TeadToolMaterials.STEEL,  new FabricItemSettings()));
     public static final Item STEEL_SICKLE = registerItem("steel_sickle",
@@ -167,7 +196,7 @@ public class TeadItems {
     public static final Item ROSE_GOLD_RAPIER = registerItem("rose_gold_rapier",
             new RapierItem(TeadToolMaterials.ROSE_GOLD, new FabricItemSettings()));
     public static final Item ROSE_GOLD_GREATSWORD = registerItem("rose_gold_greatsword",
-            new GreatSwordItem(TeadToolMaterials.ROSE_GOLD, new FabricItemSettings()));
+            new GreatswordItem(TeadToolMaterials.ROSE_GOLD, new FabricItemSettings()));
     public static final Item ROSE_GOLD_SCYTHE = registerItem("rose_gold_scythe",
             new ScytheItem(TeadToolMaterials.ROSE_GOLD,  new FabricItemSettings()));
     public static final Item ROSE_GOLD_SICKLE = registerItem("rose_gold_sickle",
@@ -193,129 +222,151 @@ public class TeadItems {
     public static final Item BRONZE_RAPIER = registerItem("bronze_rapier",
             new RapierItem(TeadToolMaterials.BRONZE, new FabricItemSettings()));
     public static final Item BRONZE_GREATSWORD = registerItem("bronze_greatsword",
-            new GreatSwordItem(TeadToolMaterials.BRONZE, new FabricItemSettings()));
+            new GreatswordItem(TeadToolMaterials.BRONZE, new FabricItemSettings()));
     public static final Item BRONZE_SCYTHE = registerItem("bronze_scythe",
             new ScytheItem(TeadToolMaterials.BRONZE,  new FabricItemSettings()));
     public static final Item BRONZE_SICKLE = registerItem("bronze_sickle",
             new SickleItem(TeadToolMaterials.BRONZE,  new FabricItemSettings()));
     public static final Item BRONZE_CLAYMORE = registerItem("bronze_claymore",
             new ClaymoreItem(TeadToolMaterials.BRONZE, new FabricItemSettings()));
-    public static final Item WOOD_DOUBLE_AXE = registerItem("wood_double_axe",
-            new AxeItem(ToolMaterials.WOOD, 6.2f, -3.5f,  new FabricItemSettings()));
-    public static final Item WOOD_HAMMER = registerItem("wood_hammer",
-            new HammerItem(ToolMaterials.WOOD,  new FabricItemSettings()));
-    public static final Item WOOD_DAGGER = registerItem("wood_dagger",
-            new DaggerItem(ToolMaterials.WOOD, new FabricItemSettings()));
-    public static final Item WOOD_RAPIER = registerItem("wood_rapier",
-            new RapierItem(ToolMaterials.WOOD, new FabricItemSettings()));
-    public static final Item WOOD_SCYTHE = registerItem("wood_scythe",
-            new ScytheItem(ToolMaterials.WOOD,  new FabricItemSettings()));
-    public static final Item WOOD_SICKLE = registerItem("wood_sickle",
-            new SickleItem(ToolMaterials.WOOD,  new FabricItemSettings()));
-    public static final Item STONE_DOUBLE_AXE = registerItem("stone_double_axe",
-            new AxeItem(ToolMaterials.STONE, 7.2f, -3.5f,  new FabricItemSettings()));
-    public static final Item STONE_HAMMER = registerItem("stone_hammer",
-            new HammerItem(ToolMaterials.STONE,  new FabricItemSettings()));
-    public static final Item STONE_DAGGER = registerItem("stone_dagger",
-            new DaggerItem(ToolMaterials.STONE, new FabricItemSettings()));
-    public static final Item STONE_RAPIER = registerItem("stone_rapier",
-            new RapierItem(ToolMaterials.STONE, new FabricItemSettings()));
-    public static final Item STONE_GREATSWORD = registerItem("stone_greatsword",
-            new GreatSwordItem(ToolMaterials.STONE, new FabricItemSettings()));
-    public static final Item STONE_SCYTHE = registerItem("stone_scythe",
-            new ScytheItem(ToolMaterials.STONE, new FabricItemSettings()));
-    public static final Item STONE_SICKLE = registerItem("stone_sickle",
-            new SickleItem(ToolMaterials.STONE, new FabricItemSettings()));
-    public static final Item GOLD_HATCHET = registerItem("gold_hatchet",
-            new HatchetItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_DOUBLE_AXE = registerItem("gold_double_axe",
-            new DoubleAxeItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_DOUBLE_HIGHLAND_AXE = registerItem("gold_double_highland_axe",
-            new HighlandDoubleAxeItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_HIGHLAND_AXE = registerItem("gold_highland_axe",
-            new HighlandAxeItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_HAMMER = registerItem("gold_hammer",
-            new HammerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_MOUNTAINEER_PICK = registerItem("gold_mountaineer_pick",
-            new MountaineerPickItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_MATTOCK = registerItem("gold_mattock",
-            new MattockItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_MACE = registerItem("gold_mace",
-            new MaceItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_DAGGER = registerItem("gold_dagger",
-            new DaggerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_HOLLOW_DAGGER = registerItem("gold_hollow_dagger",
-            new HollowDaggerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_RITE_DAGGER = registerItem("gold_rite_dagger",
-            new RiteDaggerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_CRESCENT_DAGGER = registerItem("gold_crescent_dagger",
-            new CrescentDaggerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_TRUTHSEEKER = registerItem("gold_truthseeker",
-            new TruthseekerItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_TEMPEST_KNIFE = registerItem("gold_tempest_knife",
-            new TempestKnifeItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_CUTLASS = registerItem("gold_cutlass",
-            new CutlassItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_RAPIER = registerItem("gold_rapier",
-            new RapierItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_KATANA = registerItem("gold_katana",
-            new KatanaItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_GREATSWORD = registerItem("gold_greatsword",
-            new GreatSwordItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_BROADSWORD = registerItem("gold_broadsword",
-            new BroadswordItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_LONGSWORD = registerItem("gold_longsword",
-            new LongswordItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_CLAYMORE = registerItem("gold_claymore",
-            new ClaymoreItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_SCYTHE = registerItem("gold_scythe",
-            new ScytheItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_SICKLE = registerItem("gold_sickle",
-            new SickleItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_SPEAR = registerItem("gold_spear",
-            new SpearItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_RANSEUR = registerItem("gold_ranseur",
-            new RanseurItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item GOLD_GLAIVE = registerItem("gold_glaive",
-            new GlaiveItem(ToolMaterials.GOLD, new FabricItemSettings()));
-    public static final Item RUBY_POWER_BOW = registerItem("ruby_power_bow",
-            new PowerBowItem(TeadToolMaterials.RUBY, new FabricItemSettings()));
-    public static final Item IRON_DOUBLE_AXE = registerItem("iron_double_axe",
-            new AxeItem(ToolMaterials.IRON, 6.5f, -3.4f,  new FabricItemSettings()));
-    public static final Item IRON_HAMMER = registerItem("iron_hammer",
-            new HammerItem(ToolMaterials.IRON,  new FabricItemSettings()));
-    public static final Item IRON_DAGGER = registerItem("iron_dagger",
-            new DaggerItem(ToolMaterials.IRON, new FabricItemSettings()));
-    public static final Item IRON_RAPIER = registerItem("iron_rapier",
-            new RapierItem(ToolMaterials.IRON, new FabricItemSettings()));
-    public static final Item IRON_GREATSWORD = registerItem("iron_greatsword",
-            new GreatSwordItem(ToolMaterials.IRON, new FabricItemSettings()));
-    public static final Item IRON_SCYTHE = registerItem("iron_scythe",
-            new ScytheItem(ToolMaterials.IRON,  new FabricItemSettings()));
-    public static final Item IRON_SICKLE = registerItem("iron_sickle",
-            new SickleItem(ToolMaterials.IRON,  new FabricItemSettings()));
-    public static final Item IRON_TEMPEST_KNIFE = registerItem("iron_tempest_knife",
-            new BladedWeaponItem(ToolMaterials.IRON, 2.7f, -1.6f, 0,
-                    0, 0, 0,  1.5f, false,
-                    new FabricItemSettings()));
-    public static final Item IRON_CLAYMORE = registerItem("iron_claymore",
-            new ClaymoreItem(ToolMaterials.IRON, new FabricItemSettings()));
-    public static final Item DIAMOND_DOUBLE_AXE = registerItem("diamond_double_axe",
-            new AxeItem(ToolMaterials.DIAMOND, 5.7f, -3.3f,  new FabricItemSettings()));
-    public static final Item DIAMOND_HAMMER = registerItem("diamond_hammer",
-            new HammerItem(ToolMaterials.DIAMOND, new FabricItemSettings()));
-    public static final Item DIAMOND_DAGGER = registerItem("diamond_dagger",
-            new DaggerItem(ToolMaterials.DIAMOND, new FabricItemSettings()));
-    public static final Item DIAMOND_RAPIER = registerItem("diamond_rapier",
-            new RapierItem(ToolMaterials.DIAMOND, new FabricItemSettings()));
-    public static final Item DIAMOND_GREATSWORD = registerItem("diamond_greatsword",
-            new GreatSwordItem(ToolMaterials.DIAMOND, new FabricItemSettings()));
-    public static final Item DIAMOND_SCYTHE = registerItem("diamond_scythe",
-            new ScytheItem(ToolMaterials.DIAMOND,  new FabricItemSettings()));
-    public static final Item DIAMOND_SICKLE = registerItem("diamond_sickle",
-            new SickleItem(ToolMaterials.DIAMOND,  new FabricItemSettings()));
-    public static final Item DIAMOND_CLAYMORE = registerItem("diamond_claymore",
-            new ClaymoreItem(ToolMaterials.DIAMOND, new FabricItemSettings()));
+
+    // Wood Tools
+    public static final Item WOOD_HATCHET = registerHatchetItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_HAMMER = registerHammerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_MACE = registerMaceItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_DAGGER = registerDaggerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_HOLLOW_DAGGER = registerHollowDaggerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_RITE_DAGGER = registerRiteDaggerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_CRESCENT_DAGGER = registerCrescentDaggerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_TRUTHSEEKER = registerTruthseekerItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_TEMPEST_KNIFE = registerTempestKnifeItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_CUTLASS = registerCutlassItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_RAPIER = registerRapierItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_KATANA = registerKatanaItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_HIGHLAND_AXE = registerHighlandAxeItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_DOUBLE_AXE = registerDoubleAxeItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_DOUBLE_HIGHLAND_AXE = registerDoubleHighlandAxeItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_SICKLE = registerSickleItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_SCYTHE = registerScytheItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_GREATSWORD = registerGreatswordItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_LONGSWORD = registerLongswordItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_BROADSWORD = registerBroadswordItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_CLAYMORE = registerClaymoreItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_SPEAR = registerSpearItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_RANSEUR = registerRanseurItem(ToolMaterials.WOOD, "wood");
+    public static final Item WOOD_GLAIVE = registerGlaiveItem(ToolMaterials.WOOD, "wood");
+
+    // Stone Tools
+    public static final Item STONE_HATCHET = registerHatchetItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_HAMMER = registerHammerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_MATTOCK = registerMattockItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_MACE = registerMaceItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_DAGGER = registerDaggerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_HOLLOW_DAGGER = registerHollowDaggerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_RITE_DAGGER = registerRiteDaggerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_CRESCENT_DAGGER = registerCrescentDaggerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_TRUTHSEEKER = registerTruthseekerItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_TEMPEST_KNIFE = registerTempestKnifeItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_CUTLASS = registerCutlassItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_RAPIER = registerRapierItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_KATANA = registerKatanaItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_HIGHLAND_AXE = registerHighlandAxeItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_DOUBLE_AXE = registerDoubleAxeItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_DOUBLE_HIGHLAND_AXE = registerDoubleHighlandAxeItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_SICKLE = registerSickleItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_SCYTHE = registerScytheItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_GREATSWORD = registerGreatswordItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_LONGSWORD = registerLongswordItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_BROADSWORD = registerBroadswordItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_CLAYMORE = registerClaymoreItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_SPEAR = registerSpearItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_RANSEUR = registerRanseurItem(ToolMaterials.STONE, "stone");
+    public static final Item STONE_GLAIVE = registerGlaiveItem(ToolMaterials.STONE, "stone");
+
+    // Gold Tools
+    public static final Item GOLD_HATCHET = registerHatchetItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_HAMMER = registerHammerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_MOUNTAINEER_PICK = registerMountaineerPickItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_MATTOCK = registerMattockItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_MACE = registerMaceItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_DAGGER = registerDaggerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_HOLLOW_DAGGER = registerHollowDaggerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_RITE_DAGGER = registerRiteDaggerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_CRESCENT_DAGGER = registerCrescentDaggerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_TRUTHSEEKER = registerTruthseekerItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_TEMPEST_KNIFE = registerTempestKnifeItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_CUTLASS = registerCutlassItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_RAPIER = registerRapierItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_KATANA = registerKatanaItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_HIGHLAND_AXE = registerHighlandAxeItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_DOUBLE_AXE = registerDoubleAxeItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_DOUBLE_HIGHLAND_AXE = registerDoubleHighlandAxeItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_SICKLE = registerSickleItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_SCYTHE = registerScytheItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_GREATSWORD = registerGreatswordItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_LONGSWORD = registerLongswordItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_BROADSWORD = registerBroadswordItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_CLAYMORE = registerClaymoreItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_SPEAR = registerSpearItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_RANSEUR = registerRanseurItem(ToolMaterials.GOLD, "gold");
+    public static final Item GOLD_GLAIVE = registerGlaiveItem(ToolMaterials.GOLD, "gold");
+
+    // Iron Tools
+    public static final Item IRON_HATCHET = registerHatchetItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_HAMMER = registerHammerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_MOUNTAINEER_PICK = registerMountaineerPickItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_MATTOCK = registerMattockItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_MACE = registerMaceItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_DAGGER = registerDaggerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_HOLLOW_DAGGER = registerHollowDaggerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_RITE_DAGGER = registerRiteDaggerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_CRESCENT_DAGGER = registerCrescentDaggerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_TRUTHSEEKER = registerTruthseekerItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_TEMPEST_KNIFE = registerTempestKnifeItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_CUTLASS = registerCutlassItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_RAPIER = registerRapierItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_KATANA = registerKatanaItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_HIGHLAND_AXE = registerHighlandAxeItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_DOUBLE_AXE = registerDoubleAxeItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_DOUBLE_HIGHLAND_AXE = registerDoubleHighlandAxeItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_SICKLE = registerSickleItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_SCYTHE = registerScytheItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_GREATSWORD = registerGreatswordItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_LONGSWORD = registerLongswordItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_BROADSWORD = registerBroadswordItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_CLAYMORE = registerClaymoreItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_SPEAR = registerSpearItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_RANSEUR = registerRanseurItem(ToolMaterials.IRON, "iron");
+    public static final Item IRON_GLAIVE = registerGlaiveItem(ToolMaterials.IRON, "iron");
+
+    // Diamond Tools
+    public static final Item DIAMOND_HATCHET = registerHatchetItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_HAMMER = registerHammerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_MOUNTAINEER_PICK = registerMountaineerPickItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_MATTOCK = registerMattockItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_MACE = registerMaceItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_DAGGER = registerDaggerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_HOLLOW_DAGGER = registerHollowDaggerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_RITE_DAGGER = registerRiteDaggerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_CRESCENT_DAGGER = registerCrescentDaggerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_TRUTHSEEKER = registerTruthseekerItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_TEMPEST_KNIFE = registerTempestKnifeItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_CUTLASS = registerCutlassItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_RAPIER = registerRapierItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_KATANA = registerKatanaItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_HIGHLAND_AXE = registerHighlandAxeItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_DOUBLE_AXE = registerDoubleAxeItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_DOUBLE_HIGHLAND_AXE = registerDoubleHighlandAxeItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_SICKLE = registerSickleItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_SCYTHE = registerScytheItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_GREATSWORD = registerGreatswordItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_LONGSWORD = registerLongswordItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_BROADSWORD = registerBroadswordItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_CLAYMORE = registerClaymoreItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_SPEAR = registerSpearItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_RANSEUR = registerRanseurItem(ToolMaterials.DIAMOND, "diamond");
+    public static final Item DIAMOND_GLAIVE = registerGlaiveItem(ToolMaterials.DIAMOND, "diamond");
+
     public static final Item NETHERITE_DOUBLE_AXE = registerItem("netherite_double_axe",
             new AxeItem(ToolMaterials.NETHERITE, 5, -3.3f,  new FabricItemSettings()));
     public static final Item NETHERITE_HAMMER = registerItem("netherite_hammer",
@@ -325,38 +376,18 @@ public class TeadItems {
     public static final Item NETHERITE_RAPIER = registerItem("netherite_rapier",
             new RapierItem(ToolMaterials.NETHERITE, new FabricItemSettings()));
     public static final Item NETHERITE_GREATSWORD = registerItem("netherite_greatsword",
-            new GreatSwordItem(ToolMaterials.NETHERITE, new FabricItemSettings()));
+            new GreatswordItem(ToolMaterials.NETHERITE, new FabricItemSettings()));
     public static final Item NETHERITE_SCYTHE = registerItem("netherite_scythe",
             new ScytheItem(ToolMaterials.NETHERITE,  new FabricItemSettings()));
     public static final Item NETHERITE_SICKLE = registerItem("netherite_sickle",
             new SickleItem(ToolMaterials.NETHERITE,  new FabricItemSettings()));
     public static final Item NETHERITE_CLAYMORE = registerItem("netherite_claymore",
             new ClaymoreItem(ToolMaterials.NETHERITE, new FabricItemSettings()));
-    public static final Item CORAL_DAGGER = registerItem("coral_dagger",
-            new DaggerItem(TeadToolMaterials.CORAL, new FabricItemSettings()));
-    public static final Item BATTLE_STAFF = registerItem("battle_staff",
-            new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
-                    new FabricItemSettings()));
-    public static final Item BONE_CLUB = registerItem("bone_club",
-            new StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
-                    0.5f, new FabricItemSettings()));
-    public static final Item QUARTERSTAFF = registerItem("quarterstaff",
-            new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
-                    new FabricItemSettings()));
-    public static final Item BONE_BOW = registerItem("bone_bow",
-            new BoneBowItem(new FabricItemSettings().maxDamage(415)));
-    public static final Item WIND_BOW = registerItem("wind_bow",
-            new WindBowItem(new FabricItemSettings().maxDamage(432)));
-    public static final Item TRICK_BOW = registerItem("trick_bow",
-            new TrickBowItem(new FabricItemSettings().maxDamage(432)));
-    public static final Item SHORT_BOW = registerItem("short_bow",
-            new ShortBowItem(new FabricItemSettings().maxDamage(384)));
-    public static final Item LONG_BOW = registerItem("long_bow",
-            new LongBowItem(new FabricItemSettings().maxDamage(384)));
-    public static final Item FIREBOLT_THROWER = registerItem("firebolt_thrower",
-            new FireboltThrower(new FabricItemSettings().maxDamage(427)));
+
+
     public static final Item SWIFTNESS_BOOTS = registerItem("swiftness_boots",
-            new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+            new SwiftnessArmorItem(TeadArmorMaterials.SWIFTNESS, ArmorItem.Type.BOOTS,
+                    new FabricItemSettings().rarity(Rarity.UNCOMMON)));
     public static final Item STEEL_CHAINMAIL_HELMET = registerItem("steel_chainmail_helmet",
             new ArmorItem(TeadArmorMaterials.STEEL_CHAIN, ArmorItem.Type.HELMET, new FabricItemSettings()));
     public static final Item STEEL_CHAINMAIL_CHESTPLATE = registerItem("steel_chainmail_chestplate",
@@ -540,7 +571,7 @@ public class TeadItems {
     public static final Item COPPER_RAPIER = registerItem("copper_rapier",
             new RapierItem(TeadToolMaterials.COPPER, new FabricItemSettings()));
     public static final Item COPPER_GREATSWORD = registerItem("copper_greatsword",
-            new GreatSwordItem(TeadToolMaterials.COPPER, new FabricItemSettings()));
+            new GreatswordItem(TeadToolMaterials.COPPER, new FabricItemSettings()));
     public static final Item COPPER_SCYTHE = registerItem("copper_scythe",
             new ScytheItem(TeadToolMaterials.COPPER,  new FabricItemSettings()));
     public static final Item COPPER_SICKLE = registerItem("copper_sickle",
@@ -581,6 +612,25 @@ public class TeadItems {
             new PlateDyeableArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     public static final Item COPPER_PLATE_BOOTS = registerItem("copper_plate_boots",
             new PlateDyeableArmorItem(TeadArmorMaterials.COPPER_PLATE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+
+    // Custom Arrows And Bows
+    public static final Item RUBY_POWER_BOW = registerItem("ruby_power_bow",
+            new PowerBowItem(TeadToolMaterials.RUBY, new FabricItemSettings()));
+    public static final Item BONE_BOW = registerItem("bone_bow",
+            new BoneBowItem(new FabricItemSettings().maxDamage(415)));
+    public static final Item WIND_BOW = registerItem("wind_bow",
+            new WindBowItem(new FabricItemSettings().maxDamage(432)));
+    public static final Item WEBBED_BOW = registerItem("webbed_bow",
+            new WebbedBowItem(new FabricItemSettings().maxDamage(432)));
+    public static final Item TRICK_BOW = registerItem("trick_bow",
+            new TrickBowItem(new FabricItemSettings().maxDamage(632).rarity(Rarity.UNCOMMON)));
+    public static final Item SHORT_BOW = registerItem("short_bow",
+            new ShortBowItem(new FabricItemSettings().maxDamage(384)));
+    public static final Item LONG_BOW = registerItem("long_bow",
+            new LongBowItem(new FabricItemSettings().maxDamage(384)));
+    public static final Item FIREBOLT_THROWER = registerItem("firebolt_thrower",
+            new FireboltThrower(new FabricItemSettings().maxDamage(427)));
+
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
     public static final Item COPPER_ARROW = registerItem("copper_arrow",
@@ -591,6 +641,8 @@ public class TeadItems {
             new ObsidianArrowItem(new FabricItemSettings()));
     public static final Item RUBY_ARROW = registerItem("ruby_arrow",
             new RubyArrowItem(new FabricItemSettings()));
+    public static final Item TRANSMORPHING_ARROW = registerItem("transmorphing_arrow",
+            new TransmorphingArrowItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item TNT_ARROW = registerItem("tnt_arrow",
             new TntArrowItem(new FabricItemSettings()));
     public static final Item TORCH_ARROW = registerItem("torch_arrow",
@@ -601,6 +653,8 @@ public class TeadItems {
             new SoulTorchArrowItem(new FabricItemSettings()));
     public static final Item BORING_ARROW = registerItem("boring_arrow",
             new BoringArrowItem(new FabricItemSettings()));
+
+    // Music Discs
     public static final Item MUSIC_DISC_BATTLE_HYMN = registerItem("music_disc_battle_hymn",
             new MusicDiscItem(0, TeadSounds.BATTLE_HYMN, new FabricItemSettings().maxCount(1),
                     418));
@@ -653,9 +707,149 @@ public class TeadItems {
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, new Identifier(Tead.MOD_ID, name), item);
     }
+
+    private static Item registerShovelItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_shovel",
+                new ShovelItem(toolMaterial, 1.5f, -3.0f, new FabricItemSettings()));
+    }
+
+    private static Item registerHoeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hoe",
+                new HoeItem(toolMaterial, -2, -1.0f, new FabricItemSettings()));
+    }
+
+    private static Item registerScytheItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_scythe", new ScytheItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerSickleItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_sickle", new SickleItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerPickaxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_pickaxe",
+                new PickaxeItem(toolMaterial, 1, -2.9f, new FabricItemSettings()));
+    }
+
+    private static Item registerMountaineerPickItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mountaineer_pick",
+                new MountaineerPickItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerMattockItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mattock", new MattockItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_axe",
+                new AxeItem(toolMaterial, 5.0f, -3.2f, new FabricItemSettings()));
+    }
+
+    private static Item registerHighlandAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_highland_axe",
+                new HighlandAxeItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerDoubleAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_double_axe",
+                new AxeItem(toolMaterial, 6.0f, -3.5f, new FabricItemSettings()));
+    }
+
+    private static Item registerDoubleHighlandAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_double_highland_axe",
+                new DoubleHighlandAxe(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerHatchetItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hatchet", new HatchetItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerHammerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hammer", new HammerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerMaceItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mace", new MaceItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_dagger", new DaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerHollowDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hollow_dagger",
+                new HollowDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRiteDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_rite_dagger",
+                new RiteDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerCrescentDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_crescent_dagger",
+                new CrescentDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerTruthseekerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_truthseeker",
+                new TruthseekerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerTempestKnifeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_tempest_knife",
+                new TempestKnifeItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerGreatswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_greatsword",
+                new GreatswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerSwordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_sword",
+                new SwordItem(toolMaterial, 3, -2.5f, new FabricItemSettings()));
+    }
+
+    private static Item registerRapierItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_rapier", new RapierItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerCutlassItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_cutlass", new CutlassItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerKatanaItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_katana", new KatanaItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerLongswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_longsword",
+                new LongswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerBroadswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_broadsword",
+                new BroadswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerClaymoreItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_claymore", new ClaymoreItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerSpearItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_spear", new SpearItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRanseurItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_ranseur", new RanseurItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerGlaiveItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_glaive", new GlaiveItem(toolMaterial, new FabricItemSettings()));
+    }
+
     public static void registerItems() {
         Tead.LOGGER.info("Registering mod items for " + Tead.MOD_ID);
-
-//        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(TeadItems::addItemsToIngredientItemGroup);
     }
 }

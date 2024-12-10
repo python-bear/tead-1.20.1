@@ -3,16 +3,16 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "tead:handle"
-    },
-    "X": {
       "tag": "tead:rocks"
+    },
+    "$": {
+      "item": "tead:handle"
     }
   },
   "pattern": [
-    "X",
-    "X",
-    "#"
+    "#",
+    "#",
+    "$"
   ],
   "result": {
     "item": "minecraft:stone_sword"

@@ -1,24 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_smithing_guide_sturdy": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_diamond_block": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:diamond_block"
+              "tead:smithing_guide_sturdy"
             ]
           }
         ]
@@ -34,8 +22,7 @@
   },
   "requirements": [
     [
-      "has_diamond",
-      "has_diamond_block",
+      "has_smithing_guide_sturdy",
       "has_the_recipe"
     ]
   ],

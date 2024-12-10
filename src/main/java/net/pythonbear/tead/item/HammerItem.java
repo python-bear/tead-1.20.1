@@ -97,16 +97,16 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
 
 
     public HammerItem(ToolMaterial toolMaterial, Item.Settings settings) {
-        super(4.5f, 0.7f, toolMaterial, TeadTags.Blocks.REFINED_BUILDING_BLOCKS,
+        super(4.5f - 1, 0.7f - 4, toolMaterial, TeadTags.Blocks.REFINED_BUILDING_BLOCKS,
                 settings.maxDamage(toolMaterial.getDurability() + 16));
         this.miningSpeed = toolMaterial.getMiningSpeedMultiplier() + 1;
         this.effectiveBlocks = TeadTags.Blocks.REFINED_BUILDING_BLOCKS;
-        this.attackDamage = toolMaterial.getAttackDamage() + 4.5f;
+        this.attackDamage = toolMaterial.getAttackDamage() + 4.5f - 1;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Tool modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
-                "Tool modifier", 0.7f, EntityAttributeModifier.Operation.ADDITION));
+                "Tool modifier", 0.7f - 4, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 

@@ -5,13 +5,13 @@
     "#": {
       "item": "minecraft:iron_ingot"
     },
-    "%": {
-      "item": "minecraft:stick"
+    "$": {
+      "item": "tead:handle"
     }
   },
   "pattern": [
     " #",
-    "% "
+    "$ "
   ],
   "result": {
     "item": "tead:iron_dagger"

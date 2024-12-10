@@ -15,7 +15,9 @@ import net.pythonbear.tead.init.TeadBlocks;
 import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.init.TeadModelPredicateProvider;
 import net.pythonbear.tead.init.TeadScreenHandlers;
+import net.pythonbear.tead.rendering.CustomArrowEntityRenderer;
 import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
+import net.pythonbear.tead.rendering.SpectralWindArrowEntityRenderer;
 import net.pythonbear.tead.screen.SmelterScreen;
 
 @Environment(EnvType.CLIENT)
@@ -34,10 +36,25 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.ROSE_GOLD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.WHITE_GOLD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.WEAK_COBWEB, RenderLayer.getCutout());
 
         EntityRendererRegistry.register(TeadEntityTypes.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.BUFFERED_PEARL, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.GRAVITY_PEARL, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.SPECTRAL_WIND_ARROW, SpectralWindArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.AMETHYST_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.BORING_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.COPPER_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.ENDER_PEARL_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.OBSIDIAN_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.REDSTONE_TORCH_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.RUBY_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.TRANSMORPHING_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.SOUL_TORCH_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.TNT_ARROW, CustomArrowEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.TORCH_ARROW, CustomArrowEntityRenderer::new);
+
         ColorProviderRegistry.ITEM.register((stack, tintIndex) -> tintIndex == 0?
                         ((DyeableItem) stack.getItem()).getColor(stack) : 0xFFFFFFF,
                 TeadItems.ROBE_BOOTS,

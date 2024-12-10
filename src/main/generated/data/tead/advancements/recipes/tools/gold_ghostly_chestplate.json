@@ -1,18 +1,6 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gold_garment_chestplate": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "tead:gold_garment_chestplate"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_gold_ingot": {
       "conditions": {
         "items": [
@@ -35,7 +23,6 @@
   "requirements": [
     [
       "has_gold_ingot",
-      "has_gold_garment_chestplate",
       "has_the_recipe"
     ]
   ],

@@ -16,7 +16,7 @@ public class AbstractSkeletonEntityInitEquipmentMixin {
     @Inject(method = "initEquipment(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/world/LocalDifficulty;)V",
             at = @At("RETURN"))
     private void modifyInitEquipment(Random random, LocalDifficulty localDifficulty, CallbackInfo ci) {
-        int i = random.nextInt(4);
+        int i = random.nextInt(12);
         if (i == 0) {
             ((AbstractSkeletonEntity)(Object)this).equipStack(EquipmentSlot.MAINHAND,
                     new ItemStack(TeadItems.BONE_CLUB));

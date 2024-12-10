@@ -14,13 +14,13 @@ public class DoubleAxeItem extends AxeItem {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
 
     public DoubleAxeItem(ToolMaterial toolMaterial, Settings settings) {
-        super(toolMaterial, 8, 0.6f, settings.maxDamage(toolMaterial.getDurability()));
-        this.attackDamage = toolMaterial.getAttackDamage() + 8;
+        super(toolMaterial, 8 - 1, 0.6f - 4, settings.maxDamage(toolMaterial.getDurability()));
+        this.attackDamage = toolMaterial.getAttackDamage() + 8 - 1;
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID,
                 "Weapon modifier", this.attackDamage, EntityAttributeModifier.Operation.ADDITION));
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID,
-                "Weapon modifier", 0.6f, EntityAttributeModifier.Operation.ADDITION));
+                "Weapon modifier", 0.6f - 4, EntityAttributeModifier.Operation.ADDITION));
         this.attributeModifiers = builder.build();
     }
 

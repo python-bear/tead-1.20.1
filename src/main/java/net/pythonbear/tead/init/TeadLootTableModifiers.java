@@ -62,6 +62,10 @@ public class TeadLootTableModifiers {
             "chests/ancient_city");
     private static final Identifier MINESHAFT_ID = new Identifier("minecraft",
             "chests/abandoned_mineshaft");
+    private static final Identifier STRAY_ID = new Identifier("minecraft",
+            "entities/stray");
+    private static final Identifier WARDEN_ID = new Identifier("minecraft",
+            "entities/warden");
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
@@ -296,11 +300,17 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
                         .with(ItemEntry.builder(TeadItems.LEAD_APPLE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)));
+                LootPool.Builder poolBuilder8 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(TeadItems.WEBBED_BOW))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
                 tableBuilder.pool(poolBuilder4);
                 tableBuilder.pool(poolBuilder5);
                 tableBuilder.pool(poolBuilder6);
                 tableBuilder.pool(poolBuilder7);
+                tableBuilder.pool(poolBuilder8);
             }
             if (STRONGHOLD_CROSSING_ID.equals(id)) {
                 LootPool.Builder poolBuilder5 = LootPool.builder()
@@ -682,6 +692,24 @@ public class TeadLootTableModifiers {
                 tableBuilder.pool(poolBuilder2);
                 tableBuilder.pool(poolBuilder3);
                 tableBuilder.pool(poolBuilder4);
+            }
+            if (STRAY_ID.equals(id)) {
+                LootPool.Builder poolBuilder1 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.35f))
+                        .with(ItemEntry.builder(TeadItems.FRIGID_HILT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 1.0f)));
+
+                tableBuilder.pool(poolBuilder1);
+            }
+            if (WARDEN_ID.equals(id)) {
+                LootPool.Builder poolBuilder1 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(TeadItems.SOUL))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 3.0f)));
+
+                tableBuilder.pool(poolBuilder1);
             }
         });
     }

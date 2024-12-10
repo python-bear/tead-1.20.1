@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
     "#": {
       "tag": "tead:rocks"
     },
-    "%": {
+    "$": {
       "item": "minecraft:stick"
     }
   },
   "pattern": [
     "###",
-    " %%",
-    "%  "
+    " $$",
+    "!  "
   ],
   "result": {
     "item": "tead:stone_scythe"

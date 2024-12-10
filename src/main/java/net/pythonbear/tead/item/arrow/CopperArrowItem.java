@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.CustomizedArrowEntity;
+import net.pythonbear.tead.entity.CopperArrowEntity;
 
 public class CopperArrowItem extends ArrowItem {
     public CopperArrowItem(Settings settings) {
@@ -14,7 +14,7 @@ public class CopperArrowItem extends ArrowItem {
 
     @Override
     public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
-        CustomizedArrowEntity arrowEntity = new CustomizedArrowEntity(world, shooter);
+        CopperArrowEntity arrowEntity = new CopperArrowEntity(world, shooter);
         arrowEntity.initFromStack(stack);
         return arrowEntity;
     }

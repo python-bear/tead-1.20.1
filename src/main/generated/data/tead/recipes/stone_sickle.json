@@ -5,14 +5,14 @@
     "#": {
       "tag": "tead:rocks"
     },
-    "%": {
+    "$": {
       "item": "tead:handle"
     }
   },
   "pattern": [
     " # ",
     "  #",
-    "%# "
+    "$# "
   ],
   "result": {
     "item": "tead:stone_sickle"

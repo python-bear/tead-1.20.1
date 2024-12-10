@@ -1,24 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "#": {
-      "tag": "minecraft:stone_tool_materials"
-    },
-    "$": {
-      "tag": "tead:rocks"
-    },
-    "%": {
-      "item": "tead:handle"
-    }
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "tead:rocks"
   },
-  "pattern": [
-    "$",
-    "#",
-    "%"
-  ],
+  "base": {
+    "item": "minecraft:stone_sword"
+  },
   "result": {
     "item": "tead:stone_greatsword"
   },
-  "show_notification": true
+  "template": {
+    "item": "tead:smithing_guide_sturdy"
+  }
 }

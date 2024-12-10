@@ -1,4 +1,16 @@
 {
+  "breeze": {
+    "subtitle": "sounds.tead.breeze",
+    "sounds": [
+      "tead:breeze"
+    ]
+  },
+  "ice_smash": {
+    "subtitle": "sounds.tead.ice_smash",
+    "sounds": [
+      "tead:ice_smash"
+    ]
+  },
   "battle_hymn": {
     "subtitle": "sounds.tead.battle_hymn",
     "sounds": [

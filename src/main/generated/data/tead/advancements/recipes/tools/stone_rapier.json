@@ -1,36 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_black_rock": {
+    "has_smithing_guide_rapier": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tead:black_rock"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_rock": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "tead:rock"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_slate": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "tead:slate"
+              "tead:smithing_guide_rapier"
             ]
           }
         ]
@@ -46,9 +22,7 @@
   },
   "requirements": [
     [
-      "has_rock",
-      "has_black_rock",
-      "has_slate",
+      "has_smithing_guide_rapier",
       "has_the_recipe"
     ]
   ],

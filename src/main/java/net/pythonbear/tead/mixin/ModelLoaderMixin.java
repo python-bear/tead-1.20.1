@@ -27,13 +27,20 @@ public abstract class ModelLoaderMixin {
     public void add3dModel(BlockColors blockColors, Profiler profiler, Map<Identifier,
             JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates,
                            CallbackInfo ci) {
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "wood_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "wood_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "stone_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "stone_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "lead_hammer_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "gold_hammer_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_hammer_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "netherite_hammer_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "wood_hammer_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "gold_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "rose_netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "white_netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "gravity_hammer_3d", "inventory"));
     }
 }

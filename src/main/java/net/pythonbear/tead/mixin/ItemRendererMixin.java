@@ -23,9 +23,17 @@ public abstract class ItemRendererMixin {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
                     new ModelIdentifier(Tead.MOD_ID, "wood_hammer_3d", "inventory"));
         }
+        if (stack.isOf(TeadItems.WOOD_MACE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+                    new ModelIdentifier(Tead.MOD_ID, "wood_mace_3d", "inventory"));
+        }
         if (stack.isOf(TeadItems.STONE_HAMMER) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
                     new ModelIdentifier(Tead.MOD_ID, "stone_hammer_3d", "inventory"));
+        }
+        if (stack.isOf(TeadItems.STONE_MACE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+                    new ModelIdentifier(Tead.MOD_ID, "stone_mace_3d", "inventory"));
         }
         if (stack.isOf(TeadItems.LEAD_HAMMER) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
@@ -35,13 +43,33 @@ public abstract class ItemRendererMixin {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
                     new ModelIdentifier(Tead.MOD_ID, "iron_hammer_3d", "inventory"));
         }
+        if (stack.isOf(TeadItems.IRON_MACE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+                    new ModelIdentifier(Tead.MOD_ID, "iron_mace_3d", "inventory"));
+        }
         if (stack.isOf(TeadItems.DIAMOND_HAMMER) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
                     new ModelIdentifier(Tead.MOD_ID, "diamond_hammer_3d", "inventory"));
         }
+        if (stack.isOf(TeadItems.DIAMOND_MACE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+                    new ModelIdentifier(Tead.MOD_ID, "diamond_mace_3d", "inventory"));
+        }
         if (stack.isOf(TeadItems.NETHERITE_HAMMER) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
                     new ModelIdentifier(Tead.MOD_ID, "netherite_hammer_3d", "inventory"));
+        }
+//        if (stack.isOf(TeadItems.ROSE_NETHERITE_HAMMER) && renderMode != ModelTransformationMode.GUI) {
+//            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+//                    new ModelIdentifier(Tead.MOD_ID, "rose_netherite_hammer_3d", "inventory"));
+//        }
+//        if (stack.isOf(TeadItems.WHITE_NETHERITE_HAMMER) && renderMode != ModelTransformationMode.GUI) {
+//            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+//                    new ModelIdentifier(Tead.MOD_ID, "white_netherite_hammer_3d", "inventory"));
+//        }
+        if (stack.isOf(TeadItems.GRAVITY_HAMMER) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(
+                    new ModelIdentifier(Tead.MOD_ID, "gravity_hammer_3d", "inventory"));
         }
         if (stack.isOf(TeadItems.GOLD_HAMMER) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).tead$getModels().getModelManager().getModel(

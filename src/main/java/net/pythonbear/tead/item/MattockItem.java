@@ -15,7 +15,7 @@ public class MattockItem extends MiningToolItem {
     private final TagKey<Block> effectiveBlocks;
 
     public MattockItem(ToolMaterial material, Item.Settings settings) {
-        super(0.5f, 1.1f, material, TeadTags.Blocks.MATTOCK_MINEABLE,
+        super(0.5f - 1, 1.1f - 4, material, TeadTags.Blocks.MATTOCK_MINEABLE,
                 settings.maxDamage(material.getDurability() + 16));
         this.effectiveBlocks = TeadTags.Blocks.MATTOCK_MINEABLE;
         this.miningSpeed = material.getMiningSpeedMultiplier() - 0.4f;

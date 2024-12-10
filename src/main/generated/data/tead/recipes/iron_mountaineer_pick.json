@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_pickaxe"
+  },
+  "result": {
+    "item": "tead:iron_mountaineer_pick"
+  },
+  "template": {
+    "item": "tead:smithing_guide_mountaineer_pick"
+  }
+}

@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.Instrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -13,9 +14,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.custom.SmelterBlock;
+import net.pythonbear.tead.block.custom.WeakCobwebBlock;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
 
 public class TeadBlocks {
+    public static final Block WEAK_COBWEB = registerBlock("weak_cobweb",
+            new WeakCobwebBlock(AbstractBlock.Settings.create().mapColor(MapColor.WHITE_GRAY).solid().noCollision().requiresTool().strength(2.0f).pistonBehavior(PistonBehavior.DESTROY)));
     public static final Block LEAD_ORE = registerBlock("lead_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.IRON_ORE), UniformIntProvider.create(0, 1)));
     public static final Block LEAD_DEEPSLATE_ORE = registerBlock("lead_deepslate_ore",

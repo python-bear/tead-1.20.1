@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "tead:iron_dagger"
+  },
+  "result": {
+    "item": "tead:iron_rite_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_rite_dagger"
+  }
+}

@@ -15,6 +15,7 @@
     "DrownedInitEquipmentMixin",
     "FireTrailMixin",
     "PiglinInitEquipmentMixin",
+    "SwordItemMixin",
     "VindicatorInitEquipmentMixin",
     "WitherSkeletonInitEquipmentMixin",
     "ZombieInitEquipmentMixin",

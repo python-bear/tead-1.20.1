@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "tead:rocks"
+  },
+  "base": {
+    "item": "tead:stone_dagger"
+  },
+  "result": {
+    "item": "tead:stone_crescent_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_spooky"
+  }
+}

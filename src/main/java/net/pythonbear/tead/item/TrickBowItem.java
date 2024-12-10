@@ -29,6 +29,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
                     stack.getItem() == TeadItems.ENDER_PEARL_ARROW ||
                     stack.getItem() == TeadItems.OBSIDIAN_ARROW ||
                     stack.getItem() == TeadItems.RUBY_ARROW ||
+                    stack.getItem() == TeadItems.TRANSMORPHING_ARROW ||
                     stack.getItem() == TeadItems.BORING_ARROW ||
                     stack.getItem() == TeadItems.TORCH_ARROW ||
                     stack.getItem() == TeadItems.REDSTONE_TORCH_ARROW ||
@@ -92,6 +93,7 @@ public class TrickBowItem extends BowItem implements Vanishable {
             if (item instanceof AmethystArrowItem) {
                 AmethystArrowItem arrowItem = (AmethystArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setPierceLevel((byte) 2);
             } else if (item instanceof CopperArrowItem) {
                 CopperArrowItem arrowItem = (CopperArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
@@ -101,25 +103,26 @@ public class TrickBowItem extends BowItem implements Vanishable {
             } else if (item instanceof ObsidianArrowItem) {
                 ObsidianArrowItem arrowItem = (ObsidianArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setPierceLevel((byte) 2);
             } else if (item instanceof RubyArrowItem) {
                 RubyArrowItem arrowItem = (RubyArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+            } else if (item instanceof TransmorphingArrowItem) {
+                TransmorphingArrowItem arrowItem = (TransmorphingArrowItem)(itemStack.getItem());
+                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+                persistentProjectileEntity.setPierceLevel((byte) 127);
             } else if (item instanceof TntArrowItem) {
                 TntArrowItem arrowItem = (TntArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
             } else if (item instanceof TorchArrowItem) {
                 TorchArrowItem arrowItem = (TorchArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-                persistentProjectileEntity.setOnFireFor(100);
-                Tead.LOGGER.info("returned torch");
             } else if (item instanceof RedstoneTorchArrowItem) {
                 RedstoneTorchArrowItem arrowItem = (RedstoneTorchArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-                persistentProjectileEntity.setOnFireFor(100);
             } else if (item instanceof SoulTorchArrowItem) {
                 SoulTorchArrowItem arrowItem = (SoulTorchArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-                persistentProjectileEntity.setOnFireFor(100);
             } else if (item instanceof BoringArrowItem) {
                 BoringArrowItem arrowItem = (BoringArrowItem)(itemStack.getItem());
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
@@ -128,8 +131,14 @@ public class TrickBowItem extends BowItem implements Vanishable {
                 persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
             }
 
-            persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
-                    0.0f, f * 2.8f, 1.1f);
+            if (item instanceof TransmorphingArrowItem) {
+                persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
+                        0.0f, f * 1.8f, 0.9f);
+            } else {
+                persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
+                        0.0f, f * 2.8f, 1.1f);
+            }
+
             if (f == 1.0f) {
                 persistentProjectileEntity.setCritical(true);
             }
@@ -175,7 +184,6 @@ public class TrickBowItem extends BowItem implements Vanishable {
     }
 
     public ItemStack getProjectileType(ItemStack stack, PlayerEntity user) {
-
         if (!(stack.getItem() instanceof RangedWeaponItem)) {
             return ItemStack.EMPTY;
         }

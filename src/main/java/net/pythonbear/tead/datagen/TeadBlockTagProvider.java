@@ -62,6 +62,9 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.CLAYISH_MUD)
                 .add(TeadBlocks.SLUDGE);
 
+        getOrCreateTagBuilder(BlockTags.SWORD_EFFICIENT)
+                .add(TeadBlocks.WEAK_COBWEB);
+
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
                 .add(TeadBlocks.EMPTY_BOOKSHELF)
                 .add(TeadBlocks.OLD_BOOKSHELF)

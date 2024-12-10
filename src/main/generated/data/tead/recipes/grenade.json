@@ -4,7 +4,7 @@
   "group": "grenade",
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "tead:steel_ingot"
     },
     "$": {
       "item": "minecraft:flint_and_steel"

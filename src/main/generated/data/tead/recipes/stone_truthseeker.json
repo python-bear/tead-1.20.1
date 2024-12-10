@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "tead:rocks"
+  },
+  "base": {
+    "item": "minecraft:stone_sword"
+  },
+  "result": {
+    "item": "tead:stone_truthseeker"
+  },
+  "template": {
+    "item": "tead:smithing_guide_truthseeker"
+  }
+}
