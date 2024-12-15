@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:white_gold_ingot"
+    },
+    "%": {
+      "item": "tead:white_gold_nugget"
+    }
+  },
+  "pattern": [
+    "%",
+    "#",
+    "%"
+  ],
+  "result": {
+    "item": "tead:white_gold_chain"
+  },
+  "show_notification": true
+}
