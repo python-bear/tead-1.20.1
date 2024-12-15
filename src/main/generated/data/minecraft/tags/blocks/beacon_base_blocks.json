@@ -1,10 +1,6 @@
 {
   "replace": false,
   "values": [
-    "tead:lead_block",
-    "tead:lead_chiseled_block",
-    "tead:lead_cut_block",
-    "tead:lead_tiled_block",
     "tead:rose_gold_block",
     "tead:white_gold_block",
     "tead:brass_block",

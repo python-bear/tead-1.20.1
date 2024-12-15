@@ -1,5 +1,7 @@
-// 1.20.1	2024-12-10T20:46:32.2671898	tead/Tags for minecraft:item
-2f63ac83cc62c2a583ab5d250a52da4fc03f9337 data\minecraft\tags\items\trimmable_armor.json
-870daac12e447cf4e4d8be5e8ac2bbfca009c33f data\minecraft\tags\items\creeper_drop_music_discs.json
+// 1.20.1	2024-12-15T16:25:32.9803611	tead/Tags for minecraft:item
+36e478b947df095cca654c3c5470acd6501aced7 data\tead\tags\items\crossbows.json
+8cb90f05cb76be41573ab89126eeff84f709ef74 data\minecraft\tags\items\trimmable_armor.json
+b3d16755607f924c10ebd8fe940ce2d0c4fc9be7 data\tead\tags\items\smithing_guides.json
+66a488d74c7e6aebe489e8531bf7224599b564f8 data\tead\tags\items\metal_ingots.json
+8ac9ac3aa4f3f8b4a7e8ae3a3bf7eb7c822d54e8 data\tead\tags\items\metal_nuggets.json
 bb5b757c15e6c4de1dded951c0fb1e2cf99f731d data\tead\tags\items\rocks.json
-870daac12e447cf4e4d8be5e8ac2bbfca009c33f data\minecraft\tags\items\music_discs.json

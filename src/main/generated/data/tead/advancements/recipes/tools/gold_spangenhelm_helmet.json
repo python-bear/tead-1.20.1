@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_golden_helmet": {
+    "has_smithing_guide_tempest": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:golden_helmet"
+              "tead:smithing_guide_tempest"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_golden_helmet",
+      "has_smithing_guide_tempest",
       "has_the_recipe"
     ]
   ],

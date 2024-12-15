@@ -1,5 +1,5 @@
 {
-    "parent": "tead:item/firebolt_thrower",
+    "parent": "item/crossbow",
     "textures": {
         "layer0": "tead:item/firebolt_thrower_arrow"
     }

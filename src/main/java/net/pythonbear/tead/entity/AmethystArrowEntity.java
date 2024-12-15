@@ -2,17 +2,12 @@ package net.pythonbear.tead.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
-import net.minecraft.entity.projectile.SpectralArrowEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadEntityTypes;
-import net.pythonbear.tead.init.TeadItems;
-import org.jetbrains.annotations.NotNull;
+import net.pythonbear.tead.item.TeadItems;
 
 
 public class AmethystArrowEntity extends PersistentProjectileEntity {

@@ -15,8 +15,6 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadItems;
 import net.pythonbear.tead.item.arrow.*;
 
 import java.util.function.Predicate;

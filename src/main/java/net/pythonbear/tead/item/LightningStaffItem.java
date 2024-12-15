@@ -3,7 +3,6 @@ package net.pythonbear.tead.item;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LightningEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -22,8 +21,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.minecraft.server.world.ServerWorld;
-import net.pythonbear.tead.init.TeadEnchantments;
-import net.pythonbear.tead.init.TeadToolMaterials;
+import net.pythonbear.tead.enchantments.TeadEnchantments;
 import net.pythonbear.tead.util.LightningTask;
 import org.jetbrains.annotations.Nullable;
 

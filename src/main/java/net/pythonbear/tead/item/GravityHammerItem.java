@@ -7,9 +7,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
-import net.pythonbear.tead.init.TeadItems;
-import net.pythonbear.tead.init.TeadToolMaterials;
 
 import java.util.List;
 

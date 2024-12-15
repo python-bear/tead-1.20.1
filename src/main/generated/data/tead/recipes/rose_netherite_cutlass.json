@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:rose_netherite_ingot"
+  },
+  "base": {
+    "item": "tead:diamond_cutlass"
+  },
+  "result": {
+    "item": "tead:rose_netherite_cutlass"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

@@ -12,8 +12,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadEntityTypes;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 import org.jetbrains.annotations.Nullable;
 
 public class BufferedPearlEntity

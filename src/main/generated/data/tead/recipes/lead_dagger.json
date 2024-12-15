@@ -5,13 +5,13 @@
     "#": {
       "item": "tead:lead_ingot"
     },
-    "%": {
-      "item": "minecraft:stick"
+    "$": {
+      "item": "tead:handle"
     }
   },
   "pattern": [
     " #",
-    "% "
+    "$ "
   ],
   "result": {
     "item": "tead:lead_dagger"

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:gold_nugget",
+    "tead:lead_nugget",
+    "tead:copper_nugget",
+    "tead:rose_gold_nugget",
+    "tead:white_gold_nugget",
+    "minecraft:iron_nugget",
+    "tead:brass_nugget",
+    "tead:bronze_nugget",
+    "tead:steel_nugget",
+    "tead:netherite_nugget",
+    "tead:rose_netherite_nugget",
+    "tead:white_netherite_nugget"
+  ]
+}

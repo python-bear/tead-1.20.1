@@ -124,10 +124,8 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
         Optional<BlockState> optional = this.getCrackedState(blockState);
         ItemStack itemStack = context.getStack();
         if (optional.isPresent()) {
-            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_ANVIL_BREAK, SoundCategory.BLOCKS, 1.0f, 
+            world.playSound(playerEntity, blockPos, SoundEvents.BLOCK_ANVIL_BREAK, SoundCategory.BLOCKS, 1.0f,
                     1.0f);
-        }
-        if (optional.isPresent()) {
             if (playerEntity instanceof ServerPlayerEntity) {
                 Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos, itemStack);
             }
@@ -144,8 +142,7 @@ public class HammerItem extends MiningToolItem implements Vanishable  {
     }
 
     private Optional<BlockState> getCrackedState(BlockState state) {
-        return Optional.ofNullable(CRACKED_BLOCKS.get(state.getBlock()))
-                .map(Block::getDefaultState);
+        return Optional.ofNullable(CRACKED_BLOCKS.get(state.getBlock())).map(Block::getDefaultState);
     }
 
     public float getAttackDamage() {

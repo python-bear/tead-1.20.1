@@ -13,7 +13,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 import net.pythonbear.tead.item.ExcaliburItem;
 import net.pythonbear.tead.item.ExcaliburTotemItem;
 

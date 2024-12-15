@@ -14,7 +14,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadBlocks;
+import net.pythonbear.tead.block.TeadBlocks;
 
 import java.util.List;
 

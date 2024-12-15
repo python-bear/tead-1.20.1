@@ -8,6 +8,8 @@ import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
+import net.pythonbear.tead.block.TeadBlocks;
+import net.pythonbear.tead.item.TeadItems;
 
 public class TeadLootTableModifiers {
     private static final Identifier VILLAGE_TANNERY_ID = new Identifier("minecraft",
@@ -24,6 +26,8 @@ public class TeadLootTableModifiers {
             "chests/bastion_hoglin_stable");
     private static final Identifier SHIPWRECK_TREASURE_ID = new Identifier("minecraft",
             "chests/shipwreck_treasure");
+    private static final Identifier SHIPWRECK_SUPPLY_ID = new Identifier("minecraft",
+            "chests/shipwreck_supply");
     private static final Identifier BURIED_TREASURE_ID = new Identifier("minecraft",
             "chests/buried_treasure");
     private static final Identifier RUINED_PORTAL_ID = new Identifier("minecraft",
@@ -66,6 +70,8 @@ public class TeadLootTableModifiers {
             "entities/stray");
     private static final Identifier WARDEN_ID = new Identifier("minecraft",
             "entities/warden");
+    private static final Identifier WITCH_ID = new Identifier("minecraft",
+            "entities/witch");
 
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
@@ -83,8 +89,8 @@ public class TeadLootTableModifiers {
                 LootPool.Builder poolBuilder3 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
-                        .with(ItemEntry.builder(TeadItems.TNT_ARROW))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 4.0f)));
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_MOUNTAINEER_PICK))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder4 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.2f))
@@ -172,9 +178,9 @@ public class TeadLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder4 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.3f))
-                        .with(ItemEntry.builder(TeadItems.OBSIDIAN_SHARD))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 24.0f)));
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_HOLLOW_DAGGER))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
                 tableBuilder.pool(poolBuilder1);
                 tableBuilder.pool(poolBuilder3);
@@ -244,7 +250,7 @@ public class TeadLootTableModifiers {
                 LootPool.Builder poolBuilder7 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.05f))
-                        .with(ItemEntry.builder(TeadItems.DIAMOND_PLATE_CHESTPLATE))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_TRUTHSEEKER))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
                 tableBuilder.pool(poolBuilder4);
@@ -260,8 +266,8 @@ public class TeadLootTableModifiers {
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder5 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.05f))
-                        .with(ItemEntry.builder(TeadItems.MUSIC_DISC_HOMELAND))
+                        .conditionally(RandomChanceLootCondition.builder(0.1f))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_GLAIVE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder6 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -290,11 +296,6 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.2f))
                         .with(ItemEntry.builder(TeadItems.LEAD_SICKLE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 2.0f)));
-                LootPool.Builder poolBuilder6 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.05f))
-                        .with(ItemEntry.builder(TeadItems.MUSIC_DISC_THE_HEART_ASKS_PLEASURE_FIRST))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder7 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.3f))
@@ -308,7 +309,6 @@ public class TeadLootTableModifiers {
 
                 tableBuilder.pool(poolBuilder4);
                 tableBuilder.pool(poolBuilder5);
-                tableBuilder.pool(poolBuilder6);
                 tableBuilder.pool(poolBuilder7);
                 tableBuilder.pool(poolBuilder8);
             }
@@ -354,19 +354,13 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.9f))
                         .with(ItemEntry.builder(TeadItems.FABRIC))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 22.0f)));
-                LootPool.Builder poolBuilder5 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f))
-                        .with(ItemEntry.builder(TeadItems.DIAMOND_STALWART_HELMET))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder6 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.06f))
-                        .with(ItemEntry.builder(TeadItems.MUSIC_DISC_TIME))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_STURDY))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
                 tableBuilder.pool(poolBuilder4);
-                tableBuilder.pool(poolBuilder5);
                 tableBuilder.pool(poolBuilder6);
             }
             if (SMALL_WATER_RUIN_ID.equals(id)) {
@@ -421,11 +415,6 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.06f))
                         .with(ItemEntry.builder(TeadItems.DIAMOND_CLAYMORE))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
-                LootPool.Builder poolBuilder4 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.02f))
-                        .with(ItemEntry.builder(TeadItems.MUSIC_DISC_HAIL_AND_KILL))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder5 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
                         .conditionally(RandomChanceLootCondition.builder(0.1f))
@@ -435,7 +424,6 @@ public class TeadLootTableModifiers {
                 tableBuilder.pool(poolBuilder1);
                 tableBuilder.pool(poolBuilder2);
                 tableBuilder.pool(poolBuilder3);
-                tableBuilder.pool(poolBuilder4);
                 tableBuilder.pool(poolBuilder5);
             }
             if (RUINED_PORTAL_ID.equals(id)) {
@@ -495,8 +483,8 @@ public class TeadLootTableModifiers {
             if (SHIPWRECK_TREASURE_ID.equals(id)) {
                 LootPool.Builder poolBuilder1 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.2f))
-                        .with(ItemEntry.builder(TeadItems.SWIFTNESS_BOOTS))
+                        .conditionally(RandomChanceLootCondition.builder(0.3f))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_MERCENARY))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
                 LootPool.Builder poolBuilder2 = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
@@ -513,23 +501,20 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.4f))
                         .with(ItemEntry.builder(TeadItems.CORAL_DAGGER))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
-                LootPool.Builder poolBuilder5 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.1f))
-                        .with(ItemEntry.builder(TeadItems.MUSIC_DISC_MUTINY))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 1.0f)));
-                LootPool.Builder poolBuilder6 = LootPool.builder()
-                        .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.8f))
-                        .with(ItemEntry.builder(TeadItems.JERKY))
-                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 16.0f)));
 
                 tableBuilder.pool(poolBuilder1);
                 tableBuilder.pool(poolBuilder2);
                 tableBuilder.pool(poolBuilder3);
                 tableBuilder.pool(poolBuilder4);
-                tableBuilder.pool(poolBuilder5);
-                tableBuilder.pool(poolBuilder6);
+            }
+            if (SHIPWRECK_SUPPLY_ID.equals(id)) {
+                LootPool.Builder poolBuilder1 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.5f))
+                        .with(ItemEntry.builder(TeadItems.JERKY))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 16.0f)));
+
+                tableBuilder.pool(poolBuilder1);
             }
             if (BASTION_HOGLIN_STABLE_ID.equals(id)) {
                 LootPool.Builder poolBuilder1 = LootPool.builder()
@@ -708,6 +693,15 @@ public class TeadLootTableModifiers {
                         .conditionally(RandomChanceLootCondition.builder(0.5f))
                         .with(ItemEntry.builder(TeadItems.SOUL))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(0.0f, 3.0f)));
+
+                tableBuilder.pool(poolBuilder1);
+            }
+            if (WITCH_ID.equals(id)) {
+                LootPool.Builder poolBuilder1 = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.2f))
+                        .with(ItemEntry.builder(TeadItems.SMITHING_GUIDE_SPOOKY))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0f, 1.0f)));
 
                 tableBuilder.pool(poolBuilder1);
             }

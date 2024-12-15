@@ -16,9 +16,8 @@
     }
   },
   "pattern": [
-    "%%%",
-    "$^$",
-    " & "
+    "%^%",
+    "$&$"
   ],
   "result": {
     "item": "tead:gold_thief_helmet"

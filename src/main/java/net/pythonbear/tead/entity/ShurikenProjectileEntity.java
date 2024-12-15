@@ -23,7 +23,7 @@ import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;

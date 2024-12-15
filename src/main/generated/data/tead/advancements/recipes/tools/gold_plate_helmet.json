@@ -13,6 +13,18 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_gold_nugget": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gold_nugget"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_the_recipe": {
       "conditions": {
         "recipe": "tead:gold_plate_helmet"
@@ -22,6 +34,7 @@
   },
   "requirements": [
     [
+      "has_gold_nugget",
       "has_gold_ingot",
       "has_the_recipe"
     ]

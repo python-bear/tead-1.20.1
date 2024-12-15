@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "$": {
-      "item": "tead:gold_garment_chestplate"
+      "item": "tead:garment_chestplate"
     },
     "%": {
       "item": "tead:fabric"

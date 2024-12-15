@@ -13,7 +13,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
-import net.pythonbear.tead.init.TeadToolMaterials;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class FrostClaymoreItem extends ClaymoreItem {

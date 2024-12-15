@@ -6,19 +6,29 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.pythonbear.tead.block.TeadBlocks;
+import net.pythonbear.tead.block.entity.TeadBlockEntities;
+import net.pythonbear.tead.enchantments.TeadEnchantments;
 import net.pythonbear.tead.init.*;
 import net.pythonbear.tead.item.LightningStaffItem;
+import net.pythonbear.tead.item.TeadItemGroups;
+import net.pythonbear.tead.item.TeadItems;
 import net.pythonbear.tead.item.scythe.ScytheSwing;
 import net.pythonbear.tead.item.sickle.PlayerBlockBreakHandler;
 import net.pythonbear.tead.item.sickle.UseBlockHandler;
+import net.pythonbear.tead.recipe.TeadRecipeSerializers;
+import net.pythonbear.tead.recipe.TeadRecipeTypes;
+import net.pythonbear.tead.screen.TeadScreenHandlers;
 import net.pythonbear.tead.sound.TeadSounds;
 import net.pythonbear.tead.util.DiedInVoid;
 import net.pythonbear.tead.util.OnEntityDeath;
 import net.pythonbear.tead.util.OnPlayerWorldTick;
+import net.pythonbear.tead.util.TeadCustomTrades;
 import net.pythonbear.tead.world.gen.TeadWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import software.bernie.geckolib.GeckoLib;
+
 
 public class Tead implements ModInitializer {
 	public static final String MOD_ID = "tead";
@@ -44,6 +54,7 @@ public class Tead implements ModInitializer {
 		TeadBlocks.registerBlocks();
 		TeadBlockEntities.registerBlockEntities();
 		TeadLootTableModifiers.modifyLootTables();
+		TeadCustomTrades.registerCustomTrades();
 
 		TeadWorldGeneration.generateTeadWorldGen();
 
@@ -51,6 +62,8 @@ public class Tead implements ModInitializer {
 		ServerTickEvents.END_WORLD_TICK.register(OnPlayerWorldTick::onWorldTick);
 		ServerLivingEntityEvents.ALLOW_DEATH.register(OnEntityDeath::removeExcalibur);
 		ServerLivingEntityEvents.AFTER_DEATH.register(DiedInVoid::craftExcalibur);
+
+//		generateTeadArmorMaterials();
 
 		LOGGER.info(MOD_ID + " fully initialized");
 	}

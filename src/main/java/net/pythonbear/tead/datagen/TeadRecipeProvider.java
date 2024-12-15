@@ -2,6 +2,7 @@ package net.pythonbear.tead.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -16,8 +17,8 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadBlocks;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.block.TeadBlocks;
+import net.pythonbear.tead.item.TeadItems;
 import net.pythonbear.tead.init.TeadTags;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,50 +57,36 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        offerSmelting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f,
-                1800, "copper_block");
-        offerBlasting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f,
-                900, "copper_block");
-        offerSmelting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f,
-                1800, "iron_block");
-        offerBlasting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f,
-                900, "iron_block");
-        offerSmelting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f,
-                1800, "gold_block");
-        offerBlasting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f,
-                900, "gold_block");
-        offerSmelting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.LEAD_BLOCK, 7.2f,
-                1620, "lead_block");
-        offerBlasting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.LEAD_BLOCK, 7.2f,
-                720, "lead_block");
-        offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 300,
-                "ruby");
-        offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 150,
-                "ruby");
-        offerSmelting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f,
-                180, "lead_ingot");
-        offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f,
-                80, "lead_ingot");
-        offerSmelting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
-                150, "dark_brick");
-        offerBlasting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0,
-                80,  "dark_brick");
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC,
-                TeadBlocks.RUBY_BLOCK);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA,
-                RecipeCategory.MISC, TeadBlocks.RAW_LEAD_BLOCK);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.OBSIDIAN_SHARD,
-                RecipeCategory.MISC, Blocks.OBSIDIAN);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.LEAD_NUGGET, RecipeCategory.MISC,
-                TeadItems.LEAD_INGOT);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.STEEL_NUGGET, RecipeCategory.MISC,
-                TeadItems.STEEL_INGOT);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.ROSE_GOLD_NUGGET, RecipeCategory.MISC,
-                TeadItems.ROSE_GOLD_INGOT);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.BRONZE_NUGGET, RecipeCategory.MISC,
-                TeadItems.BRONZE_INGOT);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.COPPER_NUGGET, RecipeCategory.MISC,
-                Items.COPPER_INGOT);
+        offerSmelting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f, 1800, "copper_block");
+        offerBlasting(exporter, BLOCK_OF_COPPER_SMELTABLES, RecipeCategory.MISC, Items.COPPER_BLOCK, 6.3f, 900, "copper_block");
+        offerSmelting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f, 1800, "iron_block");
+        offerBlasting(exporter, BLOCK_OF_IRON_SMELTABLES, RecipeCategory.MISC, Items.IRON_BLOCK, 6.3f, 900, "iron_block");
+        offerSmelting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f, 1800, "gold_block");
+        offerBlasting(exporter, BLOCK_OF_GOLD_SMELTABLES, RecipeCategory.MISC, Items.GOLD_BLOCK, 9f, 900, "gold_block");
+        offerSmelting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.LEAD_BLOCK, 7.2f, 1620, "lead_block");
+        offerBlasting(exporter, BLOCK_OF_LEAD_SMELTABLES, RecipeCategory.MISC, TeadBlocks.LEAD_BLOCK, 7.2f, 720, "lead_block");
+        offerSmelting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 300, "ruby");
+        offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, TeadItems.RUBY, 2, 150, "ruby");
+        offerSmelting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f, 180, "lead_ingot");
+        offerBlasting(exporter, LEAD_SMELTABLES, RecipeCategory.MISC, TeadItems.LEAD_INGOT, 0.8f, 80, "lead_ingot");
+        offerSmelting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0, 150, "dark_brick");
+        offerBlasting(exporter, DARK_BRICK_SMELTABLES, RecipeCategory.MISC, TeadItems.DARK_BRICK, 0, 80,  "dark_brick");
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC, TeadBlocks.RUBY_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA, RecipeCategory.MISC, TeadBlocks.RAW_LEAD_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.OBSIDIAN_SHARD, RecipeCategory.MISC, Blocks.OBSIDIAN);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.DIAMOND_CHIP, RecipeCategory.MISC, Items.DIAMOND);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.LEAD_NUGGET, RecipeCategory.MISC, TeadItems.LEAD_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.COPPER_NUGGET, RecipeCategory.MISC, Items.COPPER_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.ROSE_GOLD_NUGGET, RecipeCategory.MISC, TeadItems.ROSE_GOLD_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.WHITE_GOLD_NUGGET, RecipeCategory.MISC, TeadItems.WHITE_GOLD_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.BRASS_NUGGET, RecipeCategory.MISC, TeadItems.BRASS_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.BRONZE_NUGGET, RecipeCategory.MISC, TeadItems.BRONZE_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.STEEL_NUGGET, RecipeCategory.MISC, TeadItems.STEEL_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.NETHERITE_NUGGET, RecipeCategory.MISC, Items.NETHERITE_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.ROSE_NETHERITE_NUGGET, RecipeCategory.MISC, TeadItems.ROSE_NETHERITE_INGOT);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.WHITE_NETHERITE_NUGGET, RecipeCategory.MISC, TeadItems.WHITE_NETHERITE_INGOT);
+
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.LEAD_CUT_SLAB, TeadBlocks.LEAD_CUT_BLOCK);
         createStairsRecipe(TeadBlocks.LEAD_CUT_STAIRS, Ingredient.ofItems(TeadBlocks.LEAD_CUT_BLOCK))
                 .criterion(hasItem(TeadBlocks.LEAD_CUT_BLOCK), conditionsFromItem(TeadBlocks.LEAD_CUT_BLOCK))
@@ -143,12 +130,6 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO))
                 .group("fabric")
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_1"));
-        ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
-                .input(Items.WHITE_WOOL)
-                .input(Items.WHITE_WOOL)
-                .criterion(hasItem(Items.WHITE_WOOL), conditionsFromItem(Items.WHITE_WOOL))
-                .group("fabric")
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "fabric_2"));
         ShapelessRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.FABRIC)
                 .input(Items.WHITE_WOOL)
                 .input(Items.BROWN_WOOL)
@@ -450,7 +431,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("%%%")
                 .input('%', Items.TNT)
                 .input('#', TeadItems.TNT_ARROW)
-                .input('$', Items.IRON_PICKAXE)
+                .input('$', TeadItems.STEEL_PICKAXE)
                 .criterion(hasItem(TeadItems.TNT_ARROW), conditionsFromItem(TeadItems.TNT_ARROW))
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, "boring_arrow"));
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, TeadItems.COPPER_ARROW, 3)
@@ -561,89 +542,6 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', TeadItems.LEAD_INGOT)
                 .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_PICKAXE, 1)
-                .pattern("###")
-                .pattern(" $ ")
-                .pattern(" % ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_SHOVEL, 1)
-                .pattern("#")
-                .pattern("%")
-                .pattern("%")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.LEAD_INGOT)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_SWORD, 1)
-                .pattern("#")
-                .pattern("#")
-                .pattern("%")
-                .input('%', TeadItems.HANDLE)
-                .input('#', TeadItems.LEAD_INGOT)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_AXE, 1)
-                .pattern("##")
-                .pattern("#%")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_HOE, 1)
-                .pattern("##")
-                .pattern(" %")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_DOUBLE_AXE, 1)
-                .pattern("#%#")
-                .pattern("#%#")
-                .pattern(" $ ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_HAMMER, 1)
-                .pattern(" ##")
-                .pattern(" ##")
-                .pattern("%  ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_SICKLE, 1)
-                .pattern(" # ")
-                .pattern("  #")
-                .pattern("%# ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_CLAYMORE, 1)
-                .pattern("  #")
-                .pattern("## ")
-                .pattern("%# ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.LEAD_DAGGER, 1)
-                .pattern(" #")
-                .pattern("% ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .input('%', Items.STICK)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .offerTo(exporter);
 
         // Wooden Tools
 //        offerPickaxeRecipe(Items.WOODEN_PICKAXE, ItemTags.PLANKS, "wooden", true, exporter, Tead.MINECRAFT_ID);
@@ -741,6 +639,142 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         offerRanseurRecipe(TeadItems.GOLD_RANSEUR, TeadItems.GOLD_SPEAR, Items.GOLD_INGOT, "gold", exporter);
         offerGlaiveRecipe(TeadItems.GOLD_GLAIVE, TeadItems.GOLD_SPEAR, Items.GOLD_INGOT, "gold", exporter);
 
+        // Lead Tools
+        offerShovelRecipe(TeadItems.LEAD_SHOVEL, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerHoeRecipe(TeadItems.LEAD_HOE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.LEAD_PICKAXE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerAxeRecipe(TeadItems.LEAD_AXE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerSwordRecipe(TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.LEAD_HATCHET, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerHammerRecipe(TeadItems.LEAD_HAMMER, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.LEAD_MOUNTAINEER_PICK, TeadItems.LEAD_PICKAXE, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerMattockRecipe(TeadItems.LEAD_MATTOCK, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerMaceRecipe(TeadItems.LEAD_MACE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerDaggerRecipe(TeadItems.LEAD_DAGGER, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.LEAD_HOLLOW_DAGGER, TeadItems.LEAD_DAGGER, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerRiteDaggerRecipe(TeadItems.LEAD_RITE_DAGGER, TeadItems.LEAD_DAGGER, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerCrescentDaggerRecipe(TeadItems.LEAD_CRESCENT_DAGGER, TeadItems.LEAD_DAGGER, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerTruthseekerRecipe(TeadItems.LEAD_TRUTHSEEKER, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerTempestKnifeRecipe(TeadItems.LEAD_TEMPEST_KNIFE, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerCutlassRecipe(TeadItems.LEAD_CUTLASS, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerRapierRecipe(TeadItems.LEAD_RAPIER, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerKatanaRecipe(TeadItems.LEAD_KATANA, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerHighlandAxeRecipe(TeadItems.LEAD_HIGHLAND_AXE, TeadItems.LEAD_AXE, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerDoubleAxeRecipe(TeadItems.LEAD_DOUBLE_AXE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.LEAD_DOUBLE_HIGHLAND_AXE, TeadItems.LEAD_DOUBLE_AXE, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerSickleRecipe(TeadItems.LEAD_SICKLE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerScytheRecipe(TeadItems.LEAD_SCYTHE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.LEAD_GREATSWORD, TeadItems.LEAD_SWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerLongswordRecipe(TeadItems.LEAD_LONGSWORD, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.LEAD_BROADSWORD, TeadItems.LEAD_LONGSWORD, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerClaymoreRecipe(TeadItems.LEAD_CLAYMORE, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerSpearRecipe(TeadItems.LEAD_SPEAR, TeadItems.LEAD_INGOT, "lead", true, exporter, null);
+        offerRanseurRecipe(TeadItems.LEAD_RANSEUR, TeadItems.LEAD_SPEAR, TeadItems.LEAD_INGOT, "lead", exporter);
+        offerGlaiveRecipe(TeadItems.LEAD_GLAIVE, TeadItems.LEAD_SPEAR, TeadItems.LEAD_INGOT, "lead", exporter);
+
+        // Copper Tools
+        offerShovelRecipe(TeadItems.COPPER_SHOVEL, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerHoeRecipe(TeadItems.COPPER_HOE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.COPPER_PICKAXE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerAxeRecipe(TeadItems.COPPER_AXE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerSwordRecipe(TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.COPPER_HATCHET, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerHammerRecipe(TeadItems.COPPER_HAMMER, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.COPPER_MOUNTAINEER_PICK, TeadItems.COPPER_PICKAXE, Items.COPPER_INGOT, "copper", exporter);
+        offerMattockRecipe(TeadItems.COPPER_MATTOCK, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerMaceRecipe(TeadItems.COPPER_MACE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerDaggerRecipe(TeadItems.COPPER_DAGGER, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.COPPER_HOLLOW_DAGGER, TeadItems.COPPER_DAGGER, Items.COPPER_INGOT, "copper", exporter);
+        offerRiteDaggerRecipe(TeadItems.COPPER_RITE_DAGGER, TeadItems.COPPER_DAGGER, Items.COPPER_INGOT, "copper", exporter);
+        offerCrescentDaggerRecipe(TeadItems.COPPER_CRESCENT_DAGGER, TeadItems.COPPER_DAGGER, Items.COPPER_INGOT, "copper", exporter);
+        offerTruthseekerRecipe(TeadItems.COPPER_TRUTHSEEKER, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerTempestKnifeRecipe(TeadItems.COPPER_TEMPEST_KNIFE, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerCutlassRecipe(TeadItems.COPPER_CUTLASS, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerRapierRecipe(TeadItems.COPPER_RAPIER, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerKatanaRecipe(TeadItems.COPPER_KATANA, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerHighlandAxeRecipe(TeadItems.COPPER_HIGHLAND_AXE, TeadItems.COPPER_AXE, Items.COPPER_INGOT, "copper", exporter);
+        offerDoubleAxeRecipe(TeadItems.COPPER_DOUBLE_AXE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.COPPER_DOUBLE_HIGHLAND_AXE, TeadItems.COPPER_DOUBLE_AXE, Items.COPPER_INGOT, "copper", exporter);
+        offerSickleRecipe(TeadItems.COPPER_SICKLE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerScytheRecipe(TeadItems.COPPER_SCYTHE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.COPPER_GREATSWORD, TeadItems.COPPER_SWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerLongswordRecipe(TeadItems.COPPER_LONGSWORD, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.COPPER_BROADSWORD, TeadItems.COPPER_LONGSWORD, Items.COPPER_INGOT, "copper", exporter);
+        offerClaymoreRecipe(TeadItems.COPPER_CLAYMORE, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerSpearRecipe(TeadItems.COPPER_SPEAR, Items.COPPER_INGOT, "copper", true, exporter, null);
+        offerRanseurRecipe(TeadItems.COPPER_RANSEUR, TeadItems.COPPER_SPEAR, Items.COPPER_INGOT, "copper", exporter);
+        offerGlaiveRecipe(TeadItems.COPPER_GLAIVE, TeadItems.COPPER_SPEAR, Items.COPPER_INGOT, "copper", exporter);
+
+        // Rose Gold Tools
+        offerShovelRecipe(TeadItems.ROSE_GOLD_SHOVEL, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerHoeRecipe(TeadItems.ROSE_GOLD_HOE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.ROSE_GOLD_PICKAXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerAxeRecipe(TeadItems.ROSE_GOLD_AXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerSwordRecipe(TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.ROSE_GOLD_HATCHET, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerHammerRecipe(TeadItems.ROSE_GOLD_HAMMER, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.ROSE_GOLD_MOUNTAINEER_PICK, TeadItems.ROSE_GOLD_PICKAXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerMattockRecipe(TeadItems.ROSE_GOLD_MATTOCK, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerMaceRecipe(TeadItems.ROSE_GOLD_MACE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerDaggerRecipe(TeadItems.ROSE_GOLD_DAGGER, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.ROSE_GOLD_HOLLOW_DAGGER, TeadItems.ROSE_GOLD_DAGGER, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerRiteDaggerRecipe(TeadItems.ROSE_GOLD_RITE_DAGGER, TeadItems.ROSE_GOLD_DAGGER, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerCrescentDaggerRecipe(TeadItems.ROSE_GOLD_CRESCENT_DAGGER, TeadItems.ROSE_GOLD_DAGGER, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerTruthseekerRecipe(TeadItems.ROSE_GOLD_TRUTHSEEKER, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerTempestKnifeRecipe(TeadItems.ROSE_GOLD_TEMPEST_KNIFE, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerCutlassRecipe(TeadItems.ROSE_GOLD_CUTLASS, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerRapierRecipe(TeadItems.ROSE_GOLD_RAPIER, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerKatanaRecipe(TeadItems.ROSE_GOLD_KATANA, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerHighlandAxeRecipe(TeadItems.ROSE_GOLD_HIGHLAND_AXE, TeadItems.ROSE_GOLD_AXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerDoubleAxeRecipe(TeadItems.ROSE_GOLD_DOUBLE_AXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.ROSE_GOLD_DOUBLE_HIGHLAND_AXE, TeadItems.ROSE_GOLD_DOUBLE_AXE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerSickleRecipe(TeadItems.ROSE_GOLD_SICKLE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerScytheRecipe(TeadItems.ROSE_GOLD_SCYTHE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.ROSE_GOLD_GREATSWORD, TeadItems.ROSE_GOLD_SWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerLongswordRecipe(TeadItems.ROSE_GOLD_LONGSWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.ROSE_GOLD_BROADSWORD, TeadItems.ROSE_GOLD_LONGSWORD, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerClaymoreRecipe(TeadItems.ROSE_GOLD_CLAYMORE, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerSpearRecipe(TeadItems.ROSE_GOLD_SPEAR, TeadItems.ROSE_GOLD_INGOT, "rose_gold", true, exporter, null);
+        offerRanseurRecipe(TeadItems.ROSE_GOLD_RANSEUR, TeadItems.ROSE_GOLD_SPEAR, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+        offerGlaiveRecipe(TeadItems.ROSE_GOLD_GLAIVE, TeadItems.ROSE_GOLD_SPEAR, TeadItems.ROSE_GOLD_INGOT, "rose_gold", exporter);
+
+        // White Gold Tools
+        offerShovelRecipe(TeadItems.WHITE_GOLD_SHOVEL, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerHoeRecipe(TeadItems.WHITE_GOLD_HOE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.WHITE_GOLD_PICKAXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerAxeRecipe(TeadItems.WHITE_GOLD_AXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerSwordRecipe(TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.WHITE_GOLD_HATCHET, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerHammerRecipe(TeadItems.WHITE_GOLD_HAMMER, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.WHITE_GOLD_MOUNTAINEER_PICK, TeadItems.WHITE_GOLD_PICKAXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerMattockRecipe(TeadItems.WHITE_GOLD_MATTOCK, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerMaceRecipe(TeadItems.WHITE_GOLD_MACE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerDaggerRecipe(TeadItems.WHITE_GOLD_DAGGER, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.WHITE_GOLD_HOLLOW_DAGGER, TeadItems.WHITE_GOLD_DAGGER, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerRiteDaggerRecipe(TeadItems.WHITE_GOLD_RITE_DAGGER, TeadItems.WHITE_GOLD_DAGGER, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerCrescentDaggerRecipe(TeadItems.WHITE_GOLD_CRESCENT_DAGGER, TeadItems.WHITE_GOLD_DAGGER, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerTruthseekerRecipe(TeadItems.WHITE_GOLD_TRUTHSEEKER, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerTempestKnifeRecipe(TeadItems.WHITE_GOLD_TEMPEST_KNIFE, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerCutlassRecipe(TeadItems.WHITE_GOLD_CUTLASS, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerRapierRecipe(TeadItems.WHITE_GOLD_RAPIER, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerKatanaRecipe(TeadItems.WHITE_GOLD_KATANA, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerHighlandAxeRecipe(TeadItems.WHITE_GOLD_HIGHLAND_AXE, TeadItems.WHITE_GOLD_AXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerDoubleAxeRecipe(TeadItems.WHITE_GOLD_DOUBLE_AXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.WHITE_GOLD_DOUBLE_HIGHLAND_AXE, TeadItems.WHITE_GOLD_DOUBLE_AXE, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerSickleRecipe(TeadItems.WHITE_GOLD_SICKLE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerScytheRecipe(TeadItems.WHITE_GOLD_SCYTHE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.WHITE_GOLD_GREATSWORD, TeadItems.WHITE_GOLD_SWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerLongswordRecipe(TeadItems.WHITE_GOLD_LONGSWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.WHITE_GOLD_BROADSWORD, TeadItems.WHITE_GOLD_LONGSWORD, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerClaymoreRecipe(TeadItems.WHITE_GOLD_CLAYMORE, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerSpearRecipe(TeadItems.WHITE_GOLD_SPEAR, TeadItems.WHITE_GOLD_INGOT, "white_gold", true, exporter, null);
+        offerRanseurRecipe(TeadItems.WHITE_GOLD_RANSEUR, TeadItems.WHITE_GOLD_SPEAR, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+        offerGlaiveRecipe(TeadItems.WHITE_GOLD_GLAIVE, TeadItems.WHITE_GOLD_SPEAR, TeadItems.WHITE_GOLD_INGOT, "white_gold", exporter);
+
         // Iron Tools
 //        offerShovelRecipe(Items.IRON_SHOVEL, Items.IRON_INGOT, "iron", true, exporter, Tead.MINECRAFT_ID);
 //        offerHoeRecipe(Items.IRON_HOE, Items.IRON_INGOT, "iron", true, exporter, Tead.MINECRAFT_ID);
@@ -774,6 +808,108 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         offerSpearRecipe(TeadItems.IRON_SPEAR, Items.IRON_INGOT, "iron", true, exporter, null);
         offerRanseurRecipe(TeadItems.IRON_RANSEUR, TeadItems.IRON_SPEAR, Items.IRON_INGOT, "iron", exporter);
         offerGlaiveRecipe(TeadItems.IRON_GLAIVE, TeadItems.IRON_SPEAR, Items.IRON_INGOT, "iron", exporter);
+
+        // Brass Tools
+        offerShovelRecipe(TeadItems.BRASS_SHOVEL, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerHoeRecipe(TeadItems.BRASS_HOE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.BRASS_PICKAXE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerAxeRecipe(TeadItems.BRASS_AXE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerSwordRecipe(TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.BRASS_HATCHET, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerHammerRecipe(TeadItems.BRASS_HAMMER, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.BRASS_MOUNTAINEER_PICK, TeadItems.BRASS_PICKAXE, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerMattockRecipe(TeadItems.BRASS_MATTOCK, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerMaceRecipe(TeadItems.BRASS_MACE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerDaggerRecipe(TeadItems.BRASS_DAGGER, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.BRASS_HOLLOW_DAGGER, TeadItems.BRASS_DAGGER, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerRiteDaggerRecipe(TeadItems.BRASS_RITE_DAGGER, TeadItems.BRASS_DAGGER, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerCrescentDaggerRecipe(TeadItems.BRASS_CRESCENT_DAGGER, TeadItems.BRASS_DAGGER, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerTruthseekerRecipe(TeadItems.BRASS_TRUTHSEEKER, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerTempestKnifeRecipe(TeadItems.BRASS_TEMPEST_KNIFE, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerCutlassRecipe(TeadItems.BRASS_CUTLASS, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerRapierRecipe(TeadItems.BRASS_RAPIER, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerKatanaRecipe(TeadItems.BRASS_KATANA, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerHighlandAxeRecipe(TeadItems.BRASS_HIGHLAND_AXE, TeadItems.BRASS_AXE, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerDoubleAxeRecipe(TeadItems.BRASS_DOUBLE_AXE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.BRASS_DOUBLE_HIGHLAND_AXE, TeadItems.BRASS_DOUBLE_AXE, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerSickleRecipe(TeadItems.BRASS_SICKLE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerScytheRecipe(TeadItems.BRASS_SCYTHE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.BRASS_GREATSWORD, TeadItems.BRASS_SWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerLongswordRecipe(TeadItems.BRASS_LONGSWORD, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.BRASS_BROADSWORD, TeadItems.BRASS_LONGSWORD, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerClaymoreRecipe(TeadItems.BRASS_CLAYMORE, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerSpearRecipe(TeadItems.BRASS_SPEAR, TeadItems.BRASS_INGOT, "brass", true, exporter, null);
+        offerRanseurRecipe(TeadItems.BRASS_RANSEUR, TeadItems.BRASS_SPEAR, TeadItems.BRASS_INGOT, "brass", exporter);
+        offerGlaiveRecipe(TeadItems.BRASS_GLAIVE, TeadItems.BRASS_SPEAR, TeadItems.BRASS_INGOT, "brass", exporter);
+
+        // Bronze Tools
+        offerShovelRecipe(TeadItems.BRONZE_SHOVEL, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerHoeRecipe(TeadItems.BRONZE_HOE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.BRONZE_PICKAXE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerAxeRecipe(TeadItems.BRONZE_AXE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerSwordRecipe(TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.BRONZE_HATCHET, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerHammerRecipe(TeadItems.BRONZE_HAMMER, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.BRONZE_MOUNTAINEER_PICK, TeadItems.BRONZE_PICKAXE, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerMattockRecipe(TeadItems.BRONZE_MATTOCK, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerMaceRecipe(TeadItems.BRONZE_MACE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerDaggerRecipe(TeadItems.BRONZE_DAGGER, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.BRONZE_HOLLOW_DAGGER, TeadItems.BRONZE_DAGGER, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerRiteDaggerRecipe(TeadItems.BRONZE_RITE_DAGGER, TeadItems.BRONZE_DAGGER, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerCrescentDaggerRecipe(TeadItems.BRONZE_CRESCENT_DAGGER, TeadItems.BRONZE_DAGGER, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerTruthseekerRecipe(TeadItems.BRONZE_TRUTHSEEKER, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerTempestKnifeRecipe(TeadItems.BRONZE_TEMPEST_KNIFE, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerCutlassRecipe(TeadItems.BRONZE_CUTLASS, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerRapierRecipe(TeadItems.BRONZE_RAPIER, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerKatanaRecipe(TeadItems.BRONZE_KATANA, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerHighlandAxeRecipe(TeadItems.BRONZE_HIGHLAND_AXE, TeadItems.BRONZE_AXE, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerDoubleAxeRecipe(TeadItems.BRONZE_DOUBLE_AXE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.BRONZE_DOUBLE_HIGHLAND_AXE, TeadItems.BRONZE_DOUBLE_AXE, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerSickleRecipe(TeadItems.BRONZE_SICKLE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerScytheRecipe(TeadItems.BRONZE_SCYTHE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.BRONZE_GREATSWORD, TeadItems.BRONZE_SWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerLongswordRecipe(TeadItems.BRONZE_LONGSWORD, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.BRONZE_BROADSWORD, TeadItems.BRONZE_LONGSWORD, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerClaymoreRecipe(TeadItems.BRONZE_CLAYMORE, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerSpearRecipe(TeadItems.BRONZE_SPEAR, TeadItems.BRONZE_INGOT, "bronze", true, exporter, null);
+        offerRanseurRecipe(TeadItems.BRONZE_RANSEUR, TeadItems.BRONZE_SPEAR, TeadItems.BRONZE_INGOT, "bronze", exporter);
+        offerGlaiveRecipe(TeadItems.BRONZE_GLAIVE, TeadItems.BRONZE_SPEAR, TeadItems.BRONZE_INGOT, "bronze", exporter);
+
+        // Steel Tools
+        offerShovelRecipe(TeadItems.STEEL_SHOVEL, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerHoeRecipe(TeadItems.STEEL_HOE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerPickaxeRecipe(TeadItems.STEEL_PICKAXE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerAxeRecipe(TeadItems.STEEL_AXE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerSwordRecipe(TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+
+        offerHatchetRecipe(TeadItems.STEEL_HATCHET, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerHammerRecipe(TeadItems.STEEL_HAMMER, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerMountaineerPickRecipe(TeadItems.STEEL_MOUNTAINEER_PICK, TeadItems.STEEL_PICKAXE, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerMattockRecipe(TeadItems.STEEL_MATTOCK, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerMaceRecipe(TeadItems.STEEL_MACE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerDaggerRecipe(TeadItems.STEEL_DAGGER, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerHollowDaggerRecipe(TeadItems.STEEL_HOLLOW_DAGGER, TeadItems.STEEL_DAGGER, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerRiteDaggerRecipe(TeadItems.STEEL_RITE_DAGGER, TeadItems.STEEL_DAGGER, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerCrescentDaggerRecipe(TeadItems.STEEL_CRESCENT_DAGGER, TeadItems.STEEL_DAGGER, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerTruthseekerRecipe(TeadItems.STEEL_TRUTHSEEKER, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerTempestKnifeRecipe(TeadItems.STEEL_TEMPEST_KNIFE, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerCutlassRecipe(TeadItems.STEEL_CUTLASS, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerRapierRecipe(TeadItems.STEEL_RAPIER, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerKatanaRecipe(TeadItems.STEEL_KATANA, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerHighlandAxeRecipe(TeadItems.STEEL_HIGHLAND_AXE, TeadItems.STEEL_AXE, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerDoubleAxeRecipe(TeadItems.STEEL_DOUBLE_AXE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerDoubleHighlandAxeRecipe(TeadItems.STEEL_DOUBLE_HIGHLAND_AXE, TeadItems.STEEL_DOUBLE_AXE, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerSickleRecipe(TeadItems.STEEL_SICKLE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerScytheRecipe(TeadItems.STEEL_SCYTHE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerGreatswordRecipe(TeadItems.STEEL_GREATSWORD, TeadItems.STEEL_SWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerLongswordRecipe(TeadItems.STEEL_LONGSWORD, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerBroadswordRecipe(TeadItems.STEEL_BROADSWORD, TeadItems.STEEL_LONGSWORD, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerClaymoreRecipe(TeadItems.STEEL_CLAYMORE, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerSpearRecipe(TeadItems.STEEL_SPEAR, TeadItems.STEEL_INGOT, "steel", true, exporter, null);
+        offerRanseurRecipe(TeadItems.STEEL_RANSEUR, TeadItems.STEEL_SPEAR, TeadItems.STEEL_INGOT, "steel", exporter);
+        offerGlaiveRecipe(TeadItems.STEEL_GLAIVE, TeadItems.STEEL_SPEAR, TeadItems.STEEL_INGOT, "steel", exporter);
 
         // Diamond Tools
 //        offerShovelRecipe(Items.DIAMOND_SHOVEL, Items.DIAMOND, "diamond", true, exporter, Tead.MINECRAFT_ID);
@@ -809,454 +945,487 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         offerRanseurRecipe(TeadItems.DIAMOND_RANSEUR, TeadItems.DIAMOND_SPEAR, Items.DIAMOND, "diamond", exporter);
         offerGlaiveRecipe(TeadItems.DIAMOND_GLAIVE, TeadItems.DIAMOND_SPEAR, Items.DIAMOND, "diamond", exporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_BOOTS, 1)
-                .pattern("# #")
-                .pattern("# #")
-                .input('#',TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_HELMET, 1)
-                .pattern("###")
-                .pattern("# #")
-                .input('#', TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_LEGGINGS, 1)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("# #")
-                .input('#', TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_CHAINMAIL_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("###")
-                .pattern("###")
-                .input('#', TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_WOOLEN_BOOTS, 1)
-                .pattern("% %")
-                .pattern("# #")
-                .input('#', Items.GOLD_NUGGET)
-                .input('%', ItemTags.WOOL)
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_WOOLEN_HELMET, 1)
-                .pattern("###")
-                .pattern("#$#")
-                .input('#', ItemTags.WOOL)
-                .input('$', Items.GOLD_NUGGET)
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_WOOLEN_LEGGINGS, 1)
-                .pattern("#$#")
-                .pattern("# #")
-                .pattern("# #")
-                .input('#', TeadBlocks.GOLD_CHAIN)
-                .input('$', Items.GOLD_NUGGET)
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_WOOLEN_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("$#$")
-                .pattern("#@#")
-                .input('#', TeadBlocks.GOLD_CHAIN)
-                .input('$', Items.GOLD_NUGGET)
-                .input('@', TeadItems.GOLD_GARMENT_CHESTPLATE)
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_REINFORCED_MAIL_HELMET, 1)
-                .pattern("###")
-                .pattern("% %")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_REINFORCED_MAIL_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("%#%")
-                .pattern("%#%")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', TeadBlocks.GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.GOLD_CHAIN), conditionsFromItem(TeadBlocks.GOLD_CHAIN))
-                .offerTo(exporter);
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_STURDY),
-                        Ingredient.ofItems(Items.GOLDEN_HELMET), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_STALWART_HELMET)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_stalwart_helmet"));
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_STURDY),
-                        Ingredient.ofItems(Items.GOLDEN_CHESTPLATE), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_STALWART_CHESTPLATE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_stalwart_chestplate"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_PLATE_HELMET, 1)
-                .pattern("#%#")
-                .pattern("###")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.LEATHER)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_PLATE_CHESTPLATE, 1)
-                .pattern("$$$")
-                .pattern("%$%")
-                .pattern("$ $")
-                .input('%', Items.LEATHER)
-                .input('$', Items.GOLD_INGOT)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_PLATE_BOOTS, 1)
-                .pattern("% %")
-                .pattern("$ $")
-                .input('%', Items.LEATHER)
-                .input('$', Items.GOLD_INGOT)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_HIGHLAND),
-                        Ingredient.ofItems(Items.GOLDEN_HELMET), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_HIGHLAND_HELMET)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_highland_helmet"));
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_HIGHLAND),
-                        Ingredient.ofItems(Items.GOLDEN_CHESTPLATE), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_HIGHLAND_CHESTPLATE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_highland_chestplate"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_ROYAL_HELMET, 1)
-                .pattern("# #")
-                .pattern("###")
-                .input('#', Items.GOLD_INGOT)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_THIEF_HELMET, 1)
-                .pattern("%%%")
-                .pattern("$^$")
-                .pattern(" & ")
-                .input('^', Items.GOLD_INGOT)
-                .input('%', TeadItems.FABRIC)
-                .input('$', Items.LEATHER)
-                .input('&', Items.BLACK_DYE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_THIEF_CHESTPLATE, 1)
-                .pattern("%&%")
-                .pattern("$%%")
-                .pattern("%%$")
-                .input('%', TeadItems.FABRIC)
-                .input('$', TeadItems.GOLD_GARMENT_CHESTPLATE)
-                .input('&', Items.BLACK_DYE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
-                .offerTo(exporter);
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_MERCENARY),
-                        Ingredient.ofItems(Items.GOLDEN_HELMET), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_MERCENARY_HELMET)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_mercenary_helmet"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_SPANGENHELM_HELMET, 1)
-                .pattern(" % ")
-                .pattern("%$%")
-                .pattern(" # ")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.GOLD_NUGGET)
-                .input('$', Items.GOLDEN_HELMET)
-                .criterion(hasItem(Items.GOLDEN_HELMET), conditionsFromItem(Items.GOLDEN_HELMET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_GUARD_HELMET, 1)
-                .pattern("%#%")
-                .pattern("# #")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.LEATHER)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_GUARD_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("%#%")
-                .pattern("%$%")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.LEATHER)
-                .input('$', TeadItems.GOLD_GARMENT_CHESTPLATE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_GARMENT_BOOTS, 1)
-                .pattern("% %")
-                .pattern("# #")
-                .input('#', Items.GOLD_NUGGET)
-                .input('%', Items.BAMBOO)
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.GOLD_GARMENT_CHESTPLATE, 1)
-                .pattern("%#%")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.LEATHER)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter);
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_SPOOKY),
-                        Ingredient.ofItems(Items.GOLDEN_HELMET), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_GHOSTLY_HELMET)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_ghostly_helmet"));
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_SPOOKY),
-                        Ingredient.ofItems(Items.GOLDEN_CHESTPLATE), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_GHOSTLY_CHESTPLATE)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_ghostly_chestplate"));
-        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(TeadItems.SMITHING_GUIDE_SPOOKY),
-                        Ingredient.ofItems(Items.GOLDEN_BOOTS), Ingredient.ofItems(Items.GOLD_INGOT),
-                        RecipeCategory.TOOLS, TeadItems.GOLD_GHOSTLY_BOOTS)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "gold_ghostly_boots"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_PICKAXE, 1)
-                .pattern("###")
-                .pattern(" $ ")
-                .pattern(" % ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_SHOVEL, 1)
-                .pattern("#")
-                .pattern("%")
-                .pattern("%")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_SWORD, 1)
-                .pattern("#")
-                .pattern("#")
-                .pattern("%")
-                .input('%', TeadItems.HANDLE)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_AXE, 1)
-                .pattern("##")
-                .pattern("#%")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_HOE, 1)
-                .pattern("##")
-                .pattern(" %")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_DOUBLE_AXE, 1)
-                .pattern("#%#")
-                .pattern("#%#")
-                .pattern(" $ ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_HAMMER, 1)
-                .pattern(" ##")
-                .pattern(" ##")
-                .pattern("%  ")
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_SICKLE, 1)
-                .pattern(" # ")
-                .pattern("  #")
-                .pattern("%# ")
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_CLAYMORE, 1)
-                .pattern("  #")
-                .pattern("## ")
-                .pattern("%# ")
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_DAGGER, 1)
-                .pattern(" #")
-                .pattern("% ")
-                .input('#', TeadItems.ROSE_GOLD_INGOT)
-                .input('%', Items.STICK)
-                .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_PICKAXE, 1)
-                .pattern("###")
-                .pattern(" $ ")
-                .pattern(" % ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_SHOVEL, 1)
-                .pattern("#")
-                .pattern("%")
-                .pattern("%")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_SWORD, 1)
-                .pattern("#")
-                .pattern("#")
-                .pattern("%")
-                .input('%', TeadItems.HANDLE)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_AXE, 1)
-                .pattern("##")
-                .pattern("#%")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_HOE, 1)
-                .pattern("##")
-                .pattern(" %")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_DOUBLE_AXE, 1)
-                .pattern("#%#")
-                .pattern("#%#")
-                .pattern(" $ ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_HAMMER, 1)
-                .pattern(" ##")
-                .pattern(" ##")
-                .pattern("%  ")
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_SICKLE, 1)
-                .pattern(" # ")
-                .pattern("  #")
-                .pattern("%# ")
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_CLAYMORE, 1)
-                .pattern("  #")
-                .pattern("## ")
-                .pattern("%# ")
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_DAGGER, 1)
-                .pattern(" #")
-                .pattern("% ")
-                .input('#', TeadItems.BRONZE_INGOT)
-                .input('%', Items.STICK)
-                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_PICKAXE, 1)
-                .pattern("###")
-                .pattern(" $ ")
-                .pattern(" % ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_SHOVEL, 1)
-                .pattern("#")
-                .pattern("%")
-                .pattern("%")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.STEEL_INGOT)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_SWORD, 1)
-                .pattern("#")
-                .pattern("#")
-                .pattern("%")
-                .input('%', TeadItems.HANDLE)
-                .input('#', TeadItems.STEEL_INGOT)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_AXE, 1)
-                .pattern("##")
-                .pattern("#%")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_HOE, 1)
-                .pattern("##")
-                .pattern(" %")
-                .pattern(" $")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_DOUBLE_AXE, 1)
-                .pattern("#%#")
-                .pattern("#%#")
-                .pattern(" $ ")
-                .input('%', Items.STICK)
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('$', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_HAMMER, 1)
-                .pattern(" ##")
-                .pattern(" ##")
-                .pattern("%  ")
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_SICKLE, 1)
-                .pattern(" # ")
-                .pattern("  #")
-                .pattern("%# ")
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_CLAYMORE, 1)
-                .pattern("  #")
-                .pattern("## ")
-                .pattern("%# ")
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('%', TeadItems.HANDLE)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_DAGGER, 1)
-                .pattern(" #")
-                .pattern("% ")
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('%', Items.STICK)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .offerTo(exporter);
+        // Netherite Tools
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HATCHET, RecipeCategory.TOOLS, TeadItems.NETHERITE_HATCHET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HAMMER, RecipeCategory.TOOLS, TeadItems.NETHERITE_HAMMER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_MOUNTAINEER_PICK, RecipeCategory.TOOLS, TeadItems.NETHERITE_MOUNTAINEER_PICK);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_MATTOCK, RecipeCategory.TOOLS, TeadItems.NETHERITE_MATTOCK);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_MACE, RecipeCategory.COMBAT, TeadItems.NETHERITE_MACE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_DAGGER, RecipeCategory.COMBAT, TeadItems.NETHERITE_DAGGER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HOLLOW_DAGGER, RecipeCategory.COMBAT, TeadItems.NETHERITE_HOLLOW_DAGGER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_RITE_DAGGER, RecipeCategory.COMBAT, TeadItems.NETHERITE_RITE_DAGGER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_CRESCENT_DAGGER, RecipeCategory.COMBAT, TeadItems.NETHERITE_CRESCENT_DAGGER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_TRUTHSEEKER, RecipeCategory.COMBAT, TeadItems.NETHERITE_TRUTHSEEKER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_TEMPEST_KNIFE, RecipeCategory.COMBAT, TeadItems.NETHERITE_TEMPEST_KNIFE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_CUTLASS, RecipeCategory.COMBAT, TeadItems.NETHERITE_CUTLASS);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_RAPIER, RecipeCategory.COMBAT, TeadItems.NETHERITE_RAPIER);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_KATANA, RecipeCategory.COMBAT, TeadItems.NETHERITE_KATANA);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HIGHLAND_AXE, RecipeCategory.TOOLS, TeadItems.NETHERITE_HIGHLAND_AXE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_DOUBLE_AXE, RecipeCategory.TOOLS, TeadItems.NETHERITE_DOUBLE_AXE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_DOUBLE_HIGHLAND_AXE, RecipeCategory.TOOLS, TeadItems.NETHERITE_DOUBLE_HIGHLAND_AXE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_SICKLE, RecipeCategory.TOOLS, TeadItems.NETHERITE_SICKLE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_SCYTHE, RecipeCategory.TOOLS, TeadItems.NETHERITE_SCYTHE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GREATSWORD, RecipeCategory.COMBAT, TeadItems.NETHERITE_GREATSWORD);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_LONGSWORD, RecipeCategory.COMBAT, TeadItems.NETHERITE_LONGSWORD);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_BROADSWORD, RecipeCategory.COMBAT, TeadItems.NETHERITE_BROADSWORD);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_CLAYMORE, RecipeCategory.COMBAT, TeadItems.NETHERITE_CLAYMORE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_SPEAR, RecipeCategory.COMBAT, TeadItems.NETHERITE_SPEAR);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_RANSEUR, RecipeCategory.COMBAT, TeadItems.NETHERITE_RANSEUR);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GLAIVE, RecipeCategory.COMBAT, TeadItems.NETHERITE_GLAIVE);
+
+        // Rose Netherite Tools
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HATCHET, TeadItems.DIAMOND_HATCHET, "hatchet", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HAMMER, TeadItems.DIAMOND_HAMMER, "hammer", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_MOUNTAINEER_PICK, TeadItems.DIAMOND_MOUNTAINEER_PICK, "mountaineer_pick", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_MATTOCK, TeadItems.DIAMOND_MATTOCK, "mattock", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_MACE, TeadItems.DIAMOND_MACE, "mace", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_DAGGER, TeadItems.DIAMOND_DAGGER, "dagger", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HOLLOW_DAGGER, TeadItems.DIAMOND_HOLLOW_DAGGER, "hollow_dagger", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_RITE_DAGGER, TeadItems.DIAMOND_RITE_DAGGER, "rite_dagger", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_CRESCENT_DAGGER, TeadItems.DIAMOND_CRESCENT_DAGGER, "crescent_dagger", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_TRUTHSEEKER, TeadItems.DIAMOND_TRUTHSEEKER, "truthseeker", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_TEMPEST_KNIFE, TeadItems.DIAMOND_TEMPEST_KNIFE, "tempest_knife", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_CUTLASS, TeadItems.DIAMOND_CUTLASS, "cutlass", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_RAPIER, TeadItems.DIAMOND_RAPIER, "rapier", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_KATANA, TeadItems.DIAMOND_KATANA, "katana", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HIGHLAND_AXE, TeadItems.DIAMOND_HIGHLAND_AXE, "highland_axe", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_DOUBLE_AXE, TeadItems.DIAMOND_DOUBLE_AXE, "double_axe", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_DOUBLE_HIGHLAND_AXE, TeadItems.DIAMOND_DOUBLE_HIGHLAND_AXE, "double_highland_axe", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_SICKLE, TeadItems.DIAMOND_SICKLE, "sickle", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_SCYTHE, TeadItems.DIAMOND_SCYTHE, "scythe", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GREATSWORD, TeadItems.DIAMOND_GREATSWORD, "greatsword", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_LONGSWORD, TeadItems.DIAMOND_LONGSWORD, "longsword", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_BROADSWORD, TeadItems.DIAMOND_BROADSWORD, "broadsword", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_CLAYMORE, TeadItems.DIAMOND_CLAYMORE, "claymore", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_SPEAR, TeadItems.DIAMOND_SPEAR, "spear", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_RANSEUR, TeadItems.DIAMOND_RANSEUR, "ranseur", exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GLAIVE, TeadItems.DIAMOND_GLAIVE, "glaive", exporter);
+
+        // White Netherite Tools
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HATCHET, TeadItems.DIAMOND_HATCHET, "hatchet", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HAMMER, TeadItems.DIAMOND_HAMMER, "hammer", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_MOUNTAINEER_PICK, TeadItems.DIAMOND_MOUNTAINEER_PICK, "mountaineer_pick", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_MATTOCK, TeadItems.DIAMOND_MATTOCK, "mattock", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_MACE, TeadItems.DIAMOND_MACE, "mace", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_DAGGER, TeadItems.DIAMOND_DAGGER, "dagger", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HOLLOW_DAGGER, TeadItems.DIAMOND_HOLLOW_DAGGER, "hollow_dagger", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_RITE_DAGGER, TeadItems.DIAMOND_RITE_DAGGER, "rite_dagger", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_CRESCENT_DAGGER, TeadItems.DIAMOND_CRESCENT_DAGGER, "crescent_dagger", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_TRUTHSEEKER, TeadItems.DIAMOND_TRUTHSEEKER, "truthseeker", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_TEMPEST_KNIFE, TeadItems.DIAMOND_TEMPEST_KNIFE, "tempest_knife", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_CUTLASS, TeadItems.DIAMOND_CUTLASS, "cutlass", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_RAPIER, TeadItems.DIAMOND_RAPIER, "rapier", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_KATANA, TeadItems.DIAMOND_KATANA, "katana", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HIGHLAND_AXE, TeadItems.DIAMOND_HIGHLAND_AXE, "highland_axe", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_DOUBLE_AXE, TeadItems.DIAMOND_DOUBLE_AXE, "double_axe", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_DOUBLE_HIGHLAND_AXE, TeadItems.DIAMOND_DOUBLE_HIGHLAND_AXE, "double_highland_axe", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_SICKLE, TeadItems.DIAMOND_SICKLE, "sickle", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_SCYTHE, TeadItems.DIAMOND_SCYTHE, "scythe", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GREATSWORD, TeadItems.DIAMOND_GREATSWORD, "greatsword", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_LONGSWORD, TeadItems.DIAMOND_LONGSWORD, "longsword", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_BROADSWORD, TeadItems.DIAMOND_BROADSWORD, "broadsword", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_CLAYMORE, TeadItems.DIAMOND_CLAYMORE, "claymore", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_SPEAR, TeadItems.DIAMOND_SPEAR, "spear", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_RANSEUR, TeadItems.DIAMOND_RANSEUR, "ranseur", exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GLAIVE, TeadItems.DIAMOND_GLAIVE, "glaive", exporter);
+
+        // Misc Armor
+        offerGarmentChestplateRecipe(TeadItems.GARMENT_CHESTPLATE, TeadTags.Items.METAL_INGOTS, exporter);
+        offerGarmentBootsRecipe(TeadItems.GARMENT_BOOTS, TeadTags.Items.METAL_NUGGETS, exporter);
+
+        // Gold Armor
+        offerChainmailHelmetRecipe(TeadItems.GOLD_CHAINMAIL_HELMET, TeadBlocks.GOLD_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.GOLD_CHAINMAIL_CHESTPLATE, TeadBlocks.GOLD_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.GOLD_CHAINMAIL_LEGGINGS, TeadBlocks.GOLD_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.GOLD_CHAINMAIL_BOOTS, TeadBlocks.GOLD_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.GOLD_GUARD_HELMET, Items.GOLD_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.GOLD_GUARD_CHESTPLATE, Items.GOLD_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.GOLD_WOOLEN_HELMET, Items.GOLD_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.GOLD_WOOLEN_CHESTPLATE, Items.GOLD_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.GOLD_WOOLEN_LEGGINGS, Items.GOLD_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.GOLD_WOOLEN_BOOTS, Items.GOLD_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.GOLD_THIEF_HELMET, Items.GOLD_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.GOLD_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.GOLD_REINFORCED_MAIL_HELMET, Items.GOLD_INGOT, TeadBlocks.GOLD_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.GOLD_REINFORCED_MAIL_CHESTPLATE, Items.GOLD_INGOT, TeadBlocks.GOLD_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.GOLD_STALWART_HELMET, Items.GOLDEN_HELMET, Items.GOLD_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.GOLD_STALWART_CHESTPLATE, Items.GOLDEN_CHESTPLATE, Items.GOLD_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.GOLD_SPANGENHELM_HELMET, Items.GOLDEN_HELMET, Items.GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.GOLD_HIGHLAND_HELMET, Items.GOLDEN_HELMET, Items.GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.GOLD_HIGHLAND_CHESTPLATE, Items.GOLDEN_CHESTPLATE, Items.GOLD_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.GOLD_ROYAL_HELMET, Items.GOLD_INGOT, Items.GOLD_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.GOLD_MERCENARY_HELMET, Items.GOLDEN_HELMET, Items.GOLD_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.GOLD_PLATE_HELMET, Items.GOLD_INGOT, Items.GOLD_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.GOLD_PLATE_CHESTPLATE, Items.GOLD_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.GOLD_PLATE_BOOTS, Items.GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.GOLD_GHOSTLY_HELMET, Items.GOLDEN_HELMET, Items.GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.GOLD_GHOSTLY_CHESTPLATE, Items.GOLDEN_CHESTPLATE, Items.GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.GOLD_GHOSTLY_BOOTS, Items.GOLDEN_BOOTS, Items.GOLD_INGOT, exporter);
+
+        // Lead Armor
+        offerHelmetRecipe(TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.LEAD_CHESTPLATE, TeadItems.LEAD_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.LEAD_LEGGINGS, TeadItems.LEAD_INGOT, exporter);
+        offerBootsRecipe(TeadItems.LEAD_BOOTS, TeadItems.LEAD_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.LEAD_CHAINMAIL_HELMET, TeadBlocks.LEAD_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.LEAD_CHAINMAIL_CHESTPLATE, TeadBlocks.LEAD_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.LEAD_CHAINMAIL_LEGGINGS, TeadBlocks.LEAD_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.LEAD_CHAINMAIL_BOOTS, TeadBlocks.LEAD_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.LEAD_GUARD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.LEAD_GUARD_CHESTPLATE, TeadItems.LEAD_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.LEAD_WOOLEN_HELMET, TeadItems.LEAD_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.LEAD_WOOLEN_CHESTPLATE, TeadItems.LEAD_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.LEAD_WOOLEN_LEGGINGS, TeadItems.LEAD_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.LEAD_WOOLEN_BOOTS, TeadItems.LEAD_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.LEAD_THIEF_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.LEAD_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.LEAD_REINFORCED_MAIL_HELMET, TeadItems.LEAD_INGOT, TeadBlocks.LEAD_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.LEAD_REINFORCED_MAIL_CHESTPLATE, TeadItems.LEAD_INGOT, TeadBlocks.LEAD_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.LEAD_STALWART_HELMET, TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.LEAD_STALWART_CHESTPLATE, TeadItems.LEAD_CHESTPLATE, TeadItems.LEAD_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.LEAD_SPANGENHELM_HELMET, TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.LEAD_HIGHLAND_HELMET, TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.LEAD_HIGHLAND_CHESTPLATE, TeadItems.LEAD_CHESTPLATE, TeadItems.LEAD_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.LEAD_ROYAL_HELMET, TeadItems.LEAD_INGOT, TeadItems.LEAD_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.LEAD_MERCENARY_HELMET, TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.LEAD_PLATE_HELMET, TeadItems.LEAD_INGOT, TeadItems.LEAD_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.LEAD_PLATE_CHESTPLATE, TeadItems.LEAD_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.LEAD_PLATE_BOOTS, TeadItems.LEAD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.LEAD_GHOSTLY_HELMET, TeadItems.LEAD_HELMET, TeadItems.LEAD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.LEAD_GHOSTLY_CHESTPLATE, TeadItems.LEAD_CHESTPLATE, TeadItems.LEAD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.LEAD_GHOSTLY_BOOTS, TeadItems.LEAD_BOOTS, TeadItems.LEAD_INGOT, exporter);
+
+        // Copper Armor
+        offerHelmetRecipe(TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.COPPER_CHESTPLATE, Items.COPPER_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.COPPER_LEGGINGS, Items.COPPER_INGOT, exporter);
+        offerBootsRecipe(TeadItems.COPPER_BOOTS, Items.COPPER_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.COPPER_CHAINMAIL_HELMET, TeadBlocks.COPPER_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.COPPER_CHAINMAIL_CHESTPLATE, TeadBlocks.COPPER_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.COPPER_CHAINMAIL_LEGGINGS, TeadBlocks.COPPER_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.COPPER_CHAINMAIL_BOOTS, TeadBlocks.COPPER_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.COPPER_GUARD_HELMET, Items.COPPER_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.COPPER_GUARD_CHESTPLATE, Items.COPPER_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.COPPER_WOOLEN_HELMET, TeadItems.COPPER_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.COPPER_WOOLEN_CHESTPLATE, TeadItems.COPPER_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.COPPER_WOOLEN_LEGGINGS, TeadItems.COPPER_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.COPPER_WOOLEN_BOOTS, TeadItems.COPPER_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.COPPER_THIEF_HELMET, Items.COPPER_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.COPPER_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.COPPER_REINFORCED_MAIL_HELMET, Items.COPPER_INGOT, TeadBlocks.COPPER_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.COPPER_REINFORCED_MAIL_CHESTPLATE, Items.COPPER_INGOT, TeadBlocks.COPPER_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.COPPER_STALWART_HELMET, TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.COPPER_STALWART_CHESTPLATE, TeadItems.COPPER_CHESTPLATE, Items.COPPER_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.COPPER_SPANGENHELM_HELMET, TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.COPPER_HIGHLAND_HELMET, TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.COPPER_HIGHLAND_CHESTPLATE, TeadItems.COPPER_CHESTPLATE, Items.COPPER_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.COPPER_ROYAL_HELMET, Items.COPPER_INGOT, TeadItems.COPPER_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.COPPER_MERCENARY_HELMET, TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.COPPER_PLATE_HELMET, Items.COPPER_INGOT, TeadItems.COPPER_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.COPPER_PLATE_CHESTPLATE, Items.COPPER_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.COPPER_PLATE_BOOTS, Items.COPPER_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.COPPER_GHOSTLY_HELMET, TeadItems.COPPER_HELMET, Items.COPPER_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.COPPER_GHOSTLY_CHESTPLATE, TeadItems.COPPER_CHESTPLATE, Items.COPPER_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.COPPER_GHOSTLY_BOOTS, TeadItems.COPPER_BOOTS, Items.COPPER_INGOT, exporter);
+
+        // Rose Gold Armor
+        offerHelmetRecipe(TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.ROSE_GOLD_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.ROSE_GOLD_LEGGINGS, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerBootsRecipe(TeadItems.ROSE_GOLD_BOOTS, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.ROSE_GOLD_CHAINMAIL_HELMET, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.ROSE_GOLD_CHAINMAIL_CHESTPLATE, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.ROSE_GOLD_CHAINMAIL_LEGGINGS, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.ROSE_GOLD_CHAINMAIL_BOOTS, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.ROSE_GOLD_GUARD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.ROSE_GOLD_GUARD_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.ROSE_GOLD_WOOLEN_HELMET, TeadItems.ROSE_GOLD_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.ROSE_GOLD_WOOLEN_CHESTPLATE, TeadItems.ROSE_GOLD_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.ROSE_GOLD_WOOLEN_LEGGINGS, TeadItems.ROSE_GOLD_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.ROSE_GOLD_WOOLEN_BOOTS, TeadItems.ROSE_GOLD_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.ROSE_GOLD_THIEF_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.ROSE_GOLD_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.ROSE_GOLD_REINFORCED_MAIL_HELMET, TeadItems.ROSE_GOLD_INGOT, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.ROSE_GOLD_REINFORCED_MAIL_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, TeadBlocks.ROSE_GOLD_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.ROSE_GOLD_STALWART_HELMET, TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.ROSE_GOLD_STALWART_CHESTPLATE, TeadItems.ROSE_GOLD_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.ROSE_GOLD_SPANGENHELM_HELMET, TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.ROSE_GOLD_HIGHLAND_HELMET, TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.ROSE_GOLD_HIGHLAND_CHESTPLATE, TeadItems.ROSE_GOLD_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.ROSE_GOLD_ROYAL_HELMET, TeadItems.ROSE_GOLD_INGOT, TeadItems.ROSE_GOLD_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.ROSE_GOLD_MERCENARY_HELMET, TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.ROSE_GOLD_PLATE_HELMET, TeadItems.ROSE_GOLD_INGOT, TeadItems.ROSE_GOLD_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.ROSE_GOLD_PLATE_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.ROSE_GOLD_PLATE_BOOTS, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.ROSE_GOLD_GHOSTLY_HELMET, TeadItems.ROSE_GOLD_HELMET, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.ROSE_GOLD_GHOSTLY_CHESTPLATE, TeadItems.ROSE_GOLD_CHESTPLATE, TeadItems.ROSE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.ROSE_GOLD_GHOSTLY_BOOTS, TeadItems.ROSE_GOLD_BOOTS, TeadItems.ROSE_GOLD_INGOT, exporter);
+
+        // White Gold Armor
+        offerHelmetRecipe(TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.WHITE_GOLD_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.WHITE_GOLD_LEGGINGS, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerBootsRecipe(TeadItems.WHITE_GOLD_BOOTS, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.WHITE_GOLD_CHAINMAIL_HELMET, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.WHITE_GOLD_CHAINMAIL_CHESTPLATE, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.WHITE_GOLD_CHAINMAIL_LEGGINGS, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.WHITE_GOLD_CHAINMAIL_BOOTS, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.WHITE_GOLD_GUARD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.WHITE_GOLD_GUARD_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.WHITE_GOLD_WOOLEN_HELMET, TeadItems.WHITE_GOLD_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.WHITE_GOLD_WOOLEN_CHESTPLATE, TeadItems.WHITE_GOLD_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.WHITE_GOLD_WOOLEN_LEGGINGS, TeadItems.WHITE_GOLD_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.WHITE_GOLD_WOOLEN_BOOTS, TeadItems.WHITE_GOLD_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.WHITE_GOLD_THIEF_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.WHITE_GOLD_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.WHITE_GOLD_REINFORCED_MAIL_HELMET, TeadItems.WHITE_GOLD_INGOT, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.WHITE_GOLD_REINFORCED_MAIL_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, TeadBlocks.WHITE_GOLD_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.WHITE_GOLD_STALWART_HELMET, TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.WHITE_GOLD_STALWART_CHESTPLATE, TeadItems.WHITE_GOLD_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.WHITE_GOLD_SPANGENHELM_HELMET, TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.WHITE_GOLD_HIGHLAND_HELMET, TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.WHITE_GOLD_HIGHLAND_CHESTPLATE, TeadItems.WHITE_GOLD_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.WHITE_GOLD_ROYAL_HELMET, TeadItems.WHITE_GOLD_INGOT, TeadItems.WHITE_GOLD_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.WHITE_GOLD_MERCENARY_HELMET, TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.WHITE_GOLD_PLATE_HELMET, TeadItems.WHITE_GOLD_INGOT, TeadItems.WHITE_GOLD_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.WHITE_GOLD_PLATE_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.WHITE_GOLD_PLATE_BOOTS, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.WHITE_GOLD_GHOSTLY_HELMET, TeadItems.WHITE_GOLD_HELMET, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.WHITE_GOLD_GHOSTLY_CHESTPLATE, TeadItems.WHITE_GOLD_CHESTPLATE, TeadItems.WHITE_GOLD_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.WHITE_GOLD_GHOSTLY_BOOTS, TeadItems.WHITE_GOLD_BOOTS, TeadItems.WHITE_GOLD_INGOT, exporter);
+
+        // Iron Armor
+        offerGuardHelmetRecipe(TeadItems.IRON_GUARD_HELMET, Items.IRON_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.IRON_GUARD_CHESTPLATE, Items.IRON_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.IRON_WOOLEN_HELMET, Items.IRON_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.IRON_WOOLEN_CHESTPLATE, Items.IRON_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.IRON_WOOLEN_LEGGINGS, Items.IRON_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.IRON_WOOLEN_BOOTS, Items.IRON_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.IRON_THIEF_HELMET, Items.IRON_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.IRON_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.IRON_REINFORCED_MAIL_HELMET, Items.IRON_INGOT, Blocks.CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.IRON_REINFORCED_MAIL_CHESTPLATE, Items.IRON_INGOT, Blocks.CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.IRON_STALWART_HELMET, Items.IRON_HELMET, Items.IRON_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.IRON_STALWART_CHESTPLATE, Items.IRON_CHESTPLATE, Items.IRON_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.IRON_SPANGENHELM_HELMET, Items.IRON_HELMET, Items.IRON_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.IRON_HIGHLAND_HELMET, Items.IRON_HELMET, Items.IRON_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.IRON_HIGHLAND_CHESTPLATE, Items.IRON_CHESTPLATE, Items.IRON_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.IRON_ROYAL_HELMET, Items.IRON_INGOT, Items.IRON_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.IRON_MERCENARY_HELMET, Items.IRON_HELMET, Items.IRON_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.IRON_PLATE_HELMET, Items.IRON_INGOT, Items.IRON_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.IRON_PLATE_CHESTPLATE, Items.IRON_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.IRON_PLATE_BOOTS, Items.IRON_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.IRON_GHOSTLY_HELMET, Items.IRON_HELMET, Items.IRON_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.IRON_GHOSTLY_CHESTPLATE, Items.IRON_CHESTPLATE, Items.IRON_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.IRON_GHOSTLY_BOOTS, Items.IRON_BOOTS, Items.IRON_INGOT, exporter);
+
+        // Brass Armor
+        offerHelmetRecipe(TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.BRASS_CHESTPLATE, TeadItems.BRASS_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.BRASS_LEGGINGS, TeadItems.BRASS_INGOT, exporter);
+        offerBootsRecipe(TeadItems.BRASS_BOOTS, TeadItems.BRASS_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.BRASS_CHAINMAIL_HELMET, TeadBlocks.BRASS_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.BRASS_CHAINMAIL_CHESTPLATE, TeadBlocks.BRASS_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.BRASS_CHAINMAIL_LEGGINGS, TeadBlocks.BRASS_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.BRASS_CHAINMAIL_BOOTS, TeadBlocks.BRASS_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.BRASS_GUARD_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.BRASS_GUARD_CHESTPLATE, TeadItems.BRASS_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.BRASS_WOOLEN_HELMET, TeadItems.BRASS_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.BRASS_WOOLEN_CHESTPLATE, TeadItems.BRASS_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.BRASS_WOOLEN_LEGGINGS, TeadItems.BRASS_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.BRASS_WOOLEN_BOOTS, TeadItems.BRASS_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.BRASS_THIEF_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.BRASS_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.BRASS_REINFORCED_MAIL_HELMET, TeadItems.BRASS_INGOT, TeadBlocks.BRASS_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.BRASS_REINFORCED_MAIL_CHESTPLATE, TeadItems.BRASS_INGOT, TeadBlocks.BRASS_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.BRASS_STALWART_HELMET, TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.BRASS_STALWART_CHESTPLATE, TeadItems.BRASS_CHESTPLATE, TeadItems.BRASS_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.BRASS_SPANGENHELM_HELMET, TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.BRASS_HIGHLAND_HELMET, TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.BRASS_HIGHLAND_CHESTPLATE, TeadItems.BRASS_CHESTPLATE, TeadItems.BRASS_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.BRASS_ROYAL_HELMET, TeadItems.BRASS_INGOT, TeadItems.BRASS_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.BRASS_MERCENARY_HELMET, TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.BRASS_PLATE_HELMET, TeadItems.BRASS_INGOT, TeadItems.BRASS_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.BRASS_PLATE_CHESTPLATE, TeadItems.BRASS_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.BRASS_PLATE_BOOTS, TeadItems.BRASS_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRASS_GHOSTLY_HELMET, TeadItems.BRASS_HELMET, TeadItems.BRASS_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRASS_GHOSTLY_CHESTPLATE, TeadItems.BRASS_CHESTPLATE, TeadItems.BRASS_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRASS_GHOSTLY_BOOTS, TeadItems.BRASS_BOOTS, TeadItems.BRASS_INGOT, exporter);
+
+        // Bronze Armor
+        offerHelmetRecipe(TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.BRONZE_CHESTPLATE, TeadItems.BRONZE_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.BRONZE_LEGGINGS, TeadItems.BRONZE_INGOT, exporter);
+        offerBootsRecipe(TeadItems.BRONZE_BOOTS, TeadItems.BRONZE_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.BRONZE_CHAINMAIL_HELMET, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.BRONZE_CHAINMAIL_CHESTPLATE, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.BRONZE_CHAINMAIL_LEGGINGS, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.BRONZE_CHAINMAIL_BOOTS, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.BRONZE_GUARD_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.BRONZE_GUARD_CHESTPLATE, TeadItems.BRONZE_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.BRONZE_WOOLEN_HELMET, TeadItems.BRONZE_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.BRONZE_WOOLEN_CHESTPLATE, TeadItems.BRONZE_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.BRONZE_WOOLEN_LEGGINGS, TeadItems.BRONZE_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.BRONZE_WOOLEN_BOOTS, TeadItems.BRONZE_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.BRONZE_THIEF_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.BRONZE_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.BRONZE_REINFORCED_MAIL_HELMET, TeadItems.BRONZE_INGOT, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.BRONZE_REINFORCED_MAIL_CHESTPLATE, TeadItems.BRONZE_INGOT, TeadBlocks.BRONZE_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.BRONZE_STALWART_HELMET, TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.BRONZE_STALWART_CHESTPLATE, TeadItems.BRONZE_CHESTPLATE, TeadItems.BRONZE_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.BRONZE_SPANGENHELM_HELMET, TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.BRONZE_HIGHLAND_HELMET, TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.BRONZE_HIGHLAND_CHESTPLATE, TeadItems.BRONZE_CHESTPLATE, TeadItems.BRONZE_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.BRONZE_ROYAL_HELMET, TeadItems.BRONZE_INGOT, TeadItems.BRONZE_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.BRONZE_MERCENARY_HELMET, TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.BRONZE_PLATE_HELMET, TeadItems.BRONZE_INGOT, TeadItems.BRONZE_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.BRONZE_PLATE_CHESTPLATE, TeadItems.BRONZE_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.BRONZE_PLATE_BOOTS, TeadItems.BRONZE_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRONZE_GHOSTLY_HELMET, TeadItems.BRONZE_HELMET, TeadItems.BRONZE_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRONZE_GHOSTLY_CHESTPLATE, TeadItems.BRONZE_CHESTPLATE, TeadItems.BRONZE_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.BRONZE_GHOSTLY_BOOTS, TeadItems.BRONZE_BOOTS, TeadItems.BRONZE_INGOT, exporter);
+
+        // Steel Armor
+        offerHelmetRecipe(TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerChestplateRecipe(TeadItems.STEEL_CHESTPLATE, TeadItems.STEEL_INGOT, exporter);
+        offerLeggingsRecipe(TeadItems.STEEL_LEGGINGS, TeadItems.STEEL_INGOT, exporter);
+        offerBootsRecipe(TeadItems.STEEL_BOOTS, TeadItems.STEEL_INGOT, exporter);
+        offerChainmailHelmetRecipe(TeadItems.STEEL_CHAINMAIL_HELMET, TeadBlocks.STEEL_CHAIN, exporter);
+        offerChainmailChestplateRecipe(TeadItems.STEEL_CHAINMAIL_CHESTPLATE, TeadBlocks.STEEL_CHAIN, exporter);
+        offerChainmailLeggingsRecipe(TeadItems.STEEL_CHAINMAIL_LEGGINGS, TeadBlocks.STEEL_CHAIN, exporter);
+        offerChainmailBootsRecipe(TeadItems.STEEL_CHAINMAIL_BOOTS, TeadBlocks.STEEL_CHAIN, exporter);
+        offerGuardHelmetRecipe(TeadItems.STEEL_GUARD_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerGuardChestplateRecipe(TeadItems.STEEL_GUARD_CHESTPLATE, TeadItems.STEEL_INGOT, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.STEEL_WOOLEN_HELMET, TeadItems.STEEL_NUGGET, exporter);
+        offerWoolenChestplateRecipe(TeadItems.STEEL_WOOLEN_CHESTPLATE, TeadItems.STEEL_NUGGET, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.STEEL_WOOLEN_LEGGINGS, TeadItems.STEEL_NUGGET, exporter);
+        offerWoolenBootsRecipe(TeadItems.STEEL_WOOLEN_BOOTS, TeadItems.STEEL_NUGGET, exporter);
+        offerThiefHelmetRecipe(TeadItems.STEEL_THIEF_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerThiefChestplateRecipe(TeadItems.STEEL_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.STEEL_REINFORCED_MAIL_HELMET, TeadItems.STEEL_INGOT, TeadBlocks.STEEL_CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.STEEL_REINFORCED_MAIL_CHESTPLATE, TeadItems.STEEL_INGOT, TeadBlocks.STEEL_CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.STEEL_STALWART_HELMET, TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerStalwartRecipe(TeadItems.STEEL_STALWART_CHESTPLATE, TeadItems.STEEL_CHESTPLATE, TeadItems.STEEL_INGOT, exporter);
+        offerSpangenhelmRecipe(TeadItems.STEEL_SPANGENHELM_HELMET, TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.STEEL_HIGHLAND_HELMET, TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerHighlandRecipe(TeadItems.STEEL_HIGHLAND_CHESTPLATE, TeadItems.STEEL_CHESTPLATE, TeadItems.STEEL_INGOT, exporter);
+        offerRoyalHelmetRecipe(TeadItems.STEEL_ROYAL_HELMET, TeadItems.STEEL_INGOT, TeadItems.STEEL_NUGGET, exporter);
+        offerMercenaryRecipe(TeadItems.STEEL_MERCENARY_HELMET, TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerPlateHelmetRecipe(TeadItems.STEEL_PLATE_HELMET, TeadItems.STEEL_INGOT, TeadItems.STEEL_NUGGET, exporter);
+        offerPlateChestplateRecipe(TeadItems.STEEL_PLATE_CHESTPLATE, TeadItems.STEEL_INGOT, exporter);
+        offerPlateBootsRecipe(TeadItems.STEEL_PLATE_BOOTS, TeadItems.STEEL_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.STEEL_GHOSTLY_HELMET, TeadItems.STEEL_HELMET, TeadItems.STEEL_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.STEEL_GHOSTLY_CHESTPLATE, TeadItems.STEEL_CHESTPLATE, TeadItems.STEEL_INGOT, exporter);
+        offerGhostlyRecipe(TeadItems.STEEL_GHOSTLY_BOOTS, TeadItems.STEEL_BOOTS, TeadItems.STEEL_INGOT, exporter);
+
+        // Diamond Armor
+        offerGuardHelmetRecipe(TeadItems.DIAMOND_GUARD_HELMET, Items.DIAMOND, exporter);
+        offerGuardChestplateRecipe(TeadItems.DIAMOND_GUARD_CHESTPLATE, Items.DIAMOND, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenHelmetRecipe(TeadItems.DIAMOND_WOOLEN_HELMET, TeadItems.DIAMOND_CHIP, exporter);
+        offerWoolenChestplateRecipe(TeadItems.DIAMOND_WOOLEN_CHESTPLATE, TeadItems.DIAMOND_CHIP, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerWoolenLeggingsRecipe(TeadItems.DIAMOND_WOOLEN_LEGGINGS, TeadItems.DIAMOND_CHIP, exporter);
+        offerWoolenBootsRecipe(TeadItems.DIAMOND_WOOLEN_BOOTS, TeadItems.DIAMOND_CHIP, exporter);
+        offerThiefHelmetRecipe(TeadItems.DIAMOND_THIEF_HELMET, Items.DIAMOND, exporter);
+        offerThiefChestplateRecipe(TeadItems.DIAMOND_THIEF_CHESTPLATE, TeadItems.GARMENT_CHESTPLATE, exporter);
+        offerReinforcedMailHelmetRecipe(TeadItems.DIAMOND_REINFORCED_MAIL_HELMET, Items.DIAMOND, Blocks.CHAIN, exporter);
+        offerReinforcedMailChestplateRecipe(TeadItems.DIAMOND_REINFORCED_MAIL_CHESTPLATE, Items.DIAMOND, Blocks.CHAIN, exporter);
+        offerStalwartRecipe(TeadItems.DIAMOND_STALWART_HELMET, Items.DIAMOND_HELMET, Items.DIAMOND, exporter);
+        offerStalwartRecipe(TeadItems.DIAMOND_STALWART_CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.DIAMOND, exporter);
+        offerSpangenhelmRecipe(TeadItems.DIAMOND_SPANGENHELM_HELMET, Items.DIAMOND_HELMET, Items.DIAMOND, exporter);
+        offerHighlandRecipe(TeadItems.DIAMOND_HIGHLAND_HELMET, Items.DIAMOND_HELMET, Items.DIAMOND, exporter);
+        offerHighlandRecipe(TeadItems.DIAMOND_HIGHLAND_CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.DIAMOND, exporter);
+        offerRoyalHelmetRecipe(TeadItems.DIAMOND_ROYAL_HELMET, Items.DIAMOND, TeadItems.DIAMOND_CHIP, exporter);
+        offerMercenaryRecipe(TeadItems.DIAMOND_MERCENARY_HELMET, Items.DIAMOND_HELMET, Items.DIAMOND, exporter);
+        offerPlateHelmetRecipe(TeadItems.DIAMOND_PLATE_HELMET, Items.DIAMOND, TeadItems.DIAMOND_CHIP, exporter);
+        offerPlateChestplateRecipe(TeadItems.DIAMOND_PLATE_CHESTPLATE, Items.DIAMOND, exporter);
+        offerPlateBootsRecipe(TeadItems.DIAMOND_PLATE_BOOTS, Items.DIAMOND, exporter);
+        offerGhostlyRecipe(TeadItems.DIAMOND_GHOSTLY_HELMET, Items.DIAMOND_HELMET, Items.DIAMOND, exporter);
+        offerGhostlyRecipe(TeadItems.DIAMOND_GHOSTLY_CHESTPLATE, Items.DIAMOND_CHESTPLATE, Items.DIAMOND, exporter);
+        offerGhostlyRecipe(TeadItems.DIAMOND_GHOSTLY_BOOTS, Items.DIAMOND_BOOTS, Items.DIAMOND, exporter);
+
+        // Netherite Armor
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GUARD_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_GUARD_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GUARD_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_GUARD_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_WOOLEN_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_WOOLEN_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_WOOLEN_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_WOOLEN_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_WOOLEN_LEGGINGS, RecipeCategory.COMBAT, TeadItems.NETHERITE_WOOLEN_LEGGINGS);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_WOOLEN_BOOTS, RecipeCategory.COMBAT, TeadItems.NETHERITE_WOOLEN_BOOTS);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_THIEF_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_THIEF_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_THIEF_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_THIEF_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_REINFORCED_MAIL_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_REINFORCED_MAIL_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_REINFORCED_MAIL_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_REINFORCED_MAIL_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_STALWART_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_STALWART_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_STALWART_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_STALWART_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_SPANGENHELM_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_SPANGENHELM_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HIGHLAND_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_HIGHLAND_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HIGHLAND_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_HIGHLAND_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_ROYAL_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_ROYAL_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_MERCENARY_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_MERCENARY_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_PLATE_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_PLATE_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_PLATE_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_PLATE_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_PLATE_BOOTS, RecipeCategory.COMBAT, TeadItems.NETHERITE_PLATE_BOOTS);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GHOSTLY_HELMET, RecipeCategory.COMBAT, TeadItems.NETHERITE_GHOSTLY_HELMET);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GHOSTLY_CHESTPLATE, RecipeCategory.COMBAT, TeadItems.NETHERITE_GHOSTLY_CHESTPLATE);
+        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_GHOSTLY_BOOTS, RecipeCategory.COMBAT, TeadItems.NETHERITE_GHOSTLY_BOOTS);
+
+        // Rose Netherite Armor
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HELMET, Items.DIAMOND_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_CHESTPLATE, Items.DIAMOND_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_LEGGINGS, Items.DIAMOND_LEGGINGS, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_BOOTS, Items.DIAMOND_BOOTS, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GUARD_HELMET, TeadItems.DIAMOND_GUARD_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GUARD_CHESTPLATE, TeadItems.DIAMOND_GUARD_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_WOOLEN_HELMET, TeadItems.DIAMOND_WOOLEN_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_WOOLEN_CHESTPLATE, TeadItems.DIAMOND_WOOLEN_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_WOOLEN_LEGGINGS, TeadItems.DIAMOND_WOOLEN_LEGGINGS, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_WOOLEN_BOOTS, TeadItems.DIAMOND_WOOLEN_BOOTS, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_THIEF_HELMET, TeadItems.DIAMOND_THIEF_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_THIEF_CHESTPLATE, TeadItems.DIAMOND_THIEF_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_REINFORCED_MAIL_HELMET, TeadItems.DIAMOND_REINFORCED_MAIL_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_REINFORCED_MAIL_CHESTPLATE, TeadItems.DIAMOND_REINFORCED_MAIL_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_STALWART_HELMET, TeadItems.DIAMOND_STALWART_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_STALWART_CHESTPLATE, TeadItems.DIAMOND_STALWART_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_SPANGENHELM_HELMET, TeadItems.DIAMOND_SPANGENHELM_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HIGHLAND_HELMET, TeadItems.DIAMOND_HIGHLAND_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_HIGHLAND_CHESTPLATE, TeadItems.DIAMOND_HIGHLAND_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_ROYAL_HELMET, TeadItems.DIAMOND_ROYAL_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_MERCENARY_HELMET, TeadItems.DIAMOND_MERCENARY_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_PLATE_HELMET, TeadItems.DIAMOND_PLATE_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_PLATE_CHESTPLATE, TeadItems.DIAMOND_PLATE_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_PLATE_BOOTS, TeadItems.DIAMOND_PLATE_BOOTS, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GHOSTLY_HELMET, TeadItems.DIAMOND_GHOSTLY_HELMET, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GHOSTLY_CHESTPLATE, TeadItems.DIAMOND_GHOSTLY_CHESTPLATE, exporter);
+        offerRoseNetheriteUpgrade(TeadItems.ROSE_NETHERITE_GHOSTLY_BOOTS, TeadItems.DIAMOND_GHOSTLY_BOOTS, exporter);
+
+        // White Netherite Armor
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HELMET, Items.DIAMOND_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_CHESTPLATE, Items.DIAMOND_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_LEGGINGS, Items.DIAMOND_LEGGINGS, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_BOOTS, Items.DIAMOND_BOOTS, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GUARD_HELMET, TeadItems.DIAMOND_GUARD_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GUARD_CHESTPLATE, TeadItems.DIAMOND_GUARD_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_WOOLEN_HELMET, TeadItems.DIAMOND_WOOLEN_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_WOOLEN_CHESTPLATE, TeadItems.DIAMOND_WOOLEN_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_WOOLEN_LEGGINGS, TeadItems.DIAMOND_WOOLEN_LEGGINGS, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_WOOLEN_BOOTS, TeadItems.DIAMOND_WOOLEN_BOOTS, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_THIEF_HELMET, TeadItems.DIAMOND_THIEF_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_THIEF_CHESTPLATE, TeadItems.DIAMOND_THIEF_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_REINFORCED_MAIL_HELMET, TeadItems.DIAMOND_REINFORCED_MAIL_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_REINFORCED_MAIL_CHESTPLATE, TeadItems.DIAMOND_REINFORCED_MAIL_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_STALWART_HELMET, TeadItems.DIAMOND_STALWART_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_STALWART_CHESTPLATE, TeadItems.DIAMOND_STALWART_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_SPANGENHELM_HELMET, TeadItems.DIAMOND_SPANGENHELM_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HIGHLAND_HELMET, TeadItems.DIAMOND_HIGHLAND_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_HIGHLAND_CHESTPLATE, TeadItems.DIAMOND_HIGHLAND_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_ROYAL_HELMET, TeadItems.DIAMOND_ROYAL_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_MERCENARY_HELMET, TeadItems.DIAMOND_MERCENARY_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_PLATE_HELMET, TeadItems.DIAMOND_PLATE_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_PLATE_CHESTPLATE, TeadItems.DIAMOND_PLATE_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_PLATE_BOOTS, TeadItems.DIAMOND_PLATE_BOOTS, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GHOSTLY_HELMET, TeadItems.DIAMOND_GHOSTLY_HELMET, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GHOSTLY_CHESTPLATE, TeadItems.DIAMOND_GHOSTLY_CHESTPLATE, exporter);
+        offerWhiteNetheriteUpgrade(TeadItems.WHITE_NETHERITE_GHOSTLY_BOOTS, TeadItems.DIAMOND_GHOSTLY_BOOTS, exporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.RUBY_POWER_BOW, 1)
                 .pattern(" #$")
                 .pattern("# $")
@@ -1393,7 +1562,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern("$& ")
                 .pattern("#%#")
                 .pattern(" # ")
-                .input('#', TeadItems.STEEL_INGOT)
+                .input('#', TeadTags.Items.METAL_INGOTS)
                 .input('%', Items.TNT)
                 .input('&', Items.REDSTONE)
                 .input('$', Items.FLINT_AND_STEEL)
@@ -1405,26 +1574,38 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .pattern(" # ")
                 .pattern("# #")
                 .pattern(" # ")
-                .input('#', Items.IRON_INGOT)
-                .criterion(hasItem(Items.IRON_INGOT), conditionsFromItem(Items.IRON_INGOT))
+                .input('#', TeadTags.Items.METAL_INGOTS)
+                .criterion("has_" + TeadTags.Items.METAL_INGOTS.id().getPath(), conditionsFromTag(TeadTags.Items.METAL_INGOTS))
                 .group("shuriken")
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_0"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.SHURIKEN, 6)
-                .pattern(" # ")
-                .pattern("# #")
-                .pattern(" # ")
-                .input('#', TeadItems.LEAD_INGOT)
-                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
-                .group("shuriken")
-                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken_1"));
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.STEEL_CHAIN, 1)
+                .offerTo(exporter, new Identifier(Tead.MOD_ID, "shuriken"));
+
+        // Chains
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.GOLD_CHAIN, 1)
                 .pattern("%")
                 .pattern("#")
                 .pattern("%")
-                .input('#', TeadItems.STEEL_INGOT)
-                .input('%', TeadItems.STEEL_NUGGET)
-                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
-                .criterion(hasItem(TeadItems.STEEL_NUGGET), conditionsFromItem(TeadItems.STEEL_NUGGET))
+                .input('#', Items.GOLD_INGOT)
+                .input('%', Items.GOLD_NUGGET)
+                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
+                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.LEAD_CHAIN, 1)
+                .pattern("%")
+                .pattern("#")
+                .pattern("%")
+                .input('#', TeadItems.LEAD_INGOT)
+                .input('%', TeadItems.LEAD_NUGGET)
+                .criterion(hasItem(TeadItems.LEAD_INGOT), conditionsFromItem(TeadItems.LEAD_INGOT))
+                .criterion(hasItem(TeadItems.LEAD_NUGGET), conditionsFromItem(TeadItems.LEAD_NUGGET))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.COPPER_CHAIN, 1)
+                .pattern("%")
+                .pattern("#")
+                .pattern("%")
+                .input('#', Items.COPPER_INGOT)
+                .input('%', TeadItems.COPPER_NUGGET)
+                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
+                .criterion(hasItem(TeadItems.COPPER_NUGGET), conditionsFromItem(TeadItems.COPPER_NUGGET))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.ROSE_GOLD_CHAIN, 1)
                 .pattern("%")
@@ -1435,6 +1616,24 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(TeadItems.ROSE_GOLD_INGOT), conditionsFromItem(TeadItems.ROSE_GOLD_INGOT))
                 .criterion(hasItem(TeadItems.ROSE_GOLD_NUGGET), conditionsFromItem(TeadItems.ROSE_GOLD_NUGGET))
                 .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.WHITE_GOLD_CHAIN, 1)
+                .pattern("%")
+                .pattern("#")
+                .pattern("%")
+                .input('#', TeadItems.WHITE_GOLD_INGOT)
+                .input('%', TeadItems.WHITE_GOLD_NUGGET)
+                .criterion(hasItem(TeadItems.WHITE_GOLD_INGOT), conditionsFromItem(TeadItems.WHITE_GOLD_INGOT))
+                .criterion(hasItem(TeadItems.WHITE_GOLD_NUGGET), conditionsFromItem(TeadItems.WHITE_GOLD_NUGGET))
+                .offerTo(exporter);
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.BRASS_CHAIN, 1)
+                .pattern("%")
+                .pattern("#")
+                .pattern("%")
+                .input('#', TeadItems.BRASS_INGOT)
+                .input('%', TeadItems.BRASS_NUGGET)
+                .criterion(hasItem(TeadItems.BRASS_INGOT), conditionsFromItem(TeadItems.BRASS_INGOT))
+                .criterion(hasItem(TeadItems.BRASS_NUGGET), conditionsFromItem(TeadItems.BRASS_NUGGET))
+                .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.BRONZE_CHAIN, 1)
                 .pattern("%")
                 .pattern("#")
@@ -1444,15 +1643,17 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
                 .criterion(hasItem(TeadItems.BRONZE_NUGGET), conditionsFromItem(TeadItems.BRONZE_NUGGET))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.GOLD_CHAIN, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadBlocks.STEEL_CHAIN, 1)
                 .pattern("%")
                 .pattern("#")
                 .pattern("%")
-                .input('#', Items.GOLD_INGOT)
-                .input('%', Items.GOLD_NUGGET)
-                .criterion(hasItem(Items.GOLD_INGOT), conditionsFromItem(Items.GOLD_INGOT))
-                .criterion(hasItem(Items.GOLD_NUGGET), conditionsFromItem(Items.GOLD_NUGGET))
+                .input('#', TeadItems.STEEL_INGOT)
+                .input('%', TeadItems.STEEL_NUGGET)
+                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
+                .criterion(hasItem(TeadItems.STEEL_NUGGET), conditionsFromItem(TeadItems.STEEL_NUGGET))
                 .offerTo(exporter);
+
+        // Misc Armor
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.CHAINMAIL_BOOTS, 1)
                 .pattern("# #")
                 .pattern("# #")
@@ -1479,84 +1680,33 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input('#', Items.CHAIN)
                 .criterion(hasItem(Items.CHAIN), conditionsFromItem(Items.CHAIN))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_CHAINMAIL_BOOTS, 1)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_HELMET, 1)
+                .pattern("%#%")
                 .pattern("# #")
-                .pattern("# #")
-                .input('#',TeadBlocks.STEEL_CHAIN)
-                .criterion(hasItem(TeadBlocks.STEEL_CHAIN), conditionsFromItem(TeadBlocks.STEEL_CHAIN))
+                .input('#', Items.LEATHER)
+                .input('%', TeadItems.FABRIC)
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_CHAINMAIL_HELMET, 1)
-                .pattern("###")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_CHESTPLATE, 1)
                 .pattern("# #")
-                .input('#', TeadBlocks.STEEL_CHAIN)
-                .criterion(hasItem(TeadBlocks.STEEL_CHAIN), conditionsFromItem(TeadBlocks.STEEL_CHAIN))
+                .pattern("%#%")
+                .pattern("%#%")
+                .input('#', Items.LEATHER)
+                .input('%', TeadItems.FABRIC)
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_CHAINMAIL_LEGGINGS, 1)
-                .pattern("###")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_BOOTS, 1)
+                .pattern("% %")
                 .pattern("# #")
-                .pattern("# #")
-                .input('#', TeadBlocks.STEEL_CHAIN)
-                .criterion(hasItem(TeadBlocks.STEEL_CHAIN), conditionsFromItem(TeadBlocks.STEEL_CHAIN))
+                .input('#', Items.LEATHER)
+                .input('%', TeadItems.FABRIC)
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.STEEL_CHAINMAIL_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("###")
-                .pattern("###")
-                .input('#', TeadBlocks.STEEL_CHAIN)
-                .criterion(hasItem(TeadBlocks.STEEL_CHAIN), conditionsFromItem(TeadBlocks.STEEL_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_CHAINMAIL_BOOTS, 1)
-                .pattern("# #")
-                .pattern("# #")
-                .input('#',TeadBlocks.ROSE_GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.ROSE_GOLD_CHAIN), conditionsFromItem(TeadBlocks.ROSE_GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_CHAINMAIL_HELMET, 1)
-                .pattern("###")
-                .pattern("# #")
-                .input('#', TeadBlocks.ROSE_GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.ROSE_GOLD_CHAIN), conditionsFromItem(TeadBlocks.ROSE_GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_CHAINMAIL_LEGGINGS, 1)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("# #")
-                .input('#', TeadBlocks.ROSE_GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.ROSE_GOLD_CHAIN), conditionsFromItem(TeadBlocks.ROSE_GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROSE_GOLD_CHAINMAIL_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("###")
-                .pattern("###")
-                .input('#', TeadBlocks.ROSE_GOLD_CHAIN)
-                .criterion(hasItem(TeadBlocks.ROSE_GOLD_CHAIN), conditionsFromItem(TeadBlocks.ROSE_GOLD_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_CHAINMAIL_BOOTS, 1)
-                .pattern("# #")
-                .pattern("# #")
-                .input('#',TeadBlocks.BRONZE_CHAIN)
-                .criterion(hasItem(TeadBlocks.BRONZE_CHAIN), conditionsFromItem(TeadBlocks.BRONZE_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_CHAINMAIL_HELMET, 1)
-                .pattern("###")
-                .pattern("# #")
-                .input('#', TeadBlocks.BRONZE_CHAIN)
-                .criterion(hasItem(TeadBlocks.BRONZE_CHAIN), conditionsFromItem(TeadBlocks.BRONZE_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_CHAINMAIL_LEGGINGS, 1)
-                .pattern("###")
-                .pattern("# #")
-                .pattern("# #")
-                .input('#', TeadBlocks.BRONZE_CHAIN)
-                .criterion(hasItem(TeadBlocks.BRONZE_CHAIN), conditionsFromItem(TeadBlocks.BRONZE_CHAIN))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.BRONZE_CHAINMAIL_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("###")
-                .pattern("###")
-                .input('#', TeadBlocks.BRONZE_CHAIN)
-                .criterion(hasItem(TeadBlocks.BRONZE_CHAIN), conditionsFromItem(TeadBlocks.BRONZE_CHAIN))
-                .offerTo(exporter);
+
+        // Blocks
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, TeadBlocks.DARK_BRICKS, 1)
                 .pattern("##")
                 .pattern("##")
@@ -1614,45 +1764,6 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .input(Blocks.MUD)
                 .input(Blocks.COBBLESTONE)
                 .criterion(hasItem(Blocks.MUD), conditionsFromItem(Blocks.MUD))
-                .offerTo(exporter);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_STALWART_HELMET, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_STALWART_HELMET);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_STALWART_CHESTPLATE, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_STALWART_CHESTPLATE);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_PLATE_HELMET, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_PLATE_HELMET);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_PLATE_BOOTS, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_PLATE_BOOTS);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HIGHLAND_HELMET, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_HIGHLAND_HELMET);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_HIGHLAND_CHESTPLATE, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_HIGHLAND_CHESTPLATE);
-        offerNetheriteUpgradeRecipe(exporter, TeadItems.DIAMOND_ROYAL_HELMET, RecipeCategory.COMBAT,
-                TeadItems.NETHERITE_ROYAL_HELMET);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_HELMET, 1)
-                .pattern("%#%")
-                .pattern("# #")
-                .input('#', Items.LEATHER)
-                .input('%', TeadItems.FABRIC)
-                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_CHESTPLATE, 1)
-                .pattern("# #")
-                .pattern("%#%")
-                .pattern("%#%")
-                .input('#', Items.LEATHER)
-                .input('%', TeadItems.FABRIC)
-                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
-                .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.ROBE_BOOTS, 1)
-                .pattern("% %")
-                .pattern("# #")
-                .input('#', Items.LEATHER)
-                .input('%', TeadItems.FABRIC)
-                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
-                .criterion(hasItem(TeadItems.FABRIC), conditionsFromItem(TeadItems.FABRIC))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.ROOTED_DIRT, 2)
                 .pattern("%#")
@@ -1732,6 +1843,294 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(Tead.MOD_ID, equipmentName));
     }
 
+    // Armor Generators
+    private void offerHelmetRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("# #")
+                .input('#', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerChestplateRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .input('#', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerLeggingsRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerBootsRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerChainmailHelmetRecipe(Item outputItem, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("# #")
+                .input('#', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerChainmailChestplateRecipe(Item outputItem, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .input('#', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerChainmailLeggingsRecipe(Item outputItem, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerChainmailBootsRecipe(Item outputItem, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerGuardHelmetRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("%#%")
+                .pattern("# #")
+                .input('#', ingot)
+                .input('%', Items.LEATHER)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerGuardChestplateRecipe(Item outputItem, Item ingot, Item garmentChestplate, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("%#%")
+                .pattern("%$%")
+                .input('#', ingot)
+                .input('%', Items.LEATHER)
+                .input('$', garmentChestplate)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .criterion(hasItem(garmentChestplate), conditionsFromItem(garmentChestplate))
+                .offerTo(exporter);
+    }
+
+    private void offerWoolenHelmetRecipe(Item outputItem, Item nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("#$#")
+                .input('$', nugget)
+                .input('#', ItemTags.WOOL)
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .offerTo(exporter);
+    }
+
+    private void offerWoolenChestplateRecipe(Item outputItem, Item nugget, Item garmentChestplate, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("$#$")
+                .pattern("#@#")
+                .input('#', ItemTags.WOOL)
+                .input('$', nugget)
+                .input('@', garmentChestplate)
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .criterion(hasItem(garmentChestplate), conditionsFromItem(garmentChestplate))
+                .offerTo(exporter);
+    }
+
+    private void offerWoolenLeggingsRecipe(Item outputItem, Item nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("#$#")
+                .pattern("# #")
+                .pattern("# #")
+                .input('#', ItemTags.WOOL)
+                .input('$', nugget)
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .offerTo(exporter);
+    }
+
+    private void offerWoolenBootsRecipe(Item outputItem, Item nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("% %")
+                .input('#', nugget)
+                .input('%', ItemTags.WOOL)
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .offerTo(exporter);
+    }
+
+    private void offerThiefHelmetRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("%^%")
+                .pattern("$&$")
+                .input('^', ingot)
+                .input('%', TeadItems.FABRIC)
+                .input('$', Items.LEATHER)
+                .input('&', Items.BLACK_DYE)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerThiefChestplateRecipe(Item outputItem, Item garmentChestplate, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("%&%")
+                .pattern("$%%")
+                .pattern("%%$")
+                .input('%', TeadItems.FABRIC)
+                .input('$', garmentChestplate)
+                .input('&', Items.BLACK_DYE)
+                .criterion(hasItem(garmentChestplate), conditionsFromItem(garmentChestplate))
+                .offerTo(exporter);
+    }
+
+    private void offerReinforcedMailHelmetRecipe(Item outputItem, Item ingot, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("###")
+                .pattern("% %")
+                .input('#', ingot)
+                .input('%', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerReinforcedMailChestplateRecipe(Item outputItem, Item ingot, Block chainItem, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("# #")
+                .pattern("%#%")
+                .pattern("%#%")
+                .input('#', ingot)
+                .input('%', chainItem)
+                .criterion(hasItem(chainItem), conditionsFromItem(chainItem))
+                .offerTo(exporter);
+    }
+
+    private void offerRoyalHelmetRecipe(Item outputItem, Item ingot, Item nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("% %")
+                .pattern("###")
+                .input('%', nugget)
+                .input('#', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .offerTo(exporter);
+    }
+
+    private void offerPlateHelmetRecipe(Item outputItem, Item ingot, Item nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("#%#")
+                .pattern("#$#")
+                .input('$', nugget)
+                .input('#', ingot)
+                .input('%', Items.LEATHER)
+                .criterion(hasItem(nugget), conditionsFromItem(nugget))
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerPlateChestplateRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("$$$")
+                .pattern("%$%")
+                .pattern("$ $")
+                .input('%', Items.LEATHER)
+                .input('$', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerPlateBootsRecipe(Item outputItem, Item ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("% %")
+                .pattern("$ $")
+                .input('%', Items.LEATHER)
+                .input('$', ingot)
+                .criterion(hasItem(ingot), conditionsFromItem(ingot))
+                .offerTo(exporter);
+    }
+
+    private void offerGarmentChestplateRecipe(Item outputItem, TagKey<Item> ingot, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("%#%")
+                .input('#', Ingredient.fromTag(ingot))
+                .input('%', Items.LEATHER)
+                .criterion(hasItem(Items.LEATHER), conditionsFromItem(Items.LEATHER))
+                .offerTo(exporter);
+    }
+
+    private void offerGarmentBootsRecipe(Item outputItem, TagKey<Item> nugget, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, outputItem, 1)
+                .pattern("% %")
+                .pattern("# #")
+                .input('#', Ingredient.fromTag(nugget))
+                .input('%', Items.BAMBOO)
+                .criterion(hasItem(Items.BAMBOO), conditionsFromItem(Items.BAMBOO))
+                .offerTo(exporter);
+    }
+
+    private void offerArmorGuideRecipe(Item outputItem, Item inputItem, Object ingot, Item smithingGuide,
+                                       Consumer<RecipeJsonProvider> exporter) {
+        String fullName = outputItem.toString().toLowerCase();
+        int colonIndex = fullName.indexOf(':');
+        String equipmentName = colonIndex != -1 ? fullName.substring(colonIndex + 1) : fullName;
+
+        offerSmithingGuideRecipe(outputItem, inputItem, ingot, smithingGuide, equipmentName, exporter);
+    }
+
+    private void offerStalwartRecipe(Item outputItem, Item inputItem, Object ingot,
+                                   Consumer<RecipeJsonProvider> exporter) {
+        offerArmorGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_STURDY, exporter);
+    }
+
+    private void offerSpangenhelmRecipe(Item outputItem, Item inputItem, Object ingot,
+                                     Consumer<RecipeJsonProvider> exporter) {
+        offerArmorGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_TEMPEST, exporter);
+    }
+
+    private void offerHighlandRecipe(Item outputItem, Item inputItem, Object ingot,
+                                        Consumer<RecipeJsonProvider> exporter) {
+        offerArmorGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_HIGHLAND, exporter);
+    }
+
+    private void offerMercenaryRecipe(Item outputItem, Item inputItem, Object ingot,
+                                     Consumer<RecipeJsonProvider> exporter) {
+        offerArmorGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_MERCENARY, exporter);
+    }
+
+    private void offerGhostlyRecipe(Item outputItem, Item inputItem, Object ingot,
+                                      Consumer<RecipeJsonProvider> exporter) {
+        offerArmorGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_SPOOKY, exporter);
+    }
+
+
+    // Tool And Weapon Generators
     private void offerShovelRecipe(Item outputItem, Object ingot, String materialName, Boolean needsHandle,
                                     Consumer<RecipeJsonProvider> exporter, @Nullable String namespace) {
         offerEquipmentRecipeTaggable(
@@ -1959,7 +2358,7 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
 
     private void offerTempestKnifeRecipe(Item outputItem, Item inputItem, Object ingot, String materialName,
                                          Consumer<RecipeJsonProvider> exporter) {
-        offerSmithingGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_TEMPEST_KNIFE,
+        offerSmithingGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_TEMPEST,
                 materialName + "_tempest_knife", exporter);
     }
 
@@ -2015,5 +2414,35 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                                    Consumer<RecipeJsonProvider> exporter) {
         offerSmithingGuideRecipe(outputItem, inputItem, ingot, TeadItems.SMITHING_GUIDE_GLAIVE,
                 materialName + "_glaive", exporter);
+    }
+
+    private void offerRoseNetheriteUpgrade(Item outputItem, Item inputItem, String equipmentName,
+                                           Consumer<RecipeJsonProvider> exporter) {
+        offerSmithingGuideRecipe(outputItem, inputItem, TeadItems.ROSE_NETHERITE_INGOT,
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, "rose_netherite_" + equipmentName, exporter);
+    }
+
+    private void offerWhiteNetheriteUpgrade(Item outputItem, Item inputItem, String equipmentName,
+                                           Consumer<RecipeJsonProvider> exporter) {
+        offerSmithingGuideRecipe(outputItem, inputItem, TeadItems.WHITE_NETHERITE_INGOT,
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, "white_netherite_" + equipmentName, exporter);
+    }
+
+    private void offerRoseNetheriteUpgrade(Item outputItem, Item inputItem, Consumer<RecipeJsonProvider> exporter) {
+        String fullName = outputItem.toString().toLowerCase();
+        int colonIndex = fullName.indexOf(':');
+        String equipmentName = colonIndex != -1 ? fullName.substring(colonIndex + 1) : fullName;
+
+        offerSmithingGuideRecipe(outputItem, inputItem, TeadItems.ROSE_NETHERITE_INGOT,
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, "rose_netherite_" + equipmentName, exporter);
+    }
+
+    private void offerWhiteNetheriteUpgrade(Item outputItem, Item inputItem, Consumer<RecipeJsonProvider> exporter) {
+        String fullName = outputItem.toString().toLowerCase();
+        int colonIndex = fullName.indexOf(':');
+        String equipmentName = colonIndex != -1 ? fullName.substring(colonIndex + 1) : fullName;
+
+        offerSmithingGuideRecipe(outputItem, inputItem, TeadItems.WHITE_NETHERITE_INGOT,
+                Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, "white_netherite_" + equipmentName, exporter);
     }
 }

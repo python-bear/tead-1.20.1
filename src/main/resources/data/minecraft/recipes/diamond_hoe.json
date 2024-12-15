@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "##",
+    " !",
+    " $"
+  ],
+  "result": {
+    "item": "minecraft:diamond_hoe"
+  },
+  "show_notification": true
+}

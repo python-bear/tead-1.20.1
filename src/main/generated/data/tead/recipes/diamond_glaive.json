@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "tead:diamond_spear"
+  },
+  "result": {
+    "item": "tead:diamond_glaive"
+  },
+  "template": {
+    "item": "tead:smithing_guide_glaive"
+  }
+}

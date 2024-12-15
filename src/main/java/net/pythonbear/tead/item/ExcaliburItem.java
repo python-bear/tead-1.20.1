@@ -69,12 +69,12 @@ public class ExcaliburItem extends BladedWeaponItem {
         ItemStack itemStack = player.getStackInHand(hand);
         if (world.isClient) return TypedActionResult.pass(itemStack);
 
-        if (this.storedState != null) {
+        if (this.storedState != null && !(hand == Hand.OFF_HAND && player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof ExcaliburItem)) {
             triggerRewind(world, player);
-            player.getItemCooldownManager().set(this, MAX_HOLD_DURATION);
+            player.getItemCooldownManager().set(this, MAX_HOLD_DURATION - 200);
             return TypedActionResult.success(itemStack);
         } else {
-            this.storedState = new PlayerState(player.getPos(), player.getVelocity(), player.getHealth(), player.fallDistance);
+            this.storedState = new ExcaliburItem.PlayerState(player.getPos(), player.getVelocity(), player.getHealth(), player.fallDistance);
             this.activationStartTime = world.getTime();
 
             world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, SoundCategory.PLAYERS, 1.0f, 1.0f);
@@ -84,7 +84,7 @@ public class ExcaliburItem extends BladedWeaponItem {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (!(entity instanceof PlayerEntity player)) return;
+        if (!(entity instanceof PlayerEntity)) return;
         if (world.isClient || this.storedState == null) return;
 
         long currentTime = world.getTime();

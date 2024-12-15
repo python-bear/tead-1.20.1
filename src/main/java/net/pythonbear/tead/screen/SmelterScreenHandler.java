@@ -13,8 +13,7 @@ import net.minecraft.screen.slot.FurnaceOutputSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
 import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadRecipeTypes;
-import net.pythonbear.tead.init.TeadScreenHandlers;
+import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 
 public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory> {
@@ -58,7 +57,7 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
     @Override
     public void populateRecipeFinder(RecipeMatcher finder) {
         if (this.inventory instanceof RecipeInputProvider) {
-            ((RecipeInputProvider)((Object)this.inventory)).provideRecipeInputs(finder);
+            ((RecipeInputProvider) this.inventory).provideRecipeInputs(finder);
         }
     }
 

@@ -5,14 +5,14 @@
     "#": {
       "item": "tead:bronze_ingot"
     },
-    "%": {
+    "$": {
       "item": "tead:handle"
     }
   },
   "pattern": [
     "  #",
     "## ",
-    "%# "
+    "$# "
   ],
   "result": {
     "item": "tead:bronze_claymore"

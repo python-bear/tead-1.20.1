@@ -12,6 +12,7 @@ public class TeadTags {
         public static final TagKey<Block> REFINED_BUILDING_BLOCKS = createTag("refined_building_blocks");
         public static final TagKey<Block> SCYTHE_BLOCKS = createTag("scythe_blocks");
         public static final TagKey<Block> MATTOCK_MINEABLE = createTag("mattock_mineable");
+
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, new Identifier(Tead.MOD_ID, name));
         }
@@ -19,6 +20,11 @@ public class TeadTags {
 
     public static class Items {
         public static final TagKey<Item> ROCKS = createTag("rocks");
+        public static final TagKey<Item> CROSSBOWS = createTag("crossbows");
+        public static final TagKey<Item> SMITHING_GUIDES = createTag("smithing_guides");
+        public static final TagKey<Item> METAL_INGOTS = createTag("metal_ingots");
+        public static final TagKey<Item> METAL_NUGGETS = createTag("metal_nuggets");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, new Identifier(Tead.MOD_ID, name));
         }

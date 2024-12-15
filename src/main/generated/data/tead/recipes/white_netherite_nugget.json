@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "tead:white_netherite_ingot"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tead:white_netherite_nugget"
+  }
+}

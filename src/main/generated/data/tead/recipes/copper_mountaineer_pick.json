@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "tead:copper_pickaxe"
+  },
+  "result": {
+    "item": "tead:copper_mountaineer_pick"
+  },
+  "template": {
+    "item": "tead:smithing_guide_mountaineer_pick"
+  }
+}

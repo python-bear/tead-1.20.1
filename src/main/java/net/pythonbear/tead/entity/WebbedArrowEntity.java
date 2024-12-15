@@ -1,24 +1,13 @@
 package net.pythonbear.tead.entity;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadBlocks;
-import net.pythonbear.tead.sound.TeadSounds;
-
-import java.util.List;
+import net.pythonbear.tead.block.TeadBlocks;
 
 public class WebbedArrowEntity extends ArrowEntity {
     public WebbedArrowEntity(EntityType<? extends ArrowEntity> entityType, World world) {

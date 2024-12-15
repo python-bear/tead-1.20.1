@@ -3,7 +3,7 @@ package net.pythonbear.tead.mixin;
 import net.minecraft.entity.mob.PiglinEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

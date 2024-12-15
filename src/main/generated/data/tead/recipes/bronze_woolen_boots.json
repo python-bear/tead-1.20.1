@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:bronze_nugget"
+    },
+    "%": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "pattern": [
+    "# #",
+    "% %"
+  ],
+  "result": {
+    "item": "tead:bronze_woolen_boots"
+  },
+  "show_notification": true
+}

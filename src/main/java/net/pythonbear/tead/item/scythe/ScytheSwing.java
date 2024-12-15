@@ -18,7 +18,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.pythonbear.tead.init.TeadTags;
-import net.pythonbear.tead.init.TeadToolMaterials;
+import net.pythonbear.tead.item.TeadToolMaterials;
 import net.pythonbear.tead.item.ScytheItem;
 
 import java.util.List;

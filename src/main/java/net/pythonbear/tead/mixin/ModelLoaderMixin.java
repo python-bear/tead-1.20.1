@@ -31,16 +31,32 @@ public abstract class ModelLoaderMixin {
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "wood_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "stone_hammer_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "stone_mace_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "lead_hammer_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_hammer_3d", "inventory"));
-        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "gold_hammer_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "gold_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "lead_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "lead_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "copper_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "copper_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "rose_gold_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "rose_gold_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "white_gold_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "white_gold_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "iron_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "steel_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "steel_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "brass_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "brass_mace_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "bronze_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "bronze_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_hammer_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "diamond_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "netherite_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "rose_netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "rose_netherite_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "white_netherite_hammer_3d", "inventory"));
+        this.addModel(new ModelIdentifier(Tead.MOD_ID, "white_netherite_mace_3d", "inventory"));
         this.addModel(new ModelIdentifier(Tead.MOD_ID, "gravity_hammer_3d", "inventory"));
     }
 }

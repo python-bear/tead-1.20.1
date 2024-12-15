@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "tead:brass_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "###",
+    "#!#",
+    " $ "
+  ],
+  "result": {
+    "item": "tead:brass_hammer"
+  },
+  "show_notification": true
+}

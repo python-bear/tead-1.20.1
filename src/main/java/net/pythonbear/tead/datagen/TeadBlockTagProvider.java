@@ -8,7 +8,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
-import net.pythonbear.tead.init.TeadBlocks;
+import net.pythonbear.tead.block.TeadBlocks;
 import net.pythonbear.tead.init.TeadTags;
 
 import java.util.concurrent.CompletableFuture;
@@ -340,10 +340,6 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.LEAD_DEEPSLATE_ORE);
 
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
-                .add(TeadBlocks.LEAD_BLOCK)
-                .add(TeadBlocks.LEAD_CHISELED_BLOCK)
-                .add(TeadBlocks.LEAD_CUT_BLOCK)
-                .add(TeadBlocks.LEAD_TILED_BLOCK)
                 .add(TeadBlocks.ROSE_GOLD_BLOCK)
                 .add(TeadBlocks.WHITE_GOLD_BLOCK)
                 .add(TeadBlocks.BRASS_BLOCK)

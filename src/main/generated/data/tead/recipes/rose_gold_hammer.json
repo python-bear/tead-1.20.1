@@ -2,17 +2,20 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
     "#": {
       "item": "tead:rose_gold_ingot"
     },
-    "%": {
+    "$": {
       "item": "tead:handle"
     }
   },
   "pattern": [
-    " ##",
-    " ##",
-    "%  "
+    "###",
+    "#!#",
+    " $ "
   ],
   "result": {
     "item": "tead:rose_gold_hammer"

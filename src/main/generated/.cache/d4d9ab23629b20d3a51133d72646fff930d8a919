@@ -1,7 +1,7 @@
-// 1.20.1	2024-12-10T20:46:32.264182	tead/Tags for minecraft:block
+// 1.20.1	2024-12-15T16:25:32.9783051	tead/Tags for minecraft:block
 a7bed1c69a0776fb68eb189877fde38060a9bac4 data\minecraft\tags\blocks\needs_diamond_tool.json
 1028d9c7cd77a13a9ad4c2ac1396ea735951ac72 data\minecraft\tags\blocks\mineable\pickaxe.json
-e67741b7e48656e87572ba3902cd3dc2dff97cb8 data\minecraft\tags\blocks\beacon_base_blocks.json
+6c909beab2fd00bd366fadee9ea67e857f37a237 data\minecraft\tags\blocks\beacon_base_blocks.json
 4402bd1b02cef6085b60ea6200b6250fa7dca5ba data\minecraft\tags\blocks\mineable\axe.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
 2a1bae9b2d4ae8e61bf3c1c096a3c7033877313a data\minecraft\tags\blocks\needs_iron_tool.json

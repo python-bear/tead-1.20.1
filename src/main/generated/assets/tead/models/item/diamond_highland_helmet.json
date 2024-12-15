@@ -63,6 +63,7 @@
     }
   ],
   "textures": {
-    "layer0": "tead:item/diamond_highland_helmet"
+    "layer0": "tead:item/highland_helmet",
+    "layer1": "tead:item/diamond_highland_helmet_overlay"
   }
 }

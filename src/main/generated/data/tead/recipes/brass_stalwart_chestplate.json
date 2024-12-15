@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:brass_ingot"
+  },
+  "base": {
+    "item": "tead:brass_chestplate"
+  },
+  "result": {
+    "item": "tead:brass_stalwart_chestplate"
+  },
+  "template": {
+    "item": "tead:smithing_guide_sturdy"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:iron_ingot"
+  },
+  "base": {
+    "item": "minecraft:iron_chestplate"
+  },
+  "result": {
+    "item": "tead:iron_highland_chestplate"
+  },
+  "template": {
+    "item": "tead:smithing_guide_highland"
+  }
+}

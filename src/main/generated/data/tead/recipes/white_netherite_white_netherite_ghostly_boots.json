@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:white_netherite_ingot"
+  },
+  "base": {
+    "item": "tead:diamond_ghostly_boots"
+  },
+  "result": {
+    "item": "tead:white_netherite_ghostly_boots"
+  },
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:wool"
+    },
+    "$": {
+      "item": "tead:diamond_chip"
+    },
+    "@": {
+      "item": "tead:garment_chestplate"
+    }
+  },
+  "pattern": [
+    "# #",
+    "$#$",
+    "#@#"
+  ],
+  "result": {
+    "item": "tead:diamond_woolen_chestplate"
+  },
+  "show_notification": true
+}

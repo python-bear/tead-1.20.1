@@ -10,8 +10,8 @@
     }
   },
   "pattern": [
-    "% %",
-    "# #"
+    "# #",
+    "% %"
   ],
   "result": {
     "item": "tead:gold_woolen_boots"

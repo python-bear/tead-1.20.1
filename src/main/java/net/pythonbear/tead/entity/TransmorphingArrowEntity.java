@@ -15,8 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadEntityTypes;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -184,9 +183,9 @@ public class TransmorphingArrowEntity extends PersistentProjectileEntity {
                 RaycastContext.FluidHandling.NONE,
                 this
         );
-        HitResult hitResult = world.raycast(context);
+        BlockHitResult hitResult = world.raycast(context);
         return hitResult.getType() == HitResult.Type.MISS || (hitResult instanceof BlockHitResult
-                && ((BlockHitResult) hitResult).getBlockPos().equals(target.getBlockPos()));
+                && hitResult.getBlockPos().equals(target.getBlockPos()));
     }
 
     @Override

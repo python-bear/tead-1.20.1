@@ -6,26 +6,16 @@ import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ItemStackParticleEffect;
-import net.minecraft.particle.ParticleEffect;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldEvents;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadEntityTypes;
-import net.pythonbear.tead.init.TeadItems;
-
-import java.util.List;
+import net.pythonbear.tead.item.TeadItems;
 
 public class GravityPearlEntity extends Entity implements FlyingItemEntity {
     private static final TrackedData<ItemStack> ITEM = DataTracker.registerData(GravityPearlEntity.class, TrackedDataHandlerRegistry.ITEM_STACK);
@@ -132,7 +122,7 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
             double j = this.targetY - e;
             float k = (float)Math.sqrt(h * h + i * i);
             float l = (float)MathHelper.atan2(i, h);
-            double m = MathHelper.lerp(0.0025, g, (double)k);
+            double m = MathHelper.lerp(0.0025, g, k);
             double n = vec3d.y;
             if (j < 0.0) {
                 n += j * 0.015; // Move downward if the target is below

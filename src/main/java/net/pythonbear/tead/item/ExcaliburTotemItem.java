@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -15,7 +14,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadItems;
 
 public class ExcaliburTotemItem extends Item {
     private static final int MAX_HOLD_DURATION = 400;
@@ -50,8 +48,14 @@ public class ExcaliburTotemItem extends Item {
         ItemStack itemStack = player.getStackInHand(hand);
         if (world.isClient) return TypedActionResult.pass(itemStack);
 
-        if (this.storedState != null) {
-            triggerRewind(world, player);
+        Item offhandItem = player.getStackInHand(Hand.OFF_HAND).getItem();
+        Item mainhandItem = player.getStackInHand(Hand.MAIN_HAND).getItem();
+        boolean isUsingExcalibur = (hand == Hand.MAIN_HAND) ?
+                (offhandItem instanceof ExcaliburItem && !player.getItemCooldownManager().isCoolingDown(offhandItem)) :
+                (mainhandItem instanceof ExcaliburItem && !player.getItemCooldownManager().isCoolingDown(mainhandItem));
+
+        if (this.storedState != null && !(hand == Hand.OFF_HAND && player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof ExcaliburTotemItem) && !isUsingExcalibur) {
+            triggerRewind(world, player, hand);
             player.getItemCooldownManager().set(this, MAX_HOLD_DURATION - 200);
             return TypedActionResult.success(itemStack);
         } else {
@@ -65,7 +69,7 @@ public class ExcaliburTotemItem extends Item {
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (!(entity instanceof PlayerEntity player)) return;
+        if (!(entity instanceof PlayerEntity)) return;
         if (world.isClient || this.storedState == null) return;
 
         long currentTime = world.getTime();
@@ -78,13 +82,12 @@ public class ExcaliburTotemItem extends Item {
         }
     }
 
-    private void triggerRewind(World world, PlayerEntity player) {
+    private void triggerRewind(World world, PlayerEntity player, Hand hand) {
         if (this.storedState == null || world.isClient) return;
 
         PlayerInventory playerInventory = player.getInventory();
-        Item itemInMainHand = playerInventory.getMainHandStack().getItem();
 
-        if (itemInMainHand instanceof ExcaliburTotemItem) {
+        if (hand == Hand.MAIN_HAND) {
             playerInventory.setStack(playerInventory.selectedSlot, ItemStack.EMPTY);
         } else {
             playerInventory.offHand.set(0, ItemStack.EMPTY);
@@ -97,11 +100,11 @@ public class ExcaliburTotemItem extends Item {
         player.fallDistance = this.storedState.fallDistance;
         player.velocityModified = true;
 
+        world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+
         this.storedState = null;
         this.activationStartTime = -1;
         this.timeElapsed = 0;
-
-        world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
         MinecraftClient client = MinecraftClient.getInstance();
         client.particleManager.addEmitter(player, ParticleTypes.TOTEM_OF_UNDYING, 20);

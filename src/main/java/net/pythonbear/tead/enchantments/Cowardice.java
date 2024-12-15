@@ -7,7 +7,6 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.pythonbear.tead.init.TeadEnchantments;
 
 public class Cowardice extends Enchantment {
     public Cowardice(Rarity weight, EnchantmentTarget target, EquipmentSlot[] slotTypes) {

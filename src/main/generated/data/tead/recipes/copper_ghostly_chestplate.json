@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "tead:copper_chestplate"
+  },
+  "result": {
+    "item": "tead:copper_ghostly_chestplate"
+  },
+  "template": {
+    "item": "tead:smithing_guide_spooky"
+  }
+}

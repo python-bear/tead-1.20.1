@@ -3,13 +3,13 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "tead:gold_chain"
+      "tag": "minecraft:wool"
     },
     "$": {
       "item": "minecraft:gold_nugget"
     },
     "@": {
-      "item": "tead:gold_garment_chestplate"
+      "item": "tead:garment_chestplate"
     }
   },
   "pattern": [

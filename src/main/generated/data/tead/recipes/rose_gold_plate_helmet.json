@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:rose_gold_ingot"
+    },
+    "$": {
+      "item": "tead:rose_gold_nugget"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "#%#",
+    "#$#"
+  ],
+  "result": {
+    "item": "tead:rose_gold_plate_helmet"
+  },
+  "show_notification": true
+}

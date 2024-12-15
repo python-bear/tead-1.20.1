@@ -19,8 +19,8 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.CustomAttacking;
-import net.pythonbear.tead.init.TeadBlocks;
+import net.pythonbear.tead.util.CustomAttacking;
+import net.pythonbear.tead.block.TeadBlocks;
 
 public class BladedWeaponItem extends SwordItem implements Vanishable {
     private final float attackDamage;

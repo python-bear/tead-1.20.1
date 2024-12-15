@@ -5,13 +5,13 @@
     "#": {
       "item": "tead:rose_gold_ingot"
     },
-    "%": {
-      "item": "minecraft:stick"
+    "$": {
+      "item": "tead:handle"
     }
   },
   "pattern": [
     " #",
-    "% "
+    "$ "
   ],
   "result": {
     "item": "tead:rose_gold_dagger"

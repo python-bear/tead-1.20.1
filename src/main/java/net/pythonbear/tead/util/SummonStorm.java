@@ -15,7 +15,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
-import net.pythonbear.tead.init.TeadEnchantments;
+import net.pythonbear.tead.enchantments.TeadEnchantments;
 
 import java.util.List;
 
@@ -61,15 +61,4 @@ public class SummonStorm {
             }
         }
     }
-
-    private static boolean hasThunderingEnchantment(ItemEntity itemEntity) {
-        NbtList enchantments = itemEntity.getStack().getEnchantments();
-        for (NbtElement enchantment : enchantments) {
-            if (EnchantmentHelper.getEnchantmentId(TeadEnchantments.THUNDERING).equals(enchantment)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
 }

@@ -11,8 +11,7 @@ import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.world.World;
-import net.pythonbear.tead.init.TeadEntityTypes;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.item.TeadItems;
 
 public class GrenadeProjectileEntity extends ThrownItemEntity {
     public GrenadeProjectileEntity(EntityType<? extends ThrownItemEntity> entityType, World world) {

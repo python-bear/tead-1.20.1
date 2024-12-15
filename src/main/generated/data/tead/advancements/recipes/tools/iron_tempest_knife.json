@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_smithing_guide_tempest_knife": {
+    "has_smithing_guide_tempest": {
       "conditions": {
         "items": [
           {
             "items": [
-              "tead:smithing_guide_tempest_knife"
+              "tead:smithing_guide_tempest"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_smithing_guide_tempest_knife",
+      "has_smithing_guide_tempest",
       "has_the_recipe"
     ]
   ],

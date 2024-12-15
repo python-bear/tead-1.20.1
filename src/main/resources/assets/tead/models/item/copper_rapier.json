@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "tead:item/copper_rapier"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 10, 270, 60 ],
+      "translation": [ 0, 5.5, 0 ],
+      "scale": [ 1.1, 1.1, 1 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 10, -270, -60 ],
+      "translation": [ 0, 5.5, 0 ],
+      "scale": [ 1.1, 1.1, 1 ]
+    }
+  }
+}

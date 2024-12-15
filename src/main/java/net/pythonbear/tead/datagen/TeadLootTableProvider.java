@@ -14,8 +14,8 @@ import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-import net.pythonbear.tead.init.TeadBlocks;
-import net.pythonbear.tead.init.TeadItems;
+import net.pythonbear.tead.block.TeadBlocks;
+import net.pythonbear.tead.item.TeadItems;
 
 public class TeadLootTableProvider extends FabricBlockLootTableProvider {
     public TeadLootTableProvider(FabricDataOutput dataOutput) {

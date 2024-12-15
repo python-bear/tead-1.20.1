@@ -14,6 +14,7 @@ import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtList;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -23,20 +24,37 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.ExplosiveArrowEntity;
+import net.pythonbear.tead.entity.ExplosiveSpectralArrowEntity;
+import net.pythonbear.tead.entity.TNTArrowEntity;
+import net.pythonbear.tead.item.arrow.TntArrowItem;
 import org.joml.Quaternionf;
 import org.joml.Vector3f;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FireboltThrower extends CrossbowItem {
     private boolean charged = false;
     private boolean loaded = false;
     private static final String CHARGED_PROJECTILES_KEY = "ChargedProjectiles";
     private static final String CHARGED_KEY = "Charged";
+    public static final Predicate<ItemStack> BOW_PROJECTILES = stack -> stack.isIn(ItemTags.ARROWS) || stack.getItem() instanceof TntArrowItem;
+    public static final Predicate<ItemStack> CROSSBOW_HELD_PROJECTILES = BOW_PROJECTILES.or(stack -> stack.isOf(Items.FIREWORK_ROCKET));
 
     public FireboltThrower(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    public Predicate<ItemStack> getHeldProjectiles() {
+        return CROSSBOW_HELD_PROJECTILES;
+    }
+
+    @Override
+    public Predicate<ItemStack> getProjectiles() {
+        return BOW_PROJECTILES;
     }
 
     @Override
@@ -104,20 +122,20 @@ public class FireboltThrower extends CrossbowItem {
         float[] fs = FireboltThrower.getSoundPitches(entity.getRandom());
         for (int i = 0; i < list.size(); ++i) {
             ItemStack itemStack = list.get(i);
-            boolean bl = entity instanceof PlayerEntity && ((PlayerEntity)entity).getAbilities().creativeMode;
+            boolean inCreative = entity instanceof PlayerEntity && ((PlayerEntity)entity).getAbilities().creativeMode;
             if (itemStack.isEmpty()) continue;
             if (i == 0) {
-                FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], bl, speed, divergence,
+                FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], inCreative, speed, divergence,
                         0.0f);
                 continue;
             }
             if (i == 1) {
-                FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], bl, speed, divergence,
+                FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], inCreative, speed, divergence,
                         -10.0f);
                 continue;
             }
             if (i != 2) continue;
-            FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], bl, speed, divergence, 10.0f);
+            FireboltThrower.shoot(world, entity, hand, stack, itemStack, fs[i], inCreative, speed, divergence, 10.0f);
         }
         FireboltThrower.postShoot(world, entity, stack);
     }
@@ -156,21 +174,32 @@ public class FireboltThrower extends CrossbowItem {
                 SoundCategory.PLAYERS, 1.0f, soundPitch);
     }
 
-    private static PersistentProjectileEntity createArrow(World world, LivingEntity entity, ItemStack crossbow,
+    private static PersistentProjectileEntity createArrow(World world, LivingEntity owner, ItemStack crossbow,
                                                           ItemStack arrow) {
-        ArrowItem arrowItem = (ArrowItem)(arrow.getItem() instanceof ArrowItem ? arrow.getItem() : Items.ARROW);
-        PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, arrow, entity);
-        if (entity instanceof PlayerEntity) {
-            persistentProjectileEntity.setCritical(true);
+        PersistentProjectileEntity arrowEntity;
+
+        if (arrow.getItem() instanceof SpectralArrowItem) {
+            arrowEntity = new ExplosiveSpectralArrowEntity(world, owner);
+        } else if (arrow.getItem() instanceof TntArrowItem) {
+            arrowEntity = new TNTArrowEntity(world, owner);
+        } else {
+            arrowEntity = new ExplosiveArrowEntity(world, owner);
+            ((ExplosiveArrowEntity) arrowEntity).initFromStack(arrow);
         }
-        persistentProjectileEntity.setSound(SoundEvents.ITEM_CROSSBOW_HIT);
-        persistentProjectileEntity.setShotFromCrossbow(true);
+
+        if (owner instanceof PlayerEntity) {
+            arrowEntity.setCritical(true);
+        }
+
+        arrowEntity.setSound(SoundEvents.ITEM_CROSSBOW_HIT);
+        arrowEntity.setShotFromCrossbow(true);
+        arrowEntity.setOnFireFor(360);
         int i = EnchantmentHelper.getLevel(Enchantments.PIERCING, crossbow);
         if (i > 0) {
-            persistentProjectileEntity.setPierceLevel((byte)i);
+            arrowEntity.setPierceLevel((byte)i);
         }
-        persistentProjectileEntity.setOnFireFor(360);
-        return persistentProjectileEntity;
+
+        return arrowEntity;
     }
 
     private static void postShoot(World world, LivingEntity entity, ItemStack stack) {
@@ -200,5 +229,10 @@ public class FireboltThrower extends CrossbowItem {
     private static float getSoundPitch(boolean flag, Random random) {
         float f = flag ? 0.63f : 0.43f;
         return 1.0f / (random.nextFloat() * 0.5f + 1.8f) + f;
+    }
+
+    @Override
+    public int getRange() {
+        return 7;
     }
 }

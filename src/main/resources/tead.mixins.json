@@ -3,9 +3,11 @@
   "package": "net.pythonbear.tead.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "HeldItemRendererMixin",
     "ItemRendererAccessor",
     "ItemRendererMixin",
-    "ModelLoaderMixin"
+    "ModelLoaderMixin",
+    "PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -15,6 +17,7 @@
     "DrownedInitEquipmentMixin",
     "FireTrailMixin",
     "PiglinInitEquipmentMixin",
+    "SmithingScreenHandlerMixin",
     "SwordItemMixin",
     "VindicatorInitEquipmentMixin",
     "WitherSkeletonInitEquipmentMixin",

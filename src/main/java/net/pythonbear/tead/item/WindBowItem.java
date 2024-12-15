@@ -12,10 +12,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.SpectralWindArrowEntity;
 import net.pythonbear.tead.entity.WindArrowEntity;
-import net.pythonbear.tead.init.TeadItems;
 
 public class WindBowItem extends BowItem implements Vanishable {
     public WindBowItem(Settings settings) {

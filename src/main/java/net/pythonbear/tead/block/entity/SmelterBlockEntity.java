@@ -6,7 +6,6 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.SharedConstants;
-import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -42,10 +41,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.block.custom.SmelterBlock;
-import net.pythonbear.tead.init.TeadBlockEntities;
-import net.pythonbear.tead.init.TeadRecipeTypes;
+import net.pythonbear.tead.block.SmelterBlock;
+import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 import net.pythonbear.tead.screen.SmelterScreenHandler;
 import org.jetbrains.annotations.Nullable;
@@ -134,12 +131,12 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new SmelterScreenHandler(syncId, playerInventory, ((Inventory) this), this.propertyDelegate);
+        return new SmelterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
-        return new SmelterScreenHandler(syncId, playerInventory, ((Inventory) this), this.propertyDelegate);
+        return new SmelterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     public static Map<Item, Integer> createFuelTimeMap() {
@@ -259,7 +256,7 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         nbt.putShort("CookTimeTotal", (short)this.cookTimeTotal);
         Inventories.writeNbt(nbt, this.inventory);
         NbtCompound nbtCompound = new NbtCompound();
-        this.recipesUsed.forEach((identifier, count) -> nbtCompound.putInt(identifier.toString(), (int)count));
+        this.recipesUsed.forEach((identifier, count) -> nbtCompound.putInt(identifier.toString(), count));
         nbt.put("RecipesUsed", nbtCompound);
     }
 

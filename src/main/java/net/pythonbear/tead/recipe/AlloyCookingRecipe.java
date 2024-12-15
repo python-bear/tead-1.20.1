@@ -10,10 +10,6 @@ import net.minecraft.recipe.*;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadRecipeTypes;
-import net.pythonbear.tead.init.TeadRecipeSerializers;
-import net.minecraft.recipe.book.CookingRecipeCategory;
 import net.minecraft.util.Identifier;
 
 public class AlloyCookingRecipe implements Recipe<Inventory> {

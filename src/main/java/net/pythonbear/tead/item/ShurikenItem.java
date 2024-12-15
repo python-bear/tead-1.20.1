@@ -10,7 +10,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.pythonbear.tead.entity.ShurikenProjectileEntity;
-import net.pythonbear.tead.init.TeadEntityTypes;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 
 
 public class ShurikenItem extends Item {

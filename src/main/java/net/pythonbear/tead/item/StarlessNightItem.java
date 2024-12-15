@@ -9,10 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.init.TeadEnchantments;
+import net.pythonbear.tead.enchantments.TeadEnchantments;
 
 import java.util.Collections;
 import java.util.Map;
