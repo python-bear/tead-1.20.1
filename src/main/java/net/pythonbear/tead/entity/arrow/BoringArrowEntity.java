@@ -1,4 +1,4 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -11,6 +11,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.item.TeadItems;
 
 

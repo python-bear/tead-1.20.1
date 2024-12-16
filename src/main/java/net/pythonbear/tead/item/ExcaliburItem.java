@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 
 
 public class ExcaliburItem extends BladedWeaponItem {
-    private static final int MAX_HOLD_DURATION = 400;
+    public static final int MAX_HOLD_DURATION = 400;
     private PlayerState storedState;
     private long activationStartTime;
     private long timeElapsed;

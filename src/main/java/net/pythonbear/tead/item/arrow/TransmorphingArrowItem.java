@@ -5,8 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.RubyArrowEntity;
-import net.pythonbear.tead.entity.TransmorphingArrowEntity;
+import net.pythonbear.tead.entity.arrow.TransmorphingArrowEntity;
 
 public class TransmorphingArrowItem extends ArrowItem {
     public TransmorphingArrowItem(Settings settings) {

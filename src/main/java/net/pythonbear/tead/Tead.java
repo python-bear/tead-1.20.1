@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.pythonbear.tead.block.TeadBlocks;
@@ -20,10 +21,7 @@ import net.pythonbear.tead.recipe.TeadRecipeSerializers;
 import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.screen.TeadScreenHandlers;
 import net.pythonbear.tead.sound.TeadSounds;
-import net.pythonbear.tead.util.DiedInVoid;
-import net.pythonbear.tead.util.OnEntityDeath;
-import net.pythonbear.tead.util.OnPlayerWorldTick;
-import net.pythonbear.tead.util.TeadCustomTrades;
+import net.pythonbear.tead.util.*;
 import net.pythonbear.tead.world.gen.TeadWorldGeneration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,7 +57,7 @@ public class Tead implements ModInitializer {
 		TeadWorldGeneration.generateTeadWorldGen();
 
 		ServerTickEvents.END_WORLD_TICK.register(LightningStaffItem::tick);
-		ServerTickEvents.END_WORLD_TICK.register(OnPlayerWorldTick::onWorldTick);
+		ServerTickEvents.END_WORLD_TICK.register(OnWorldTick::onPlayerWorldTick);
 		ServerLivingEntityEvents.ALLOW_DEATH.register(OnEntityDeath::removeExcalibur);
 		ServerLivingEntityEvents.AFTER_DEATH.register(DiedInVoid::craftExcalibur);
 

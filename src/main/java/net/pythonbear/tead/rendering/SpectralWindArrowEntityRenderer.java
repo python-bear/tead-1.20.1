@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.ProjectileEntityRenderer;
 import net.minecraft.entity.projectile.SpectralArrowEntity;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.entity.SpectralWindArrowEntity;
+import net.pythonbear.tead.entity.arrow.SpectralWindArrowEntity;
 
 @Environment(value=EnvType.CLIENT)
 public class SpectralWindArrowEntityRenderer

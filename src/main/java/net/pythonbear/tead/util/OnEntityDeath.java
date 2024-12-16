@@ -13,6 +13,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.TeadItems;
 import net.pythonbear.tead.item.ExcaliburItem;
 import net.pythonbear.tead.item.ExcaliburTotemItem;
@@ -29,7 +30,7 @@ public class OnEntityDeath {
 
         if (itemInMainHand instanceof ExcaliburItem || itemInOffHand instanceof ExcaliburItem) {
             if (!world.isClient) {
-                if (itemInMainHand instanceof ExcaliburTotemItem) {
+                if (itemInMainHand instanceof ExcaliburItem) {
                     playerInventory.setStack(playerInventory.selectedSlot, ItemStack.EMPTY);
                 } else {
                     playerInventory.offHand.set(0, ItemStack.EMPTY);
@@ -49,7 +50,7 @@ public class OnEntityDeath {
                 if (client.player != null && client.player.isMainPlayer()) {
                     client.gameRenderer.showFloatingItem(TeadItems.EXCALIBUR_TOTEM.getDefaultStack());
                 }
-//                    world.sendEntityStatus(livingEntity, EntityStatuses.USE_TOTEM_OF_UNDYING);
+//                world.sendEntityStatus(livingEntity, EntityStatuses.USE_TOTEM_OF_UNDYING);
 
                 world.playSound(null, livingEntity.getBlockPos(), SoundEvents.ITEM_TOTEM_USE, SoundCategory.PLAYERS, 1.0f, 1.0f);
             }

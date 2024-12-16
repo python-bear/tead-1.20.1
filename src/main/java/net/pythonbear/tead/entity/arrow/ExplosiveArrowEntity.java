@@ -1,4 +1,4 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

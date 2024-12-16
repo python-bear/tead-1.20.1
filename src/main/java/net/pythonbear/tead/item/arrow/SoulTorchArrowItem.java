@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.SoulTorchArrowEntity;
+import net.pythonbear.tead.entity.arrow.SoulTorchArrowEntity;
 
 public class SoulTorchArrowItem extends ArrowItem {
     public SoulTorchArrowItem(Settings settings) {

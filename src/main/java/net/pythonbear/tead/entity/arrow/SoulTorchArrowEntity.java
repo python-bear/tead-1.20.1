@@ -1,31 +1,35 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.TntBlock;
+import net.minecraft.block.WallTorchBlock;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.TntEntity;
+import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
-import net.minecraft.entity.mob.CreeperEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.item.TeadItems;
 
 
-public class TorchArrowEntity extends PersistentProjectileEntity {
-    public TorchArrowEntity(World world, LivingEntity owner) {
-        super(TeadEntityTypes.TORCH_ARROW, owner, world);
+public class SoulTorchArrowEntity extends PersistentProjectileEntity {
+    public SoulTorchArrowEntity(World world, LivingEntity owner) {
+        super(TeadEntityTypes.SOUL_TORCH_ARROW, owner, world);
     }
 
-    public TorchArrowEntity(World world, double x, double y, double z) {
-        super(TeadEntityTypes.TORCH_ARROW, x, y, z, world);
+    public SoulTorchArrowEntity(World world, double x, double y, double z) {
+        super(TeadEntityTypes.SOUL_TORCH_ARROW, x, y, z, world);
     }
 
-    public TorchArrowEntity(EntityType<TorchArrowEntity> arrowEntity, World world) {
+    public SoulTorchArrowEntity(EntityType<SoulTorchArrowEntity> arrowEntity, World world) {
         super(arrowEntity, world);
     }
 
@@ -35,7 +39,7 @@ public class TorchArrowEntity extends PersistentProjectileEntity {
     public void tick() {
         super.tick();
         if (!this.getWorld().isClient && !this.inGround) {
-            ((ServerWorld)this.getWorld()).spawnParticles(ParticleTypes.FLAME, this.getX(), this.getY(),
+            ((ServerWorld)this.getWorld()).spawnParticles(ParticleTypes.SOUL_FIRE_FLAME, this.getX(), this.getY(),
                     this.getZ(), 1, 0, 0, 0,0);
         }
     }
@@ -68,23 +72,23 @@ public class TorchArrowEntity extends PersistentProjectileEntity {
             switch (blockHitResult.getSide()) {
                 case UP:
                     placePos = hitPos.up();
-                    torchState = Blocks.TORCH.getDefaultState();
+                    torchState = Blocks.SOUL_TORCH.getDefaultState();
                     break;
                 case NORTH:
                     placePos = hitPos.north();
-                    torchState = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.NORTH);
+                    torchState = Blocks.SOUL_WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.NORTH);
                     break;
                 case SOUTH:
                     placePos = hitPos.south();
-                    torchState = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.SOUTH);
+                    torchState = Blocks.SOUL_WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.SOUTH);
                     break;
                 case WEST:
                     placePos = hitPos.west();
-                    torchState = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.WEST);
+                    torchState = Blocks.SOUL_WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.WEST);
                     break;
                 case EAST:
                     placePos = hitPos.east();
-                    torchState = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.EAST);
+                    torchState = Blocks.SOUL_WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, Direction.EAST);
                     break;
                 case DOWN:
                     placePos = null;
@@ -95,7 +99,7 @@ public class TorchArrowEntity extends PersistentProjectileEntity {
                         BlockPos adjacentPos = hitPos.down().offset(direction);
                         if (world.getBlockState(adjacentPos).isSolidBlock(world, adjacentPos)) {
                             placePos = hitPos.down();
-                            torchState = Blocks.WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, direction.getOpposite());
+                            torchState = Blocks.SOUL_WALL_TORCH.getDefaultState().with(WallTorchBlock.FACING, direction.getOpposite());
                             break;
                         }
                     }
@@ -119,6 +123,6 @@ public class TorchArrowEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(TeadItems.TORCH_ARROW);
+        return new ItemStack(TeadItems.SOUL_TORCH_ARROW);
     }
 }

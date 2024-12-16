@@ -8,6 +8,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.*;
+import net.pythonbear.tead.entity.arrow.*;
 
 @Environment(value=EnvType.CLIENT)
 public class CustomArrowEntityRenderer extends ProjectileEntityRenderer<PersistentProjectileEntity> {

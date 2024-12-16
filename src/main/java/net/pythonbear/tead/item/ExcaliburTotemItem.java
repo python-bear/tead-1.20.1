@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 
 public class ExcaliburTotemItem extends Item {
     private static final int MAX_HOLD_DURATION = 400;
@@ -50,11 +51,13 @@ public class ExcaliburTotemItem extends Item {
 
         Item offhandItem = player.getStackInHand(Hand.OFF_HAND).getItem();
         Item mainhandItem = player.getStackInHand(Hand.MAIN_HAND).getItem();
-        boolean isUsingExcalibur = (hand == Hand.MAIN_HAND) ?
-                (offhandItem instanceof ExcaliburItem && !player.getItemCooldownManager().isCoolingDown(offhandItem)) :
-                (mainhandItem instanceof ExcaliburItem && !player.getItemCooldownManager().isCoolingDown(mainhandItem));
+        float offhandCooldown = player.getItemCooldownManager().getCooldownProgress(offhandItem, 0);
+        float mainhandCooldown = player.getItemCooldownManager().getCooldownProgress(mainhandItem, 0);
+        boolean shouldUseExcalibur = (hand == Hand.MAIN_HAND) ?
+                (offhandItem instanceof ExcaliburItem && (offhandCooldown > 0.99f || offhandCooldown == 0)) :
+                (mainhandItem instanceof ExcaliburItem && (mainhandCooldown > 0.99f || mainhandCooldown == 0));
 
-        if (this.storedState != null && !(hand == Hand.OFF_HAND && player.getStackInHand(Hand.MAIN_HAND).getItem() instanceof ExcaliburTotemItem) && !isUsingExcalibur) {
+        if (this.storedState != null && !shouldUseExcalibur) {
             triggerRewind(world, player, hand);
             player.getItemCooldownManager().set(this, MAX_HOLD_DURATION - 200);
             return TypedActionResult.success(itemStack);

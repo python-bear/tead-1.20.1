@@ -8,8 +8,8 @@ import net.minecraft.util.math.Box;
 
 import java.util.List;
 
-public class OnPlayerWorldTick {
-    public static void onWorldTick(ServerWorld world) {
+public class OnWorldTick {
+    public static void onPlayerWorldTick(ServerWorld world) {
         for (PlayerEntity player : world.getPlayers()) {
             BlockPos playerPos = player.getBlockPos();
             Box nearbyBox = new Box(playerPos.add(-6, -6, -6), playerPos.add(6, 6, 6));
@@ -17,6 +17,7 @@ public class OnPlayerWorldTick {
 
             FrostClaymoreHandler.onPlayerWorldTick(world, player, allNearbyItems, playerPos, nearbyBox);
             SummonStorm.onPlayerWorldTick(world, player, allNearbyItems, playerPos, nearbyBox);
+            SpecialArmorEffect.onPlayerWorldTick(world, player, playerPos);
         }
     }
 }

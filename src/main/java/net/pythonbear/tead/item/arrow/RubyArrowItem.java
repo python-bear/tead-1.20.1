@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.RubyArrowEntity;
+import net.pythonbear.tead.entity.arrow.RubyArrowEntity;
 
 public class RubyArrowItem extends ArrowItem {
     public RubyArrowItem(Settings settings) {

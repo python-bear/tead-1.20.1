@@ -1,4 +1,4 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -15,29 +15,40 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.item.TeadItems;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.UUID;
 
-public class RubyArrowEntity extends PersistentProjectileEntity {
+public class TransmorphingArrowEntity extends PersistentProjectileEntity {
     @Nullable
     private Entity currentTarget;
 
-    public RubyArrowEntity(World world, LivingEntity owner) {
-        super(TeadEntityTypes.RUBY_ARROW, owner, world);
+    public TransmorphingArrowEntity(World world, LivingEntity owner) {
+        super(TeadEntityTypes.TRANSMORPHING_ARROW, owner, world);
     }
 
-    public RubyArrowEntity(World world, double x, double y, double z) {
-        super(TeadEntityTypes.RUBY_ARROW, x, y, z, world);
+    public TransmorphingArrowEntity(World world, double x, double y, double z) {
+        super(TeadEntityTypes.TRANSMORPHING_ARROW, x, y, z, world);
     }
 
-    public RubyArrowEntity(EntityType<RubyArrowEntity> arrowEntity, World world) {
+    public TransmorphingArrowEntity(EntityType<TransmorphingArrowEntity> arrowEntity, World world) {
         super(arrowEntity, world);
     }
 
     public void initFromStack(ItemStack stack) {}
+
+    @Override
+    protected void onHit(LivingEntity target) {
+        if (this.getWorld().isClient) return;
+        if (!this.inGround) {
+            ServerWorld world = ((ServerWorld) this.getWorld());
+            LivingEntity owner = (LivingEntity) this.getOwner();
+            this.currentTarget = findClosestTarget(owner, world);
+        }
+    }
 
     @Override
     public void tick() {
@@ -142,12 +153,12 @@ public class RubyArrowEntity extends PersistentProjectileEntity {
         boolean arrowInWater = this.isSubmergedInWater();
 
         List<LivingEntity> nearbyEntities = world.getEntitiesByClass(LivingEntity.class,
-                this.getBoundingBox().expand(20.0), entity -> {
-                    boolean entityInWater = entity.isSubmergedInWater();
-                    if (entityInWater && !arrowInWater) return false;
-                    return entity != owner && entity != this.currentTarget && this.canHit(entity) && entity.isAlive()
-                            && this.canSeeTarget(entity, world);
-                });
+                this.getBoundingBox().expand(50.0), entity -> {
+            boolean entityInWater = entity.isSubmergedInWater();
+            if (entityInWater && !arrowInWater) return false;
+            return entity != owner && entity != this.currentTarget && this.canHit(entity) && entity.isAlive()
+                    && this.canSeeTarget(entity, world);
+        });
 
         Entity closestTarget = null;
         double closestDistance = Double.MAX_VALUE;
@@ -185,7 +196,7 @@ public class RubyArrowEntity extends PersistentProjectileEntity {
         Vec3d pos = this.getPos();
 
         if (!world.isClient()) {
-            ItemEntity arrow = new ItemEntity(world, pos.x, pos.y, pos.z, TeadItems.RUBY_ARROW.getDefaultStack());
+            ItemEntity arrow = new ItemEntity(world, pos.x, pos.y, pos.z, TeadItems.TRANSMORPHING_ARROW.getDefaultStack());
             DustParticleEffect dustParticle = new DustParticleEffect(Vec3d.unpackRgb(0xC71836).toVector3f(), 1.0f);
             ((ServerWorld) world).spawnParticles(dustParticle, this.getX(), this.getY(), this.getZ(), 1, 0, 0, 0, 0.1);
             this.kill();
@@ -212,11 +223,11 @@ public class RubyArrowEntity extends PersistentProjectileEntity {
 
     @Override
     protected ItemStack asItemStack() {
-        return new ItemStack(TeadItems.RUBY_ARROW);
+        return new ItemStack(TeadItems.TRANSMORPHING_ARROW);
     }
 
     @Override
     protected float getDragInWater() {
-        return 0.5f;
+        return 0.4f;
     }
 }

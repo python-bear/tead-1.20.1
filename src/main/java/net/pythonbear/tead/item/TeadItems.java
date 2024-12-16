@@ -642,8 +642,8 @@ public class TeadItems {
     public static final Item GOLD_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.GOLD_SPANGENHELM);
     public static final Item GOLD_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.GOLD_STALWART);
     public static final Item GOLD_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.GOLD_STALWART);
-    public static final Item GOLD_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.GOLD_THIEF);
-    public static final Item GOLD_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.GOLD_THIEF);
+    public static final Item GOLD_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.GOLD_THIEF);
+    public static final Item GOLD_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.GOLD_THIEF);
     public static final Item GOLD_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.GOLD_WOOLEN);
     public static final Item GOLD_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.GOLD_WOOLEN);
     public static final Item GOLD_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.GOLD_WOOLEN);
@@ -675,8 +675,8 @@ public class TeadItems {
     public static final Item LEAD_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.LEAD_SPANGENHELM);
     public static final Item LEAD_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.LEAD_STALWART);
     public static final Item LEAD_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.LEAD_STALWART);
-    public static final Item LEAD_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.LEAD_THIEF);
-    public static final Item LEAD_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.LEAD_THIEF);
+    public static final Item LEAD_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.LEAD_THIEF);
+    public static final Item LEAD_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.LEAD_THIEF);
     public static final Item LEAD_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.LEAD_WOOLEN);
     public static final Item LEAD_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.LEAD_WOOLEN);
     public static final Item LEAD_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.LEAD_WOOLEN);
@@ -708,8 +708,8 @@ public class TeadItems {
     public static final Item COPPER_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.COPPER_SPANGENHELM);
     public static final Item COPPER_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.COPPER_STALWART);
     public static final Item COPPER_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.COPPER_STALWART);
-    public static final Item COPPER_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.COPPER_THIEF);
-    public static final Item COPPER_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.COPPER_THIEF);
+    public static final Item COPPER_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.COPPER_THIEF);
+    public static final Item COPPER_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.COPPER_THIEF);
     public static final Item COPPER_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.COPPER_WOOLEN);
     public static final Item COPPER_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.COPPER_WOOLEN);
     public static final Item COPPER_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.COPPER_WOOLEN);
@@ -741,8 +741,8 @@ public class TeadItems {
     public static final Item ROSE_GOLD_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.ROSE_GOLD_SPANGENHELM);
     public static final Item ROSE_GOLD_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.ROSE_GOLD_STALWART);
     public static final Item ROSE_GOLD_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.ROSE_GOLD_STALWART);
-    public static final Item ROSE_GOLD_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.ROSE_GOLD_THIEF);
-    public static final Item ROSE_GOLD_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.ROSE_GOLD_THIEF);
+    public static final Item ROSE_GOLD_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.ROSE_GOLD_THIEF);
+    public static final Item ROSE_GOLD_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.ROSE_GOLD_THIEF);
     public static final Item ROSE_GOLD_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.ROSE_GOLD_WOOLEN);
     public static final Item ROSE_GOLD_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.ROSE_GOLD_WOOLEN);
     public static final Item ROSE_GOLD_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.ROSE_GOLD_WOOLEN);
@@ -774,8 +774,8 @@ public class TeadItems {
     public static final Item WHITE_GOLD_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.WHITE_GOLD_SPANGENHELM);
     public static final Item WHITE_GOLD_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.WHITE_GOLD_STALWART);
     public static final Item WHITE_GOLD_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.WHITE_GOLD_STALWART);
-    public static final Item WHITE_GOLD_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.WHITE_GOLD_THIEF);
-    public static final Item WHITE_GOLD_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.WHITE_GOLD_THIEF);
+    public static final Item WHITE_GOLD_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.WHITE_GOLD_THIEF);
+    public static final Item WHITE_GOLD_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.WHITE_GOLD_THIEF);
     public static final Item WHITE_GOLD_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.WHITE_GOLD_WOOLEN);
     public static final Item WHITE_GOLD_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.WHITE_GOLD_WOOLEN);
     public static final Item WHITE_GOLD_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.WHITE_GOLD_WOOLEN);
@@ -799,8 +799,8 @@ public class TeadItems {
     public static final Item IRON_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.IRON_SPANGENHELM);
     public static final Item IRON_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.IRON_STALWART);
     public static final Item IRON_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.IRON_STALWART);
-    public static final Item IRON_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.IRON_THIEF);
-    public static final Item IRON_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.IRON_THIEF);
+    public static final Item IRON_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.IRON_THIEF);
+    public static final Item IRON_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.IRON_THIEF);
     public static final Item IRON_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.IRON_WOOLEN);
     public static final Item IRON_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.IRON_WOOLEN);
     public static final Item IRON_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.IRON_WOOLEN);
@@ -832,8 +832,8 @@ public class TeadItems {
     public static final Item BRASS_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.BRASS_SPANGENHELM);
     public static final Item BRASS_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.BRASS_STALWART);
     public static final Item BRASS_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.BRASS_STALWART);
-    public static final Item BRASS_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.BRASS_THIEF);
-    public static final Item BRASS_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.BRASS_THIEF);
+    public static final Item BRASS_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.BRASS_THIEF);
+    public static final Item BRASS_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.BRASS_THIEF);
     public static final Item BRASS_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.BRASS_WOOLEN);
     public static final Item BRASS_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.BRASS_WOOLEN);
     public static final Item BRASS_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.BRASS_WOOLEN);
@@ -865,8 +865,8 @@ public class TeadItems {
     public static final Item BRONZE_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.BRONZE_SPANGENHELM);
     public static final Item BRONZE_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.BRONZE_STALWART);
     public static final Item BRONZE_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.BRONZE_STALWART);
-    public static final Item BRONZE_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.BRONZE_THIEF);
-    public static final Item BRONZE_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.BRONZE_THIEF);
+    public static final Item BRONZE_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.BRONZE_THIEF);
+    public static final Item BRONZE_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.BRONZE_THIEF);
     public static final Item BRONZE_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.BRONZE_WOOLEN);
     public static final Item BRONZE_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.BRONZE_WOOLEN);
     public static final Item BRONZE_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.BRONZE_WOOLEN);
@@ -898,8 +898,8 @@ public class TeadItems {
     public static final Item STEEL_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.STEEL_SPANGENHELM);
     public static final Item STEEL_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.STEEL_STALWART);
     public static final Item STEEL_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.STEEL_STALWART);
-    public static final Item STEEL_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.STEEL_THIEF);
-    public static final Item STEEL_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.STEEL_THIEF);
+    public static final Item STEEL_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.STEEL_THIEF);
+    public static final Item STEEL_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.STEEL_THIEF);
     public static final Item STEEL_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.STEEL_WOOLEN);
     public static final Item STEEL_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.STEEL_WOOLEN);
     public static final Item STEEL_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.STEEL_WOOLEN);
@@ -923,8 +923,8 @@ public class TeadItems {
     public static final Item DIAMOND_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.DIAMOND_SPANGENHELM);
     public static final Item DIAMOND_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.DIAMOND_STALWART);
     public static final Item DIAMOND_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.DIAMOND_STALWART);
-    public static final Item DIAMOND_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.DIAMOND_THIEF);
-    public static final Item DIAMOND_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.DIAMOND_THIEF);
+    public static final Item DIAMOND_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.DIAMOND_THIEF);
+    public static final Item DIAMOND_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.DIAMOND_THIEF);
     public static final Item DIAMOND_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.DIAMOND_WOOLEN);
     public static final Item DIAMOND_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.DIAMOND_WOOLEN);
     public static final Item DIAMOND_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.DIAMOND_WOOLEN);
@@ -948,8 +948,8 @@ public class TeadItems {
     public static final Item NETHERITE_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.NETHERITE_SPANGENHELM);
     public static final Item NETHERITE_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.NETHERITE_STALWART);
     public static final Item NETHERITE_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.NETHERITE_STALWART);
-    public static final Item NETHERITE_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.NETHERITE_THIEF);
-    public static final Item NETHERITE_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.NETHERITE_THIEF);
+    public static final Item NETHERITE_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.NETHERITE_THIEF);
+    public static final Item NETHERITE_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.NETHERITE_THIEF);
     public static final Item NETHERITE_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.NETHERITE_WOOLEN);
     public static final Item NETHERITE_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.NETHERITE_WOOLEN);
     public static final Item NETHERITE_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.NETHERITE_WOOLEN);
@@ -977,8 +977,8 @@ public class TeadItems {
     public static final Item ROSE_NETHERITE_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.ROSE_NETHERITE_SPANGENHELM);
     public static final Item ROSE_NETHERITE_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.ROSE_NETHERITE_STALWART);
     public static final Item ROSE_NETHERITE_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.ROSE_NETHERITE_STALWART);
-    public static final Item ROSE_NETHERITE_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.ROSE_NETHERITE_THIEF);
-    public static final Item ROSE_NETHERITE_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.ROSE_NETHERITE_THIEF);
+    public static final Item ROSE_NETHERITE_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.ROSE_NETHERITE_THIEF);
+    public static final Item ROSE_NETHERITE_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.ROSE_NETHERITE_THIEF);
     public static final Item ROSE_NETHERITE_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.ROSE_NETHERITE_WOOLEN);
     public static final Item ROSE_NETHERITE_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.ROSE_NETHERITE_WOOLEN);
     public static final Item ROSE_NETHERITE_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.ROSE_NETHERITE_WOOLEN);
@@ -1006,8 +1006,8 @@ public class TeadItems {
     public static final Item WHITE_NETHERITE_SPANGENHELM_HELMET = registerHelmetItem(TeadArmorMaterials.WHITE_NETHERITE_SPANGENHELM);
     public static final Item WHITE_NETHERITE_STALWART_HELMET = registerHelmetItem(TeadArmorMaterials.WHITE_NETHERITE_STALWART);
     public static final Item WHITE_NETHERITE_STALWART_CHESTPLATE = registerChestplateItem(TeadArmorMaterials.WHITE_NETHERITE_STALWART);
-    public static final Item WHITE_NETHERITE_THIEF_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.WHITE_NETHERITE_THIEF);
-    public static final Item WHITE_NETHERITE_THIEF_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.WHITE_NETHERITE_THIEF);
+    public static final Item WHITE_NETHERITE_THIEF_HELMET = registerThiefHelmetItem(TeadArmorMaterials.WHITE_NETHERITE_THIEF);
+    public static final Item WHITE_NETHERITE_THIEF_CHESTPLATE = registerThiefChestplateItem(TeadArmorMaterials.WHITE_NETHERITE_THIEF);
     public static final Item WHITE_NETHERITE_WOOLEN_HELMET = registerDyeableHelmetItem(TeadArmorMaterials.WHITE_NETHERITE_WOOLEN);
     public static final Item WHITE_NETHERITE_WOOLEN_CHESTPLATE = registerDyeableChestplateItem(TeadArmorMaterials.WHITE_NETHERITE_WOOLEN);
     public static final Item WHITE_NETHERITE_WOOLEN_LEGGINGS = registerDyeableLeggingsItem(TeadArmorMaterials.WHITE_NETHERITE_WOOLEN);
@@ -1238,6 +1238,14 @@ public class TeadItems {
 
     private static Item registerDyeableBootsItem(ArmorMaterial armorMaterial) {
         return registerArmorItem( "boots", new DyeableArmorItem(armorMaterial, ArmorItem.Type.BOOTS, new FabricItemSettings()));
+    }
+
+    private static Item registerThiefHelmetItem(ArmorMaterial armorMaterial) {
+        return registerArmorItem( "helmet", new ThiefArmor(armorMaterial, ArmorItem.Type.HELMET, new FabricItemSettings()));
+    }
+
+    private static Item registerThiefChestplateItem(ArmorMaterial armorMaterial) {
+        return registerArmorItem( "chestplate", new ThiefArmor(armorMaterial, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
     }
 
     public static void registerItems() {

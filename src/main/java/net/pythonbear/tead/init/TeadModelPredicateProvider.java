@@ -17,7 +17,33 @@ public class TeadModelPredicateProvider {
         registerBow(TeadItems.WEBBED_BOW);
         registerBow(TeadItems.SHORT_BOW);
         registerBow(TeadItems.LONG_BOW);
+
         registerCrossBow(TeadItems.FIREBOLT_THROWER);
+
+        registerSpear(TeadItems.WOOD_SPEAR);
+        registerSpear(TeadItems.STONE_SPEAR);
+        registerSpear(TeadItems.GOLD_SPEAR);
+        registerSpear(TeadItems.LEAD_SPEAR);
+        registerSpear(TeadItems.COPPER_SPEAR);
+        registerSpear(TeadItems.ROSE_GOLD_SPEAR);
+        registerSpear(TeadItems.WHITE_GOLD_SPEAR);
+        registerSpear(TeadItems.IRON_SPEAR);
+        registerSpear(TeadItems.BRASS_SPEAR);
+        registerSpear(TeadItems.BRONZE_SPEAR);
+        registerSpear(TeadItems.STEEL_SPEAR);
+        registerSpear(TeadItems.DIAMOND_SPEAR);
+        registerSpear(TeadItems.NETHERITE_SPEAR);
+        registerSpear(TeadItems.ROSE_NETHERITE_SPEAR);
+        registerSpear(TeadItems.WHITE_NETHERITE_SPEAR);
+    }
+
+    private static void registerSpear(Item spear) {
+        ModelPredicateProviderRegistry.register(
+                spear,
+                new Identifier("throwing"), (stack, world, entity, seed) -> entity != null
+                        && entity.isUsingItem()
+                        && entity.getActiveItem() == stack ? 1.0f : 0.0f
+        );
     }
 
     private static void registerBow(Item bow) {

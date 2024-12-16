@@ -17,6 +17,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
@@ -106,7 +107,7 @@ public class LightningStaffItem extends StaffItem implements Vanishable {
     public static void tick(ServerWorld world) {
         List<LightningTask> tasks = worldTaskMap.get(world);
         if (tasks == null || tasks.isEmpty()) {
-            return; // No tasks for this world
+            return;
         }
 
         List<LightningTask> completedTasks = new ArrayList<>();
@@ -116,14 +117,12 @@ public class LightningStaffItem extends StaffItem implements Vanishable {
                 LightningEntity lightning = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
                 lightning.setPosition(task.getPosition());
                 world.spawnEntity(lightning);
-                completedTasks.add(task); // Mark for removal
+                completedTasks.add(task);
             }
         }
 
-        // Remove completed tasks
         tasks.removeAll(completedTasks);
 
-        // Cleanup if no tasks remain
         if (tasks.isEmpty()) {
             worldTaskMap.remove(world);
         }

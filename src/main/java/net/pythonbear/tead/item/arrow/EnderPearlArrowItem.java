@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.EnderPearlArrowEntity;
+import net.pythonbear.tead.entity.arrow.EnderPearlArrowEntity;
 
 public class EnderPearlArrowItem extends ArrowItem {
     public EnderPearlArrowItem(Settings settings) {

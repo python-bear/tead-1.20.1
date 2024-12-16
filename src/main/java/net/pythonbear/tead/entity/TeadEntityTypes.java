@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.entity.arrow.*;
 
 public class TeadEntityTypes {
     public static final EntityType<GrenadeProjectileEntity> GRENADE_PROJECTILE = Registry.register(

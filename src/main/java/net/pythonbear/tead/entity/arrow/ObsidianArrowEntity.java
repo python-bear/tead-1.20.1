@@ -1,10 +1,11 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.item.TeadItems;
 
 

@@ -16,6 +16,7 @@
     "AbstractSkeletonEntityInitEquipmentMixin",
     "DrownedInitEquipmentMixin",
     "FireTrailMixin",
+    "MiningToolItemMixin",
     "PiglinInitEquipmentMixin",
     "SmithingScreenHandlerMixin",
     "SwordItemMixin",

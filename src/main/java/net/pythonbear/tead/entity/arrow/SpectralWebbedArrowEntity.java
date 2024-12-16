@@ -1,4 +1,4 @@
-package net.pythonbear.tead.entity;
+package net.pythonbear.tead.entity.arrow;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -13,6 +13,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.TeadEntityTypes;
 
 public class SpectralWebbedArrowEntity extends PersistentProjectileEntity {
     public SpectralWebbedArrowEntity(World world, double x, double y, double z) {

@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.CopperArrowEntity;
+import net.pythonbear.tead.entity.arrow.CopperArrowEntity;
 
 public class CopperArrowItem extends ArrowItem {
     public CopperArrowItem(Settings settings) {

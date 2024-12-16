@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.AmethystArrowEntity;
+import net.pythonbear.tead.entity.arrow.AmethystArrowEntity;
 
 public class AmethystArrowItem extends ArrowItem {
     public AmethystArrowItem(Settings settings) {

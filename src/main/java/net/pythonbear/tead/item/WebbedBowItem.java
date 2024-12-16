@@ -15,8 +15,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.SpectralWebbedArrowEntity;
-import net.pythonbear.tead.entity.WebbedArrowEntity;
+import net.pythonbear.tead.entity.arrow.SpectralWebbedArrowEntity;
+import net.pythonbear.tead.entity.arrow.WebbedArrowEntity;
 
 public class WebbedBowItem extends BowItem implements Vanishable {
     public WebbedBowItem(Settings settings) {

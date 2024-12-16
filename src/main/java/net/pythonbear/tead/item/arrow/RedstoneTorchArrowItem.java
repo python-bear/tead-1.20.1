@@ -5,7 +5,7 @@ import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.RedstoneTorchArrowEntity;
+import net.pythonbear.tead.entity.arrow.RedstoneTorchArrowEntity;
 
 public class RedstoneTorchArrowItem extends ArrowItem {
     public RedstoneTorchArrowItem(Settings settings) {
