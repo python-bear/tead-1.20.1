@@ -61,8 +61,8 @@ public class TeadLootTableProvider extends FabricBlockLootTableProvider {
                 3f));
         addDrop(TeadBlocks.WHITE_GOLD_NETHER_ORE, copperLikeOreDrops(TeadBlocks.WHITE_GOLD_NETHER_ORE,
                 TeadItems.WHITE_GOLD_NUGGET, 3f, 7f));
-        addDrop(TeadBlocks.RUBY_ORE, copperLikeOreDrops(TeadBlocks.RUBY_ORE, TeadItems.RUBY, 1f, 2f));
-        addDrop(TeadBlocks.DEEPSLATE_RUBY_ORE, copperLikeOreDrops(TeadBlocks.DEEPSLATE_RUBY_ORE, TeadItems.RUBY,
+        addDrop(TeadBlocks.RUBY_ORE, copperLikeOreDrops(TeadBlocks.RUBY_ORE, TeadItems.ROUGH_RUBY, 1f, 2f));
+        addDrop(TeadBlocks.DEEPSLATE_RUBY_ORE, copperLikeOreDrops(TeadBlocks.DEEPSLATE_RUBY_ORE, TeadItems.ROUGH_RUBY,
                 1f, 3f));
     }
 

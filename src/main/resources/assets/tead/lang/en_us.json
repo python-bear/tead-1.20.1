@@ -3,6 +3,8 @@
 
   "item.tead.copper_nugget": "Copper Nugget",
   "item.tead.diamond_chip": "Diamond Chip",
+  "item.tead.rough_diamond": "Rough Diamond",
+  "item.tead.rough_ruby": "Rough Ruby",
   "item.tead.ruby": "Ruby",
   "item.tead.ruby_ingot": "Transmutation Cube",
   "item.tead.rock": "Rock",
@@ -15,6 +17,8 @@
   "item.tead.gravity_pearl": "Eye Of Gravity",
   "item.tead.galena": "Galena",
   "item.tead.handle": "Handle",
+  "item.tead.pig_iron_ingot": "Pig Iron Ingot",
+  "item.tead.pig_iron_nugget": "Pig Iron Nugget",
   "item.tead.steel_ingot": "Steel Ingot",
   "item.tead.steel_nugget": "Steel Nugget",
   "item.tead.rose_netherite_ingot": "Rose Netherite Ingot",
@@ -1049,7 +1053,7 @@
   "enchantment.tead.transmorphing": "Transmorphing",
   "enchantment.tead.weakening": "Weakening",
 
-  "container.tead.smelter": "Smelter",
-
+  "container.tead.smelter": "Alloy Smelter",
+  "gui.recipebook.toggleRecipes.alloyable": "Showing Alloyable",
   "gui.recipebook.toggleRecipes.smeltable": "Showing Smeltable"
 }

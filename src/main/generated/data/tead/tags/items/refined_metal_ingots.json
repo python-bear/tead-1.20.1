@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "tead:rose_gold_ingot",
+    "tead:white_gold_ingot",
+    "minecraft:iron_ingot",
+    "tead:brass_ingot",
+    "tead:bronze_ingot",
+    "tead:steel_ingot"
+  ]
+}

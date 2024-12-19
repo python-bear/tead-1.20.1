@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tead:pig_iron_block",
     "tead:lead_ore",
     "tead:lead_deepslate_ore",
     "tead:raw_lead_block",

@@ -14,5 +14,13 @@
       "translation": [ 0, 0, 2 ],
       "scale": [ 1.3, 1.3, 1 ]
     }
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "throwing": 1
+      },
+      "model": "tead:item/brass_spear_throwing"
+    }
+  ]
 }

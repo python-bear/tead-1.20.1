@@ -46,9 +46,13 @@ public class TeadItems {
     public static final Item MUDDY_CLAY_BALL = registerItem("muddy_clay_ball",
             new Item(new FabricItemSettings()));
     public static final Item DARK_BRICK = registerItem("dark_brick", new Item(new FabricItemSettings()));
+    public static final Item ROUGH_DIAMOND = registerItem("rough_diamond", new Item(new FabricItemSettings()));
+    public static final Item ROUGH_RUBY = registerItem("rough_ruby", new Item(new FabricItemSettings()));
     public static final Item DIAMOND_CHIP = registerItem("diamond_chip", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard", new Item(new FabricItemSettings()));
     public static final Item OBSIDIAN_INGOT = registerItem("obsidian_ingot", new Item(new FabricItemSettings()));
+    public static final Item PIG_IRON_INGOT = registerItem("pig_iron_ingot", new Item(new FabricItemSettings()));
+    public static final Item PIG_IRON_NUGGET = registerItem("pig_iron_nugget", new Item(new FabricItemSettings()));
     public static final Item GALENA = registerItem("galena", new Item(new FabricItemSettings()));
     public static final Item LEAD_INGOT = registerItem("lead_ingot", new Item(new FabricItemSettings()));
     public static final Item LEAD_NUGGET = registerItem("lead_nugget", new Item(new FabricItemSettings()));
@@ -80,6 +84,7 @@ public class TeadItems {
     public static final Item TRANSMUTATION_GRIMOIRE = registerItem("transmutation_grimoire",
             new GlintedItem(new FabricItemSettings().rarity(Rarity.RARE)));
     public static final Item HANDLE = registerItem("handle", new Item(new FabricItemSettings()));
+    public static final Item GRENADE_ENTITY = registerItem("entity_grenade", new Item(new FabricItemSettings()));
     public static final Item GRENADE = registerItem("grenade", new GrenadeItem(new FabricItemSettings()));
     public static final Item SHURIKEN = registerItem("shuriken", new ShurikenItem(new FabricItemSettings()));
     public static final Item LIGHTNING_STAFF = registerItem("lightning_staff",

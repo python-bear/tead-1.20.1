@@ -74,8 +74,18 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.RUBY, RecipeCategory.MISC, TeadBlocks.RUBY_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.GALENA, RecipeCategory.MISC, TeadBlocks.RAW_LEAD_BLOCK);
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.PIG_IRON_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.PIG_IRON_BLOCK, "pig_iron_ingot_from_block", "pig_iron_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.LEAD_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.LEAD_BLOCK, "lead_ingot_from_block", "lead_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.ROSE_GOLD_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.ROSE_GOLD_BLOCK, "rose_gold_ingot_from_block", "rose_gold_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.WHITE_GOLD_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.WHITE_GOLD_BLOCK, "white_gold_ingot_from_block", "white_gold_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.BRASS_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.BRASS_BLOCK, "brass_ingot_from_block", "brass_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.BRONZE_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.BRONZE_BLOCK, "bronze_ingot_from_block", "bronze_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.STEEL_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.STEEL_BLOCK, "steel_ingot_from_block", "steel_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.ROSE_NETHERITE_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.ROSE_NETHERITE_BLOCK, "rose_netherite_from_block", "rose_netherite_ingot");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, TeadItems.WHITE_NETHERITE_INGOT, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.WHITE_NETHERITE_BLOCK, "white_netherite_from_block", "white_netherite_ingot");
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, TeadItems.OBSIDIAN_SHARD, RecipeCategory.MISC, Blocks.OBSIDIAN);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.DIAMOND_CHIP, RecipeCategory.MISC, Items.DIAMOND);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.PIG_IRON_NUGGET, RecipeCategory.MISC, TeadItems.PIG_IRON_INGOT);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.LEAD_NUGGET, RecipeCategory.MISC, TeadItems.LEAD_INGOT);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.COPPER_NUGGET, RecipeCategory.MISC, Items.COPPER_INGOT);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.ROSE_GOLD_NUGGET, RecipeCategory.MISC, TeadItems.ROSE_GOLD_INGOT);
@@ -1538,16 +1548,17 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
                 .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
                 .offerTo(exporter);
-        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, TeadItems.FIREBOLT_THROWER, 1)
-                .pattern("&$&")
+        ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.CROSSBOW, 1)
+                .pattern("!$!")
                 .pattern("%#%")
-                .pattern("%%%")
-                .input('#', Items.CROSSBOW)
+                .pattern(" ! ")
+                .input('#', Items.TRIPWIRE_HOOK)
                 .input('%', Items.STRING)
-                .input('$', Items.FLINT_AND_STEEL)
-                .input('&', Items.RED_DYE)
-                .criterion(hasItem(Items.FLINT_AND_STEEL), conditionsFromItem(Items.FLINT_AND_STEEL))
-                .criterion(hasItem(Items.CROSSBOW), conditionsFromItem(Items.CROSSBOW))
+                .input('!', Items.STICK)
+                .input('$', TeadTags.Items.REFINED_METAL_INGOTS)
+                .criterion(hasItem(Items.TRIPWIRE_HOOK), conditionsFromItem(Items.TRIPWIRE_HOOK))
+                .criterion(hasItem(Items.STRING), conditionsFromItem(Items.STRING))
+                .criterion("has_" + TeadTags.Items.REFINED_METAL_INGOTS.id().getPath(), conditionsFromTag(TeadTags.Items.REFINED_METAL_INGOTS))
                 .offerTo(exporter);
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, Items.ITEM_FRAME, 1)
                 .pattern("%%%")

@@ -28,13 +28,17 @@ public class TeadItemGroups {
                         entries.add(TeadItems.ROSE_GOLD_INGOT);
                         entries.add(TeadItems.WHITE_GOLD_NUGGET);
                         entries.add(TeadItems.WHITE_GOLD_INGOT);
+                        entries.add(TeadItems.PIG_IRON_NUGGET);
+                        entries.add(TeadItems.PIG_IRON_INGOT);
                         entries.add(TeadItems.BRASS_NUGGET);
                         entries.add(TeadItems.BRASS_INGOT);
                         entries.add(TeadItems.BRONZE_NUGGET);
                         entries.add(TeadItems.BRONZE_INGOT);
                         entries.add(TeadItems.STEEL_NUGGET);
                         entries.add(TeadItems.STEEL_INGOT);
+                        entries.add(TeadItems.ROUGH_DIAMOND);
                         entries.add(TeadItems.DIAMOND_CHIP);
+                        entries.add(TeadItems.ROUGH_RUBY);
                         entries.add(TeadItems.RUBY);
                         entries.add(TeadItems.RUBY_INGOT);
                         entries.add(TeadItems.NETHERITE_NUGGET);
@@ -955,6 +959,7 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.BRONZE_CHAIN);
                         entries.add(TeadBlocks.STEEL_CHAIN);
 
+                        entries.add(TeadBlocks.PIG_IRON_BLOCK);
                         entries.add(TeadBlocks.RAW_LEAD_BLOCK);
                         entries.add(TeadBlocks.LEAD_BLOCK);
                         entries.add(TeadBlocks.LEAD_CUT_BLOCK);

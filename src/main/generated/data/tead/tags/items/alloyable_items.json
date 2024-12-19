@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:gold_nugget",
+    "minecraft:gold_ingot",
+    "tead:lead_nugget",
+    "tead:lead_ingot",
+    "tead:copper_nugget",
+    "minecraft:copper_ingot",
+    "minecraft:coal",
+    "minecraft:charcoal",
+    "minecraft:iron_nugget",
+    "minecraft:iron_ingot"
+  ]
+}

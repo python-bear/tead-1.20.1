@@ -53,8 +53,7 @@ public class CustomAttacking {
             boolean bl2 = false;
             int i = 0;
 
-            Optional<Integer> knockbackEnchantment =
-                    Optional.ofNullable(itemStackEnchantments.get(Enchantments.KNOCKBACK));
+            Optional<Integer> knockbackEnchantment = Optional.ofNullable(itemStackEnchantments.get(Enchantments.KNOCKBACK));
             i += knockbackEnchantment.orElse(0);
 
 

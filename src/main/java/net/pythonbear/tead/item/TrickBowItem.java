@@ -88,46 +88,16 @@ public class TrickBowItem extends BowItem implements Vanishable {
 
             Item item = itemStack.getItem();
             PersistentProjectileEntity persistentProjectileEntity;
-            if (item instanceof AmethystArrowItem) {
-                AmethystArrowItem arrowItem = (AmethystArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+
+            ArrowItem arrowItem = (ArrowItem) item;
+            persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+
+            if (arrowItem instanceof AmethystArrowItem || arrowItem instanceof ObsidianArrowItem) {
                 persistentProjectileEntity.setPierceLevel((byte) 2);
-            } else if (item instanceof CopperArrowItem) {
-                CopperArrowItem arrowItem = (CopperArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof EnderPearlArrowItem) {
-                EnderPearlArrowItem arrowItem = (EnderPearlArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof ObsidianArrowItem) {
-                ObsidianArrowItem arrowItem = (ObsidianArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-                persistentProjectileEntity.setPierceLevel((byte) 2);
-            } else if (item instanceof RubyArrowItem) {
-                RubyArrowItem arrowItem = (RubyArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof TransmorphingArrowItem) {
-                TransmorphingArrowItem arrowItem = (TransmorphingArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
+            } else if (arrowItem instanceof TransmorphingArrowItem) {
                 persistentProjectileEntity.setPierceLevel((byte) 127);
-            } else if (item instanceof TntArrowItem) {
-                TntArrowItem arrowItem = (TntArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof TorchArrowItem) {
-                TorchArrowItem arrowItem = (TorchArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof RedstoneTorchArrowItem) {
-                RedstoneTorchArrowItem arrowItem = (RedstoneTorchArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof SoulTorchArrowItem) {
-                SoulTorchArrowItem arrowItem = (SoulTorchArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else if (item instanceof BoringArrowItem) {
-                BoringArrowItem arrowItem = (BoringArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-            } else {
-                ArrowItem arrowItem = (ArrowItem)(itemStack.getItem());
-                persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
             }
+
 
             if (item instanceof TransmorphingArrowItem) {
                 persistentProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(),
@@ -186,14 +156,12 @@ public class TrickBowItem extends BowItem implements Vanishable {
             return ItemStack.EMPTY;
         }
 
-        // Use getHeldProjectiles to get projectiles from the player's hand
         Predicate<ItemStack> heldPredicate = ((TrickBowItem)stack.getItem()).getHeldProjectiles();
         ItemStack heldProjectile = getHeldProjectile(user, heldPredicate);
         if (!heldProjectile.isEmpty()) {
             return heldProjectile;
         }
 
-        // Use getProjectiles to get projectiles from the player's inventory
         Predicate<ItemStack> inventoryPredicate = ((TrickBowItem)stack.getItem()).getProjectiles();
         for (int i = 0; i < user.getInventory().size(); ++i) {
             ItemStack inventoryProjectile = user.getInventory().getStack(i);

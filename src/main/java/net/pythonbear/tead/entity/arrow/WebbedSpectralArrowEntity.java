@@ -6,6 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
+import net.minecraft.entity.projectile.SpectralArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
@@ -15,30 +16,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.pythonbear.tead.entity.TeadEntityTypes;
 
-public class SpectralWebbedArrowEntity extends PersistentProjectileEntity {
-    public SpectralWebbedArrowEntity(World world, double x, double y, double z) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, x, y, z, world);
+public class WebbedSpectralArrowEntity extends SpectralArrowEntity {
+    public WebbedSpectralArrowEntity(EntityType<? extends SpectralArrowEntity> entityType, World world) {
+        super(entityType, world);
     }
 
-    public SpectralWebbedArrowEntity(World world, LivingEntity owner) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, owner, world);
+    public WebbedSpectralArrowEntity(World world, LivingEntity owner) {
+        super(world, owner);
     }
 
-    public SpectralWebbedArrowEntity(World world, LivingEntity owner, double x, double y, double z) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, owner, world);
-    }
-
-    public SpectralWebbedArrowEntity(EntityType<SpectralWebbedArrowEntity> spectralWindArrowEntityEntityType, World world) {
-        super(spectralWindArrowEntityEntityType, world);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (!this.getWorld().isClient && !this.inGround) {
-            ((ServerWorld)this.getWorld()).spawnParticles(ParticleTypes.INSTANT_EFFECT, this.getX(), this.getY(),
-                    this.getZ(), 1, 0, 0, 0,0);
-        }
+    public WebbedSpectralArrowEntity(World world, double x, double y, double z) {
+        super(world, x, y, z);
     }
 
     @Override
@@ -64,10 +52,5 @@ public class SpectralWebbedArrowEntity extends PersistentProjectileEntity {
 
             world.setBlockState(blockPos, Blocks.COBWEB.getDefaultState());
         }
-    }
-
-    @Override
-    protected ItemStack asItemStack() {
-        return new ItemStack(Items.SPECTRAL_ARROW);
     }
 }

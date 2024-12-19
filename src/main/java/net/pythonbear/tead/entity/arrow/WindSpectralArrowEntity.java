@@ -5,10 +5,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.entity.projectile.SpectralArrowEntity;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
@@ -16,35 +14,21 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.sound.TeadSounds;
 
 import java.util.List;
 
-public class SpectralWindArrowEntity extends PersistentProjectileEntity {
-    public SpectralWindArrowEntity(World world, double x, double y, double z) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, x, y, z, world);
+public class WindSpectralArrowEntity extends SpectralArrowEntity {
+    public WindSpectralArrowEntity(EntityType<? extends SpectralArrowEntity> entityType, World world) {
+        super(entityType, world);
     }
 
-    public SpectralWindArrowEntity(World world, LivingEntity owner) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, owner, world);
+    public WindSpectralArrowEntity(World world, LivingEntity owner) {
+        super(world, owner);
     }
 
-    public SpectralWindArrowEntity(World world, LivingEntity owner, double x, double y, double z) {
-        super(TeadEntityTypes.SPECTRAL_WIND_ARROW, owner, world);
-    }
-
-    public SpectralWindArrowEntity(EntityType<SpectralWindArrowEntity> spectralWindArrowEntityEntityType, World world) {
-        super(spectralWindArrowEntityEntityType, world);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        if (!this.getWorld().isClient && !this.inGround) {
-            ((ServerWorld)this.getWorld()).spawnParticles(ParticleTypes.INSTANT_EFFECT, this.getX(), this.getY(),
-                    this.getZ(), 1, 0, 0, 0,0);
-        }
+    public WindSpectralArrowEntity(World world, double x, double y, double z) {
+        super(world, x, y, z);
     }
 
     @Override
@@ -132,10 +116,5 @@ public class SpectralWindArrowEntity extends PersistentProjectileEntity {
                     -(offsetX / 5), 0.02 + world.getRandom().nextDouble(), -(offsetZ / 5), 0.2
             );
         }
-    }
-
-    @Override
-    protected ItemStack asItemStack() {
-        return new ItemStack(Items.SPECTRAL_ARROW);
     }
 }

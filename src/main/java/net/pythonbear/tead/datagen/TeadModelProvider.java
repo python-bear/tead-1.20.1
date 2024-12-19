@@ -25,6 +25,7 @@ public class TeadModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_DEEPSLATE_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RAW_LEAD_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.PIG_IRON_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_BLOCK);
         BlockStateModelGenerator.BlockTexturePool leadCutPool = blockStateModelGenerator.registerCubeAllModelTexturePool(TeadBlocks.LEAD_CUT_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_TILED_BLOCK);
@@ -141,11 +142,15 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.SMITHING_GUIDE_KATANA, Models.GENERATED);
 
         itemModelGenerator.register(TeadItems.FABRIC, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ROUGH_DIAMOND, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.ROUGH_RUBY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.DIAMOND_CHIP, Models.GENERATED);
         itemModelGenerator.register(TeadItems.RUBY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.RUBY_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_SHARD, Models.GENERATED);
         itemModelGenerator.register(TeadItems.OBSIDIAN_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.PIG_IRON_INGOT, Models.GENERATED);
+        itemModelGenerator.register(TeadItems.PIG_IRON_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_INGOT, Models.GENERATED);
         itemModelGenerator.register(TeadItems.LEAD_NUGGET, Models.GENERATED);
         itemModelGenerator.register(TeadItems.COPPER_NUGGET, Models.GENERATED);
@@ -191,6 +196,7 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.AMETHYST_ARROW, Models.GENERATED);
         itemModelGenerator.register(TeadItems.ENDER_PEARL_ARROW, Models.GENERATED);
 
+        itemModelGenerator.register(TeadItems.GRENADE_ENTITY, Models.GENERATED);
         itemModelGenerator.register(TeadItems.GRENADE, Models.GENERATED);
         itemModelGenerator.register(TeadItems.SHURIKEN, Models.GENERATED);
 

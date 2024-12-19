@@ -12,7 +12,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.arrow.SpectralWindArrowEntity;
+import net.pythonbear.tead.entity.arrow.WindSpectralArrowEntity;
 import net.pythonbear.tead.entity.arrow.WindArrowEntity;
 
 public class WindBowItem extends BowItem implements Vanishable {
@@ -97,9 +97,7 @@ public class WindBowItem extends BowItem implements Vanishable {
 
     private PersistentProjectileEntity createWindArrow(World world, ItemStack stack, LivingEntity shooter) {
         if (stack.getItem() == Items.SPECTRAL_ARROW) {
-            return new SpectralWindArrowEntity(world, shooter, shooter.getX(),
-                    shooter.getY(),
-                    shooter.getZ());
+            return new WindSpectralArrowEntity(world, shooter);
         } else {
             WindArrowEntity arrowEntity = new WindArrowEntity(world, shooter, shooter.getX(), shooter.getY(),
                     shooter.getZ());

@@ -18,6 +18,7 @@ import net.minecraft.util.UseAction;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.pythonbear.tead.entity.SpearEntity;
 
 public class SpearItem extends BladedWeaponItem {
     public SpearItem(ToolMaterial toolMaterial, Settings settings) {
@@ -60,13 +61,13 @@ public class SpearItem extends BladedWeaponItem {
         if (!world.isClient) {
             stack.damage(1, playerEntity, p -> p.sendToolBreakStatus(user.getActiveHand()));
             if (j == 0) {
-                TridentEntity tridentEntity = new TridentEntity(world, (LivingEntity)playerEntity, stack);
-                tridentEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 2.5f + (float)j * 0.5f, 1.0f);
+                SpearEntity spearEntity = new SpearEntity(world, playerEntity, stack);
+                spearEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0f, 1.5f + (float)j * 0.5f, 1.2f);
                 if (playerEntity.getAbilities().creativeMode) {
-                    tridentEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                    spearEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
                 }
-                world.spawnEntity(tridentEntity);
-                world.playSoundFromEntity(null, tridentEntity, SoundEvents.ITEM_TRIDENT_THROW, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                world.spawnEntity(spearEntity);
+                world.playSoundFromEntity(null, spearEntity, SoundEvents.ITEM_TRIDENT_THROW, SoundCategory.PLAYERS, 1.0f, 1.0f);
                 if (!playerEntity.getAbilities().creativeMode) {
                     playerEntity.getInventory().removeOne(stack);
                 }

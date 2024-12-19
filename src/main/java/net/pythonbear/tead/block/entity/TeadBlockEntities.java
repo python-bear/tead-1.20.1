@@ -16,5 +16,4 @@ public class TeadBlockEntities {
     public static void registerBlockEntities() {
         Tead.LOGGER.info("Registering mod block entities for " + Tead.MOD_ID);
     }
-
 }

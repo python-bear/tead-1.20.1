@@ -1,39 +1,40 @@
 package net.pythonbear.tead.screen;
 
-import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.screen.*;
-import net.minecraft.screen.slot.FurnaceOutputSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.block.entity.SmelterBlockEntity;
+import net.pythonbear.tead.recipe.TeadRecipeBookCategory;
 import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 
-public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory> {
+public class SmelterScreenHandler extends TeadAbstractRecipeScreenHandler<Inventory> {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     protected final World world;
     private final RecipeType<? extends AlloyCookingRecipe> recipeType;
 
-    public SmelterScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, ((Inventory) inventory.player.getWorld().getBlockEntity(buf.readBlockPos())),
+    public SmelterScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
+        this(syncId, playerInventory, ((Inventory) playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos())),
                 new ArrayPropertyDelegate(4));
-        Tead.LOGGER.info("Called SmelterScreenHandler using PacketByteBuf");
     }
 
-    public SmelterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory,
-                                PropertyDelegate propertyDelegate) {
+    public SmelterScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(4), new ArrayPropertyDelegate(4));
+    }
+
+    public SmelterScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, syncId);
-        Tead.LOGGER.info("Init SmelterScreenHandler");
         int i;
-        this.recipeType = TeadRecipeTypes.ALLOYING;
+        this.recipeType = TeadRecipeTypes.ALLOY_SMELTING;
         AbstractFurnaceScreenHandler.checkSize(inventory, 4);
         AbstractFurnaceScreenHandler.checkDataCount(propertyDelegate, 4);
         this.inventory = inventory;
@@ -42,7 +43,7 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         this.addSlot(new Slot(inventory, 0, 42, 17));
         this.addSlot(new Slot(inventory, 1, 68, 17));
         this.addSlot(new SmelterFuelSlot(this, inventory, 2, 55, 53));
-        this.addSlot(new FurnaceOutputSlot(playerInventory.player, inventory, 3, 117, 35));
+        this.addSlot(new SmelterOutputSlot(playerInventory.player, inventory, 3, 117, 35));
         for (i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; ++j) {
                 this.addSlot(new Slot(playerInventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
@@ -90,12 +91,12 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
 
     @Override
     public int getCraftingSlotCount() {
-        return 2;
+        return 4;
     }
 
     @Override
-    public RecipeBookCategory getCategory() {
-        return RecipeBookCategory.CRAFTING; // this is wrong
+    public TeadRecipeBookCategory getCategory() {
+        return TeadRecipeBookCategory.ALLOY_SMELTING;
     }
 
     @Override
@@ -108,51 +109,54 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(slotIndex);
         if (slot != null && slot.hasStack()) {
-            ItemStack slotsItemStack = slot.getStack();
-            itemStack = slotsItemStack.copy();
-            // Output slot (index 3)
+            ItemStack itemStack2 = slot.getStack();
+            itemStack = itemStack2.copy();
             if (slotIndex == 3) {
-                if (!this.insertItem(slotsItemStack, 4, 40, true)) {
+                if (!this.insertItem(itemStack2, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
-                slot.onQuickTransfer(slotsItemStack, itemStack);
-            }
-            // Smelter input slots (indexes 0 and 1) and fuel slot (index 2)
-            else if (slotIndex == 0 || slotIndex == 1 || slotIndex == 2) {
-                if (!this.insertItem(slotsItemStack, 4, 40, false)) {
+                slot.onQuickTransfer(itemStack2, itemStack);
+            } else if (slotIndex == 2 || slotIndex == 1 || slotIndex == 0) {
+                if (!this.insertItem(itemStack2, 4, 40, false)) {
                     return ItemStack.EMPTY;
                 }
-            }
-            // Player inventory slots
-            else if (slotIndex >= 4) {
-                if (this.isFuel(slotsItemStack) && this.insertItem(slotsItemStack, 2, 3, false)) {
-                    return itemStack;
-                } else if (this.insertItem(slotsItemStack, 0, 2, false)) {
-                    return itemStack;
-                } else if (slotIndex < 31 && this.insertItem(slotsItemStack, 31, 40, false)) {
-                    return itemStack;
-                } else if (slotIndex < 40 && this.insertItem(slotsItemStack, 4, 31, false)) {
-                    return itemStack;
+            } else if (this.isSmeltable(itemStack2)) {
+                if (!this.insertItem(itemStack2, 0, 2, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (this.isFuel(itemStack2)) {
+                if (!this.insertItem(itemStack2, 2, 3, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (slotIndex >= 4 && slotIndex < 31) {
+                if (!this.insertItem(itemStack2, 31, 40, false)) {
+                    return ItemStack.EMPTY;
+                }
+            } else if (slotIndex >= 31 && slotIndex < 40) {
+                if (!this.insertItem(itemStack2, 4, 31, false)) {
+                    return ItemStack.EMPTY;
                 }
             }
 
-            if (slotsItemStack.isEmpty()) {
+            if (itemStack2.isEmpty()) {
                 slot.setStack(ItemStack.EMPTY);
             } else {
                 slot.markDirty();
             }
-
-            if (slotsItemStack.getCount() == itemStack.getCount()) {
+            if (itemStack2.getCount() == itemStack.getCount()) {
                 return ItemStack.EMPTY;
             }
-            slot.onTakeItem(player, slotsItemStack);
+            slot.onTakeItem(player, itemStack2);
         }
-
         return itemStack;
     }
 
+    protected boolean isSmeltable(ItemStack itemStack) {
+        return this.world.getRecipeManager().getFirstMatch(this.recipeType, new SimpleInventory(itemStack), this.world).isPresent();
+    }
+
     protected boolean isFuel(ItemStack itemStack) {
-        return AbstractFurnaceBlockEntity.canUseAsFuel(itemStack);
+        return SmelterBlockEntity.canUseAsFuel(itemStack);
     }
 
     public int getCookProgress() {

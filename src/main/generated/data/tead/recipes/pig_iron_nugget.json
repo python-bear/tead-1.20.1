@@ -1,14 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "group": "rose_netherite_ingot",
   "ingredients": [
     {
-      "item": "tead:rose_netherite_block"
+      "item": "tead:pig_iron_ingot"
     }
   ],
   "result": {
     "count": 9,
-    "item": "tead:rose_netherite_ingot"
+    "item": "tead:pig_iron_nugget"
   }
 }

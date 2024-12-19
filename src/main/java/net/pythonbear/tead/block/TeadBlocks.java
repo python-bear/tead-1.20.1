@@ -18,6 +18,8 @@ import net.pythonbear.tead.block.entity.SmelterBlockEntity;
 public class TeadBlocks {
     public static final Block WEAK_COBWEB = registerBlockWithoutItem("weak_cobweb",
             new WeakCobwebBlock(AbstractBlock.Settings.create().mapColor(MapColor.WHITE_GRAY).solid().noCollision().requiresTool().strength(2.0f).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block PIG_IRON_BLOCK = registerBlock("pig_iron_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.TERRACOTTA_WHITE)));
     public static final Block LEAD_ORE = registerBlock("lead_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.IRON_ORE), UniformIntProvider.create(0, 1)));
     public static final Block LEAD_DEEPSLATE_ORE = registerBlock("lead_deepslate_ore",

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tead:pig_iron_block",
     "tead:lead_block",
     "tead:lead_chiseled_block",
     "tead:lead_cut_block",

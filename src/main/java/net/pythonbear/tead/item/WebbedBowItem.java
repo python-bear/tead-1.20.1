@@ -15,7 +15,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
-import net.pythonbear.tead.entity.arrow.SpectralWebbedArrowEntity;
+import net.pythonbear.tead.entity.arrow.WebbedSpectralArrowEntity;
 import net.pythonbear.tead.entity.arrow.WebbedArrowEntity;
 
 public class WebbedBowItem extends BowItem implements Vanishable {
@@ -100,12 +100,9 @@ public class WebbedBowItem extends BowItem implements Vanishable {
 
     private PersistentProjectileEntity createWebbedArrow(World world, ItemStack stack, LivingEntity shooter) {
         if (stack.getItem() == Items.SPECTRAL_ARROW) {
-            return new SpectralWebbedArrowEntity(world, shooter, shooter.getX(),
-                    shooter.getY(),
-                    shooter.getZ());
+            return new WebbedSpectralArrowEntity(world, shooter);
         } else {
-            WebbedArrowEntity arrowEntity = new WebbedArrowEntity(world, shooter, shooter.getX(), shooter.getY(),
-                    shooter.getZ());
+            WebbedArrowEntity arrowEntity = new WebbedArrowEntity(world, shooter);
             arrowEntity.initFromStack(stack);
             return arrowEntity;
         }

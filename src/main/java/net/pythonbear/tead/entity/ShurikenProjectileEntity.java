@@ -30,12 +30,10 @@ import java.util.List;
 
 public class ShurikenProjectileEntity extends PersistentProjectileEntity implements FlyingItemEntity {
     private final SoundEvent sound = this.getHitSound();
-    private final double damage = 4.1;
     @Nullable
     private IntOpenHashSet piercedEntities;
     @Nullable
     private List<Entity> piercingKilledEntities;
-    private int punch;
 
     public ShurikenProjectileEntity(EntityType<? extends PersistentProjectileEntity> entityType, World world) {
         super(entityType, world);
@@ -66,7 +64,7 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
 
     @Override
     protected float getDragInWater() {
-        return 0.4F;
+        return 0.7f;
     }
 
     @Override
@@ -74,7 +72,8 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
         float f = (float)this.getVelocity().length();
-        int i = MathHelper.ceil(MathHelper.clamp((double)f * this.damage, 0.0, 2.147483647E9));
+        double damage = 4.1;
+        int i = MathHelper.ceil(MathHelper.clamp((double)f * damage, 0.0, 2.147483647E9));
         if (this.getPierceLevel() > 0) {
             if (this.piercedEntities == null) {
                 this.piercedEntities = new IntOpenHashSet(5);
@@ -122,16 +121,6 @@ public class ShurikenProjectileEntity extends PersistentProjectileEntity impleme
             if (entity instanceof LivingEntity livingEntity) {
                 if (!this.getWorld().isClient && this.getPierceLevel() <= 0) {
                     livingEntity.setStuckArrowCount(livingEntity.getStuckArrowCount() + 1);
-                }
-
-                if (this.punch > 0) {
-                    double d = Math.max(0.0, 1.0 - livingEntity.getAttributeValue(
-                            EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
-                    Vec3d vec3d = this.getVelocity().multiply(1.0, 0.0, 1.0).normalize().multiply(
-                            (double)this.punch * 0.6 * d);
-                    if (vec3d.lengthSquared() > 0.0) {
-                        livingEntity.addVelocity(vec3d.x, 0.1, vec3d.z);
-                    }
                 }
 
                 if (!this.getWorld().isClient && entity2 instanceof LivingEntity) {

@@ -1,7 +1,7 @@
-// 1.20.1	2024-12-15T16:52:08.87574	tead/Tags for minecraft:block
+// 1.20.1	2024-12-18T22:26:18.3082754	tead/Tags for minecraft:block
 a7bed1c69a0776fb68eb189877fde38060a9bac4 data\minecraft\tags\blocks\needs_diamond_tool.json
-1028d9c7cd77a13a9ad4c2ac1396ea735951ac72 data\minecraft\tags\blocks\mineable\pickaxe.json
-6c909beab2fd00bd366fadee9ea67e857f37a237 data\minecraft\tags\blocks\beacon_base_blocks.json
+b89e57fe3d95a36e8b0e2a3641eec1b6ee03aff2 data\minecraft\tags\blocks\mineable\pickaxe.json
+9296fb08b0cac677685090a894e18b393303fa95 data\minecraft\tags\blocks\beacon_base_blocks.json
 4402bd1b02cef6085b60ea6200b6250fa7dca5ba data\minecraft\tags\blocks\mineable\axe.json
 8a23702b05296c8af5014d6aa6e9265ded85c7d9 data\fabric\tags\blocks\needs_tool_level_4.json
 2a1bae9b2d4ae8e61bf3c1c096a3c7033877313a data\minecraft\tags\blocks\needs_iron_tool.json
@@ -9,5 +9,5 @@ d231d220a6a38b14a8eb2c0f216b9f4cfad910ec data\tead\tags\blocks\mattock_mineable.
 9205ec33e3c382ec051b5450fa508cf4af84ed14 data\minecraft\tags\blocks\mineable\shovel.json
 0f7c341c5e87d7640778322ae4911f4e614c024d data\minecraft\tags\blocks\needs_stone_tool.json
 e4eb62d21a9ac0c463f56ebbfca3955a657bd710 data\tead\tags\blocks\scythe_blocks.json
-46ca7fcaa4497aea8b858db789f5c45d981a9210 data\tead\tags\blocks\refined_building_blocks.json
+9a780e26b604f1f2d63271ad15d9040244bff137 data\tead\tags\blocks\refined_building_blocks.json
 9d606e17052998168717efa04995cb0462e3b990 data\minecraft\tags\blocks\sword_efficient.json

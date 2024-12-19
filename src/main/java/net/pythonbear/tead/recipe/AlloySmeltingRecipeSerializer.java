@@ -1,12 +1,10 @@
 package net.pythonbear.tead.recipe;
 
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.AbstractCookingRecipe;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.ShapedRecipe;
@@ -14,11 +12,11 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
 
-public class AlloyRecipeSerializer<T extends AlloyCookingRecipe> implements RecipeSerializer<T> {
+public class AlloySmeltingRecipeSerializer<T extends AlloyCookingRecipe> implements RecipeSerializer<T> {
     private final int cookingTime;
     private final RecipeFactory<T> recipeFactory;
 
-    public AlloyRecipeSerializer(RecipeFactory<T> recipeFactory, int cookingTime) {
+    public AlloySmeltingRecipeSerializer(RecipeFactory<T> recipeFactory, int cookingTime) {
         this.cookingTime = cookingTime;
         this.recipeFactory = recipeFactory;
     }
@@ -44,7 +42,7 @@ public class AlloyRecipeSerializer<T extends AlloyCookingRecipe> implements Reci
         }
 
         ItemStack result = ShapedRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "result"));
-        float experience = JsonHelper.getFloat(jsonObject, "experience", 0.0F);
+        float experience = JsonHelper.getFloat(jsonObject, "experience", 0.0f);
         int cookingTime = JsonHelper.getInt(jsonObject, "cookingtime", this.cookingTime);
 
         return this.recipeFactory.create(identifier, group, ingredients, result, experience, cookingTime);

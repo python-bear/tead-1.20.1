@@ -24,14 +24,18 @@ public class ExplosiveSpectralArrowEntity extends SpectralArrowEntity {
     protected void onHit(LivingEntity target) {
         super.onHit(target);
         World world = this.getWorld();
-        world.createExplosion(null, this.getX(), this.getY(), this.getZ(), 2.0f, false, World.ExplosionSourceType.NONE);
+        if (!this.getWorld().isClient) {
+            world.createExplosion(null, this.getX(), this.getY(), this.getZ(), 2.0f, false, World.ExplosionSourceType.NONE);
+        }
     }
 
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);
         World world = this.getWorld();
-        world.createExplosion(null, this.getX(), this.getY(), this.getZ(), 2.0f, false, World.ExplosionSourceType.NONE);
-        this.kill();
+        if (!this.getWorld().isClient) {
+            world.createExplosion(null, this.getX(), this.getY(), this.getZ(), 2.0f, false, World.ExplosionSourceType.NONE);
+            this.kill();
+        }
     }
 }

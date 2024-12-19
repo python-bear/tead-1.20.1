@@ -6,6 +6,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
@@ -13,11 +14,12 @@ import net.minecraft.item.DyeableItem;
 import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.block.TeadBlocks;
 import net.pythonbear.tead.item.TeadItems;
-import net.pythonbear.tead.init.TeadModelPredicateProvider;
+import net.pythonbear.tead.rendering.TeadModelPredicateProvider;
+import net.pythonbear.tead.rendering.GrenadeProjectileRenderer;
+import net.pythonbear.tead.rendering.SpearEntityRenderer;
 import net.pythonbear.tead.screen.TeadScreenHandlers;
 import net.pythonbear.tead.rendering.CustomArrowEntityRenderer;
 import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
-import net.pythonbear.tead.rendering.SpectralWindArrowEntityRenderer;
 import net.pythonbear.tead.screen.SmelterScreen;
 
 @Environment(EnvType.CLIENT)
@@ -38,11 +40,11 @@ public class TeadClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.STEEL_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.WEAK_COBWEB, RenderLayer.getCutout());
 
-        EntityRendererRegistry.register(TeadEntityTypes.GRENADE_PROJECTILE, FlyingItemEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.SPEAR, SpearEntityRenderer::new);
+        EntityRendererRegistry.register(TeadEntityTypes.GRENADE_PROJECTILE, GrenadeProjectileRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.SHURIKEN_PROJECTILE, ShurikenProjectileRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.BUFFERED_PEARL, FlyingItemEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.GRAVITY_PEARL, FlyingItemEntityRenderer::new);
-        EntityRendererRegistry.register(TeadEntityTypes.SPECTRAL_WIND_ARROW, SpectralWindArrowEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.AMETHYST_ARROW, CustomArrowEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.BORING_ARROW, CustomArrowEntityRenderer::new);
         EntityRendererRegistry.register(TeadEntityTypes.COPPER_ARROW, CustomArrowEntityRenderer::new);

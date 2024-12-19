@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "tead:pig_iron_block",
     "tead:rose_gold_block",
     "tead:white_gold_block",
     "tead:brass_block",

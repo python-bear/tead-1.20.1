@@ -16,7 +16,7 @@ public class OnWorldTick {
             List<ItemEntity> allNearbyItems = world.getEntitiesByClass(ItemEntity.class, nearbyBox, ItemEntity::isAlive);
 
             FrostClaymoreHandler.onPlayerWorldTick(world, player, allNearbyItems, playerPos, nearbyBox);
-            SummonStorm.onPlayerWorldTick(world, player, allNearbyItems, playerPos, nearbyBox);
+            EnchantmentBookSpells.onPlayerWorldTick(world, player, allNearbyItems, playerPos, nearbyBox);
             SpecialArmorEffect.onPlayerWorldTick(world, player, playerPos);
         }
     }

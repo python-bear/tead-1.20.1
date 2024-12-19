@@ -1,0 +1,26 @@
+{
+  "parent": "tead:item/netherite_spear",
+  "textures": {
+    "layer0": "tead:item/netherite_spear"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 20, 270, 240 ],
+      "translation": [ 0, -4, 2 ],
+      "scale": [ 1.3, 1.3, 1 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 20, -270, -240 ],
+      "translation": [ 0, -4, 2 ],
+      "scale": [ 1.3, 1.3, 1 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ -10, 80, 30 ],
+      "translation": [ 2, 0, 0 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ -10, -90, -30 ],
+      "translation": [ 2, 0, 0 ]
+    }
+  }
+}

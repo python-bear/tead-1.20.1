@@ -18,6 +18,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.pythonbear.tead.util.CustomAttacking;
 import net.pythonbear.tead.block.TeadBlocks;
@@ -61,6 +62,24 @@ public class BladedWeaponItem extends SwordItem implements Vanishable {
             return this.attributeModifiers;
         }
         return super.getAttributeModifiers(slot);
+    }
+
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        if (!world.isClient) {
+            Item mainhandItem = user.getStackInHand(Hand.MAIN_HAND).getItem();
+            Item offhandItem = user.getStackInHand(Hand.OFF_HAND).getItem();
+
+            if (!(mainhandItem instanceof BladedWeaponItem) || !(offhandItem instanceof BladedWeaponItem)) {
+                return TypedActionResult.pass(user.getStackInHand(hand));
+            }
+
+            if (hand == Hand.OFF_HAND && ((BladedWeaponItem) mainhandItem).dualWielded
+                    && ((BladedWeaponItem) offhandItem).dualWielded) {
+                return TypedActionResult.success(user.getStackInHand(hand));
+            }
+        }
+        return TypedActionResult.pass(user.getStackInHand(hand));
     }
 
     @Override

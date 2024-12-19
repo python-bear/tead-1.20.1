@@ -429,6 +429,14 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.ROSE_NETHERITE_INGOT)
                 .add(TeadItems.WHITE_NETHERITE_INGOT);
 
+        getOrCreateTagBuilder(TeadTags.Items.REFINED_METAL_INGOTS)
+                .add(TeadItems.ROSE_GOLD_INGOT)
+                .add(TeadItems.WHITE_GOLD_INGOT)
+                .add(Items.IRON_INGOT)
+                .add(TeadItems.BRASS_INGOT)
+                .add(TeadItems.BRONZE_INGOT)
+                .add(TeadItems.STEEL_INGOT);
+
         getOrCreateTagBuilder(TeadTags.Items.METAL_NUGGETS)
                 .add(Items.GOLD_NUGGET)
                 .add(TeadItems.LEAD_NUGGET)
@@ -442,6 +450,18 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.NETHERITE_NUGGET)
                 .add(TeadItems.ROSE_NETHERITE_NUGGET)
                 .add(TeadItems.WHITE_NETHERITE_NUGGET);
+
+        getOrCreateTagBuilder(TeadTags.Items.ALLOYABLE_ITEMS)
+                .add(Items.GOLD_NUGGET)
+                .add(Items.GOLD_INGOT)
+                .add(TeadItems.LEAD_NUGGET)
+                .add(TeadItems.LEAD_INGOT)
+                .add(TeadItems.COPPER_NUGGET)
+                .add(Items.COPPER_INGOT)
+                .add(Items.COAL)
+                .add(Items.CHARCOAL)
+                .add(Items.IRON_NUGGET)
+                .add(Items.IRON_INGOT);
 
         getOrCreateTagBuilder(TeadTags.Items.SMITHING_GUIDES)
                 .add(SMITHING_GUIDE_STURDY)

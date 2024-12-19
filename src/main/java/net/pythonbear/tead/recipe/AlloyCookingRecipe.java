@@ -97,6 +97,6 @@ public class AlloyCookingRecipe implements Recipe<Inventory> {
 
     @Override
     public RecipeType<?> getType() {
-        return TeadRecipeTypes.ALLOYING;
+        return TeadRecipeTypes.ALLOY_SMELTING;
     }
 }

@@ -22,6 +22,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(TeadBlocks.PIG_IRON_BLOCK)
                 .add(TeadBlocks.LEAD_ORE)
                 .add(TeadBlocks.LEAD_DEEPSLATE_ORE)
                 .add(TeadBlocks.RAW_LEAD_BLOCK)
@@ -83,6 +84,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(Blocks.GRASS);
 
         getOrCreateTagBuilder(TeadTags.Blocks.REFINED_BUILDING_BLOCKS)
+                .add(TeadBlocks.PIG_IRON_BLOCK)
                 .add(TeadBlocks.LEAD_BLOCK)
                 .add(TeadBlocks.LEAD_CHISELED_BLOCK)
                 .add(TeadBlocks.LEAD_CUT_BLOCK)
@@ -340,6 +342,7 @@ public class TeadBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(TeadBlocks.LEAD_DEEPSLATE_ORE);
 
         getOrCreateTagBuilder(BlockTags.BEACON_BASE_BLOCKS)
+                .add(TeadBlocks.PIG_IRON_BLOCK)
                 .add(TeadBlocks.ROSE_GOLD_BLOCK)
                 .add(TeadBlocks.WHITE_GOLD_BLOCK)
                 .add(TeadBlocks.BRASS_BLOCK)

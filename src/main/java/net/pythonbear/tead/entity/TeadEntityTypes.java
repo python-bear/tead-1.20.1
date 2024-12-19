@@ -11,14 +11,19 @@ import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.entity.arrow.*;
 
 public class TeadEntityTypes {
+    public static final EntityType<SpearEntity> SPEAR = Registry.register(
+            Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "spear"),
+            FabricEntityTypeBuilder.<SpearEntity>create(SpawnGroup.MISC, SpearEntity::new)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeBlocks(4)
+                    .trackedUpdateRate(20).build());
     public static final EntityType<GrenadeProjectileEntity> GRENADE_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "grenade_projectile"),
             FabricEntityTypeBuilder.<GrenadeProjectileEntity>create(SpawnGroup.MISC, GrenadeProjectileEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.2f, 0.2f)).build());
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<ShurikenProjectileEntity> SHURIKEN_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "shuriken_projectile"),
             FabricEntityTypeBuilder.<ShurikenProjectileEntity>create(SpawnGroup.MISC, ShurikenProjectileEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.25f)).build());
     public static final EntityType<GravityPearlEntity> GRAVITY_PEARL = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "gravity_pearl"),
             FabricEntityTypeBuilder.<GravityPearlEntity>create(SpawnGroup.MISC, GravityPearlEntity::new)
@@ -27,10 +32,6 @@ public class TeadEntityTypes {
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "buffered_pearl"),
             FabricEntityTypeBuilder.<BufferedPearlEntity>create(SpawnGroup.MISC, BufferedPearlEntity::new)
                     .dimensions(EntityDimensions.fixed(0.25f, 0.25f)).build());
-    public static final EntityType<SpectralWindArrowEntity> SPECTRAL_WIND_ARROW = Registry.register(
-            Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "spectral_wind_arrow"),
-            FabricEntityTypeBuilder.<SpectralWindArrowEntity>create(SpawnGroup.MISC, SpectralWindArrowEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).build());
     public static final EntityType<AmethystArrowEntity> AMETHYST_ARROW = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "amethyst_arrow"),
             FabricEntityTypeBuilder.<AmethystArrowEntity>create(SpawnGroup.MISC, AmethystArrowEntity::new)

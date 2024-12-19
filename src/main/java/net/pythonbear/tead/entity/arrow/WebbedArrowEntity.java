@@ -22,10 +22,6 @@ public class WebbedArrowEntity extends ArrowEntity {
         super(world, owner);
     }
 
-    public WebbedArrowEntity(World world, LivingEntity owner, double x, double y, double z) {
-        super(world, owner);
-    }
-
     @Override
     protected void onBlockHit(BlockHitResult blockHitResult) {
         super.onBlockHit(blockHitResult);

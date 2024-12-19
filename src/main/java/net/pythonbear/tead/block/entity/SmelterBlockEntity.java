@@ -1,14 +1,13 @@
 package net.pythonbear.tead.block.entity;
 
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.SharedConstants;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.LockableContainerBlockEntity;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +18,6 @@ import net.minecraft.inventory.SidedInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
@@ -32,6 +30,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
@@ -42,13 +41,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.pythonbear.tead.block.SmelterBlock;
+import net.pythonbear.tead.init.TeadTags;
 import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 import net.pythonbear.tead.screen.SmelterScreenHandler;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -59,9 +58,11 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
     private static final int INPUT_SLOT_TWO = 1;
     private static final int INPUT_FUEL_SLOT = 2;
     private static final int OUTPUT_SLOT = 3;
+    private static final int[] FUEL_SLOTS = new int[]{2};
+    private static final int[] BOTTOM_SLOTS = new int[]{3};
     private static final int[] TOP_SLOTS = new int[]{0, 1};
-    private static final int[] BOTTOM_SLOTS = new int[]{3, 2};
-    private static final int[] SIDE_SLOTS = new int[]{2};
+    private static final int[] RIGHT_SLOTS = new int[]{0};
+    private static final int[] LEFT_SLOTS = new int[]{1};
     int burnTime;
     int fuelTime;
     int cookTime;
@@ -110,7 +111,7 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
 
     public SmelterBlockEntity(BlockPos pos, BlockState state) {
         super(TeadBlockEntities.SMELTER_BLOCK_ENTITY, pos, state);
-        this.matchGetter = RecipeManager.createCachedMatchGetter(TeadRecipeTypes.ALLOYING);
+        this.matchGetter = RecipeManager.createCachedMatchGetter(TeadRecipeTypes.ALLOY_SMELTING);
     }
 
     @Override
@@ -128,79 +129,13 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         return Text.translatable("container.tead.smelter");
     }
 
-    @Nullable
-    @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new SmelterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
-    }
-
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
         return new SmelterScreenHandler(syncId, playerInventory, this, this.propertyDelegate);
     }
 
     public static Map<Item, Integer> createFuelTimeMap() {
-        LinkedHashMap<Item, Integer> map = Maps.newLinkedHashMap();
-        SmelterBlockEntity.addFuel(map, Items.LAVA_BUCKET, 20000);
-        SmelterBlockEntity.addFuel(map, Blocks.COAL_BLOCK, 16000);
-        SmelterBlockEntity.addFuel(map, Items.BLAZE_ROD, 2400);
-        SmelterBlockEntity.addFuel(map, Items.COAL, 1600);
-        SmelterBlockEntity.addFuel(map, Items.CHARCOAL, 1600);
-        SmelterBlockEntity.addFuel(map, ItemTags.LOGS, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.BAMBOO_BLOCKS, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.PLANKS, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.BAMBOO_MOSAIC, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_STAIRS, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.BAMBOO_MOSAIC_STAIRS, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_SLABS, 150);
-        SmelterBlockEntity.addFuel(map, Blocks.BAMBOO_MOSAIC_SLAB, 150);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_TRAPDOORS, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_PRESSURE_PLATES, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_FENCES, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.FENCE_GATES, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.NOTE_BLOCK, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.BOOKSHELF, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.CHISELED_BOOKSHELF, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.LECTERN, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.JUKEBOX, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.CHEST, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.TRAPPED_CHEST, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.CRAFTING_TABLE, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.DAYLIGHT_DETECTOR, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.BANNERS, 300);
-        SmelterBlockEntity.addFuel(map, Items.BOW, 300);
-        SmelterBlockEntity.addFuel(map, Items.FISHING_ROD, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.LADDER, 300);
-        SmelterBlockEntity.addFuel(map, ItemTags.SIGNS, 200);
-        SmelterBlockEntity.addFuel(map, ItemTags.HANGING_SIGNS, 800);
-        SmelterBlockEntity.addFuel(map, Items.WOODEN_SHOVEL, 200);
-        SmelterBlockEntity.addFuel(map, Items.WOODEN_SWORD, 200);
-        SmelterBlockEntity.addFuel(map, Items.WOODEN_HOE, 200);
-        SmelterBlockEntity.addFuel(map, Items.WOODEN_AXE, 200);
-        SmelterBlockEntity.addFuel(map, Items.WOODEN_PICKAXE, 200);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_DOORS, 200);
-        SmelterBlockEntity.addFuel(map, ItemTags.BOATS, 1200);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOOL, 100);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOODEN_BUTTONS, 100);
-        SmelterBlockEntity.addFuel(map, Items.STICK, 100);
-        SmelterBlockEntity.addFuel(map, ItemTags.SAPLINGS, 100);
-        SmelterBlockEntity.addFuel(map, Items.BOWL, 100);
-        SmelterBlockEntity.addFuel(map, ItemTags.WOOL_CARPETS, 67);
-        SmelterBlockEntity.addFuel(map, Blocks.DRIED_KELP_BLOCK, 4001);
-        SmelterBlockEntity.addFuel(map, Items.CROSSBOW, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.BAMBOO, 50);
-        SmelterBlockEntity.addFuel(map, Blocks.DEAD_BUSH, 100);
-        SmelterBlockEntity.addFuel(map, Blocks.SCAFFOLDING, 50);
-        SmelterBlockEntity.addFuel(map, Blocks.LOOM, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.BARREL, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.CARTOGRAPHY_TABLE, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.FLETCHING_TABLE, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.SMITHING_TABLE, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.COMPOSTER, 300);
-        SmelterBlockEntity.addFuel(map, Blocks.AZALEA, 100);
-        SmelterBlockEntity.addFuel(map, Blocks.FLOWERING_AZALEA, 100);
-        SmelterBlockEntity.addFuel(map, Blocks.MANGROVE_ROOTS, 300);
-        return map;
+        return AbstractFurnaceBlockEntity.createFuelTimeMap();
     }
 
     /**
@@ -353,11 +288,6 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         } else if (outputItemStack.isOf(recipeOutputItemStack.getItem())) {
             outputItemStack.increment(1);
         }
-        if ((inputItemStack1.isOf(Blocks.WET_SPONGE.asItem()) || inputItemStack2.isOf(Blocks.WET_SPONGE.asItem()))
-                && !slots.get(INPUT_FUEL_SLOT).isEmpty()
-                && slots.get(INPUT_FUEL_SLOT).isOf(Items.BUCKET)) {
-            slots.set(INPUT_FUEL_SLOT, new ItemStack(Items.WATER_BUCKET));
-        }
         inputItemStack1.decrement(1);
         inputItemStack2.decrement(1);
         return true;
@@ -386,13 +316,23 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
 
     @Override
     public int[] getAvailableSlots(Direction side) {
+        Direction facing = this.getCachedState().get(Properties.HORIZONTAL_FACING);
+        Direction right = facing.rotateYClockwise();
+        Direction left = facing.rotateYCounterclockwise();
+
         if (side == Direction.DOWN) {
             return BOTTOM_SLOTS;
         }
         if (side == Direction.UP) {
             return TOP_SLOTS;
         }
-        return SIDE_SLOTS;
+        if (side == right) {
+            return RIGHT_SLOTS;
+        }
+        if (side == left) {
+            return LEFT_SLOTS;
+        }
+        return FUEL_SLOTS;
     }
 
     @Override
@@ -402,9 +342,6 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
 
     @Override
     public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-        if (dir == Direction.DOWN && slot == 1) {
-            return stack.isOf(Items.WATER_BUCKET) || stack.isOf(Items.BUCKET);
-        }
         return true;
     }
 
@@ -464,10 +401,13 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         }
         if (slot == INPUT_SLOT_ONE) {
             ItemStack itemStack = this.inventory.get(INPUT_SLOT_ONE);
-            return SmelterBlockEntity.canUseAsFuel(stack) || stack.isOf(Items.BUCKET) && !itemStack.isOf(Items.BUCKET);
+            return (stack.isIn(TeadTags.Items.ALLOYABLE_ITEMS) && itemStack.isEmpty()) || stack.isOf(itemStack.getItem());
         } else if (slot == INPUT_SLOT_TWO) {
             ItemStack itemStack = this.inventory.get(INPUT_SLOT_TWO);
-            return SmelterBlockEntity.canUseAsFuel(stack) || stack.isOf(Items.BUCKET) && !itemStack.isOf(Items.BUCKET);
+            return (stack.isIn(TeadTags.Items.ALLOYABLE_ITEMS) && itemStack.isEmpty()) || stack.isOf(itemStack.getItem());
+        } else if (slot == INPUT_FUEL_SLOT) {
+            ItemStack itemStack = this.inventory.get(INPUT_FUEL_SLOT);
+            return (SmelterBlockEntity.canUseAsFuel(stack) && itemStack.isEmpty()) || stack.isOf(itemStack.getItem());
         }
         return true;
     }

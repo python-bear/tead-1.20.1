@@ -1,4 +1,4 @@
-package net.pythonbear.tead.init;
+package net.pythonbear.tead.rendering;
 
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.CrossbowItem;

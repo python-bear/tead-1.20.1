@@ -2,8 +2,6 @@ package net.pythonbear.tead.screen;
 
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.screen.slot.FurnaceFuelSlot;
 import net.minecraft.screen.slot.Slot;
 
 public class SmelterFuelSlot extends Slot {
@@ -16,15 +14,11 @@ public class SmelterFuelSlot extends Slot {
 
     @Override
     public boolean canInsert(ItemStack stack) {
-        return this.handler.isFuel(stack) || FurnaceFuelSlot.isBucket(stack);
+        return this.handler.isFuel(stack);
     }
 
     @Override
     public int getMaxItemCount(ItemStack stack) {
-        return FurnaceFuelSlot.isBucket(stack) ? 1 : super.getMaxItemCount(stack);
-    }
-
-    public static boolean isBucket(ItemStack stack) {
-        return stack.isOf(Items.BUCKET);
+        return super.getMaxItemCount(stack);
     }
 }
