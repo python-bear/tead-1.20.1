@@ -1,9 +1,8 @@
 {
   "type": "tead:alloy_smelting",
-  "group": "steel_ingot",
   "ingredients": [
     {
-      "item": "minecraft:coal"
+      "item": "minecraft:iron_nugget"
     },
     {
       "item": "minecraft:iron_nugget"
@@ -12,6 +11,6 @@
   "result": {
     "item": "tead:steel_nugget"
   },
-  "cookingtime": 330,
+  "cookingtime": 650,
   "experience": 0.1
 }

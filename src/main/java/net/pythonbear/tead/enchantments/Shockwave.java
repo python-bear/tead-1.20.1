@@ -58,9 +58,4 @@ public class Shockwave extends Enchantment {
     public int getMaxLevel() {
         return 3;
     }
-
-    @Override
-    protected boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != TeadEnchantments.GRAVITY;
-    }
 }

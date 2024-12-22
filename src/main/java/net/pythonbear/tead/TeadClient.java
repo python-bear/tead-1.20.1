@@ -9,18 +9,18 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 import net.minecraft.item.DyeableItem;
+import net.pythonbear.tead.block.entity.TeadBlockEntities;
 import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.block.TeadBlocks;
 import net.pythonbear.tead.item.TeadItems;
-import net.pythonbear.tead.rendering.TeadModelPredicateProvider;
-import net.pythonbear.tead.rendering.GrenadeProjectileRenderer;
-import net.pythonbear.tead.rendering.SpearEntityRenderer;
+import net.pythonbear.tead.rendering.*;
+import net.pythonbear.tead.screen.GemcutterScreen;
 import net.pythonbear.tead.screen.TeadScreenHandlers;
-import net.pythonbear.tead.rendering.CustomArrowEntityRenderer;
-import net.pythonbear.tead.rendering.ShurikenProjectileRenderer;
 import net.pythonbear.tead.screen.SmelterScreen;
+import net.pythonbear.tead.screen.TransmutationTableScreen;
 
 @Environment(EnvType.CLIENT)
 public class TeadClient implements ClientModInitializer {
@@ -28,8 +28,13 @@ public class TeadClient implements ClientModInitializer {
     public void onInitializeClient() {
         TeadModelPredicateProvider.registerTeadModels();
 
+        HandledScreens.register(TeadScreenHandlers.GEMCUTTER_SCREEN_HANDLER, GemcutterScreen::new);
         HandledScreens.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);
+        HandledScreens.register(TeadScreenHandlers.TRANSMUTATION_TABLE_SCREEN_HANDLER, TransmutationTableScreen::new);
 
+        BlockEntityRendererFactories.register(TeadBlockEntities.TRANSMUTATION_TABLE_ENTITY, TransmutationTableBlockEntityRenderer::new);
+
+        BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GEMCUTTER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.GOLD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.LEAD_CHAIN, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(TeadBlocks.COPPER_CHAIN, RenderLayer.getCutout());

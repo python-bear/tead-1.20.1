@@ -33,9 +33,9 @@ public class StarlessNightItem extends BroadswordItem {
                     Map<Enchantment, Integer> itemStackEnchantments = optionalEnchantments.orElse(Collections.emptyMap());
                     int enderBufferLevel = 0;
 
-                    Optional<Integer> knockbackEnchantment =
-                            Optional.ofNullable(itemStackEnchantments.get(TeadEnchantments.THUNDERING));
-                    enderBufferLevel += knockbackEnchantment.orElse(0);
+                    Optional<Integer> endBufferEnchantment =
+                            Optional.ofNullable(itemStackEnchantments.get(TeadEnchantments.END_BUFFER));
+                    enderBufferLevel += endBufferEnchantment.orElse(0);
 
                     // Switch positions
                     double attackerX = attacker.getX();

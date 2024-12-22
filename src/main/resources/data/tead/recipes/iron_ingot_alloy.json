@@ -1,0 +1,21 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:coal"
+      },
+      {
+        "item": "minecraft:charcoal"
+      }
+    ],
+    {
+      "item": "tead:pig_iron_ingot"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_ingot"
+  },
+  "cookingtime": 650,
+  "experience": 0.5
+}

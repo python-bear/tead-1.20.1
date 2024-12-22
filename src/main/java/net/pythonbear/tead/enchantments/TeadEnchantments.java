@@ -19,13 +19,10 @@ public class TeadEnchantments {
             new FireTrail(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.ARMOR_FEET,
                     new EquipmentSlot[] {EquipmentSlot.FEET}));
     public static Enchantment END_BUFFER = register("end_buffer",
-            new EndBuffer(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON,
+            new EndBuffer(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON,
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment EXPLODING = register("exploding",
             new Exploding(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.WEAPON,
-                    new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
-    public static Enchantment GRAVITY = register("gravity",
-            new Gravity(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON,
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment SHOCKWAVE = register("shockwave",
             new Shockwave(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON,
@@ -38,9 +35,6 @@ public class TeadEnchantments {
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment THUNDERING = register("thundering",
             new Thundering(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON,
-                    new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
-    public static Enchantment TRANSMORPHING = register("transmorphing",
-            new Transmorphing(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON,
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment WEAKENING = register("weakening",
             new Weakening(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON,

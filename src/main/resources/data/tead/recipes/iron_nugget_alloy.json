@@ -1,0 +1,21 @@
+{
+  "type": "tead:alloy_smelting",
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:coal"
+      },
+      {
+        "item": "minecraft:charcoal"
+      }
+    ],
+    {
+      "item": "tead:pig_iron_nugget"
+    }
+  ],
+  "result": {
+    "item": "minecraft:iron_nugget"
+  },
+  "cookingtime": 330,
+  "experience": 0.5
+}

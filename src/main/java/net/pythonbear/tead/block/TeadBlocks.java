@@ -13,7 +13,9 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.block.entity.GemcutterBlockEntity;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
+import net.pythonbear.tead.block.entity.TransmutationTableBlockEntity;
 
 public class TeadBlocks {
     public static final Block WEAK_COBWEB = registerBlockWithoutItem("weak_cobweb",
@@ -117,10 +119,24 @@ public class TeadBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.BOOKSHELF)));
     public static final Block SMELTER = registerBlock("smelter",
             new SmelterBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
+    public static final Block GEMCUTTER = registerBlock("gemcutter",
+            new GemcutterBlock(FabricBlockSettings.copyOf(Blocks.STONECUTTER)));
+    public static final Block TRANSMUTATION_TABLE = registerBlock("transmutation_table",
+            new TransmutationTableBlock(FabricBlockSettings.copyOf(Blocks.ENCHANTING_TABLE)));
     public static final BlockEntityType<SmelterBlockEntity> SMELTER_ENTITY = Registry.register(
             Registries.BLOCK_ENTITY_TYPE,
             new Identifier(Tead.MOD_ID, "smelter"),
             BlockEntityType.Builder.create(SmelterBlockEntity::new, SMELTER).build(null)
+    );
+    public static final BlockEntityType<GemcutterBlockEntity> GEMCUTTER_ENTITY = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            new Identifier(Tead.MOD_ID, "gemcutter"),
+            BlockEntityType.Builder.create(GemcutterBlockEntity::new, GEMCUTTER).build(null)
+    );
+    public static final BlockEntityType<TransmutationTableBlockEntity> TRANSMUTATION_TABLE_ENTITY = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            new Identifier(Tead.MOD_ID, "transmutation_table"),
+            BlockEntityType.Builder.create(TransmutationTableBlockEntity::new, TRANSMUTATION_TABLE).build(null)
     );
 
     private static Block registerBlock(String name, Block block) {

@@ -11,12 +11,16 @@ import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
+import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
 import net.pythonbear.tead.recipe.TeadRecipeBookCategory;
 import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 
-public class SmelterScreenHandler extends TeadAbstractRecipeScreenHandler<Inventory> {
+import java.util.List;
+import java.util.Optional;
+
+public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory> {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     protected final World world;
@@ -95,9 +99,14 @@ public class SmelterScreenHandler extends TeadAbstractRecipeScreenHandler<Invent
     }
 
     @Override
-    public TeadRecipeBookCategory getCategory() {
-        return TeadRecipeBookCategory.ALLOY_SMELTING;
+    public RecipeBookCategory getCategory() {
+        return null;
     }
+
+//    @Override
+//    public TeadRecipeBookCategory getCategory() {
+//        return TeadRecipeBookCategory.ALLOY_SMELTING;
+//    }
 
     @Override
     public boolean canUse(PlayerEntity player) {
@@ -111,24 +120,36 @@ public class SmelterScreenHandler extends TeadAbstractRecipeScreenHandler<Invent
         if (slot != null && slot.hasStack()) {
             ItemStack itemStack2 = slot.getStack();
             itemStack = itemStack2.copy();
+
             if (slotIndex == 3) {
                 if (!this.insertItem(itemStack2, 4, 40, true)) {
                     return ItemStack.EMPTY;
                 }
-                slot.onQuickTransfer(itemStack2, itemStack);
             } else if (slotIndex == 2 || slotIndex == 1 || slotIndex == 0) {
                 if (!this.insertItem(itemStack2, 4, 40, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.isSmeltable(itemStack2)) {
-                if (!this.insertItem(itemStack2, 0, 2, false)) {
-                    return ItemStack.EMPTY;
-                }
             } else if (this.isFuel(itemStack2)) {
                 if (!this.insertItem(itemStack2, 2, 3, false)) {
+                    if (this.isSmeltable(itemStack2)) {
+                        if (!this.insertItem(itemStack2, 0, 2, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    }
                     return ItemStack.EMPTY;
                 }
-            } else if (slotIndex >= 4 && slotIndex < 31) {
+            } else if (this.isSmeltable(itemStack2)) {
+                if (!this.insertItem(itemStack2, 0, 2, false)) {
+                    if (this.isFuel(itemStack2)) {
+                        if (!this.insertItem(itemStack2, 0, 2, false)) {
+                            return ItemStack.EMPTY;
+                        }
+                    }
+                    return ItemStack.EMPTY;
+                }
+            }
+
+            if (slotIndex >= 4 && slotIndex < 31) {
                 if (!this.insertItem(itemStack2, 31, 40, false)) {
                     return ItemStack.EMPTY;
                 }
@@ -152,8 +173,21 @@ public class SmelterScreenHandler extends TeadAbstractRecipeScreenHandler<Invent
     }
 
     protected boolean isSmeltable(ItemStack itemStack) {
-        return this.world.getRecipeManager().getFirstMatch(this.recipeType, new SimpleInventory(itemStack), this.world).isPresent();
+        List<? extends AlloyCookingRecipe> allRecipes = this.world.getRecipeManager().listAllOfType(this.recipeType);
+
+        for (Recipe<?> recipe : allRecipes) {
+            if (recipe instanceof AlloyCookingRecipe alloyRecipe) {
+                Ingredient ingredientOne = alloyRecipe.getIngredients().get(0);
+                Ingredient ingredientTwo = alloyRecipe.getIngredients().get(1);
+                boolean matches = ingredientOne.test(itemStack) || ingredientTwo.test(itemStack);
+
+                if (matches) return true;
+            }
+        }
+        return false;
     }
+
+
 
     protected boolean isFuel(ItemStack itemStack) {
         return SmelterBlockEntity.canUseAsFuel(itemStack);

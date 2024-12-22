@@ -1,6 +1,5 @@
 package net.pythonbear.tead.recipe;
 
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

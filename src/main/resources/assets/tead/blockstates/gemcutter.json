@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tead:block/gemcutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tead:block/gemcutter"
+    },
+    "facing=south": {
+      "model": "tead:block/gemcutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tead:block/gemcutter",
+      "y": 270
+    }
+  }
+}

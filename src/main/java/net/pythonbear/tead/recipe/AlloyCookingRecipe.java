@@ -50,7 +50,7 @@ public class AlloyCookingRecipe implements Recipe<Inventory> {
 
     @Override
     public ItemStack craft(Inventory inventory, DynamicRegistryManager registryManager) {
-        return this.output.copy();
+        return this.getOutputEasy().copy();
     }
 
     @Override

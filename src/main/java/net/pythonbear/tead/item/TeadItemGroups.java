@@ -988,7 +988,9 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.RUBY_ORE);
                         entries.add(TeadBlocks.DEEPSLATE_RUBY_ORE);
 
+                        entries.add(TeadBlocks.GEMCUTTER);
                         entries.add(TeadBlocks.SMELTER);
+                        entries.add(TeadBlocks.TRANSMUTATION_TABLE);
 
                         entries.add(TeadBlocks.SICK_PUMPKIN);
 

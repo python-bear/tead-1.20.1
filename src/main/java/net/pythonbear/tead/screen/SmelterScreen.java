@@ -17,10 +17,9 @@ import net.pythonbear.tead.Tead;
 
 import java.util.List;
 
-@Environment(value=EnvType.CLIENT)
-public class SmelterScreen extends HandledScreen<SmelterScreenHandler> implements RecipeBookProvider {
+public class SmelterScreen extends HandledScreen<SmelterScreenHandler> {
     private static final Identifier RECIPE_BUTTON_TEXTURE = new Identifier(Tead.MINECRAFT_ID, "textures/gui/recipe_button.png");
-    public final TeadRecipeBookWidget recipeBook = new TeadRecipeBookWidget();
+//    public final TeadRecipeBookWidget recipeBook = new TeadRecipeBookWidget();
     private boolean narrow;
     private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = new Identifier(Tead.MINECRAFT_ID, "item/empty_slot_ingot");
     private static final Identifier EMPTY_SLOT_NUGGET_TEXTURE = new Identifier(Tead.MOD_ID, "item/empty_slot_nugget");
@@ -37,13 +36,13 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> implement
     public void init() {
         super.init();
         this.narrow = this.width < 379;
-        this.recipeBook.initialize(this.width, this.height, this.client, this.narrow, this.handler);
-        this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
-        this.addDrawableChild(new TexturedButtonWidget(this.x + 10, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_TEXTURE, button -> {
-            this.recipeBook.toggleOpen();
-            this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
-            button.setPosition(this.x + 10, this.height / 2 - 49);
-        }));
+//        this.recipeBook.initialize(this.width, this.height, this.client, this.narrow, this.handler);
+//        this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
+//        this.addDrawableChild(new TexturedButtonWidget(this.x + 10, this.height / 2 - 49, 20, 18, 0, 0, 19, RECIPE_BUTTON_TEXTURE, button -> {
+//            this.recipeBook.toggleOpen();
+//            this.x = this.recipeBook.findLeftEdge(this.width, this.backgroundWidth);
+//            button.setPosition(this.x + 10, this.height / 2 - 49);
+//        }));
         this.titleX = (this.backgroundWidth - this.textRenderer.getWidth(this.title)) / 2;
     }
 
@@ -52,25 +51,27 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> implement
         super.handledScreenTick();
         this.inputSlotOneIcon.updateTexture(EMPTY_SLOT_TEXTURES);
         this.inputSlotTwoIcon.updateTexture(EMPTY_SLOT_TEXTURES);
-        this.recipeBook.update();
+//        this.recipeBook.update();
     }
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         this.renderBackground(context);
 
-        if (this.recipeBook.isOpen() && this.narrow) {
-            this.drawBackground(context, delta, mouseX, mouseY);
-            this.recipeBook.render(context, mouseX, mouseY, delta);
-        } else {
-            this.recipeBook.render(context, mouseX, mouseY, delta);
-            super.render(context, mouseX, mouseY, delta);
-            this.recipeBook.drawGhostSlots(context, this.x, this.y, true, delta);
-        }
+//        if (this.recipeBook.isOpen() && this.narrow) {
+//            this.drawBackground(context, delta, mouseX, mouseY);
+//            this.recipeBook.render(context, mouseX, mouseY, delta);
+//        } else {
+//            this.recipeBook.render(context, mouseX, mouseY, delta);
+//            super.render(context, mouseX, mouseY, delta);
+//            this.recipeBook.drawGhostSlots(context, this.x, this.y, true, delta);
+//        }
+        super.render(context, mouseX, mouseY, delta); // remove this
+
         this.inputSlotOneIcon.render(this.handler, context, delta, this.x, this.y);
         this.inputSlotTwoIcon.render(this.handler, context, delta, this.x, this.y);
         this.drawMouseoverTooltip(context, mouseX, mouseY);
-        this.recipeBook.drawTooltip(context, this.x, this.y, mouseX, mouseY);
+//        this.recipeBook.drawTooltip(context, this.x, this.y, mouseX, mouseY);
     }
 
     @Override
@@ -89,51 +90,52 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> implement
 
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (this.recipeBook.mouseClicked(mouseX, mouseY, button)) {
-            return true;
-        }
-        if (this.narrow && this.recipeBook.isOpen()) {
-            return true;
-        }
+//        if (this.recipeBook.mouseClicked(mouseX, mouseY, button)) {
+//            return true;
+//        }
+//        if (this.narrow && this.recipeBook.isOpen()) {
+//            return true;
+//        }
         return super.mouseClicked(mouseX, mouseY, button);
     }
 
     @Override
     protected void onMouseClick(Slot slot, int slotId, int button, SlotActionType actionType) {
         super.onMouseClick(slot, slotId, button, actionType);
-        this.recipeBook.slotClicked(slot);
+//        this.recipeBook.slotClicked(slot);
     }
 
     @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-        if (this.recipeBook.keyPressed(keyCode, scanCode, modifiers)) {
-            return false;
-        }
+//        if (this.recipeBook.keyPressed(keyCode, scanCode, modifiers)) {
+//            return false;
+//        }
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
 
-    @Override
-    protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
-        boolean bl = mouseX < (double)left || mouseY < (double)top || mouseX >= (double)(left + this.backgroundWidth)
-                || mouseY >= (double)(top + this.backgroundHeight);
-        return this.recipeBook.isClickOutsideBounds(mouseX, mouseY, this.x, this.y, this.backgroundWidth, this.backgroundHeight, button) && bl;
-    }
+//    @Override
+//    protected boolean isClickOutsideBounds(double mouseX, double mouseY, int left, int top, int button) {
+//        boolean bl = mouseX < (double)left || mouseY < (double)top || mouseX >= (double)(left + this.backgroundWidth)
+//                || mouseY >= (double)(top + this.backgroundHeight);
+//        return this.recipeBook.isClickOutsideBounds(mouseX, mouseY, this.x, this.y, this.backgroundWidth, this.backgroundHeight, button) && bl;
+//    }
 
     @Override
     public boolean charTyped(char chr, int modifiers) {
-        if (this.recipeBook.charTyped(chr, modifiers)) {
-            return true;
-        }
+//        if (this.recipeBook.charTyped(chr, modifiers)) {
+//            return true;
+//        }
         return super.charTyped(chr, modifiers);
     }
 
-    @Override
-    public void refreshRecipeBook() {
-        this.recipeBook.refresh();
-    }
-
-    @Override
-    public RecipeBookWidget getRecipeBookWidget() {
-        return this.recipeBook;
-    }
+//    @Override
+//    public void refreshRecipeBook() {
+//        this.recipeBook.refresh();
+//    }
+//
+//    @Override
+//    public RecipeBookWidget getRecipeBookWidget() {
+//        return this.recipeBook;
+//        return null;
+//    }
 }

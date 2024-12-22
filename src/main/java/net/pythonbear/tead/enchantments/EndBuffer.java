@@ -3,6 +3,8 @@ package net.pythonbear.tead.enchantments;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.pythonbear.tead.item.StarlessNightItem;
 
 public class EndBuffer extends Enchantment {
     public EndBuffer(Rarity weight, EnchantmentTarget target, EquipmentSlot[] slotTypes) {
@@ -21,11 +23,11 @@ public class EndBuffer extends Enchantment {
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 5;
     }
 
     @Override
-    public boolean isAvailableForEnchantedBookOffer() {
-        return false;
+    public boolean isAcceptableItem(ItemStack stack) {
+        return stack.getItem() instanceof StarlessNightItem;
     }
 }

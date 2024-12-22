@@ -996,6 +996,8 @@
   "block.tead.brass_chain": "Brazen Chain",
   "block.tead.old_bookshelf": "Old Bookshelf",
   "block.tead.smelter": "Alloy Smelter",
+  "block.tead.gemcutter": "Gemcutter",
+  "block.tead.transmutation_table": "Transmutation Table",
   "block.tead.empty_bookshelf": "Empty Bookshelf",
   "block.tead.sick_pumpkin": "Sick Pumpkin",
   "block.tead.clayish_mud": "Clayish Mud",
@@ -1053,6 +1055,8 @@
   "enchantment.tead.transmorphing": "Transmorphing",
   "enchantment.tead.weakening": "Weakening",
 
+  "container.tead.gemcutter": "Gemcutter",
+  "container.tead.transmutation_table": "Transmutation Table",
   "container.tead.smelter": "Alloy Smelter",
   "gui.recipebook.toggleRecipes.alloyable": "Showing Alloyable",
   "gui.recipebook.toggleRecipes.smeltable": "Showing Smeltable"
