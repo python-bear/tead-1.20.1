@@ -7,7 +7,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
-import net.minecraft.item.ToolMaterials;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.property.IntProperty;
@@ -18,8 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.pythonbear.tead.init.TeadTags;
-import net.pythonbear.tead.item.TeadToolMaterials;
-import net.pythonbear.tead.item.ScytheItem;
+import net.pythonbear.tead.item.tool.ScytheItem;
 
 import java.util.List;
 
@@ -76,11 +74,12 @@ public class ScytheSwing {
     }
 
     private static int getRadiusBasedOnMaterial(ToolMaterial material) {
-        if (material == ToolMaterials.WOOD || material == ToolMaterials.STONE) {
+        int miningLevel = material.getMiningLevel();
+        if (miningLevel <= 1) {
             return 1;
-        } else if (material == ToolMaterials.IRON || material == TeadToolMaterials.LEAD) {
+        } else if (miningLevel == 2) {
             return 2;
-        } else if (material == ToolMaterials.DIAMOND) {
+        } else if (miningLevel == 3) {
             return 3;
         } else {
             return 4;

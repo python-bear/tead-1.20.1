@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "tead:block/brass_cut_block",
-    "side": "tead:block/brass_cut_block",
-    "top": "tead:block/brass_cut_block"
-  }
-}

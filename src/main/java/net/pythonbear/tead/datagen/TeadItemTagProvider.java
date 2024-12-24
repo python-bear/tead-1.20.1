@@ -413,7 +413,11 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(TeadTags.Items.CROSSBOWS)
                 .add(Items.CROSSBOW)
-                .add(FIREBOLT_THROWER);
+                .add(FIREBOLT_THROWER)
+                .add(AUTO_CROSSBOW)
+                .add(AZURE_CROSSBOW)
+                .add(HEAVY_CROSSBOW)
+                .add(RUBY_CROSSBOW);
 
         getOrCreateTagBuilder(TeadTags.Items.METAL_INGOTS)
                 .add(Items.GOLD_INGOT)

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tead:item/highland_chestplate",
-    "layer1": "tead:item/rose_gold_highland_chestplate_overlay",
-    "layer2": "minecraft:trims/items/chestplate_trim_gold"
-  }
-}

@@ -199,7 +199,7 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         if (j == 0 || i == 0) {
             return 0;
         }
-        return i * 24 / j;
+        return i * 23 / j;
     }
 
     public int getFuelProgress() {

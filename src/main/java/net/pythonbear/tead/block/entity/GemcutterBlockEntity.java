@@ -14,6 +14,8 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -28,7 +30,7 @@ public class GemcutterBlockEntity extends BlockEntity implements ExtendedScreenH
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(2, ItemStack.EMPTY);
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = 220;
+    private int maxProgress = 124;
 
     public GemcutterBlockEntity(BlockPos pos, BlockState state) {
         super(TeadBlockEntities.GEMCUTTER_ENTITY, pos, state);
@@ -101,6 +103,7 @@ public class GemcutterBlockEntity extends BlockEntity implements ExtendedScreenH
 
                 if(hasCraftingFinished()) {
                     this.craftItem();
+                    world.playSound(null, pos, SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS, 1.0f, world.random.nextFloat() * 0.1f + 0.9f);
                     this.resetProgress();
                 }
             } else {

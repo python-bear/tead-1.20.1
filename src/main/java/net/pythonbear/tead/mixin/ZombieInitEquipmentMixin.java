@@ -19,7 +19,7 @@ public class ZombieInitEquipmentMixin {
     @Inject(method = "initEquipment(Lnet/minecraft/util/math/random/Random;Lnet/minecraft/world/LocalDifficulty;)V",
             at = @At("RETURN"))
     private void modifyInitEquipment(Random random, LocalDifficulty localDifficulty, CallbackInfo ci) {
-        if (((ZombieEntity)(Object)this).getStackInHand(Hand.MAIN_HAND) == ItemStack.EMPTY) {
+        if (((ZombieEntity)(Object)this).getStackInHand(Hand.MAIN_HAND).isEmpty()) {
             if (random.nextFloat() < (((ZombieEntity)(Object)this).getWorld().getDifficulty() == Difficulty.HARD ?
                     0.05F : 0.01F)) {
                 int i = random.nextInt(4);

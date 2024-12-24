@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:ruby"
+    },
+    "$": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " #$",
+    "# $",
+    " #$"
+  ],
+  "result": {
+    "item": "tead:ruby_bow"
+  },
+  "show_notification": true
+}

@@ -1,13 +1,8 @@
 package net.pythonbear.tead.screen;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.CyclingSlotIcon;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.client.gui.screen.recipebook.RecipeBookProvider;
-import net.minecraft.client.gui.screen.recipebook.RecipeBookWidget;
-import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -23,7 +18,10 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> {
     private boolean narrow;
     private static final Identifier EMPTY_SLOT_INGOT_TEXTURE = new Identifier(Tead.MINECRAFT_ID, "item/empty_slot_ingot");
     private static final Identifier EMPTY_SLOT_NUGGET_TEXTURE = new Identifier(Tead.MOD_ID, "item/empty_slot_nugget");
-    private static final List<Identifier> EMPTY_SLOT_TEXTURES = List.of(EMPTY_SLOT_INGOT_TEXTURE, EMPTY_SLOT_NUGGET_TEXTURE);
+    private static final Identifier EMPTY_SLOT_PIG_IRON_INGOT_TEXTURE = new Identifier(Tead.MOD_ID, "item/empty_slot_pig_iron_ingot");
+    private static final Identifier EMPTY_SLOT_COAL_TEXTURE = new Identifier(Tead.MOD_ID, "item/empty_slot_coal");
+    private static final List<Identifier> EMPTY_SLOT_ONE_TEXTURES = List.of(EMPTY_SLOT_INGOT_TEXTURE, EMPTY_SLOT_NUGGET_TEXTURE, EMPTY_SLOT_PIG_IRON_INGOT_TEXTURE);
+    private static final List<Identifier> EMPTY_SLOT_TWO_TEXTURES = List.of(EMPTY_SLOT_INGOT_TEXTURE, EMPTY_SLOT_NUGGET_TEXTURE, EMPTY_SLOT_COAL_TEXTURE);
     private final CyclingSlotIcon inputSlotOneIcon = new CyclingSlotIcon(0);
     private final CyclingSlotIcon inputSlotTwoIcon = new CyclingSlotIcon(1);
     private final Identifier BACKGROUND = new Identifier(Tead.MOD_ID, "textures/gui/smelter.png");
@@ -49,8 +47,8 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> {
     @Override
     public void handledScreenTick() {
         super.handledScreenTick();
-        this.inputSlotOneIcon.updateTexture(EMPTY_SLOT_TEXTURES);
-        this.inputSlotTwoIcon.updateTexture(EMPTY_SLOT_TEXTURES);
+        this.inputSlotOneIcon.updateTexture(EMPTY_SLOT_ONE_TEXTURES);
+        this.inputSlotTwoIcon.updateTexture(EMPTY_SLOT_TWO_TEXTURES);
 //        this.recipeBook.update();
     }
 
@@ -85,7 +83,7 @@ public class SmelterScreen extends HandledScreen<SmelterScreenHandler> {
             context.drawTexture(this.BACKGROUND, i + 56, j + 36 + 12 - k, 176, 12 - k, 14, k + 1);
         }
         k = this.handler.getCookProgress();
-        context.drawTexture(this.BACKGROUND, i + 79, j + 34, 176, 14, k + 1, 16);
+        context.drawTexture(this.BACKGROUND, i + 80, j + 34, 176, 14, k + 1, 16);
     }
 
     @Override

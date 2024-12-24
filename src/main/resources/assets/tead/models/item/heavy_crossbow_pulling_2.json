@@ -1,0 +1,6 @@
+{
+    "parent": "item/crossbow",
+    "textures": {
+        "layer0": "tead:item/heavy_crossbow_pulling_2"
+    }
+}

@@ -10,5 +10,87 @@
     "sounds": [
       "tead:ice_smash"
     ]
+  },
+  "teleport": {
+    "subtitle": "sounds.tead.teleport",
+    "sounds": [
+      "tead:teleport"
+    ]
+  },
+  "metallic_clink": {
+    "subtitle": "sounds.tead.metallic_clink",
+    "sounds": [
+      "tead:metallic_clink1",
+      "tead:metallic_clink2",
+      "tead:metallic_clink3",
+      "tead:metallic_clink4"
+    ]
+  },
+  "summon_lightning": {
+    "subtitle": "sounds.tead.summon_lightning",
+    "sounds": [
+      "tead:summon_lightning"
+    ]
+  },
+  "soul_scream": {
+    "subtitle": "sounds.tead.soul_scream",
+    "sounds": [
+      "tead:soul_scream1",
+      "tead:soul_scream2"
+    ]
+  },
+  "fiery_combustion": {
+    "subtitle": "sounds.tead.fiery_combustion",
+    "sounds": [
+      "tead:fiery_combustion1",
+      "tead:fiery_combustion2",
+      "tead:fiery_combustion3"
+    ]
+  },
+  "bone_bow_shoot": {
+    "subtitle": "sounds.tead.bone_bow_shoot",
+    "sounds": [
+      "tead:bone_bow_shoot1",
+      "tead:bone_bow_shoot2",
+      "tead:bone_bow_shoot3"
+    ]
+  },
+  "wind_bow_shoot": {
+    "subtitle": "sounds.tead.wind_bow_shoot",
+    "sounds": [
+      "tead:wind_bow_shoot1",
+      "tead:wind_bow_shoot2",
+      "tead:wind_bow_shoot3"
+    ]
+  },
+  "frost_claymore_summon": {
+    "subtitle": "sounds.tead.frost_claymore_summon",
+    "sounds": [
+      "tead:frost_claymore_summon"
+    ]
+  },
+  "frosty_explosion": {
+    "subtitle": "sounds.tead.frosty_explosion",
+    "sounds": [
+      "tead:frosty_explosion1",
+      "tead:frosty_explosion2",
+      "tead:frosty_explosion3"
+    ]
+  },
+  "transmutation": {
+    "subtitle": "sounds.tead.transmutation",
+    "sounds": [
+      "tead:transmutation1",
+      "tead:transmutation2",
+      "tead:transmutation3"
+    ]
+  },
+  "transmorph": {
+    "subtitle": "sounds.tead.transmorph",
+    "sounds": [
+      "tead:transmorph1",
+      "tead:transmorph2",
+      "tead:transmorph3"
+    ]
   }
 }

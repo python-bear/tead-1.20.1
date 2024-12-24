@@ -43,8 +43,7 @@ public class FrostClaymoreHandler {
 
                     if (totalDiamonds >= 4 && player.experienceLevel >= 1) {
                         player.addExperienceLevels(-1);
-                        world.playSound(null, pos, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
-                                SoundCategory.PLAYERS, 1.0f, 1.0f);
+                        world.playSound(null, pos, TeadSounds.FROST_CLAYMORE_SUMMON, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
                         spawnIcyParticles(world, pos);
                         spawnIcyParticles(world, pos);
@@ -66,9 +65,6 @@ public class FrostClaymoreHandler {
                                 break;
                             }
                         }
-
-                        world.playSound(null, pos, TeadSounds.ICE_SMASH, SoundCategory.PLAYERS,
-                                1.5f, 1.0f);
 
                         ItemEntity frostClaymoreItem = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(),
                                 TeadItems.FROST_CLAYMORE.getDefaultStack());

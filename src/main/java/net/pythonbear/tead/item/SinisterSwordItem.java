@@ -8,7 +8,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.pythonbear.tead.sound.TeadSounds;
 
 public class SinisterSwordItem extends SwordItem {
     public SinisterSwordItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
@@ -17,11 +20,15 @@ public class SinisterSwordItem extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (!attacker.getWorld().isClient() && target instanceof LivingEntity) {
+        World world = attacker.getWorld();
+
+        if (!world.isClient() && target instanceof LivingEntity) {
             attacker.heal((float) ((LivingEntity) attacker).defaultMaxHealth / 16);
 
             if (attacker.getRandom().nextFloat() < 0.1) {
-                attacker.setOnFireFor(2);
+                Vec3d pos = target.getPos();
+                world.playSound(null, pos.x, pos.y, pos.z, TeadSounds.FIERY_COMBUSTION, SoundCategory.PLAYERS, 0.9f, 1.0f);
+                attacker.setOnFireFor(3);
             }
         }
 

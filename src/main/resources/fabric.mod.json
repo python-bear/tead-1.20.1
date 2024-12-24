@@ -3,7 +3,7 @@
 	"id": "tead",
 	"version": "${version}",
 	"name": "tead",
-	"description": "Adds a range of smaller additions to Minecraft, new weapons, tools, armor types, etc. Heavily inspired by Minecraft Dungeons.",
+	"description": "Adds plenty of new tools, weapons, and armor heavily inspired by Minecraft: Dungeons but redesigned to fit the vanilla aesthetic.",
 	"authors": [
 		"Python-Bear"
 	],
@@ -33,10 +33,9 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*",
-		"geckolib": ">=4.1.1"
+		"geckolib": ">=4.3.1"
 	},
 	"suggests": {
-		"another-mod": "*"
 	},
 	"accessWidener" : "tead.accesswidener"
 }

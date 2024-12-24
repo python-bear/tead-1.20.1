@@ -28,7 +28,7 @@ public enum TeadToolMaterials implements ToolMaterial {
             () -> Ingredient.ofItems(TeadItems.BRONZE_INGOT)),
     STEEL(MiningLevels.DIAMOND, 1250, 7.0f, 2.5f, 13,
             () -> Ingredient.ofItems(TeadItems.STEEL_INGOT)),
-    RUBY(MiningLevels.DIAMOND, 1222, 7.5f, 3.0f, 7,
+    RUBY(MiningLevels.DIAMOND, 1357, 7.5f, 3.0f, 17,
             () -> Ingredient.ofItems(TeadItems.RUBY)),
     ROSE_NETHERITE(MiningLevels.NETHERITE, 2371, 11.0f, 4.1f, 19,
             () -> Ingredient.ofItems(TeadItems.ROSE_NETHERITE_INGOT)),

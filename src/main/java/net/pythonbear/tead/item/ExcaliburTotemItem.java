@@ -15,6 +15,7 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.sound.TeadSounds;
 
 public class ExcaliburTotemItem extends Item {
     private static final int MAX_HOLD_DURATION = 400;
@@ -103,7 +104,7 @@ public class ExcaliburTotemItem extends Item {
         player.fallDistance = this.storedState.fallDistance;
         player.velocityModified = true;
 
-        world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+        world.playSound(null, player.getBlockPos(), TeadSounds.TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
         this.storedState = null;
         this.activationStartTime = -1;

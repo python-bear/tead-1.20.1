@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "tead:block/lead_cut_block",
-    "side": "tead:block/lead_cut_block",
-    "top": "tead:block/lead_cut_block"
-  }
-}

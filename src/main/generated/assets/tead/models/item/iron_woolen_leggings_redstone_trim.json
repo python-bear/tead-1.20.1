@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tead:item/woolen_leggings",
-    "layer1": "tead:item/iron_woolen_leggings_overlay",
-    "layer2": "minecraft:trims/items/leggings_trim_redstone"
-  }
-}

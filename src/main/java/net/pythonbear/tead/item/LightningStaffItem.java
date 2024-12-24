@@ -17,18 +17,18 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.minecraft.server.world.ServerWorld;
 import net.pythonbear.tead.enchantments.TeadEnchantments;
+import net.pythonbear.tead.sound.TeadSounds;
 import net.pythonbear.tead.util.LightningTask;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class LightningStaffItem extends StaffItem implements Vanishable {
+public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanishable {
     private static final Map<ServerWorld, List<LightningTask>> worldTaskMap = new HashMap<>();
 
     public LightningStaffItem(Settings settings) {
@@ -40,15 +40,15 @@ public class LightningStaffItem extends StaffItem implements Vanishable {
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient()) {
             ItemStack itemStack = user.getStackInHand(hand);
-            world.playSound(null, user.getX(), user.getY(), user.getZ(),
-                    SoundEvents.BLOCK_AMETHYST_BLOCK_RESONATE, SoundCategory.NEUTRAL, 0.5f,
-                    0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
             Map<Enchantment, Integer> itemStackEnchantments =
                     Optional.ofNullable(EnchantmentHelper.get(itemStack)).orElse(Map.of());
             int thunderingLevel = itemStackEnchantments.getOrDefault(TeadEnchantments.THUNDERING, 0);
 
             if (world.isRaining() && thunderingLevel > 0) {
                 user.getItemCooldownManager().set(this, 90);
+                world.playSound(null, user.getX(), user.getY(), user.getZ(),
+                        TeadSounds.SUMMON_LIGHTNING, SoundCategory.PLAYERS, 0.5f,
+                        0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
 
                 // Perform raycast
                 Vec3d playerEyePos = user.getEyePos();
@@ -87,6 +87,10 @@ public class LightningStaffItem extends StaffItem implements Vanishable {
                 for (int i = 1; i < thunderingLevel; i++) {
                     scheduleLightning((ServerWorld) world, strikePos, i * 20); // Delay of 20 ticks per level
                 }
+            } else {
+                world.playSound(null, user.getX(), user.getY(), user.getZ(),
+                        SoundEvents.BLOCK_AMETHYST_BLOCK_RESONATE, SoundCategory.PLAYERS, 0.5f,
+                        0.4f / (world.getRandom().nextFloat() * 0.4f + 0.8f));
             }
         }
 

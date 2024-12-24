@@ -9,8 +9,8 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.pythonbear.tead.item.TeadArmorMaterials;
-import net.pythonbear.tead.item.ThiefArmor;
+import net.pythonbear.tead.item.armor.TeadArmorMaterials;
+import net.pythonbear.tead.item.armor.ThiefArmor;
 
 
 public class SpecialArmorEffect {

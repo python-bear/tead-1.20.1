@@ -18,6 +18,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.sound.TeadSounds;
 
 import java.util.List;
 
@@ -76,6 +77,8 @@ public class EnchantmentBookSpells {
                         player.addExperienceLevels(-1);
                         world.playSound(null, pos, SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
                                 SoundCategory.PLAYERS, 1.0f, 1.0f);
+                        world.playSound(null, pos, TeadSounds.SUMMON_LIGHTNING,
+                                SoundCategory.PLAYERS, 1.0f, 1.0f);
                         enchantedBook.discard();
                         world.setWeather(0, 6000 * thunderingLevel, true, true);
                     }
@@ -94,6 +97,7 @@ public class EnchantmentBookSpells {
                             Vec3d entityPos = undeadEntity.getPos();
                             world.spawnParticles(ParticleTypes.SOUL, entityPos.x, entityPos.y, entityPos.z, 1,
                                     0, 0.5, 0, 0.1);
+                            world.playSound(null, entityPos.x, entityPos.y, entityPos.z, TeadSounds.SOUL_SCREAM, SoundCategory.HOSTILE, 0.9f, 1.0f);
                             for (int i = 0; i < 10; i++) {
                                 world.spawnParticles(ParticleTypes.ASH, entityPos.x, entityPos.y, entityPos.z, 1,
                                         random.nextFloat() * 0.5, random.nextFloat() - 0.3,
@@ -117,6 +121,7 @@ public class EnchantmentBookSpells {
                             Vec3d entityPos = arthropodEntity.getPos();
                             world.spawnParticles(ParticleTypes.SOUL, entityPos.x, entityPos.y, entityPos.z, 1,
                                     0, 0.5, 0, 0.1);
+                            world.playSound(null, entityPos.x, entityPos.y, entityPos.z, TeadSounds.SOUL_SCREAM, SoundCategory.HOSTILE, 0.9f, 1.0f);
                             for (int i = 0; i < 10; i++) {
                                 world.spawnParticles(ParticleTypes.ASH, entityPos.x, entityPos.y, entityPos.z, 1,
                                         random.nextFloat() * 0.5, random.nextFloat() - 0.3,

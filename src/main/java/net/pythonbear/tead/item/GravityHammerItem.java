@@ -7,6 +7,8 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.pythonbear.tead.item.tool.HammerItem;
+import net.pythonbear.tead.sound.TeadSounds;
 
 import java.util.List;
 
@@ -25,8 +27,7 @@ public class GravityHammerItem extends HammerItem {
         if (!attacker.getWorld().isClient()) {
             ServerWorld world = (ServerWorld) attacker.getWorld();
 
-            world.playSound(null, target.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT,
-                    SoundCategory.PLAYERS, 1.0f, 1.0f);
+            world.playSound(null, target.getBlockPos(), TeadSounds.TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
             summonPullParticles(world, target);
 

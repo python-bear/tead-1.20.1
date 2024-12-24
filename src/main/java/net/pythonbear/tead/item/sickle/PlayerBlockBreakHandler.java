@@ -16,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
-import net.pythonbear.tead.item.SickleItem;
+import net.pythonbear.tead.item.tool.SickleItem;
 
 /**
  * {@link PlayerBlockBreakEvents#AFTER} event handler.

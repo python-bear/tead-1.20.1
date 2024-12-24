@@ -11,6 +11,8 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.pythonbear.tead.enchantments.TeadEnchantments;
+import net.pythonbear.tead.item.tool.BroadswordItem;
+import net.pythonbear.tead.sound.TeadSounds;
 
 import java.util.Collections;
 import java.util.Map;
@@ -37,7 +39,6 @@ public class StarlessNightItem extends BroadswordItem {
                             Optional.ofNullable(itemStackEnchantments.get(TeadEnchantments.END_BUFFER));
                     enderBufferLevel += endBufferEnchantment.orElse(0);
 
-                    // Switch positions
                     double attackerX = attacker.getX();
                     double attackerY = attacker.getY();
                     double attackerZ = attacker.getZ();
@@ -46,14 +47,12 @@ public class StarlessNightItem extends BroadswordItem {
                     target.teleport(attackerX, attackerY, attackerZ);
 
                     attacker.getWorld().playSound(null, attacker.getBlockPos(),
-                            SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.AMBIENT);
-                     target.getWorld().playSound(null, target.getBlockPos(),
-                            SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.AMBIENT);
+                            TeadSounds.TELEPORT, SoundCategory.AMBIENT);
+                    target.getWorld().playSound(null, target.getBlockPos(),
+                            TeadSounds.TELEPORT, SoundCategory.AMBIENT);
 
-                    // Make attacker face target
                     attacker.lookAt(EntityAnchorArgumentType.EntityAnchor.FEET, target.getPos());
 
-                    // Deal enderpearl damage to both
                     attacker.damage(attacker.getDamageSources().fall(), 5.0F - enderBufferLevel);
                     target.damage(attacker.getDamageSources().fall(), 5.0F);
                 }

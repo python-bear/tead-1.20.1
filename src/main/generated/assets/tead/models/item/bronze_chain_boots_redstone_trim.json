@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tead:item/bronze_chain_boots",
-    "layer1": "minecraft:trims/items/boots_trim_redstone"
-  }
-}

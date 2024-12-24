@@ -106,6 +106,7 @@ public class GemcutterScreenHandler extends ScreenHandler {
         super.onClosed(player);
         if (player instanceof ServerPlayerEntity && !player.getWorld().isClient) {
             this.dropInventory(player, this.inventory);
+            this.inventory.markDirty();
         }
     }
 }

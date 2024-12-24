@@ -13,6 +13,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.pythonbear.tead.item.tool.ClaymoreItem;
 import net.pythonbear.tead.sound.TeadSounds;
 
 public class FrostClaymoreItem extends ClaymoreItem {
@@ -50,6 +51,8 @@ public class FrostClaymoreItem extends ClaymoreItem {
 
             if (world.getRandom().nextFloat() < 0.6 && isCritical) {
                 summonFrostyParticles(world, target);
+                world.playSound(null, target.getBlockPos(), TeadSounds.FROSTY_EXPLOSION, SoundCategory.PLAYERS, 1.0f, 1.0f);
+
                 int nearbyMobsCount = world.getEntitiesByClass(LivingEntity.class,
                         attacker.getBoundingBox().expand(3.0),
                         entity -> entity != attacker && entity != target
@@ -93,8 +96,7 @@ public class FrostClaymoreItem extends ClaymoreItem {
 
             Vec3d particlePos = new Vec3d(targetPos.x, targetPos.y + 0.5, targetPos.z);
 
-            world.spawnParticles(
-                    ParticleTypes.SNOWFLAKE, particlePos.x, particlePos.y, particlePos.z, 1,
+            world.spawnParticles(ParticleTypes.SNOWFLAKE, particlePos.x, particlePos.y, particlePos.z, 1,
                     -(offsetX / 6), -0.02, -(offsetZ / 6), 0.1
             );
         }
@@ -108,8 +110,7 @@ public class FrostClaymoreItem extends ClaymoreItem {
 
             Vec3d particlePos = new Vec3d(targetPos.x, targetPos.y + 0.5, targetPos.z);
 
-            world.spawnParticles(
-                    ParticleTypes.SPLASH, particlePos.x, particlePos.y, particlePos.z, 1,
+            world.spawnParticles(ParticleTypes.SPLASH, particlePos.x, particlePos.y, particlePos.z, 1,
                     -(offsetX / 7), -0.02, -(offsetZ / 7), 0.1
             );
         }

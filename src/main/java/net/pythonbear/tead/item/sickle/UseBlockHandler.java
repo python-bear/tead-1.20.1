@@ -25,7 +25,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.pythonbear.tead.Tead;
-import net.pythonbear.tead.item.SickleItem;
+import net.pythonbear.tead.item.tool.SickleItem;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;

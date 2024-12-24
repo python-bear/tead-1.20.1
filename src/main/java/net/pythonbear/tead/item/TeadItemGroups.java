@@ -106,14 +106,20 @@ public class TeadItemGroups {
                         entries.add(TeadItems.STARLESS_NIGHT);
                         entries.add(TeadItems.CORAL_DAGGER);
 
+                        entries.add(TeadItems.RUBY_BOW);
+                        entries.add(TeadItems.RUBY_CROSSBOW);
+
                         entries.add(TeadItems.BONE_BOW);
-                        entries.add(TeadItems.RUBY_POWER_BOW);
+                        entries.add(TeadItems.TWIN_BOW);
                         entries.add(TeadItems.TRICK_BOW);
                         entries.add(TeadItems.WIND_BOW);
                         entries.add(TeadItems.WEBBED_BOW);
                         entries.add(TeadItems.SHORT_BOW);
                         entries.add(TeadItems.LONG_BOW);
 
+                        entries.add(TeadItems.AZURE_CROSSBOW);
+                        entries.add(TeadItems.AUTO_CROSSBOW);
+                        entries.add(TeadItems.HEAVY_CROSSBOW);
                         entries.add(TeadItems.FIREBOLT_THROWER);
 
                         entries.add(TeadItems.WOOD_HATCHET);
@@ -471,6 +477,38 @@ public class TeadItemGroups {
                         entries.add(TeadItems.DIAMOND_SPEAR);
                         entries.add(TeadItems.DIAMOND_RANSEUR);
                         entries.add(TeadItems.DIAMOND_GLAIVE);
+
+                        entries.add(TeadItems.RUBY_SHOVEL);
+                        entries.add(TeadItems.RUBY_HATCHET);
+                        entries.add(TeadItems.RUBY_HAMMER);
+                        entries.add(TeadItems.RUBY_PICKAXE);
+                        entries.add(TeadItems.RUBY_MOUNTAINEER_PICK);
+                        entries.add(TeadItems.RUBY_MATTOCK);
+                        entries.add(TeadItems.RUBY_MACE);
+                        entries.add(TeadItems.RUBY_DAGGER);
+                        entries.add(TeadItems.RUBY_HOLLOW_DAGGER);
+                        entries.add(TeadItems.RUBY_RITE_DAGGER);
+                        entries.add(TeadItems.RUBY_CRESCENT_DAGGER);
+                        entries.add(TeadItems.RUBY_TRUTHSEEKER);
+                        entries.add(TeadItems.RUBY_TEMPEST_KNIFE);
+                        entries.add(TeadItems.RUBY_CUTLASS);
+                        entries.add(TeadItems.RUBY_RAPIER);
+                        entries.add(TeadItems.RUBY_KATANA);
+                        entries.add(TeadItems.RUBY_AXE);
+                        entries.add(TeadItems.RUBY_HIGHLAND_AXE);
+                        entries.add(TeadItems.RUBY_DOUBLE_AXE);
+                        entries.add(TeadItems.RUBY_DOUBLE_HIGHLAND_AXE);
+                        entries.add(TeadItems.RUBY_HOE);
+                        entries.add(TeadItems.RUBY_SICKLE);
+                        entries.add(TeadItems.RUBY_SCYTHE);
+                        entries.add(TeadItems.RUBY_SWORD);
+                        entries.add(TeadItems.RUBY_GREATSWORD);
+                        entries.add(TeadItems.RUBY_BROADSWORD);
+                        entries.add(TeadItems.RUBY_LONGSWORD);
+                        entries.add(TeadItems.RUBY_CLAYMORE);
+                        entries.add(TeadItems.RUBY_SPEAR);
+                        entries.add(TeadItems.RUBY_RANSEUR);
+                        entries.add(TeadItems.RUBY_GLAIVE);
 
                         entries.add(TeadItems.NETHERITE_HATCHET);
                         entries.add(TeadItems.NETHERITE_HAMMER);

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "tead:item/thief_chestplate",
-    "layer1": "tead:item/steel_thief_chestplate_overlay",
-    "layer2": "minecraft:trims/items/chestplate_trim_diamond"
-  }
-}

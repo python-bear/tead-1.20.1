@@ -7,7 +7,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.pythonbear.tead.Tead;
+import net.pythonbear.tead.item.armor.RobeArmorItem;
+import net.pythonbear.tead.item.armor.SwiftnessArmorItem;
+import net.pythonbear.tead.item.armor.TeadArmorMaterials;
+import net.pythonbear.tead.item.armor.ThiefArmor;
 import net.pythonbear.tead.item.arrow.*;
+import net.pythonbear.tead.item.bow.*;
+import net.pythonbear.tead.item.ruby.*;
+import net.pythonbear.tead.item.tool.*;
 
 public class TeadItems {
     // Custom Smithing Guides
@@ -123,13 +130,13 @@ public class TeadItems {
 
     // Staffs
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
-            new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
+            new ExcaliburItem.StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
                     new FabricItemSettings()));
     public static final Item BONE_CLUB = registerItem("bone_club",
-            new StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
+            new ExcaliburItem.StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
                     0.5f, new FabricItemSettings()));
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
-            new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
+            new ExcaliburItem.StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
 
     // Wood Tools
@@ -471,6 +478,39 @@ public class TeadItems {
     public static final Item STEEL_SPEAR = registerSpearItem(TeadToolMaterials.STEEL, "steel");
     public static final Item STEEL_RANSEUR = registerRanseurItem(TeadToolMaterials.STEEL, "steel");
     public static final Item STEEL_GLAIVE = registerGlaiveItem(TeadToolMaterials.STEEL, "steel");
+
+    // Ruby Tools
+    public static final Item RUBY_SHOVEL = registerRubyShovelItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_HOE = registerRubyHoeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_AXE = registerRubyAxeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_PICKAXE = registerRubyPickaxeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_SWORD = registerRubySwordItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_HATCHET = registerRubyHatchetItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_HAMMER = registerRubyHammerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_MOUNTAINEER_PICK = registerRubyMountaineerPickItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_MATTOCK = registerRubyMattockItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_MACE = registerRubyMaceItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_DAGGER = registerRubyDaggerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_HOLLOW_DAGGER = registerRubyHollowDaggerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_RITE_DAGGER = registerRubyRiteDaggerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_CRESCENT_DAGGER = registerRubyCrescentDaggerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_TRUTHSEEKER = registerRubyTruthseekerItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_TEMPEST_KNIFE = registerRubyTempestKnifeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_CUTLASS = registerRubyCutlassItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_RAPIER = registerRubyRapierItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_KATANA = registerRubyKatanaItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_HIGHLAND_AXE = registerRubyHighlandAxeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_DOUBLE_AXE = registerRubyDoubleAxeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_DOUBLE_HIGHLAND_AXE = registerRubyDoubleHighlandAxeItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_SICKLE = registerRubySickleItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_SCYTHE = registerRubyScytheItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_GREATSWORD = registerRubyGreatswordItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_LONGSWORD = registerRubyLongswordItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_BROADSWORD = registerRubyBroadswordItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_CLAYMORE = registerRubyClaymoreItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_SPEAR = registerRubySpearItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_RANSEUR = registerRubyRanseurItem(TeadToolMaterials.RUBY, "ruby");
+    public static final Item RUBY_GLAIVE = registerRubyGlaiveItem(TeadToolMaterials.RUBY, "ruby");
 
     // Diamond Tools
     public static final Item DIAMOND_HATCHET = registerHatchetItem(ToolMaterials.DIAMOND, "diamond");
@@ -1019,22 +1059,32 @@ public class TeadItems {
     public static final Item WHITE_NETHERITE_WOOLEN_BOOTS = registerDyeableBootsItem(TeadArmorMaterials.WHITE_NETHERITE_WOOLEN);
 
     // Custom Arrows And Bows
-    public static final Item RUBY_POWER_BOW = registerItem("ruby_power_bow",
-            new PowerBowItem(TeadToolMaterials.RUBY, new FabricItemSettings()));
+    public static final Item RUBY_BOW = registerItem("ruby_bow",
+            new RubyBowItem(TeadToolMaterials.RUBY, new FabricItemSettings()));
     public static final Item BONE_BOW = registerItem("bone_bow",
-            new BoneBowItem(new FabricItemSettings().maxDamage(415)));
+            new BoneBowItem(new FabricItemSettings().maxDamage(215)));
+    public static final Item TWIN_BOW = registerItem("twin_bow",
+            new TwinBowItem(new FabricItemSettings().maxDamage(750)));
     public static final Item WIND_BOW = registerItem("wind_bow",
-            new WindBowItem(new FabricItemSettings().maxDamage(432)));
+            new WindBowItem(new FabricItemSettings().maxDamage(750)));
     public static final Item WEBBED_BOW = registerItem("webbed_bow",
             new WebbedBowItem(new FabricItemSettings().maxDamage(432)));
     public static final Item TRICK_BOW = registerItem("trick_bow",
-            new TrickBowItem(new FabricItemSettings().maxDamage(632).rarity(Rarity.UNCOMMON)));
+            new TrickBowItem(new FabricItemSettings().maxDamage(2233).rarity(Rarity.UNCOMMON)));
     public static final Item SHORT_BOW = registerItem("short_bow",
             new ShortBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item LONG_BOW = registerItem("long_bow",
             new LongBowItem(new FabricItemSettings().maxDamage(384)));
     public static final Item FIREBOLT_THROWER = registerItem("firebolt_thrower",
-            new FireboltThrower(new FabricItemSettings().maxDamage(427)));
+            new FireboltThrowerItem(new FabricItemSettings().maxDamage(427)));
+    public static final Item HEAVY_CROSSBOW = registerItem("heavy_crossbow",
+            new HeavyCrossbowItem(new FabricItemSettings().maxDamage(500)));
+    public static final Item AUTO_CROSSBOW = registerItem("auto_crossbow",
+            new AutoCrossbowItem(new FabricItemSettings().maxDamage(1250)));
+    public static final Item AZURE_CROSSBOW = registerItem("azure_crossbow",
+            new CrossbowItem(new FabricItemSettings().maxCount(1).maxDamage(578)));
+    public static final Item RUBY_CROSSBOW = registerItem("ruby_crossbow",
+            new RubyCrossbowItem(new FabricItemSettings().maxCount(1).maxDamage(1357)));
 
     public static final Item AMETHYST_ARROW = registerItem("amethyst_arrow",
             new AmethystArrowItem(new FabricItemSettings()));
@@ -1112,7 +1162,7 @@ public class TeadItems {
 
     private static Item registerDoubleHighlandAxeItem(ToolMaterial toolMaterial, String materialName) {
         return registerItem(materialName + "_double_highland_axe",
-                new DoubleHighlandAxe(toolMaterial, new FabricItemSettings()));
+                new DoubleHighlandAxeItem(toolMaterial, new FabricItemSettings()));
     }
 
     private static Item registerHatchetItem(ToolMaterial toolMaterial, String materialName) {
@@ -1202,6 +1252,148 @@ public class TeadItems {
 
     private static Item registerGlaiveItem(ToolMaterial toolMaterial, String materialName) {
         return registerItem(materialName + "_glaive", new GlaiveItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    // Ruby Tool And Weapon Constructors
+    private static Item registerRubyShovelItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_shovel",
+                new RubyShovelItem(toolMaterial, 1.5f, -3.0f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyHoeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hoe",
+                new RubyHoeItem(toolMaterial, -2, -1.0f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyScytheItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_scythe", new RubyScytheItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubySickleItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_sickle", new RubySickleItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyPickaxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_pickaxe",
+                new RubyPickaxeItem(toolMaterial, 1, -2.9f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyMountaineerPickItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mountaineer_pick",
+                new RubyMountaineerPickItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyMattockItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mattock", new RubyMattockItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_axe",
+                new RubyAxeItem(toolMaterial, 5, -3.2f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyHighlandAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_highland_axe",
+                new RubyHighlandAxeItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyDoubleAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_double_axe",
+                new RubyAxeItem(toolMaterial, 6, -3.5f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyDoubleHighlandAxeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_double_highland_axe",
+                new RubyDoubleHighlandAxeItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyHatchetItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hatchet", new RubyHatchetItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyHammerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hammer", new RubyHammerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyMaceItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_mace", new RubyMaceItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_dagger", new RubyDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyHollowDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_hollow_dagger",
+                new RubyHollowDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyRiteDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_rite_dagger",
+                new RubyRiteDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyCrescentDaggerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_crescent_dagger",
+                new RubyCrescentDaggerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyTruthseekerItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_truthseeker",
+                new RubyTruthseekerItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyTempestKnifeItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_tempest_knife",
+                new RubyTempestKnifeItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyGreatswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_greatsword",
+                new RubyGreatswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubySwordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_sword",
+                new RubySwordItem(toolMaterial, 3, -2.5f, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyRapierItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_rapier", new RubyRapierItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyCutlassItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_cutlass", new RubyCutlassItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyKatanaItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_katana", new RubyKatanaItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyLongswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_longsword",
+                new RubyLongswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyBroadswordItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_broadsword",
+                new RubyBroadswordItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyClaymoreItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_claymore", new RubyClaymoreItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubySpearItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_spear", new RubySpearItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyRanseurItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_ranseur", new RubyRanseurItem(toolMaterial, new FabricItemSettings()));
+    }
+
+    private static Item registerRubyGlaiveItem(ToolMaterial toolMaterial, String materialName) {
+        return registerItem(materialName + "_glaive", new RubyGlaiveItem(toolMaterial, new FabricItemSettings()));
     }
 
     // Armor Constructors

@@ -253,6 +253,12 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.STEEL_PICKAXE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STEEL_SWORD, Models.HANDHELD);
 
+        itemModelGenerator.register(TeadItems.RUBY_HOE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.RUBY_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.RUBY_AXE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.RUBY_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(TeadItems.RUBY_SWORD, Models.HANDHELD);
+
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_HOE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.WHITE_NETHERITE_AXE, Models.HANDHELD);

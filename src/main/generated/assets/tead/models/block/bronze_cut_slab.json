@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "tead:block/bronze_cut_block",
-    "side": "tead:block/bronze_cut_block",
-    "top": "tead:block/bronze_cut_block"
-  }
-}

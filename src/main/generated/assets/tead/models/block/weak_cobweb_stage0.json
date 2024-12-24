@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "tead:block/weak_cobweb_stage0"
-  }
-}

@@ -36,6 +36,15 @@ public class TeadCustomTrades {
             ));
         });
 
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FLETCHER, 4, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(Items.LAPIS_ORE, 4),
+                    new ItemStack(Items.EMERALD, 23),
+                    new ItemStack(TeadItems.AZURE_CROSSBOW),
+                    1, 25, 0.2f
+            ));
+        });
+
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.CLERIC, 1, factories -> {
             factories.add((entity, random) -> new TradeOffer(
                     new ItemStack(TeadItems.ROSE_GOLD_INGOT, 2),
