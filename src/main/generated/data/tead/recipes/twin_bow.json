@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:bronze_ingot"
+    },
+    "%": {
+      "item": "minecraft:string"
+    }
+  },
+  "pattern": [
+    " #%",
+    "#%%",
+    " #%"
+  ],
+  "result": {
+    "item": "tead:twin_bow"
+  },
+  "show_notification": true
+}
