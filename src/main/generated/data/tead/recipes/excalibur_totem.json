@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:steel_ingot"
+    },
+    "%": {
+      "item": "tead:soul_bottle"
+    },
+    "@": {
+      "item": "minecraft:ender_pearl"
+    }
+  },
+  "pattern": [
+    "@#@",
+    "#%#",
+    " # "
+  ],
+  "result": {
+    "item": "tead:excalibur_totem"
+  },
+  "show_notification": true
+}

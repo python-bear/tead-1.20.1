@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:steel_ingot"
+    },
+    "%": {
+      "item": "tead:steel_chain"
+    }
+  },
+  "pattern": [
+    "###",
+    "% %"
+  ],
+  "result": {
+    "item": "tead:steel_reinforced_mail_helmet"
+  },
+  "show_notification": true
+}

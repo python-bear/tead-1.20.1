@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:wool"
+    },
+    "$": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    "#$#",
+    "# #",
+    "# #"
+  ],
+  "result": {
+    "item": "tead:iron_woolen_leggings"
+  },
+  "show_notification": true
+}

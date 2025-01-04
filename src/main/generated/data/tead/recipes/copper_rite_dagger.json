@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:copper_ingot"
+  },
+  "base": {
+    "item": "tead:copper_dagger"
+  },
+  "result": {
+    "item": "tead:copper_rite_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_rite_dagger"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "minecraft:gold_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "  #",
+    " $ ",
+    "!  "
+  ],
+  "result": {
+    "item": "tead:gold_spear"
+  },
+  "show_notification": true
+}

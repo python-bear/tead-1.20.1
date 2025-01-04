@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:crossbow",
+    "tead:firebolt_thrower",
+    "tead:auto_crossbow",
+    "tead:azure_crossbow",
+    "tead:heavy_crossbow",
+    "tead:ruby_crossbow"
+  ]
+}

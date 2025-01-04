@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "%": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    "###",
+    "%%%",
+    "###"
+  ],
+  "result": {
+    "item": "tead:empty_bookshelf"
+  },
+  "show_notification": true
+}

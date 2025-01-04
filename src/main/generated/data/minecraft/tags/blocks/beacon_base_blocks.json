@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "tead:rose_gold_block",
+    "tead:white_gold_block",
+    "tead:brass_block",
+    "tead:brass_cut_block",
+    "tead:bronze_block",
+    "tead:bronze_cut_block",
+    "tead:steel_block",
+    "tead:ruby_block"
+  ]
+}

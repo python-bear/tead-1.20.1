@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bronze_ingot",
+  "ingredients": [
+    {
+      "item": "tead:bronze_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "tead:bronze_ingot"
+  }
+}

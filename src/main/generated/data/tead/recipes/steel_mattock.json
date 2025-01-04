@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "tead:steel_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "###",
+    " !#",
+    " $ "
+  ],
+  "result": {
+    "item": "tead:steel_mattock"
+  },
+  "show_notification": true
+}

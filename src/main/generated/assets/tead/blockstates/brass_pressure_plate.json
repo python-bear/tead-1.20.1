@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "tead:block/brass_pressure_plate"
+    },
+    "powered=true": {
+      "model": "tead:block/brass_pressure_plate_down"
+    }
+  }
+}

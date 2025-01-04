@@ -1,0 +1,7 @@
+{
+  "parent": "tead:block/template_trapdoor_notched_bottom",
+  "textures": {
+    "texture": "tead:block/steel_trapdoor",
+    "reversed_texture": "tead:block/steel_trapdoor_reversed"
+  }
+}

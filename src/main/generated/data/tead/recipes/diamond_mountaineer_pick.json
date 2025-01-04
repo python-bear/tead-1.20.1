@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+  "result": {
+    "item": "tead:diamond_mountaineer_pick"
+  },
+  "template": {
+    "item": "tead:smithing_guide_mountaineer_pick"
+  }
+}

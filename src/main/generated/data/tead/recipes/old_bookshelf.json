@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "$": {
+      "item": "minecraft:cobweb"
+    },
+    "%": {
+      "item": "minecraft:book"
+    }
+  },
+  "pattern": [
+    "###",
+    "%$%",
+    "###"
+  ],
+  "result": {
+    "item": "tead:old_bookshelf"
+  },
+  "show_notification": true
+}

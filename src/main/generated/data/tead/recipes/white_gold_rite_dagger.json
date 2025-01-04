@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:white_gold_ingot"
+  },
+  "base": {
+    "item": "tead:white_gold_dagger"
+  },
+  "result": {
+    "item": "tead:white_gold_rite_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_rite_dagger"
+  }
+}

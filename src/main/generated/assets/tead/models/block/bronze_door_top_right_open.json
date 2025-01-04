@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_right_open",
+  "textures": {
+    "bottom": "tead:block/bronze_door_bottom",
+    "top": "tead:block/bronze_door_top"
+  }
+}

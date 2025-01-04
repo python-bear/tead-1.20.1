@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:ruby"
+  },
+  "base": {
+    "item": "tead:ruby_sword"
+  },
+  "result": {
+    "item": "tead:ruby_katana"
+  },
+  "template": {
+    "item": "tead:smithing_guide_katana"
+  }
+}

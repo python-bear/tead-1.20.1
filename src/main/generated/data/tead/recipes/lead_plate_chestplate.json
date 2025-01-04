@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "$": {
+      "item": "tead:lead_ingot"
+    },
+    "%": {
+      "item": "minecraft:leather"
+    }
+  },
+  "pattern": [
+    "$$$",
+    "%$%",
+    "$ $"
+  ],
+  "result": {
+    "item": "tead:lead_plate_chestplate"
+  },
+  "show_notification": true
+}

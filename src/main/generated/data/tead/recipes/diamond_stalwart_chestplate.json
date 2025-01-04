@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "minecraft:diamond_chestplate"
+  },
+  "result": {
+    "item": "tead:diamond_stalwart_chestplate"
+  },
+  "template": {
+    "item": "tead:smithing_guide_sturdy"
+  }
+}

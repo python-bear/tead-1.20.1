@@ -997,6 +997,19 @@ public class TeadItemGroups {
                         entries.add(TeadBlocks.BRONZE_CHAIN);
                         entries.add(TeadBlocks.STEEL_CHAIN);
 
+                        entries.add(TeadBlocks.ROSE_GOLD_PRESSURE_PLATE_BLOCK);
+                        entries.add(TeadBlocks.WHITE_GOLD_PRESSURE_PLATE_BLOCK);
+                        entries.add(TeadBlocks.BRASS_PRESSURE_PLATE_BLOCK);
+                        entries.add(TeadBlocks.STEEL_PRESSURE_PLATE_BLOCK);
+
+                        entries.add(TeadBlocks.STEEL_BARS);
+                        entries.add(TeadBlocks.BRASS_DOOR);
+                        entries.add(TeadBlocks.BRONZE_DOOR);
+                        entries.add(TeadBlocks.STEEL_DOOR);
+                        entries.add(TeadBlocks.BRASS_TRAPDOOR);
+                        entries.add(TeadBlocks.BRONZE_TRAPDOOR);
+                        entries.add(TeadBlocks.STEEL_TRAPDOOR);
+
                         entries.add(TeadBlocks.PIG_IRON_BLOCK);
                         entries.add(TeadBlocks.RAW_LEAD_BLOCK);
                         entries.add(TeadBlocks.LEAD_BLOCK);

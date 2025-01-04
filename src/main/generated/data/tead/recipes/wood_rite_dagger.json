@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "minecraft:planks"
+  },
+  "base": {
+    "item": "tead:wood_dagger"
+  },
+  "result": {
+    "item": "tead:wood_rite_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_rite_dagger"
+  }
+}

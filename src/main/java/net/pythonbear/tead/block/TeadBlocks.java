@@ -44,12 +44,26 @@ public class TeadBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.DEEPSLATE_GRAY)));
     public static final Block ROSE_GOLD_BLOCK = registerBlock("rose_gold_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).mapColor(MapColor.PINK)));
+    public static final Block ROSE_GOLD_PRESSURE_PLATE_BLOCK = registerBlock("rose_gold_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS,
+                    FabricBlockSettings.copyOf(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE).mapColor(MapColor.PINK), BlockSetType.GOLD));
     public static final Block WHITE_GOLD_NETHER_ORE = registerBlock("white_gold_nether_ore",
             new Block(FabricBlockSettings.copyOf(Blocks.NETHER_GOLD_ORE)));
     public static final Block WHITE_GOLD_BLOCK = registerBlock("white_gold_block",
             new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK).mapColor(MapColor.WHITE)));
+    public static final Block WHITE_GOLD_PRESSURE_PLATE_BLOCK = registerBlock("white_gold_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS,
+                    FabricBlockSettings.copyOf(Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE).mapColor(MapColor.WHITE), BlockSetType.GOLD));
     public static final Block BRASS_BLOCK = registerBlock("brass_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).mapColor(MapColor.YELLOW)));
+    public static final Block BRASS_DOOR = registerBlock("brass_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_DOOR).mapColor(MapColor.YELLOW), BlockSetType.IRON));
+    public static final Block BRASS_TRAPDOOR = registerBlock("brass_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_TRAPDOOR).mapColor(MapColor.YELLOW), BlockSetType.IRON));
+    public static final Block BRASS_PRESSURE_PLATE_BLOCK = registerBlock("brass_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE).mapColor(MapColor.YELLOW),
+                    BlockSetType.IRON));
     public static final Block BRASS_CUT_BLOCK = registerBlock("brass_cut_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).mapColor(MapColor.YELLOW)));
     public static final Block BRASS_CUT_SLAB = registerBlock("brass_cut_slab",
@@ -59,6 +73,10 @@ public class TeadBlocks {
                     FabricBlockSettings.copyOf(Blocks.CUT_COPPER_STAIRS).mapColor(MapColor.YELLOW)));
     public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).mapColor(MapColor.BROWN)));
+    public static final Block BRONZE_DOOR = registerBlock("bronze_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_DOOR).mapColor(MapColor.BROWN), BlockSetType.IRON));
+    public static final Block BRONZE_TRAPDOOR = registerBlock("bronze_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_TRAPDOOR).mapColor(MapColor.BROWN), BlockSetType.IRON));
     public static final Block BRONZE_CUT_BLOCK = registerBlock("bronze_cut_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK).mapColor(MapColor.BROWN)));
     public static final Block BRONZE_CUT_SLAB = registerBlock("bronze_cut_slab",
@@ -68,6 +86,16 @@ public class TeadBlocks {
                     FabricBlockSettings.copyOf(Blocks.CUT_COPPER_STAIRS).mapColor(MapColor.BROWN)));
     public static final Block STEEL_BLOCK = registerBlock("steel_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).mapColor(MapColor.LIGHT_BLUE_GRAY)));
+    public static final Block STEEL_PRESSURE_PLATE_BLOCK = registerBlock("steel_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.HEAVY_WEIGHTED_PRESSURE_PLATE).mapColor(MapColor.LIGHT_BLUE_GRAY),
+                    BlockSetType.IRON));
+    public static final Block STEEL_BARS = registerBlock("steel_bars",
+            new PaneBlock(FabricBlockSettings.copyOf(Blocks.IRON_BARS).mapColor(MapColor.LIGHT_BLUE_GRAY)));
+    public static final Block STEEL_DOOR = registerBlock("steel_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_DOOR).mapColor(MapColor.LIGHT_BLUE_GRAY), BlockSetType.IRON));
+    public static final Block STEEL_TRAPDOOR = registerBlock("steel_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.IRON_TRAPDOOR).mapColor(MapColor.LIGHT_BLUE_GRAY), BlockSetType.IRON));
     public static final Block RUBY_ORE = registerBlock("ruby_ore",
             new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE),
                     UniformIntProvider.create(4, 8)));

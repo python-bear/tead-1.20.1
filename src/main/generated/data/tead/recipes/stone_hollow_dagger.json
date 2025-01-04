@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "minecraft:stone_tool_materials"
+  },
+  "base": {
+    "item": "tead:stone_dagger"
+  },
+  "result": {
+    "item": "tead:stone_hollow_dagger"
+  },
+  "template": {
+    "item": "tead:smithing_guide_hollow_dagger"
+  }
+}

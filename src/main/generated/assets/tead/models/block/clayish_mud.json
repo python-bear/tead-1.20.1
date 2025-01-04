@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "tead:block/clayish_mud_top",
+    "east": "tead:block/clayish_mud_side",
+    "north": "tead:block/clayish_mud_side",
+    "particle": "tead:block/clayish_mud_side",
+    "south": "tead:block/clayish_mud_side",
+    "up": "tead:block/clayish_mud_top",
+    "west": "tead:block/clayish_mud_side"
+  }
+}

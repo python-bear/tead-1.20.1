@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:bronze_ingot"
+  },
+  "base": {
+    "item": "tead:bronze_sword"
+  },
+  "result": {
+    "item": "tead:bronze_truthseeker"
+  },
+  "template": {
+    "item": "tead:smithing_guide_truthseeker"
+  }
+}

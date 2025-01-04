@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "minecraft:copper_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "#!#",
+    "#!#",
+    " $ "
+  ],
+  "result": {
+    "item": "tead:copper_double_axe"
+  },
+  "show_notification": true
+}

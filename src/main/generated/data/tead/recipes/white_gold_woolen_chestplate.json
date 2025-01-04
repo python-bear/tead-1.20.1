@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:wool"
+    },
+    "$": {
+      "item": "tead:white_gold_nugget"
+    },
+    "@": {
+      "item": "tead:garment_chestplate"
+    }
+  },
+  "pattern": [
+    "# #",
+    "$#$",
+    "#@#"
+  ],
+  "result": {
+    "item": "tead:white_gold_woolen_chestplate"
+  },
+  "show_notification": true
+}

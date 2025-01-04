@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "tead:lead_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    " ##",
+    " ##",
+    "$  "
+  ],
+  "result": {
+    "item": "tead:lead_mace"
+  },
+  "show_notification": true
+}

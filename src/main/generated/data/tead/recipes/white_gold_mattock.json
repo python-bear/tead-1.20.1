@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "!": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "tead:white_gold_ingot"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "###",
+    " !#",
+    " $ "
+  ],
+  "result": {
+    "item": "tead:white_gold_mattock"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "tead:diamond_double_axe"
+  },
+  "result": {
+    "item": "tead:diamond_double_highland_axe"
+  },
+  "template": {
+    "item": "tead:smithing_guide_highland"
+  }
+}

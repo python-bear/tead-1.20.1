@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:dirt"
+    },
+    "%": {
+      "item": "minecraft:hanging_roots"
+    }
+  },
+  "pattern": [
+    "%#",
+    "#%"
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:rooted_dirt"
+  },
+  "show_notification": true
+}

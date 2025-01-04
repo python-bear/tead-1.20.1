@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 2.0,
+  "group": "ruby",
+  "ingredient": {
+    "item": "tead:deepslate_ruby_ore"
+  },
+  "result": "tead:ruby"
+}

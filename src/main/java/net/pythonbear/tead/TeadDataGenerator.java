@@ -15,6 +15,7 @@ public class TeadDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(TeadBlockTagProvider::new);
 		pack.addProvider(TeadItemTagProvider::new);
+		pack.addProvider(TeadAdvancementsProvider::new);
 		pack.addProvider(TeadLootTableProvider::new);
 		pack.addProvider(TeadModelProvider::new);
 		pack.addProvider(TeadRecipeProvider::new);

@@ -97,6 +97,39 @@ public class TeadRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.ROSE_NETHERITE_NUGGET, RecipeCategory.MISC, TeadItems.ROSE_NETHERITE_INGOT);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, TeadItems.WHITE_NETHERITE_NUGGET, RecipeCategory.MISC, TeadItems.WHITE_NETHERITE_INGOT);
 
+        offerPressurePlateRecipe(exporter, TeadBlocks.ROSE_GOLD_PRESSURE_PLATE_BLOCK, TeadItems.ROSE_GOLD_INGOT);
+        offerPressurePlateRecipe(exporter, TeadBlocks.WHITE_GOLD_PRESSURE_PLATE_BLOCK, TeadItems.WHITE_GOLD_INGOT);
+        offerPressurePlateRecipe(exporter, TeadBlocks.BRASS_PRESSURE_PLATE_BLOCK, TeadItems.BRASS_INGOT);
+        offerPressurePlateRecipe(exporter, TeadBlocks.STEEL_PRESSURE_PLATE_BLOCK, TeadItems.STEEL_INGOT);
+
+        createDoorRecipe(TeadBlocks.BRASS_DOOR, Ingredient.ofItems(TeadItems.BRASS_INGOT))
+                .criterion(hasItem(TeadItems.BRASS_INGOT), conditionsFromItem(TeadItems.BRASS_INGOT))
+                .offerTo(exporter);
+        createTrapdoorRecipe(TeadBlocks.BRASS_TRAPDOOR, Ingredient.ofItems(TeadItems.BRASS_INGOT))
+                .criterion(hasItem(TeadItems.BRASS_INGOT), conditionsFromItem(TeadItems.BRASS_INGOT))
+                .offerTo(exporter);
+
+        createDoorRecipe(TeadBlocks.BRONZE_DOOR, Ingredient.ofItems(TeadItems.BRONZE_INGOT))
+                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
+                .offerTo(exporter);
+        createTrapdoorRecipe(TeadBlocks.BRONZE_TRAPDOOR, Ingredient.ofItems(TeadItems.BRONZE_INGOT))
+                .criterion(hasItem(TeadItems.BRONZE_INGOT), conditionsFromItem(TeadItems.BRONZE_INGOT))
+                .offerTo(exporter);
+
+        createDoorRecipe(TeadBlocks.STEEL_DOOR, Ingredient.ofItems(TeadItems.STEEL_INGOT))
+                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
+                .offerTo(exporter);
+        createTrapdoorRecipe(TeadBlocks.STEEL_TRAPDOOR, Ingredient.ofItems(TeadItems.STEEL_INGOT))
+                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
+                .offerTo(exporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, TeadBlocks.STEEL_BARS, 1)
+                .pattern("###")
+                .pattern("###")
+                .input('#', TeadItems.STEEL_INGOT)
+                .criterion(hasItem(TeadItems.STEEL_INGOT), conditionsFromItem(TeadItems.STEEL_INGOT))
+                .offerTo(exporter);
+
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, TeadBlocks.LEAD_CUT_SLAB, TeadBlocks.LEAD_CUT_BLOCK);
         createStairsRecipe(TeadBlocks.LEAD_CUT_STAIRS, Ingredient.ofItems(TeadBlocks.LEAD_CUT_BLOCK))
                 .criterion(hasItem(TeadBlocks.LEAD_CUT_BLOCK), conditionsFromItem(TeadBlocks.LEAD_CUT_BLOCK))

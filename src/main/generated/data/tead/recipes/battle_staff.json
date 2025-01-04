@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "%": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "  #",
+    " % ",
+    "#  "
+  ],
+  "result": {
+    "item": "tead:battle_staff"
+  },
+  "show_notification": true
+}

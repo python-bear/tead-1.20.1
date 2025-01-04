@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "tead:rocks"
+    },
+    "$": {
+      "item": "tead:handle"
+    }
+  },
+  "pattern": [
+    "  #",
+    "## ",
+    "$# "
+  ],
+  "result": {
+    "item": "tead:stone_claymore"
+  },
+  "show_notification": true
+}

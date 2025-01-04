@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:ruby"
+  },
+  "base": {
+    "item": "tead:ruby_longsword"
+  },
+  "result": {
+    "item": "tead:ruby_broadsword"
+  },
+  "template": {
+    "item": "tead:smithing_guide_sturdy"
+  }
+}

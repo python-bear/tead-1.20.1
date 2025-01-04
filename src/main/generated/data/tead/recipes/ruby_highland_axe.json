@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:ruby"
+  },
+  "base": {
+    "item": "tead:ruby_axe"
+  },
+  "result": {
+    "item": "tead:ruby_highland_axe"
+  },
+  "template": {
+    "item": "tead:smithing_guide_highland"
+  }
+}

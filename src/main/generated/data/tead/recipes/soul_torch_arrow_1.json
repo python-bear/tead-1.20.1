@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "soul_torch_arrow",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "$": {
+      "item": "minecraft:soul_sand"
+    },
+    "%": {
+      "item": "minecraft:feather"
+    }
+  },
+  "pattern": [
+    "$",
+    "#",
+    "%"
+  ],
+  "result": {
+    "count": 4,
+    "item": "tead:soul_torch_arrow"
+  },
+  "show_notification": true
+}

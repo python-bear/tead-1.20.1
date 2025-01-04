@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tead:item/woolen_boots",
+    "layer1": "tead:item/rose_gold_woolen_boots_overlay",
+    "layer2": "minecraft:trims/items/boots_trim_netherite"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "tead:steel_ingot"
+    },
+    "$": {
+      "item": "minecraft:gold_ingot"
+    },
+    "%": {
+      "item": "minecraft:stripped_dark_oak_log"
+    }
+  },
+  "pattern": [
+    " # ",
+    "$%$"
+  ],
+  "result": {
+    "item": "tead:gemcutter"
+  },
+  "show_notification": true
+}

@@ -2,6 +2,7 @@ package net.pythonbear.tead.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.*;
@@ -29,26 +30,34 @@ public class TeadModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_BLOCK);
         BlockStateModelGenerator.BlockTexturePool leadCutPool = blockStateModelGenerator.registerCubeAllModelTexturePool(TeadBlocks.LEAD_CUT_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.LEAD_TILED_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.ROSE_GOLD_BLOCK);
+        BlockStateModelGenerator.BlockTexturePool roseGoldPool = blockStateModelGenerator.registerCubeAllModelTexturePool((TeadBlocks.ROSE_GOLD_BLOCK));
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.WHITE_GOLD_NETHER_ORE);
-        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.WHITE_GOLD_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BRASS_BLOCK);
+        BlockStateModelGenerator.BlockTexturePool whiteGoldPool = blockStateModelGenerator.registerCubeAllModelTexturePool((TeadBlocks.WHITE_GOLD_BLOCK));
+        BlockStateModelGenerator.BlockTexturePool brassPool = blockStateModelGenerator.registerCubeAllModelTexturePool((TeadBlocks.BRASS_BLOCK));
         BlockStateModelGenerator.BlockTexturePool brassCutPool = blockStateModelGenerator.registerCubeAllModelTexturePool(TeadBlocks.BRASS_CUT_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.BRONZE_BLOCK);
         BlockStateModelGenerator.BlockTexturePool bronzeCutPool = blockStateModelGenerator.registerCubeAllModelTexturePool(TeadBlocks.BRONZE_CUT_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.STEEL_BLOCK);
+        BlockStateModelGenerator.BlockTexturePool steelPool = blockStateModelGenerator.registerCubeAllModelTexturePool(TeadBlocks.STEEL_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DEEPSLATE_RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.RUBY_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.ROSE_NETHERITE_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.WHITE_NETHERITE_BLOCK);
 
+        roseGoldPool.pressurePlate(TeadBlocks.ROSE_GOLD_PRESSURE_PLATE_BLOCK);
+        whiteGoldPool.pressurePlate(TeadBlocks.WHITE_GOLD_PRESSURE_PLATE_BLOCK);
+        brassPool.pressurePlate(TeadBlocks.BRASS_PRESSURE_PLATE_BLOCK);
+        steelPool.pressurePlate(TeadBlocks.STEEL_PRESSURE_PLATE_BLOCK);
         leadCutPool.slab(TeadBlocks.LEAD_CUT_SLAB);
         leadCutPool.stairs(TeadBlocks.LEAD_CUT_STAIRS);
         brassCutPool.slab(TeadBlocks.BRASS_CUT_SLAB);
         brassCutPool.stairs(TeadBlocks.BRASS_CUT_STAIRS);
         bronzeCutPool.slab(TeadBlocks.BRONZE_CUT_SLAB);
         bronzeCutPool.stairs(TeadBlocks.BRONZE_CUT_STAIRS);
+
+        blockStateModelGenerator.registerDoor(TeadBlocks.BRASS_DOOR);
+        blockStateModelGenerator.registerDoor(TeadBlocks.BRONZE_DOOR);
+        blockStateModelGenerator.registerDoor(TeadBlocks.STEEL_DOOR);
 
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.SLUDGE);
         blockStateModelGenerator.registerSimpleCubeAll(TeadBlocks.DARK_BRICKS);
@@ -207,9 +216,6 @@ public class TeadModelProvider extends FabricModelProvider {
         itemModelGenerator.register(TeadItems.SINISTER_SWORD, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.STARLESS_NIGHT, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.BONE_CLUB, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.BATTLE_STAFF, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.CORAL_DAGGER, Models.HANDHELD);
-//        itemModelGenerator.register(TeadItems.QUARTERSTAFF, Models.HANDHELD);
 
         itemModelGenerator.register(TeadItems.LEAD_HOE, Models.HANDHELD);
         itemModelGenerator.register(TeadItems.LEAD_SHOVEL, Models.HANDHELD);

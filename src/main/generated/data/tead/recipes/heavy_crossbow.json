@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "$": {
+      "item": "tead:bronze_ingot"
+    },
+    "%": {
+      "item": "minecraft:string"
+    },
+    "&": {
+      "item": "minecraft:tripwire_hook"
+    }
+  },
+  "pattern": [
+    "$#$",
+    "%&%",
+    " $ "
+  ],
+  "result": {
+    "item": "tead:heavy_crossbow"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "tead:metal_nuggets"
+    },
+    "%": {
+      "item": "minecraft:bamboo"
+    }
+  },
+  "pattern": [
+    "% %",
+    "# #"
+  ],
+  "result": {
+    "item": "tead:garment_boots"
+  },
+  "show_notification": true
+}

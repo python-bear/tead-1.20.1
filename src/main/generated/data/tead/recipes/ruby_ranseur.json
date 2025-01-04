@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "tead:ruby"
+  },
+  "base": {
+    "item": "tead:ruby_spear"
+  },
+  "result": {
+    "item": "tead:ruby_ranseur"
+  },
+  "template": {
+    "item": "tead:smithing_guide_ranseur"
+  }
+}

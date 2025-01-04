@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "minecraft:planks"
+  },
+  "base": {
+    "item": "minecraft:wooden_sword"
+  },
+  "result": {
+    "item": "tead:wood_truthseeker"
+  },
+  "template": {
+    "item": "tead:smithing_guide_truthseeker"
+  }
+}

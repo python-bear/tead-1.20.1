@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "tag": "minecraft:planks"
+  },
+  "base": {
+    "item": "tead:wood_spear"
+  },
+  "result": {
+    "item": "tead:wood_glaive"
+  },
+  "template": {
+    "item": "tead:smithing_guide_glaive"
+  }
+}

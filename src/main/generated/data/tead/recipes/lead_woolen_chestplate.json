@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "tag": "minecraft:wool"
+    },
+    "$": {
+      "item": "tead:lead_nugget"
+    },
+    "@": {
+      "item": "tead:garment_chestplate"
+    }
+  },
+  "pattern": [
+    "# #",
+    "$#$",
+    "#@#"
+  ],
+  "result": {
+    "item": "tead:lead_woolen_chestplate"
+  },
+  "show_notification": true
+}

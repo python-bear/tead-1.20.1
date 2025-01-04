@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "%": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "###",
+    "% %"
+  ],
+  "result": {
+    "item": "tead:diamond_reinforced_mail_helmet"
+  },
+  "show_notification": true
+}
