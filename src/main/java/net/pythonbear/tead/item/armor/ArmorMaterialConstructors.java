@@ -9,7 +9,7 @@ public class ArmorMaterialConstructors {
 
     static {
         BASE_MATERIALS.put("gold", new MaterialData(7, new int[]{2, 5, 3, 1}, 25, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_GOLD", "() -> Ingredient.ofItems(Items.GOLD_INGOT)"));
-        BASE_MATERIALS.put("iron", new MaterialData(15, new int[]{3, 6, 5, 2}, 9, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(Items.IRON_INGOT)"));
+        BASE_MATERIALS.put("iron", new MaterialData(15, new int[]{2, 6, 5, 2}, 9, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(Items.IRON_INGOT)"));
         BASE_MATERIALS.put("diamond", new MaterialData(33, new int[]{3, 8, 6, 3}, 10, 2.0f, 0, "SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND", "() -> Ingredient.ofItems(Items.DIAMOND)"));
         BASE_MATERIALS.put("netherite", new MaterialData(37, new int[]{3, 8, 6, 3}, 15, 3.0f, 0.1f, "SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE", "() -> Ingredient.ofItems(Items.NETHERITE_INGOT)"));
 
@@ -19,7 +19,7 @@ public class ArmorMaterialConstructors {
         BASE_MATERIALS.put("white_gold", new MaterialData(13, new int[]{2, 6, 4, 2}, 18, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_GOLD", "() -> Ingredient.ofItems(TeadItems.WHITE_GOLD_INGOT)"));
         BASE_MATERIALS.put("brass", new MaterialData(25, new int[]{2, 6, 5, 2}, 10, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(TeadItems.BRASS_INGOT)"));
         BASE_MATERIALS.put("bronze", new MaterialData(19, new int[]{2, 6, 5, 3}, 6, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(TeadItems.BRONZE_INGOT)"));
-        BASE_MATERIALS.put("steel", new MaterialData(30, new int[]{3, 7, 6, 3}, 8, 0, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(TeadItems.STEEL_INGOT)"));
+        BASE_MATERIALS.put("steel", new MaterialData(30, new int[]{3, 7, 6, 3}, 8, 1.0f, 0.0f, "SoundEvents.ITEM_ARMOR_EQUIP_IRON", "() -> Ingredient.ofItems(TeadItems.STEEL_INGOT)"));
         BASE_MATERIALS.put("rose_netherite", new MaterialData(38, new int[]{4, 9, 7, 3}, 20, 3, 0.1f, "SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE", "() -> Ingredient.ofItems(TeadItems.ROSE_NETHERITE_INGOT)"));
         BASE_MATERIALS.put("white_netherite", new MaterialData(39, new int[]{4, 9, 7, 3}, 16, 3.5f, 0.1f, "SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE", "() -> Ingredient.ofItems(TeadItems.WHITE_NETHERITE_INGOT)"));
 

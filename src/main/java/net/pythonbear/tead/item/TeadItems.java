@@ -130,13 +130,13 @@ public class TeadItems {
 
     // Staffs
     public static final Item BATTLE_STAFF = registerItem("battle_staff",
-            new ExcaliburItem.StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
+            new StaffItem(ToolMaterials.WOOD, 4.5f, -1.8f, 1, 0.9f,
                     new FabricItemSettings()));
     public static final Item BONE_CLUB = registerItem("bone_club",
-            new ExcaliburItem.StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
+            new StaffItem(TeadToolMaterials.BONE, 1.8f, -2.4f, 1.3f,
                     0.5f, new FabricItemSettings()));
     public static final Item QUARTERSTAFF = registerItem("quarterstaff",
-            new ExcaliburItem.StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
+            new StaffItem(ToolMaterials.WOOD, 3, -1.9f, 0.7f, 0.7f,
                     new FabricItemSettings()));
 
     // Wood Tools

@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolItem;
 import net.minecraft.registry.tag.BlockTags;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.TeadBlocks;
 import net.pythonbear.tead.item.TeadToolMaterials;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,9 +22,9 @@ public class SwordItemMixin {
     @Inject(method = "postHit", at = @At("HEAD"), cancellable = true)
     private void addNauseaEffect(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
         if (!attacker.getWorld().isClient) {
-            ItemStack weapon = attacker.getMainHandStack();
-            Tead.LOGGER.info("weapon: {}", weapon);
-            if (((SwordItem) weapon.getItem()).getMaterial() == TeadToolMaterials.LEAD) {
+            // Use this item (the one that hit), not whatever is in the main hand: a dual-wielded off-hand hit
+            // would otherwise read the main-hand item, which may not be a sword at all.
+            if (((SwordItem) (Object) this).getMaterial() == TeadToolMaterials.LEAD) {
                 if (attacker.getWorld().getRandom().nextInt(5) == 0) {
                     target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 1));
                 }

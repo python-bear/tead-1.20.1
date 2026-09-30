@@ -17,8 +17,8 @@ public class MiningToolItemMixin {
     @Inject(method = "postHit", at = @At("HEAD"), cancellable = true)
     private void addNauseaEffect(ItemStack stack, LivingEntity target, LivingEntity attacker, CallbackInfoReturnable<Boolean> cir) {
         if (!attacker.getWorld().isClient) {
-            ItemStack weapon = attacker.getMainHandStack();
-            if (((MiningToolItem) weapon.getItem()).getMaterial() == TeadToolMaterials.LEAD) {
+            // Use this item (the one that hit), not whatever is in the main hand.
+            if (((MiningToolItem) (Object) this).getMaterial() == TeadToolMaterials.LEAD) {
                 if (attacker.getWorld().getRandom().nextInt(5) == 0) {
                     target.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 1));
                 }
