@@ -1,0 +1,38 @@
+{
+  "parent": "tead:adventure/excalibur_totem",
+  "criteria": {
+    "has_excalibur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:excalibur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.excalibur.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "tead:excalibur"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.excalibur.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_excalibur"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

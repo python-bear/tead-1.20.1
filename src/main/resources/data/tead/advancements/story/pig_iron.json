@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "has_pig_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:pig_iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.pig_iron.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:pig_iron_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.pig_iron.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_pig_iron"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

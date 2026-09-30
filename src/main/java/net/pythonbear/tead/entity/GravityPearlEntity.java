@@ -1,7 +1,5 @@
 package net.pythonbear.tead.entity;
 
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.*;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
@@ -10,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ItemStackParticleEffect;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -149,9 +148,6 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
             this.setPosition(d, e, f);
             ++this.lifespan;
 
-            MinecraftClient client = MinecraftClient.getInstance();
-            ClientWorld world = client.world;
-
             double gravityDistance = Math.max((int) ((this.lifespan - 20) / 12) * 1.5, 0);
             if (this.getWorld() != null) {
                 this.getWorld().getEntitiesByClass(LivingEntity.class, this.getBoundingBox().expand(gravityDistance),
@@ -187,34 +183,25 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
                 if (this.dropsItem) {
                     this.getWorld().spawnEntity(new ItemEntity(this.getWorld(), this.getX(), this.getY(), this.getZ(), this.getStack()));
                 } else {
+                    // Shatter effect. This runs on the server, so particles have to be sent with spawnParticles;
+                    // it used to draw them through MinecraftClient, which crashes a dedicated server and only
+                    // showed them to the host on LAN.
+                    ServerWorld serverWorld = (ServerWorld) this.getWorld();
                     double x_shard = this.getX() + 0.5;
                     double y_shard = this.getY();
                     double z_shard = this.getZ() + 0.5;
 
-                    if (world != null) {
-                        for (int t = 0; t < 8; ++t) {
-                            world.addParticle(new ItemStackParticleEffect(ParticleTypes.ITEM, new ItemStack(TeadItems.GRAVITY_PEARL)),
-                                    x_shard, y_shard, z_shard,
-                                    client.world.random.nextGaussian() * 0.15,
-                                    client.world.random.nextDouble() * 0.2,
-                                    client.world.random.nextGaussian() * 0.15);
-                        }
-                        for (double shard_r = 0.0; shard_r < Math.PI * 2; shard_r += 0.15707963267948966) {
-                            world.addParticle(ParticleTypes.PORTAL,
-                                    x_shard + Math.cos(shard_r) * 5.0,
-                                    y_shard - 0.4,
-                                    z_shard + Math.sin(shard_r) * 5.0,
-                                    Math.cos(shard_r) * -5.0,
-                                    0.0,
-                                    Math.sin(shard_r) * -5.0);
-                            world.addParticle(ParticleTypes.PORTAL,
-                                    x_shard + Math.cos(shard_r) * 5.0,
-                                    y_shard - 0.4,
-                                    z_shard + Math.sin(shard_r) * 5.0,
-                                    Math.cos(shard_r) * -7.0,
-                                    0.0,
-                                    Math.sin(shard_r) * -7.0);
-                        }
+                    serverWorld.spawnParticles(new ItemStackParticleEffect(ParticleTypes.ITEM, new ItemStack(TeadItems.GRAVITY_PEARL)),
+                            x_shard, y_shard, z_shard, 8, 0.15, 0.1, 0.15, 0.1);
+
+                    // With a count of 0, spawnParticles treats the offset as the particle's velocity.
+                    for (double shard_r = 0.0; shard_r < Math.PI * 2; shard_r += 0.15707963267948966) {
+                        serverWorld.spawnParticles(ParticleTypes.PORTAL,
+                                x_shard + Math.cos(shard_r) * 5.0, y_shard - 0.4, z_shard + Math.sin(shard_r) * 5.0,
+                                0, Math.cos(shard_r) * -5.0, 0.0, Math.sin(shard_r) * -5.0, 1.0);
+                        serverWorld.spawnParticles(ParticleTypes.PORTAL,
+                                x_shard + Math.cos(shard_r) * 5.0, y_shard - 0.4, z_shard + Math.sin(shard_r) * 5.0,
+                                0, Math.cos(shard_r) * -7.0, 0.0, Math.sin(shard_r) * -7.0, 1.0);
                     }
                 }
             }
@@ -230,12 +217,32 @@ public class GravityPearlEntity extends Entity implements FlyingItemEntity {
         if (!itemStack.isEmpty()) {
             nbt.put("Item", itemStack.writeNbt(new NbtCompound()));
         }
+        // Without these a reloaded pearl would fly towards 0,0,0 and restart its lifetime.
+        nbt.putDouble("TargetX", this.targetX);
+        nbt.putDouble("TargetY", this.targetY);
+        nbt.putDouble("TargetZ", this.targetZ);
+        nbt.putInt("Lifespan", this.lifespan);
+        nbt.putBoolean("DropsItem", this.dropsItem);
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         ItemStack itemStack = ItemStack.fromNbt(nbt.getCompound("Item"));
         this.setItem(itemStack);
+        if (nbt.contains("TargetX")) {
+            this.targetX = nbt.getDouble("TargetX");
+            this.targetY = nbt.getDouble("TargetY");
+            this.targetZ = nbt.getDouble("TargetZ");
+            this.lifespan = nbt.getInt("Lifespan");
+            this.dropsItem = nbt.getBoolean("DropsItem");
+        } else {
+            // Pearls saved by older versions: just let them finish shortly where they are.
+            this.targetX = this.getX();
+            this.targetY = this.getY();
+            this.targetZ = this.getZ();
+            this.lifespan = 100;
+            this.dropsItem = true;
+        }
     }
 
     @Override

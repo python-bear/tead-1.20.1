@@ -1,0 +1,5 @@
+-[ ] Updated shuriken texture. 
+-[ ] Move recipe book in alloy smelter.
+-[X] Soul recipe too early
+-[X] Arrow recipe only when get trick bow
+-[ ] Lightning Staff first enchantment reduced range, higher more range.

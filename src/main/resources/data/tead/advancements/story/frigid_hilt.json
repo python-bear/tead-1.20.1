@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "has_frigid_hilt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:frigid_hilt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.frigid_hilt.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:frigid_hilt"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.frigid_hilt.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_frigid_hilt"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

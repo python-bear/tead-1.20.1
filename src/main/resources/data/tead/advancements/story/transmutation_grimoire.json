@@ -1,0 +1,38 @@
+{
+  "parent": "tead:story/rubies",
+  "criteria": {
+    "has_transmutation_grimoire": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:transmutation_grimoire"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.transmutation_grimoire.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:transmutation_grimoire"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.transmutation_grimoire.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_transmutation_grimoire"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

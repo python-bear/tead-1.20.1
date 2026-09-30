@@ -3,6 +3,7 @@
   "package": "net.pythonbear.tead.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "ClientRecipeBookMixin",
     "HeldItemRendererMixin",
     "ItemRendererAccessor",
     "ItemRendererMixin",

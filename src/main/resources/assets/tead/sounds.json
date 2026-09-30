@@ -66,7 +66,7 @@
   "frost_claymore_summon": {
     "subtitle": "sounds.tead.frost_claymore_summon",
     "sounds": [
-      "tead:frost_claymore_summon"
+      "tead:frost_claymore_spawn"
     ]
   },
   "frosty_explosion": {

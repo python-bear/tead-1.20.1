@@ -1,0 +1,38 @@
+{
+  "parent": "tead:story/steel",
+  "criteria": {
+    "has_gemcutter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:gemcutter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.gemcutter.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:gemcutter"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.gemcutter.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_gemcutter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

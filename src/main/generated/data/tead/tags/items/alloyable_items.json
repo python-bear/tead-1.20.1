@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "tead:pig_iron_nugget",
+    "tead:pig_iron_ingot",
     "minecraft:gold_nugget",
     "minecraft:gold_ingot",
     "tead:lead_nugget",

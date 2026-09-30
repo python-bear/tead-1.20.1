@@ -1,6 +1,5 @@
 package net.pythonbear.tead.util;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -8,17 +7,19 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
-import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.item.TeadItems;
 import net.pythonbear.tead.item.ExcaliburItem;
-import net.pythonbear.tead.item.ExcaliburTotemItem;
+import net.pythonbear.tead.network.TeadNetworking;
 
 public class OnEntityDeath {
+    /**
+     * Excalibur acts like a totem of undying: when a player holding it would die, it is consumed and they survive.
+     * Registered on ServerLivingEntityEvents.ALLOW_DEATH (server only).
+     */
     public static boolean removeExcalibur(LivingEntity livingEntity, DamageSource damageSource, float damage) {
         if (!(livingEntity instanceof ServerPlayerEntity serverPlayer)) return true;
         if (serverPlayer.isCreative()) return true;
@@ -29,31 +30,24 @@ public class OnEntityDeath {
         World world = livingEntity.getWorld();
 
         if (itemInMainHand instanceof ExcaliburItem || itemInOffHand instanceof ExcaliburItem) {
-            if (!world.isClient) {
-                if (itemInMainHand instanceof ExcaliburItem) {
-                    playerInventory.setStack(playerInventory.selectedSlot, ItemStack.EMPTY);
-                } else {
-                    playerInventory.offHand.set(0, ItemStack.EMPTY);
-                }
-
-                serverPlayer.playerScreenHandler.sendContentUpdates();
-
-                livingEntity.setHealth(2.0f);
-                livingEntity.clearStatusEffects();
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
-
-                MinecraftClient client = MinecraftClient.getInstance();
-                client.particleManager.addEmitter(livingEntity, ParticleTypes.TOTEM_OF_UNDYING, 30);
-
-                if (client.player != null && client.player.isMainPlayer()) {
-                    client.gameRenderer.showFloatingItem(TeadItems.EXCALIBUR_TOTEM.getDefaultStack());
-                }
-//                world.sendEntityStatus(livingEntity, EntityStatuses.USE_TOTEM_OF_UNDYING);
-
-                world.playSound(null, livingEntity.getBlockPos(), SoundEvents.ITEM_TOTEM_USE, SoundCategory.PLAYERS, 1.0f, 1.0f);
+            if (itemInMainHand instanceof ExcaliburItem) {
+                playerInventory.setStack(playerInventory.selectedSlot, ItemStack.EMPTY);
+            } else {
+                playerInventory.offHand.set(0, ItemStack.EMPTY);
             }
+
+            serverPlayer.playerScreenHandler.sendContentUpdates();
+
+            livingEntity.setHealth(2.0f);
+            livingEntity.clearStatusEffects();
+            livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 900, 1));
+            livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100, 1));
+            livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 800, 0));
+
+            // Client-side effects are sent as a packet; this used to call MinecraftClient directly, which crashes a
+            // dedicated server and showed the effect to the host instead of the dying player on LAN.
+            TeadNetworking.sendTotemEffect(serverPlayer, new ItemStack(TeadItems.EXCALIBUR_TOTEM), 30);
+            world.playSound(null, livingEntity.getBlockPos(), SoundEvents.ITEM_TOTEM_USE, SoundCategory.PLAYERS, 1.0f, 1.0f);
 
             return false;
         }

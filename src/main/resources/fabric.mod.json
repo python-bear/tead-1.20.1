@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "tead",
 	"version": "${version}",
-	"name": "tead",
+	"name": "Tead: Equipment And More",
 	"description": "Adds plenty of new tools, weapons, and armor heavily inspired by Minecraft: Dungeons but redesigned to fit the vanilla aesthetic.",
 	"authors": [
 		"Python-Bear"

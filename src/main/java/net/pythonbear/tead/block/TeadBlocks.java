@@ -15,7 +15,6 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.entity.GemcutterBlockEntity;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
-import net.pythonbear.tead.block.entity.TransmutationTableBlockEntity;
 
 public class TeadBlocks {
     public static final Block WEAK_COBWEB = registerBlockWithoutItem("weak_cobweb",
@@ -160,11 +159,6 @@ public class TeadBlocks {
             Registries.BLOCK_ENTITY_TYPE,
             new Identifier(Tead.MOD_ID, "gemcutter"),
             BlockEntityType.Builder.create(GemcutterBlockEntity::new, GEMCUTTER).build(null)
-    );
-    public static final BlockEntityType<TransmutationTableBlockEntity> TRANSMUTATION_TABLE_ENTITY = Registry.register(
-            Registries.BLOCK_ENTITY_TYPE,
-            new Identifier(Tead.MOD_ID, "transmutation_table"),
-            BlockEntityType.Builder.create(TransmutationTableBlockEntity::new, TRANSMUTATION_TABLE).build(null)
     );
 
     private static Block registerBlock(String name, Block block) {

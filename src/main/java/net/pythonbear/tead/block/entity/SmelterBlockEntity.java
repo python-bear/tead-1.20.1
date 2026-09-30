@@ -176,7 +176,7 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         this.burnTime = nbt.getShort("BurnTime");
         this.cookTime = nbt.getShort("CookTime");
         this.cookTimeTotal = nbt.getShort("CookTimeTotal");
-        this.fuelTime = this.getFuelTime(this.inventory.get(1));
+        this.fuelTime = this.getFuelTime(this.inventory.get(INPUT_FUEL_SLOT));
         NbtCompound nbtCompound = nbt.getCompound("RecipesUsed");
         for (String string : nbtCompound.getKeys()) {
             this.recipesUsed.put(new Identifier(string), nbtCompound.getInt(string));
@@ -450,7 +450,10 @@ public class SmelterBlockEntity extends LockableContainerBlockEntity implements 
         for (Object2IntMap.Entry entry : this.recipesUsed.object2IntEntrySet()) {
             world.getRecipeManager().get((Identifier)entry.getKey()).ifPresent(recipe -> {
                 list.add((Recipe<?>)recipe);
-                SmelterBlockEntity.dropExperience(world, pos, entry.getIntValue(), ((AbstractCookingRecipe)recipe).getExperience());
+                // Alloy recipes are not AbstractCookingRecipes, so the old cast threw a ClassCastException here.
+                if (recipe instanceof AlloyCookingRecipe alloyRecipe) {
+                    SmelterBlockEntity.dropExperience(world, pos, entry.getIntValue(), alloyRecipe.getExperience());
+                }
             });
         }
         return list;

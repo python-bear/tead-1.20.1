@@ -1,0 +1,38 @@
+{
+  "parent": "tead:adventure/soul",
+  "criteria": {
+    "has_excalibur_totem": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:excalibur_totem"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.excalibur_totem.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "tead:excalibur_totem"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.excalibur_totem.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_excalibur_totem"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

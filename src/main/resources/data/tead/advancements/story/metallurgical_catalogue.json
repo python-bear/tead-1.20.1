@@ -1,0 +1,218 @@
+{
+  "parent": "tead:story/metal_collector",
+  "criteria": {
+    "has_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:copper_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_pig_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:pig_iron_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_steel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:steel_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_lead": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:lead_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rose_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:rose_gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_white_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:white_gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_brass": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:brass_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_bronze": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:bronze_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:netherite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_rose_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:rose_netherite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_white_netherite": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:white_netherite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.metallurgical_catalogue.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "tead:brass_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.metallurgical_catalogue.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_gold"
+    ],
+    [
+      "has_copper"
+    ],
+    [
+      "has_iron"
+    ],
+    [
+      "has_pig_iron"
+    ],
+    [
+      "has_steel"
+    ],
+    [
+      "has_lead"
+    ],
+    [
+      "has_rose_gold"
+    ],
+    [
+      "has_white_gold"
+    ],
+    [
+      "has_brass"
+    ],
+    [
+      "has_bronze"
+    ],
+    [
+      "has_netherite"
+    ],
+    [
+      "has_rose_netherite"
+    ],
+    [
+      "has_white_netherite"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

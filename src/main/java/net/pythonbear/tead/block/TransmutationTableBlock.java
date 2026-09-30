@@ -71,9 +71,8 @@ public class TransmutationTableBlock extends BlockWithEntity implements BlockEnt
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof TransmutationTableBlockEntity) {
-                ItemScatterer.spawn(world, pos, (TransmutationTableBlockEntity)blockEntity);
-                world.updateComparators(pos, this);
+            if (blockEntity instanceof TransmutationTableBlockEntity table) {
+                table.dropLegacyItems(world, pos);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
         }

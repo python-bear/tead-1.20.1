@@ -13,7 +13,6 @@ import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
 import net.pythonbear.tead.Tead;
 import net.pythonbear.tead.block.entity.SmelterBlockEntity;
-import net.pythonbear.tead.recipe.TeadRecipeBookCategory;
 import net.pythonbear.tead.recipe.TeadRecipeTypes;
 import net.pythonbear.tead.recipe.AlloyCookingRecipe;
 
@@ -59,18 +58,22 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         this.addProperties(propertyDelegate);
     }
 
+    /**
+     * Items the recipe book may use, besides the player's inventory. Only the two input slots: the fuel slot and the
+     * output must not count (otherwise coal in the fuel slot would count as the coal for steel, but could never be
+     * moved into an input slot).
+     */
     @Override
     public void populateRecipeFinder(RecipeMatcher finder) {
-        if (this.inventory instanceof RecipeInputProvider) {
-            ((RecipeInputProvider) this.inventory).provideRecipeInputs(finder);
-        }
+        finder.addInput(this.inventory.getStack(0));
+        finder.addInput(this.inventory.getStack(1));
     }
 
+    /** Only the inputs are cleared/returned when the recipe book fills the smelter; fuel and output stay put. */
     @Override
     public void clearCraftingSlots() {
         this.getSlot(0).setStackNoCallbacks(ItemStack.EMPTY);
         this.getSlot(1).setStackNoCallbacks(ItemStack.EMPTY);
-        this.getSlot(3).setStackNoCallbacks(ItemStack.EMPTY);
     }
 
     @Override
@@ -102,11 +105,6 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
     public RecipeBookCategory getCategory() {
         return null;
     }
-
-//    @Override
-//    public TeadRecipeBookCategory getCategory() {
-//        return TeadRecipeBookCategory.ALLOY_SMELTING;
-//    }
 
     @Override
     public boolean canUse(PlayerEntity player) {
@@ -214,8 +212,9 @@ public class SmelterScreenHandler extends AbstractRecipeScreenHandler<Inventory>
         return this.propertyDelegate.get(0) > 0;
     }
 
+    /** Which slots the recipe book empties back into the player's inventory before filling (just the inputs). */
     @Override
     public boolean canInsertIntoSlot(int index) {
-        return index != 2;
+        return index == 0 || index == 1;
     }
 }

@@ -2,7 +2,7 @@
   "type": "tead:alloy_smelting",
   "ingredients": [
     {
-      "item": "minecraft:iron_nugget"
+      "item": "minecraft:coal"
     },
     {
       "item": "minecraft:iron_nugget"

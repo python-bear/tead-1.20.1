@@ -1,0 +1,83 @@
+{
+  "parent": "minecraft:story/upgrade_tools",
+  "criteria": {
+    "has_galena": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:galena"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_copper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_copper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_gold": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_gold"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_raw_iron": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:raw_iron"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.metal_collector.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "tead:galena"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.metal_collector.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_galena"
+    ],
+    [
+      "has_raw_gold"
+    ],
+    [
+      "has_raw_iron"
+    ],
+    [
+      "has_raw_copper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

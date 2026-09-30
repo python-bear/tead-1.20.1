@@ -49,6 +49,21 @@ public class RubyToolTransmuting {
         return mainRubyTool;
     }
 
+    /** The tools stored in a transmuted ruby tool, in the order sneak-using cycles through them. */
+    public static List<ItemStack> getStoredTools(ItemStack mainRubyTool) {
+        List<ItemStack> tools = new ArrayList<>();
+        NbtCompound nbtCompound = mainRubyTool.getNbt();
+        if (nbtCompound == null || !nbtCompound.contains(TRANSMUTATION_ITEMS_KEY, NbtElement.LIST_TYPE)) {
+            return tools;
+        }
+        NbtList nbtList = nbtCompound.getList(TRANSMUTATION_ITEMS_KEY, NbtElement.COMPOUND_TYPE);
+        for (int i = 0; i < nbtList.size(); i++) {
+            ItemStack stack = ItemStack.fromNbt(nbtList.getCompound(i));
+            if (!stack.isEmpty()) tools.add(stack);
+        }
+        return tools;
+    }
+
     public static void cleanNbt(ItemStack stack) {
         if (stack.hasNbt()) {
             NbtCompound stackNbt = stack.getNbt();

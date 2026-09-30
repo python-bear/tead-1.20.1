@@ -1,0 +1,38 @@
+{
+  "parent": "tead:story/frigid_hilt",
+  "criteria": {
+    "has_frost_claymore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:frost_claymore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.frost_claymore.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "tead:frost_claymore"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.frost_claymore.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_frost_claymore"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

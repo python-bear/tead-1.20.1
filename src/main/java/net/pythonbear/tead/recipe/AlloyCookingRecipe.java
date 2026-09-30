@@ -11,6 +11,7 @@ import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
 import net.minecraft.util.Identifier;
+import net.pythonbear.tead.block.TeadBlocks;
 
 public class AlloyCookingRecipe implements Recipe<Inventory> {
     protected final Identifier id;
@@ -88,6 +89,12 @@ public class AlloyCookingRecipe implements Recipe<Inventory> {
     @Override
     public Identifier getId() {
         return this.id;
+    }
+
+    /** Shown on the "New Recipes Unlocked" toast. */
+    @Override
+    public ItemStack createIcon() {
+        return new ItemStack(TeadBlocks.SMELTER);
     }
 
     @Override

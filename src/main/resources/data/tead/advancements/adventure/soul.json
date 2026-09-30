@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:adventure/kill_mob_near_sculk_catalyst",
+  "criteria": {
+    "has_soul": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:soul"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.soul.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:soul"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.soul.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_soul"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "tead:story/transmutation_grimoire",
+  "criteria": {
+    "has_ruby_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:ruby_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.ruby_ingot.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "tead:ruby_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.ruby_ingot.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_ingot"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -14,7 +14,7 @@ public class TeadEntityTypes {
     public static final EntityType<SpearEntity> SPEAR = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "spear"),
             FabricEntityTypeBuilder.<SpearEntity>create(SpawnGroup.MISC, SpearEntity::new)
-                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeBlocks(4)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.5f)).trackRangeChunks(4)
                     .trackedUpdateRate(20).build());
     public static final EntityType<GrenadeProjectileEntity> GRENADE_PROJECTILE = Registry.register(
             Registries.ENTITY_TYPE, new Identifier(Tead.MOD_ID, "grenade_projectile"),

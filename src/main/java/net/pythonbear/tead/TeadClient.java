@@ -16,6 +16,7 @@ import net.pythonbear.tead.block.entity.TeadBlockEntities;
 import net.pythonbear.tead.entity.TeadEntityTypes;
 import net.pythonbear.tead.block.TeadBlocks;
 import net.pythonbear.tead.item.TeadItems;
+import net.pythonbear.tead.network.TeadClientNetworking;
 import net.pythonbear.tead.rendering.*;
 import net.pythonbear.tead.screen.GemcutterScreen;
 import net.pythonbear.tead.screen.TeadScreenHandlers;
@@ -27,6 +28,8 @@ public class TeadClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         TeadModelPredicateProvider.registerTeadModels();
+        TeadClientNetworking.registerReceivers();
+        TransmutedToolTooltip.register();
 
         HandledScreens.register(TeadScreenHandlers.GEMCUTTER_SCREEN_HANDLER, GemcutterScreen::new);
         HandledScreens.register(TeadScreenHandlers.SMELTER_SCREEN_HANDLER, SmelterScreen::new);

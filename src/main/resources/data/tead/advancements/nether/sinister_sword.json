@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:nether/find_fortress",
+  "criteria": {
+    "has_sinister_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:sinister_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.nether.sinister_sword.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "tead:sinister_sword"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.nether.sinister_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_sinister_sword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

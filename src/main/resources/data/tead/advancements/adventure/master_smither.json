@@ -1,0 +1,218 @@
+{
+  "parent": "minecraft:adventure/trade",
+  "criteria": {
+    "smithing_guide_sturdy": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_sturdy"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_spooky": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_spooky"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_glaive": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_glaive"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_highland": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_highland"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_hollow_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_hollow_dagger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_mountaineer_pick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_mountaineer_pick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_ranseur": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_ranseur"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_rapier": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_rapier"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_rite_dagger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_rite_dagger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_tempest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_tempest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_truthseeker": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_truthseeker"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_mercenary": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_mercenary"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "smithing_guide_katana": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "tead:smithing_guide_katana"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.adventure.master_smither.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "tead:smithing_guide_sturdy"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.adventure.master_smither.title"
+    }
+  },
+  "requirements": [
+    [
+      "smithing_guide_sturdy"
+    ],
+    [
+      "smithing_guide_spooky"
+    ],
+    [
+      "smithing_guide_glaive"
+    ],
+    [
+      "smithing_guide_highland"
+    ],
+    [
+      "smithing_guide_hollow_dagger"
+    ],
+    [
+      "smithing_guide_mountaineer_pick"
+    ],
+    [
+      "smithing_guide_ranseur"
+    ],
+    [
+      "smithing_guide_rapier"
+    ],
+    [
+      "smithing_guide_rite_dagger"
+    ],
+    [
+      "smithing_guide_tempest"
+    ],
+    [
+      "smithing_guide_truthseeker"
+    ],
+    [
+      "smithing_guide_mercenary"
+    ],
+    [
+      "smithing_guide_katana"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

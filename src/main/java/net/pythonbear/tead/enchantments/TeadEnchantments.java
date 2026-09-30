@@ -37,7 +37,7 @@ public class TeadEnchantments {
             new Thundering(Enchantment.Rarity.COMMON, EnchantmentTarget.WEAPON,
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment TRANSMORPHING = register("transmorphing",
-            new Thundering(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.WEAPON,
+            new Transmorphing(Enchantment.Rarity.VERY_RARE, EnchantmentTarget.WEAPON,
                     new EquipmentSlot[] {EquipmentSlot.MAINHAND}));
     public static Enchantment WEAKENING = register("weakening",
             new Weakening(Enchantment.Rarity.UNCOMMON, EnchantmentTarget.WEAPON,

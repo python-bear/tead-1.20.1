@@ -30,9 +30,7 @@ public class SpearEntity extends PersistentProjectileEntity {
 
     public SpearEntity(World world, LivingEntity owner, ItemStack stack) {
         super(TeadEntityTypes.SPEAR, owner, world);
-        this.spearStack = stack.copy();
-        this.dataTracker.set(SPEAR_STACK, stack.copy());
-        this.dataTracker.set(ENCHANTED, stack.hasGlint());
+        this.setSpearStack(stack);
     }
 
     public SpearEntity(EntityType<? extends SpearEntity> entityType, World world) {
@@ -54,9 +52,27 @@ public class SpearEntity extends PersistentProjectileEntity {
         super.tick();
     }
 
+    /**
+     * The stack this spear gives back when picked up. On the server {@code spearStack} is the source of truth
+     * (it is what gets saved to NBT); the client only has the synced tracked copy.
+     */
     @Override
     public ItemStack asItemStack() {
+        ItemStack stack = this.spearStack.isEmpty() ? this.dataTracker.get(SPEAR_STACK) : this.spearStack;
+        return stack.copy();
+    }
+
+    /**
+     * The stack used for rendering. Not copied, so do not modify it.
+     */
+    public ItemStack getRenderStack() {
         return this.dataTracker.get(SPEAR_STACK);
+    }
+
+    private void setSpearStack(ItemStack stack) {
+        this.spearStack = stack.copy();
+        this.dataTracker.set(SPEAR_STACK, stack.copy());
+        this.dataTracker.set(ENCHANTED, stack.hasGlint());
     }
 
     public boolean isEnchanted() {
@@ -128,10 +144,12 @@ public class SpearEntity extends PersistentProjectileEntity {
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
+        // Restore both the server-side stack and the synced copy; previously only the field was restored,
+        // so reloaded spears were invisible and could not be picked up.
         if (nbt.contains("SpearStack", NbtElement.COMPOUND_TYPE)) {
-            this.spearStack = ItemStack.fromNbt(nbt.getCompound("SpearStack"));
+            this.setSpearStack(ItemStack.fromNbt(nbt.getCompound("SpearStack")));
         } else {
-            this.spearStack = ItemStack.EMPTY;
+            this.setSpearStack(ItemStack.EMPTY);
         }
         this.dealtDamage = nbt.getBoolean("DealtDamage");
     }

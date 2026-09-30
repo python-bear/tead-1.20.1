@@ -3,6 +3,8 @@ package net.pythonbear.tead;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -58,7 +60,9 @@ public class Tead implements ModInitializer {
 		ServerTickEvents.END_WORLD_TICK.register(LightningStaffItem::tick);
 		ServerTickEvents.END_WORLD_TICK.register(OnWorldTick::onPlayerWorldTick);
 		ServerLivingEntityEvents.ALLOW_DEATH.register(OnEntityDeath::removeExcalibur);
-		ServerLivingEntityEvents.AFTER_DEATH.register(DiedInVoid::craftExcalibur);
+		ServerLivingEntityEvents.ALLOW_DEATH.register(DiedInVoid::craftExcalibur);
+		ServerPlayerEvents.COPY_FROM.register(DiedInVoid::giveOnRespawn);
+		ServerLifecycleEvents.SERVER_STOPPED.register(server -> LightningStaffItem.clearPendingStrikes());
 
 //		generateTeadArmorMaterials();
 

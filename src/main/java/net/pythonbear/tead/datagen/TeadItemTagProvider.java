@@ -455,7 +455,11 @@ public class TeadItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(TeadItems.ROSE_NETHERITE_NUGGET)
                 .add(TeadItems.WHITE_NETHERITE_NUGGET);
 
+        // Every item used by an alloy smelting recipe (data/tead/recipes/*_alloy*.json); the smelter's input
+        // slots only accept these from hoppers.
         getOrCreateTagBuilder(TeadTags.Items.ALLOYABLE_ITEMS)
+                .add(TeadItems.PIG_IRON_NUGGET)
+                .add(TeadItems.PIG_IRON_INGOT)
                 .add(Items.GOLD_NUGGET)
                 .add(Items.GOLD_INGOT)
                 .add(TeadItems.LEAD_NUGGET)

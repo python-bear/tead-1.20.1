@@ -21,6 +21,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.registry.RegistryKey;
 import net.pythonbear.tead.enchantments.TeadEnchantments;
 import net.pythonbear.tead.sound.TeadSounds;
 import net.pythonbear.tead.util.LightningTask;
@@ -28,8 +29,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanishable {
-    private static final Map<ServerWorld, List<LightningTask>> worldTaskMap = new HashMap<>();
+public class LightningStaffItem extends StaffItem implements Vanishable {
+    /**
+     * Pending delayed strikes, per dimension. Keyed by the dimension key rather than the ServerWorld object so that
+     * old worlds aren't kept alive in memory after leaving a singleplayer world, and cleared when the server stops
+     * so strikes queued in one world can't fire in the next one that is opened.
+     */
+    private static final Map<RegistryKey<World>, List<LightningTask>> PENDING_STRIKES = new HashMap<>();
 
     public LightningStaffItem(Settings settings) {
         super(TeadToolMaterials.ROSE_NETHERITE, 2.2f, -2f, 0.5f, 0.4f,
@@ -66,7 +72,7 @@ public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanis
                     // If the ray missed
                     strikePos = user.getPos();
                     user.getStackInHand(hand).damage(8, user,
-                            playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
+                            playerEntity -> playerEntity.sendToolBreakStatus(hand));
                 } else {
                     // If the ray hit something
                     strikePos = rayHit.getBlockPos().toCenterPos();
@@ -77,7 +83,7 @@ public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanis
                     user.addStatusEffect(magicHealthEffect);
                     user.addStatusEffect(magicDamageEffect);
                     user.getStackInHand(hand).damage(1, user,
-                            playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand()));
+                            playerEntity -> playerEntity.sendToolBreakStatus(hand));
                 }
 
                 // Schedule the first strike immediately
@@ -98,7 +104,12 @@ public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanis
     }
 
     private void scheduleLightning(ServerWorld world, Vec3d position, int delayTicks) {
-        worldTaskMap.computeIfAbsent(world, w -> new ArrayList<>()).add(new LightningTask(position, delayTicks));
+        PENDING_STRIKES.computeIfAbsent(world.getRegistryKey(), key -> new ArrayList<>())
+                .add(new LightningTask(position, delayTicks));
+    }
+
+    public static void clearPendingStrikes() {
+        PENDING_STRIKES.clear();
     }
 
 
@@ -109,7 +120,7 @@ public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanis
     }
 
     public static void tick(ServerWorld world) {
-        List<LightningTask> tasks = worldTaskMap.get(world);
+        List<LightningTask> tasks = PENDING_STRIKES.get(world.getRegistryKey());
         if (tasks == null || tasks.isEmpty()) {
             return;
         }
@@ -128,7 +139,7 @@ public class LightningStaffItem extends ExcaliburItem.StaffItem implements Vanis
         tasks.removeAll(completedTasks);
 
         if (tasks.isEmpty()) {
-            worldTaskMap.remove(world);
+            PENDING_STRIKES.remove(world.getRegistryKey());
         }
     }
 
